@@ -9,6 +9,9 @@ With some basic JavaScript principles we can now expand our skills out even furt
 * To test your `console` statements you can either run `node /assignments/<fileName>` and see what prints in your terminal. You can also use an online tool like `JSBin`, `REPL.it`, `JSFiddle` or even your `Chrome developer console`.
 * Once you finish the exercises in each file, commit your code, and push it to your fork. 
 
+### Function Conversion
+You will see more and more arrow functions as you progress deeper into JavaScript.  Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax. 
+
 ### Array Methods
 Use .forEach(), .map(), .filter(), and .reduce() to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fund rasising 5k fun run event.
 
