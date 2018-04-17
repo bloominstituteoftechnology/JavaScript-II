@@ -102,4 +102,10 @@ console.log(emailarray);
 
 // Problem 2
 
+let format = [];
+format = runners.map((money) => `\$${money.donation}.00`);
+
+console.log(format);
+
+
 // Problem 3
