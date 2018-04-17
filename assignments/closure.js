@@ -1,5 +1,9 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+let name = "William VanDolah";
+let greeting = () => `Hello ${name}`
+console.log(greeting());
+
 
 
 // ==== Challenge 2: Create a counter function ====
