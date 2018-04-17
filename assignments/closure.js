@@ -41,10 +41,10 @@ const counterFactory = () => {
 
 const UpOrDown = counterFactory(); 
 console.log(UpOrDown.increment)
-UpOrDown.increment() //?
-UpOrDown.increment() //?
-UpOrDown.increment() //?
-UpOrDown.increment() //?
-UpOrDown.decrement() //?
-UpOrDown.decrement() //?
-UpOrDown.decrement() //?
+console.log(UpOrDown.increment()) 
+console.log(UpOrDown.increment()) 
+console.log(UpOrDown.increment()) 
+console.log(UpOrDown.increment()) 
+console.log(UpOrDown.decrement()) 
+console.log(UpOrDown.decrement()) 
+console.log(UpOrDown.decrement()) 
