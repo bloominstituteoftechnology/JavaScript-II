@@ -112,6 +112,6 @@ const sympathySize = obj => {
 let miserablePeople = runners.filter(obj => obj.donation < donationAvg)
                         .sort((a, b) => shirtSizes.indexOf(a.shirt_size) - shirtSizes.indexOf(b.shirt_size))
                         .map(sympathySize)
-                        .map(obj => `${obj.first_name} ${obj.last_name} Shirt Size is ${obj.shirt_size}`);
+                        .map(obj => `${obj.first_name} ${obj.last_name}'s Shirt Size is ${obj.shirt_size}`);
 
 console.log(miserablePeople);
