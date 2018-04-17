@@ -55,6 +55,7 @@ const runners = [
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
+
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.
 //Combine both the first and last names into a new array called fullName.
@@ -73,8 +74,8 @@ console.log(fullName);
 
 let allCaps = [];
 
-allCaps = runners.map(function(a, i){
-  return runners[i].first_name.toUpperCase();
+allCaps = runners.map(function(runner, i){
+  return runner.first_name.toUpperCase();
 });
 
 console.log(allCaps);
@@ -86,8 +87,8 @@ console.log(allCaps);
 
 let largeShirts = [];
 
-largeShirts = runners.filter((data, i, array) => {
-  return runners[i].shirt_size === 'L';
+largeShirts = runners.filter((runner, i, array) => {
+  return runner.shirt_size === 'L';
 })
 
 console.log(largeShirts);
@@ -96,11 +97,11 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 
-ticketPriceTotal = runners.reduce((theReducer, data, i, array) => {
-  return theReducer += runners[i].donation;
+ticketPriceTotal = runners.reduce((totalDonations, runner, i, array) => {
+  return totalDonations += runner.donation;
 }, 0);
 
-console.log(ticketPriceTotal);
+console.log(`The total amount of money donated: ${ticketPriceTotal}`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().
@@ -108,7 +109,34 @@ console.log(ticketPriceTotal);
 //Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//A mass email needs to be sent out to all of the runners to give them the details of the race. Compile all of them in an array.
+
+let runnerEmails = [];
+
+runnerEmails = runners.map((runner, i, runners) => {
+  return runner.email;
+})
+
+console.log(runnerEmails);
 
 // Problem 2
+//The company Skinix forgot who volunteered for the race. Create an array for them with all of their runners info.
+
+let skinixRunners = [];
+
+skinixRunners = runners.filter((runner, i, runners) => {
+  return runner.company_name === 'Skinix';
+});
+
+console.log(skinixRunners);
 
 // Problem 3
+//The community center wants to send a special thank you letter to all of the company's that donated more $100. Create an array with all of the company's that donated more than $100
+
+let bigSpenders = [];
+
+bigSpenders = runners.filter((runner, i, runners) => {
+  return runner.donation > 100;
+});
+
+console.log(bigSpenders);
