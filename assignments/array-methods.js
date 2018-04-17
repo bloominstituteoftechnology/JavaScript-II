@@ -100,6 +100,18 @@ BigDonors.forEach((id) =>{
     return ThankYouEmails.push(id.email);
 })
 console.log(ThankYouEmails)
+
 // Problem 2
+//Sort the runners by their last names.
+let LastName = runners.map((id) =>{
+    return `${id.last_name}, ${id.first_name}`
+});
+let orderLastName = LastName.sort();
+console.log(LastName)
 
 // Problem 3
+//List of all the companies that participated.
+
+let CompanyName= runners.map(runner => runner.company_name);
+CompanyName.sort();
+console.log(CompanyName);
