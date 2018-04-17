@@ -110,5 +110,9 @@ runners.forEach((item) => {
 
 console.log(shirtSizeCount);
 
-// Problem 3 - Calculate the Average Donation from Shirt Size
-console.log(shirtSizeCount.xs)
+// Problem 3 - Write out how much everyone donated and from where.
+let richPeople = [];
+richPeople = runners.map((item) => {
+    return `${item.first_name} ${item.last_name} from ${item.company_name} donated $${item.donation}`
+})
+console.log(richPeople)
