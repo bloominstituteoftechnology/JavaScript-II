@@ -2,7 +2,7 @@
 
 // let myFunction = function () {};
 
-let myfunction = () => 
+let myfunction = () => {}; 
 
 // let anotherFunction = function (param) {
 //   return param;
