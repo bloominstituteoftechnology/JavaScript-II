@@ -2,9 +2,15 @@
 
 // let myFunction = function () {};
 
+let myFunction => {};
+
 // let anotherFunction = function (param) {
 //   return param;
 // };
+
+let anotherFunction = (param) => {
+  return param;
+};
 
 // let add = function (param1, param2) {
 //   return param1 + param2;
