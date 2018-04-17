@@ -24,3 +24,5 @@ Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array w
 The [closure.js](assignments/closure.js) assignment showcases how variables can be used outside of functions to store state using closure.  
 
 * Complete each challenge.
+
+12:00 PM PDT - Project START!
