@@ -58,14 +58,14 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 let fullName = [];
 runners.forEach((array, first_name, last_name) => {
-    fullName.push(`${array.first_name} ${array.last_name}`)
+    return fullName.push(`${array.first_name} ${array.last_name}`)
 })
 console.log(fullName)
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
 const newArray = runners.map((array, first_name) => {
-    allCaps.push(array.first_name.toUpperCase())
+    return allCaps.push(array.first_name.toUpperCase())
 })
 console.log(allCaps); 
 
@@ -89,7 +89,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// The organization wants to award organizations that donate more than $200.  
+// Make a list of all the organizational information for the people who donated more than $200.
+let moneyBags = [];
+moneyBags = runners.filter((array, donation) => {
+    return array.donation > 200
+})
+console.log(moneyBags);
 // Problem 2
-
+// They're printing the bibs and the numbers correspond with last names!  
+// The organization needs a list of representatives' last names in alphabetical order.
+let nameBibs = [];
+runners.map((array, last_name) => {
+    nameBibs.push(array.last_name),
+    nameBibs = nameBibs.sort();
+});
+console.log(nameBibs);
 // Problem 3
+// The organization neds to see how many people from Skinix are attending the race.
+let Skinix = []
+Skinix = runners.filter((array, company_name) => {
+    return array.company_name === "Skinix"
+});
+console.log(Skinix)
+console.log(Skinix.length)
