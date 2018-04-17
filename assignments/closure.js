@@ -16,7 +16,7 @@ const counter = () => {
   function increment() {
     return count++
   }
-  return increment()
+  return increment
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
