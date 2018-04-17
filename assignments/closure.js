@@ -2,17 +2,23 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 let myClosure = ((current_input) => {
-  let last_input;
-  return (current_input) => last_input = current_input;
+  let last_input = [];
+  return (current_input) => {
+    last_input.unshift(current_input);
+    return last_input[1];
+  }
 })("help");
 
 myClosure("blah");
 console.log(myClosure("blargh"));
+
+
 // ==== Challenge 2: Create a counter function ====
 let counter = (() => {
   let count = 0;
   return () => {return count += 1};
 })();
+
   // Return a function that when invoked increments and returns a counter variable.
 
 counter();
