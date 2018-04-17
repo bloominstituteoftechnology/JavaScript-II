@@ -100,6 +100,6 @@ console.log(VIP, lowBaller);
 
 // Problem 3 adults only! 
 let adults = [];
-adults = runners.filter((data, index, array) => data.shirt_size != "XS" || data.shirt_size != "S"); 
+adults = runners.filter((data, index, array) => data.shirt_size != "XS" && data.shirt_size != "S"); 
 
 console.log(adults);
