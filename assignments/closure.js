@@ -30,12 +30,16 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.'
   let count = 0;
-  return function increase() {
-    ++count;
-    return count;
-  }
-  return function decrease() {
-    --count;
-    return count;
-  };
+  return {
+    increment: function increment() {
+      return ++count;
+    },
+    decrement: function decrement() {
+      return --count;
+    },
+  } 
 };
+const up = counterFactory();;
+console.log(up.increment());
+console.log(up.decrement());
+console.log(up);
