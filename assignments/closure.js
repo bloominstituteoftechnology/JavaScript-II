@@ -24,10 +24,17 @@ console.log(myClosure().doSomethig_2("'I am in the outer space'"));
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function (){
+    return ++count;
+  }
 };
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+// Example usage:
+const newCounter = counter();
+console.log(newCounter()); // 1
+console.log(newCounter()); // 2
+console.log(newCounter()); // 3
+
 
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
