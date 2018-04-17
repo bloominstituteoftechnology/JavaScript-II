@@ -1,7 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+let myClosure = ((current_input) => {
+  let last_input;
+  return (current_input) => last_input = current_input;
+})("help");
 
+myClosure("blah");
+console.log(myClosure("blargh"));
 // ==== Challenge 2: Create a counter function ====
 let counter = (() => {
   let count = 0;
