@@ -34,10 +34,10 @@ console.log(counter());
 const counterFactory = (() => {
   let count = 0;
   return {
-    increment: function() {
+    increment: () => {
       return count++;
     },
-    decrement: function() {
+    decrement: () => {
       return count--;
     },
   }
@@ -45,6 +45,8 @@ const counterFactory = (() => {
 
 counterFactory.increment();
 counterFactory.increment();
+counterFactory.decrement();
+counterFactory.decrement();
 counterFactory.decrement();
 console.log(counterFactory.increment());
   // Return an object that has two methods called `increment` and `decrement`.
