@@ -1,27 +1,16 @@
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
-// let myFunction = function () {};
+let myFunction = () => {};
 
-let myFunction () => {};
 
-// let anotherFunction = function (param) {
-//   return param;
-// };
-
-let anotherFunction (param) => {
+let anotherFunction = (param) => {
   return param;
 }
-
-
-// let add = function (param1, param2) {
-//   return param1 + param2;
-// };
-// add(1,2);
 
 let subtract = (param1, param2) => {
   return param1 - param2;
 };
-subtract(1,2); //?
+subtract(1,2);
 
 exampleArray = [1,2,3,4];
 
