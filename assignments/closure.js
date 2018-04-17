@@ -1,7 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-// Do challenge 1 on your own..
+let userCreater = function(password) {
+  let encryptPass = password.split("").reverse().join(""); // encrpyted password
+  return function(username) {
+    return {
+      name: username,
+      password: encryptPass
+    }
+  }
+};
+
+let myUser = userCreater("abc123");
+let xang = myUser("Xang");
+console.log("My own simple closure");
+console.log(xang);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
@@ -13,6 +26,7 @@ const counter = () => {
   }
 };
 
+console.log("Challenge 2 counter function");
 const newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
@@ -50,5 +64,5 @@ myCounter.increment();
 myCounter.increment();
 myCounter.decrement();
 myCounter.decrement();
-console.log("counter function result");
+console.log("Challenge 3 counter function result");
 console.log(myCounter.getCount());
