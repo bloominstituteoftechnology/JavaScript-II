@@ -42,15 +42,18 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
   let count = 0;
-  let timeChange = {
-    increment:count++,
-    decrement:count--
-  };
-  return count;
-  
+  return {
+    increment: function increase() {
+     return count++;
+    },
+    decrement: function decrease() {
+     return count--;
+    }
+  };   
 };
-let newCount = counterFactory();
+let counting = counterFactory();
 
-console.log(newCount);
-console.log(newCount);
-console.log(newCount);
+console.log(counting.increment());
+console.log(counting.decrement());
+console.log(counting.increment());
+
