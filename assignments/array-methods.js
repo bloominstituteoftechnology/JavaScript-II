@@ -77,8 +77,23 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Personalized thank you's need to be emailed to each participant. Return an array with the note that should be sent to each email address.
+let thankYouEmails = runners.map(x => ({ 'email': x.email, 'message':`Thank you ${x.first_name} ${x.last_name} for participating in the Palmetto Bay Community Center 5K Fun Run. Your donation will help us complete some much needed renovations to our facilities!`}));
+console.log(thankYouEmails);
 
-// Problem 2
+// Problem 2 - The "Friends of Palmetto Bay" Plaque is reserved for those who have donated $200 or more. Return an array with the information for those who qualify.
+let friendsOfPalmettoBay = runners.filter(x => x.donation >= 200);
+console.log(friendsOfPalmettoBay);
 
-// Problem 3
+// Problem 3  - If given a tshirt size, tell the event director how many need to be orderd.
+const howManyToOrder = function(size){
+  return runners.reduce((t, x) => (x.shirt_size === size) ? t+=1 : t+=0, 0);
+}
+
+console.log(howManyToOrder('XS'));
+console.log(howManyToOrder('S'));
+console.log(howManyToOrder('M'));
+console.log(howManyToOrder('L'));
+console.log(howManyToOrder('XL'));
+console.log(howManyToOrder('2XL'));
+console.log(howManyToOrder('3XL'));
