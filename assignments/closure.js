@@ -6,14 +6,18 @@ let doMath = () => console.log(math);
 
 doMath();
 // ==== Challenge 2: Create a counter function ====
-const newCounter = () => {
+const counter = () => {
   let count = 0;
   return () => {
     count++;
     return count;
   };
 };
-// Example usage: const newCounter = counter();
+
+let newCounter = counter();
+
+console.log(newCounter());
+console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
 
@@ -30,8 +34,5 @@ const counterFactory = () => {
   };
 };
 
-console.log(counterFactory());
-
-// Return an object that has two methods called `increment` and `decrement`.
-// `increment` should increment a counter variable in closure scope and return it.
-// `decrement` should decrement the counter variable and return it.
+let newFac = counterFactory();
+console.log(newFac);
