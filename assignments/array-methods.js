@@ -114,13 +114,30 @@ console.log('******************');
  console.log('******************');
 
 // Problem 2
-let num = 0
+//how many runners wear S, M, L t-shirts
+let num = 0;
 const smallSize = runners.filter((data, index, array) => {
     return data.shirt_size === 'S';
 });
+let newNum = 0;
+const mediumSize = runners.filter((data, index, array) => {
+    return data.shirt_size === 'M';
+});
+let largeNum = 0;
+const largeSize = runners.filter((data, index, array) => {
+    return data.shirt_size === 'L';
+});
 smallSize.forEach((item) => {
     num++;
-})
+});
+mediumSize.forEach((item) => {
+    newNum++;
+});
+largeSize.forEach((item) => {
+    largeNum++;
+});
+console.log("There are ", largeNum, " runners with large size T-shirts.");
+console.log("There are ", newNum, " runners with medium size T-shirts.");
 console.log("There are ", num, " runners with small size T-shirts.");
 console.log('******************');
 // Problem 3
