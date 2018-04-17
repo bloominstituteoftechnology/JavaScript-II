@@ -8,7 +8,7 @@ const ancestor = () => {
 	};
 	return addDescendent;
 }
-newAncestor = ancestor();
+let newAncestor = ancestor();
 console.log(newAncestor());
 console.log(newAncestor());
 console.log(newAncestor());
@@ -27,7 +27,7 @@ const counter = () => {
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
-newCounter = counter();
+let newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
@@ -50,6 +50,7 @@ const counterFactory = () => {
   }
 }
 
-newFactory = counterFactory();
+let newFactory = counterFactory();
 console.log(newFactory.increment());
 console.log(newFactory.decrement());
+
