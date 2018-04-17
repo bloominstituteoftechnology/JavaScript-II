@@ -87,7 +87,27 @@ console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+const candidates = [
+{"id":1,"first_name":"Julie","last_name":"Suldede","email":"dkaejhd@yahoo.com", "age": 23},
+{"id":2,"first_name":"Malachi","last_name":"McCloid","email":"vanded@yahoo.com", "age": 20},
+{"id":3,"first_name":"Condred","last_name":"McCloid","email":"seindc@yahoo.com", "age": 22},
+{"id":4,"first_name":"Julieta","last_name":"McCloid","email":"jdhon@yahoo.com", "age": 18},
+{"id":5,"first_name":"John","last_name":"Geie","email":"linder@yahoo.com", "age": 17},
+{"id":6,"first_name":"Julieta","last_name":"Morded","email":"stihdhe@yahoo.com", "age": 26},
+{"id":7,"first_name":"shebed","last_name":"Max","email":"markovoi@yahoo.com", "age": 20},
+{"id":8,"first_name":"Joe","last_name":"Bieshe","email":"maridk@yahoo.com", "age": 28}]
 
+
+
+const ageLimit = (arr) => {
+  let NeigborHoodWatch = [];
+ NeigborHoodWatch = arr.filter((person) => {
+ return person.age > 20;
+ });
+
+ return NeigborHoodWatch;
+}
+console.log(ageLimit(candidates));
 // Problem 1
 
 // Problem 2
