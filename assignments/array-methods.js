@@ -98,41 +98,12 @@ let playerEmail = runners.map((item, index, array) => {
 console.log(playerEmail);
 
 // Problem 2
-// Having trouble with this problem. 
-
-// let wrongEmail = runners.filter((item, index, array) => {
-// let emailFormat = [item.email.split()];
-//    for(var i = 0; i < emailFormat.length; i++) {
-//       if(emailFormat === "@") {
-//      }
-//      else {
-//        return item.emailFormat === "@"
-//      }
-//    }
-
-// }
-let wrongEmail = runners.filter((item, index, array) => {
-let emailFormat = [];
-  for(var i = 0; i < emailFormat.length; i++) {
-     if(emailFormat === "@") {
-    }
-    else {
-      return item.emailFormat === "@"
-    }
-  }
-  emailFormat = emailFormat.push(item);
-});
-console.log(wrongEmail)
-//find players who have given donations less than 100
-
 let playerDonationBelowHundred = runners.filter((item, index, array) =>{
   return item.donation < 100;
 })
 
 console.log(playerDonationBelowHundred)
 
-
-
 // Problem 3
-let greaterThan100 = runners.filter((item, index, array) =>{return item.donation >= 200 && item.shirt_size === "S";});
-console.log(greaterThan100);
+let smallBigDonors = runners.filter((item, index, array) =>{return item.donation >= 200 && item.shirt_size === "S";});
+console.log(smallBigDonors);
