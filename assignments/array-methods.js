@@ -77,7 +77,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Use forEach to grab each company name so we can make a list of company sponsors.
+runners.forEach((runner) => { console.log(runner.company_name); });
 
 // Problem 2
+// Check for dupliate companies so we don't give extra recognition.
+let singleCompany = runners.filter(function(runner, index) {
+    return runners.indexOf(runner) === index;
+}, 0);
+console.log(singleCompany);
 
 // Problem 3
+// Use map to find a list of the sizes people wanted.
+
+let xlShirts = runners.map((runner)  => {
+    return runner.shirt_size;
+});
+console.log(xlShirts);
