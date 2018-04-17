@@ -1,10 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function parent() {
+  let parentRole = "mother"
+  function child() {
+    return `This is my ${parentRole}`
+  }
+  return child()
+}
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0
+  function increment() {
+    return count++
+  }
+  return increment()
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
@@ -16,4 +28,13 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0
+  return {
+    increment: () => {
+      return count++
+    },
+    decrement: () => {
+      return count--
+    }
+  }
 };
