@@ -98,4 +98,7 @@ let playerEmail = runners.map((item, index, array) => {
 console.log(playerEmail);
 // Problem 2
 
+
 // Problem 3
+let greaterThan100 = runners.filter((item, index, array) =>{return item.donation >= 200 && item.shirt_size === "S";});
+console.log(greaterThan100);
