@@ -88,14 +88,14 @@ const contactList = [];
 runners.forEach(function(runner) {
     contactList.push(`Name: ${runner.first_name} ${runner.last_name}, Email: ${runner.email}`);
 });
-console.log(contactList);
+console.log(contactList.sort());
 // Problem 2
 const runnersId = [];
 runners.forEach(function(runner) {
     runnersId.push(`Name: ${runner.first_name} ${runner.last_name}, ID: ${runner.id}`);
 });
-console.log(runnersId);
+console.log(runnersId.sort());
 // Problem 3
 const companyDir = [];
 companyDir.push(runners.map(runner => runner.company_name));
-console.log(companyDir);
+console.log(companyDir.sort());
