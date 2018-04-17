@@ -112,6 +112,6 @@ console.log(LastName)
 // Problem 3
 //List of all the companies that participated.
 
-let CompanyName= runners.map(runner => runner.company_name);
+let CompanyName= runners.map(id => id.company_name);
 CompanyName.sort();
 console.log(CompanyName);
