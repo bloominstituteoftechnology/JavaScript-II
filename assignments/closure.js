@@ -1,5 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function myClosure () {
+  let variable_1 = 0;
+  let variable_2 = "'I am in a closured universe'";
+  function doSomethig_1 () {
+    // optional statements here
+    return ++variable_1;
+  }
+  function doSomethig_2 ( param ) {
+    // optional statements here
+    return `${variable_2} joined with ${param}`;
+  }
+
+  return {
+    doSomethig_1,
+    doSomethig_2
+  }
+}
+console.log(myClosure().doSomethig_1());
+console.log(myClosure().doSomethig_2("'I am in the outer space'"));
 
 
 // ==== Challenge 2: Create a counter function ====
