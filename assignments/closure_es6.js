@@ -4,8 +4,8 @@
 
 // ==== Challenge 2: Create a counter function ====
 const count = ((() => {
-  let counter = 0;
-  return () => counter += 1;
+    let counter = 0;
+    return () => counter += 1;
 }))();
 let counter1 = count()
 let counter2 = count()
