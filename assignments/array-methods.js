@@ -102,6 +102,7 @@ console.log(generousCompanies);
 
 Formally, we will return a new array containing people of companies that donated below the average and their corresponding *ahem* "corrected" shirt sizes. Like problem 2, we will output each person-shirt pair as a string so our t-shirt supplier will understand what to do.  */
 const shirtSizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+
 const sympathySize = obj => {
     let sizeIndex = shirtSizes.indexOf(obj.shirt_size);
     obj.shirt_size = sizeIndex - 1 > 0 ? shirtSizes[sizeIndex - 1] : "XS";
@@ -110,6 +111,7 @@ const sympathySize = obj => {
 
 let miserablePeople = runners.filter(obj => obj.donation < donationAvg)
                         .sort((a, b) => shirtSizes.indexOf(a.shirt_size) - shirtSizes.indexOf(b.shirt_size))
-                        .map(sympathySize).map(obj => `${obj.first_name} ${obj.last_name} Shirt Size is ${obj.shirt_size}`);
+                        .map(sympathySize)
+                        .map(obj => `${obj.first_name} ${obj.last_name} Shirt Size is ${obj.shirt_size}`);
 
 console.log(miserablePeople);
