@@ -1,6 +1,25 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function parentFunction() {
+  let myValue = 'Dante';
+  console.log('Parent: ' + myValue);
+  
+  function childFunction() {
+    console.log('Child: ' + myValue);
+    
+      function grandchildFunction() {
+        console.log('Grandchild: ' + myValue);
+        let grandchild = 'Yo, what up!';
+      } 
+      
+      return grandchildFunction();
+  }
+  
+  return childFunction();
+}
+
+parentFunction();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
