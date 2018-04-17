@@ -100,10 +100,20 @@ console.log(highestDonation);
 // Problem 2
 //Use .Map to sort through the last names and put them in alphabetical order.
 let orderNames = [];
-let orderNames = runners.map((array, last_name) => {
-return orderNames.push(`${array.last_name}`)
+let sum = runners.map((array, last_name) => {
+orderNames.push(array.last_name)
+orderNames = orderNames.sort();
 });
 console.log(orderNames);
 
 
 // Problem 3
+//How many people from Skinix are in the system? Return the numbers using .filter
+
+let comp = [];
+comp = runners.filter((array, company_name) => {
+return array.company_name === 'Skinix';
+
+});
+console.log(comp);
+console.log(comp.length);
