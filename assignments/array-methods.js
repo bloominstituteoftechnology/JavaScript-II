@@ -1,4 +1,6 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+/* A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small
+    donation on their behalf for some much needed updates to their facilities.  Each business has assigned 
+    a representative to attend the event along with a small donation.*/
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -53,10 +55,22 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
+const keys = Object.keys(runners[0]);
+console.log(keys);
+
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+/* The event director needs both the first and last names of each
+runner for their running bibs.  Combine both the first and last names into a new array called fullName. */
 let fullName = [];
+/** Option 1 */
+for ( let value of runners ) {
+    fullName.push(`${value.first_name} ${value.last_name}`);
+}
+/** Option 2 */
+runners.forEach( value => fullName.push(`${value.first_name} ${value.last_name}`) )
 console.log(fullName);
+
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
