@@ -3,10 +3,24 @@
 let count =  28;
 function countMe() {
    let total= 100;
-   total += count;
+     total += count;
    console.log(total);
+   }
+ countMe();
+
+//  Same Closure with Persistent total
+let addNumber =  28;
+function countMe() {
+   let total= 100;
+   return () => {
+     total += addNumber;
+   console.log(total);
+   }
 }
-countMe();
+let newFun = countMe();
+newFun();
+newFun();
+newFun();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
