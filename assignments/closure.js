@@ -30,8 +30,8 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
   const Obj = {};
   let x = 0;
-  Obj.increment = () => x++;
-  Obj.decrement = () => x--;
+  Obj.increment = () => ++x;
+  Obj.decrement = () => --x;
   console.log(Obj)
   return Obj;
 }
