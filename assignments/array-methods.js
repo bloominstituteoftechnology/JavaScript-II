@@ -79,7 +79,7 @@ console.log(allCaps);
 let largeShirts = runners.filter((runner) => {
     return runner.shirt_size === "L";
 });
-console.log(largeShirts);
+largeShirts.forEach(item => console.log(item.first_name + " " + item.shirt_size));
 
 // for (let i = 0; i < runners.length; i++) {
 //     if (runners[i].shirt_size === "L") {
