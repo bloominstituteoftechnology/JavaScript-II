@@ -1,5 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const list = () => {
+  let list = [];
+  return {
+    'addItem': item => list.push(item),
+    'getItem': itemId => list[itemId],
+    'getAllItems': () => list,
+    'removeItem': itemId => list.splice(itemId, 1),
+    'removeAllItems': () => list.length = 0
+  }
+};
+
+const groceryList = list();
+
+groceryList.addItem('Steak');
+groceryList.addItem('Chicken');
+groceryList.addItem('Pork');
+groceryList.addItem('Milk');
+groceryList.addItem('Cheese');
+
+console.log(groceryList.getItem(0));
+console.log(groceryList.getItem(3));
+console.log(groceryList.getAllItems());
+
+groceryList.removeItem(3);
+console.log(groceryList.getAllItems());
+
+groceryList.removeAllItems();
+console.log(groceryList.getAllItems())
 
 
 // ==== Challenge 2: Create a counter function ====
