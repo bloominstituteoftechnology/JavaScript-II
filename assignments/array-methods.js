@@ -63,7 +63,7 @@ console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = runners.map((cRunnerInfo, i, fullRunnerArray) =>{
+let allCaps = runners.map((cRunnerInfo) =>{
     return cRunnerInfo.first_name.toUpperCase()
 });
 // allCaps.toUppercase();
@@ -89,6 +89,41 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
-// Problem 2
+let emails = []
+runners.forEach(function(i) {
+	emails.push(i.email);
+})
+console.log(emails);
 
+
+// Problem 2
+//This doesn't work yet
+
+
+let shirtSizeCount = {
+    "small": 0,
+    "med":0,
+    "large":0
+}
+let smallShirt = 0
+
+runners.forEach(function(i){
+    if([i].shirt_size === "S"){
+        smallShirt = smallShirt + 1
+        
+    }
+    console.log(smallShirt);
+})
+
+console.log(shirtSizeCount)
+console.log(smallShirt)
 // Problem 3
+
+//find people that work for Skinix
+
+let skinixEmp = runners.filter((current) =>{
+    return current.company_name === 'Skinix'
+})
+
+console.log(skinixEmp)
+
