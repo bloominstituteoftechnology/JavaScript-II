@@ -1,10 +1,22 @@
+
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
 // let myFunction = function () {};
 
+let myFunction = () => {
+
+}
+
+console.log(myFunction);
+
+
 // let anotherFunction = function (param) {
 //   return param;
 // };
+
+let anotherFunction = (param) => param;
+
+console.log(anotherFunction);
 
 // let add = function (param1, param2) {
 //   return param1 + param2;
