@@ -90,8 +90,23 @@ console.log(total);
 //==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - email all participants whose donations were > $50.
 
-// Problem 2
+let emailarray = [];
+let wealthy_folk = runners.filter(money => money.donation > 50);
+wealthy_folk.forEach((wealth) => {
+  emailarray.push(wealth.email);
+});
 
-// Problem 3
+console.log(emailarray);
+
+
+// Problem 2 - put donations in $xx.xx format
+
+let format = [];
+format = runners.map((money) => `\$${money.donation}.00`);
+
+console.log(format);
+
+
+// Problem 3 - create list of companies and remove duplicates
