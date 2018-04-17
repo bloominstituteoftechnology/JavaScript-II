@@ -102,9 +102,15 @@ console.log(ticketPriceTotal);
 /** Number of T-shirt */
 const sizes = new Map();
 runners.forEach( value => sizes.has(value.shirt_size) ? sizes.set(value.shirt_size, sizes.get(value.shirt_size) + 1) : sizes.set(value.shirt_size, 1) );
-
 console.log(sizes);
 
 // Problem 2
+/** Assistants by company. */
+const companyAssistants = new Map();
+runners.forEach( value => {
+    let company = value.company_name;
+    companyAssistants.has(company) ? companyAssistants.set(company, companyAssistants.get(company)+1) : companyAssistants.set(company, 1)
+});
+console.log(companyAssistants);
 
 // Problem 3
