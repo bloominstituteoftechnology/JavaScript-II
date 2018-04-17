@@ -90,11 +90,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
-
+// Use .filter to find all the people who donated over $200 and return in a new array. 
+let highestDonation = [];
+highestDonation = runners.filter((array, donation) => {
+return array.donation > 200;
+});
+console.log(highestDonation);
 
 // Problem 2
-
+//Use .Map to sort through the last names and put them in alphabetical order.
+let orderNames = [];
+let orderNames = runners.map((array, last_name) => {
+return orderNames.push(`${array.last_name}`)
+});
+console.log(orderNames);
 
 
 // Problem 3
