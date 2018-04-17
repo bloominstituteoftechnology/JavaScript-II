@@ -24,15 +24,12 @@ console.log(newCounter());
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   let factory = 0;
-  function change(val) {
-    factory += val;
-  }
   return {
-    increment: () => change(1),
-    decrement: () => change(-1),
+    increment: () => factory++,
+    decrement: () => factory--,
     value: () => factory,
   };
 };
 
 let newFac = counterFactory();
-console.log(newFac);
+console.log(newFac.decrement());
