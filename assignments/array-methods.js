@@ -110,3 +110,20 @@ console.log(format);
 
 
 // Problem 3 - create list of companies and remove duplicates
+
+let company_names = [];
+runners.forEach((company_runner) => {
+  company_names.push(company_runner.company_name);
+});
+
+console.log
+
+let unique_company_names = []
+company_names.forEach((company_name) => {
+  if (unique_company_names.indexOf(company_name) === -1){
+    unique_company_names.push(company_name);
+  }
+});
+
+
+console.log(unique_company_names);
