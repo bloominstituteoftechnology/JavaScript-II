@@ -114,3 +114,6 @@ runners.forEach( value => {
 console.log(companyAssistants);
 
 // Problem 3
+/** Average donation. */
+let avgDonation = runners.reduce( ( (avg, value) => avg = (avg + value.donation)/2 ),0 );
+console.log(avgDonation);
