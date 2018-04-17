@@ -92,7 +92,7 @@ const topDonations = runners.sort((x, y) => y.donation - x.donation).slice(0, 3)
   return {
     company: company.company_name,
     donation: company.donation
-  }
+  };
 });
 
 console.log(topDonations)
