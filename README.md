@@ -6,11 +6,11 @@ With some basic JavaScript principles we can now expand our skills out even furt
 * Fork/Clone this repository.
 * Complete all the exercises as described inside each assignment file.
 * Use `console.log()` statements to check to see if your code does what it is supposed to do.
-* To test your `console` statements you can either run `node /assignments/<fileName>` and see what prints in your terminal. You can also use an online tool like `JSBin`, `REPL.it`, `JSFiddle` or even your `Chrome developer console`.
+* To test your `console` statements you can run `node /assignments/<fileName>` and see what prints in your terminal. You can also use an online tool like `JSBin`, `REPL.it`, `JSFiddle`, or even your `Chrome developer console`.
 * Once you finish the exercises in each file, commit your code, and push it to your fork. 
 
 ### Array Methods
-Use .forEach(), .map(), .filter(), and .reduce() to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fund rasising 5k fun run event.
+Use `.forEach()`, `.map(), `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fund rasising 5k fun run event.
 
 * Read the instructions found within the file carefully to finish the challenges. 
 * The last challenge is to come up with 3 problems to solve and then build a solution for them using any of the array methods listed above.
