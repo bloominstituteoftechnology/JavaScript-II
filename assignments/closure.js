@@ -1,7 +1,7 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-whereIAm = 'Boo I\'m outside';
+let whereIAm = 'Boo I\'m outside';
 
 function whereAreYou() {
   whereIAm = 'Don\'t be scare I\'m inside';

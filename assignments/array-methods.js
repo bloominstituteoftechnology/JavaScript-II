@@ -92,7 +92,7 @@ console.log(largeShirts);
 let ticketPriceTotal = [];
 
 ticketPriceTotal = runners.reduce( (totalDonations, runner) => {
-    return totalDonations += runner.donation;
+    return totalDonations + runner.donation;
 }, 0);
 
 console.log("\nChallenge 4: Use .reduce() \n");
