@@ -1,12 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 let gender = 'I am male'
-let self = () => {
+let surgery = () => {
   let gender = 'I am female'
-  console.log( gender)
-}
+  return function () {
+    console.log(gender);
+}}
 console.log(gender)
-self();
+trans = surgery();
+console.log(trans());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
@@ -36,11 +38,11 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
   let count = 0;
   let math = {
-    increment: function(){
+    increment: function (){
       count ++;
       return count;
     },
-    decrement: function(){
+    decrement: function (){
       count--;
       return count;
     }
