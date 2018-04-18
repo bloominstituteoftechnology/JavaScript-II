@@ -95,18 +95,11 @@ let majorDonor = []; //new array
 runners.filter((elem, i) => majorDonor.push([runners[i].company_name, runners[i].donation])); //
 majorDonor.sort((a, b) => b[1] - a[1]).splice(5, majorDonor.length);
 console.log(majorDonor.map((elem, i) => `${majorDonor[i][0]} donated ${(majorDonor[i][1]).toLocaleString('en-US', {style: 'currency',  currency: 'USD'})}, and is in ${i + 1}${(i => {
-    if (i === 0) {
-        return 'st';
-    }
-    if (i === 1) {
-        return 'nd';
-    }
-    if (i === 2) {
-        return 'rd';
-    }
-    else {
-        return 'th';
-    }
+    if (i > 9 && i < 14 ) return 'th';
+    if (i === 0 || i % 10 === 0) return 'st';
+    if (i === 1 || i % 10 === 1) return 'nd';
+    if (i === 2 || i % 10 === 2) return 'rd';
+    else return 'th';
 })(i)} place!`));
 
 // Problem 3 === Convert USD donations to EUR
