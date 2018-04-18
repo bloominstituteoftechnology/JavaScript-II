@@ -499,7 +499,7 @@ const sortLargestShirtDonor = largeShirts
 const logLargesetShirtDonorWhoGetsPriority = (largestDonationOfLargeShirtOwners, peopleWithShirtProblem, cb) => {
   // console.log(largestDonationOfThemLargeShirtOwners)
   // console.log(peopleWithShirtProblem);
-  const largestShirtOwner = peopleWithShirtProblem.forEach(person => {
+  peopleWithShirtProblem.forEach(person => {
     if (person.donation === largestDonationOfLargeShirtOwners) {
       cb(`${person.first_name} ${person.last_name} gets priority for a different shirt size because he/she donated the most: ${person.donation} Dollars.`)
     }
@@ -508,9 +508,26 @@ const logLargesetShirtDonorWhoGetsPriority = (largestDonationOfLargeShirtOwners,
 
 const logger = function(log) {
   console.log(log)
-  return log;
 };
 
 logLargesetShirtDonorWhoGetsPriority(sortLargestShirtDonor, largeShirts, logger);
 
 // Problem 3
+// Person representing company with smallest donation will be not be invited to the fund raiser next year
+// :(
+
+const lowestDonor = runners
+  .map(donor => donor.donation)
+  .sort((b, a) => a - b)
+  .reverse()[0];
+
+const logPersonWhoGaveLowestDonation = (lowestDoner, runners, cb) => {
+  runners.forEach(person => {
+    if (person.donation === lowestDonor) {
+      cb(`Although possibly great runners, ${person.first_name} and ${person.last_name} will not be invited next year because of a low donations: ${person.donation} Dollars.`)
+    }
+  })
+};
+
+logPersonWhoGaveLowestDonation(lowestDonor, runners, logger);
+
