@@ -521,10 +521,10 @@ const lowestDonor = runners
   .sort((b, a) => a - b)
   .reverse()[0];
 
-const logPersonWhoGaveLowestDonation = (lowestDoner, runners, cb) => {
+const logPersonWhoGaveLowestDonation = (lowestDonor, runners, cb) => {
   runners.forEach(person => {
     if (person.donation === lowestDonor) {
-      cb(`Although possibly great runners, ${person.first_name} and ${person.last_name} will not be invited next year because of a low donations: ${person.donation} Dollars.`)
+      cb(`Although possibly a great runner, ${person.first_name + ' ' + person.last_name} will not be invited next year because of a small donation: ${person.donation} Dollars. This person tied with another person so both will not be invited.`)
     }
   })
 };
