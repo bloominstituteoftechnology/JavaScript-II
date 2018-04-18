@@ -31,10 +31,17 @@ const counterFactory = () => {
   let count = 0
   return {
     increment: () => {
-      return count++
+      return ++count
     },
     decrement: () => {
-      return count--
+      return --count
     }
   }
 };
+
+// const newCounter = counterFactory();
+
+// console.log(newCounter.increment())
+// console.log(newCounter.increment())
+// console.log(newCounter.increment())
+// console.log(newCounter.decrement())

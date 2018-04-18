@@ -91,7 +91,40 @@ console.log(ticketPriceTotal)
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Find all runners whose first and last name have the same first character
+runners.filter((each) => (
+    each.first_name[0] === each.last_name[0]
+))
 
 // Problem 2
+// Calculate total donations coming from each company
+const getDonationsFromEachCompany = runners.sort((x, y) => {
+      if (x.company_name > y.company_name) return 1;
+      if (x.company_name < y.company_name) return -1;
+      return 0;
+    });
+    
+const res = [];
+    
+for (let i = 0; i < getDonationsFromEachCompany.length; i++) {
+    if (res[res.length - 1] && getDonationsFromEachCompany[i].company_name === res[res.length - 1].company_name) {
+        res[res.length - 1].donations += getDonationsFromEachCompany[i].donation;
+    }
+    else {
+        res.push({ company: getDonationsFromEachCompany[i].company_name, donations: getDonationsFromEachCompany[i].donation });
+    }
+}
 
 // Problem 3
+// How many runners come from the same company?
+let count = 0
+runners.sort((a,b) => { // Sorting whole list by company name
+    if (a.company_name > b.company_name) return 1
+    if (a.company_name < b.company_name) return -1
+    return 0
+  }).forEach((current, i, arr) => { // Iterate each runner, evaluate the runner's company_name with the next runner's company_name
+      if (arr[i+1] && current.company_name === arr[i+1].company_name){
+        count++
+      }
+  })
+console.log(count)
