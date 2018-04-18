@@ -105,14 +105,18 @@ let shirtSizeCount = {
     "med":0,
     "large":0
 }
-let smallShirt = 0
+let smallShirt = [];
 
 runners.forEach(function(i){
-    if([i].shirt_size === "S"){
-        smallShirt = smallShirt + 1
-        
+    if(i.shirt_size === "S"){
+        // smallShirt.push(i.first_name)
+        shirtSizeCount.small++     
+    }else if(i.shirt_size === "M"){
+        shirtSizeCount.med++ 
+    }else if(i.shirt_size === "L"){
+        shirtSizeCount.large++ 
     }
-    console.log(smallShirt);
+    
 })
 
 console.log(shirtSizeCount)
