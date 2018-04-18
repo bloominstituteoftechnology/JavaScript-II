@@ -20,8 +20,7 @@ console.log('\n==== Challenge 2: Create a counter function ====\n')
 const counter = () => {
     let count = 0;
     return () => {
-      count++;
-      return count;
+      return ++count;
     }
   // Return a function that when invoked increments and returns a counter variable.
 };
