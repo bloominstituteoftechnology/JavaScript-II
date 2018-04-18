@@ -56,7 +56,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-runners.forEach(function(elem, i, runners){
+runners.forEach(function(elem, i){
     fullName.push(`${runners[i].first_name} ${runners[i].last_name}`);
 })
 console.log(fullName);
@@ -109,7 +109,7 @@ console.log(majorDonor.slice(0, 5));
 // Problem 3 === Convert USD donations to EUR
 let eurDonations = [];
 runners.map(function(elem, i) {
-    runners[i].donation = Math.round((runners[i].donation * 0.81), 2);
+    runners[i].donation = (runners[i].donation * 0.81).toLocaleString('en-EU', {style: 'currency',currency: 'EUR'});
     eurDonations.push(elem);
 })
 console.log(eurDonations);
