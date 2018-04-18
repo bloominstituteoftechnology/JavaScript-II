@@ -56,33 +56,26 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-runners.forEach(function(elem, i){
-    fullName.push(`${runners[i].first_name} ${runners[i].last_name}`);
-})
+runners.forEach((elem, i) => fullName.push(`${runners[i].first_name} ${runners[i].last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-runners.map(function(elem, i, arr){
-    allCaps.push(runners[i].first_name.toUpperCase());
-})
+runners.map((elem, i, arr) => allCaps.push(runners[i].first_name.toUpperCase()));
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-runners.filter(function(elem, i) {
-    if (runners[i].shirt_size === "L") largeShirts.push(elem)
-})
+runners.filter((elem, i) => {if (runners[i].shirt_size === "L") largeShirts.push(elem)});
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-ticketPriceTotal.push(runners.reduce(function(acc, i) {
-   return acc + i.donation;
-}, 0).toLocaleString('en-US',{style: 'currency', currency: 'USD'}));
+ticketPriceTotal.push(runners.reduce((acc, i) => acc + i.donation, 0).toLocaleString('en-US',{style: 'currency', currency: 'USD'}));
 
 console.log(ticketPriceTotal);
 
@@ -91,25 +84,23 @@ console.log(ticketPriceTotal);
 
 // Problem 1===Generate an Email List for people who donated more than 150 USD.
 let goldDonate = [];
-runners.filter(function(elem, i) {
-    if (runners[i].donation > 150) goldDonate.push(runners[i].email);
+runners.filter((elem, i) => {
+    if (runners[i].donation > 150) goldDonate.push(runners[i].email)
 });
+
 console.log(goldDonate);
 
 // Problem 2===Give a list of top 5 companies whose employees donated the most
 let majorDonor = [];
-runners.forEach(function(elem, i) {
-    majorDonor.push([runners[i].company_name, runners[i].donation]);
-});
-majorDonor.sort(function(a, b){
-    return b[1] - a[1];
-});
+runners.forEach((elem, i) => majorDonor.push([runners[i].company_name, runners[i].donation]));
+majorDonor.sort((a, b) => b[1] - a[1]);
+
 console.log(majorDonor.slice(0, 5));
 
 // Problem 3 === Convert USD donations to EUR
 let eurDonations = [];
-runners.map(function(elem, i) {
-    runners[i].donation = (runners[i].donation * 0.81).toLocaleString('en-EU', {style: 'currency',currency: 'EUR'});
-    eurDonations.push(elem);
-})
+runners.map((elem, i) => {
+    runners[i].donation = (runners[i].donation * 0.81).toLocaleString('en-EU', {style: 'currency',currency: 'EUR'}),
+    eurDonations.push(elem)
+});
 console.log(eurDonations);
