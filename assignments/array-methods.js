@@ -98,17 +98,28 @@ console.log(ticketPriceTotal);
 //Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-//Need to find the highest donors so that they can be recognized at the fun run during the festivities. 
-//Using filter(), find the donors that met the benchmark to be
-//recognized on a banner at the event (i.e. $500+ donor level, $1000+ donor level, etc. ). 
-//Using sort(), find the top three donors/fundraisers to be honored at the event during festivities. 
-s
+//Organizer wants a list of donors and their donation amounts.
+let highestDonations = [];
+runners.forEach(function (runner, index){
+    return(highestDonations.push(`${runner.first_name} ${runner.last_name} : $${runner.donation}`));
+});
+
+console.log(highestDonations);
 
 
+//Problem 2
+//Nvidia is taking over the world! Change all company names to Nvidia
+let NvidiaRocks = runners.map(function (runner){
+    return runner["company_name"]="Nvidia";
+});
 
-//The organizer of the event wants to send out an email blast close to the event date to give out details on parking
-//and directions and other things. Use map() to convert the runners array into another array that can be used to create a 
-//csv for mail merge. It needs to include first_name, last_name, email, the individual donation amount and the total raised 
-//by the community at large. use reduce() here to find out the current cumulative money raised.
+console.log(NvidiaRocks);
 
 // Problem 3
+//Organizer would like to send out an email blast! Please get a list of names and email addresses to him ASAP
+
+let emailBlast = runners.map(function (runner, index){
+    return `\"${runner.first_name} ${runner.last_name}"\  ${runner.email}`
+});
+
+console.log(emailBlast);
