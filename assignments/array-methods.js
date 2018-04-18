@@ -481,17 +481,36 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
-ticketPriceTotal = 0;
-runners.forEach(runner => ticketPriceTotal += runner.donation);
-ticketPriceTotal = ticketPriceTotal / runners.length;
-
-console.log('total donation ', ticketPriceTotal);
+// average donation
 let averageDonation = ticketPriceTotal / runners.length;
 console.log(averageDonation);
 
+
 // Problem 2
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result.
+
+// give priority for choosing a different shirt size to the highest donor
 
 
+const sortLargestShirtDonor = largeShirts
+  .map(donor => donor.donation)
+  .sort((b, a) => a - b)[0];
+
+const logLargesetShirtDonorWhoGetsPriority = (largestDonationOfLargeShirtOwners, peopleWithShirtProblem, cb) => {
+  // console.log(largestDonationOfThemLargeShirtOwners)
+  // console.log(peopleWithShirtProblem);
+  const largestShirtOwner = peopleWithShirtProblem.forEach(person => {
+    if (person.donation === largestDonationOfLargeShirtOwners) {
+      cb(`${person.first_name} ${person.last_name} gets priority for a different shirt size because he/she donated the most: ${person.donation} Dollars.`)
+    }
+  })
+};
+
+const logger = function(log) {
+  console.log(log)
+  return log;
+};
+
+logLargesetShirtDonorWhoGetsPriority(sortLargestShirtDonor, largeShirts, logger);
 
 // Problem 3
