@@ -75,7 +75,6 @@ runners.forEach((element) => fullName.push(`${element.first_name}  ${element.las
 console.log(fullName);
 
 
-
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 
@@ -112,7 +111,33 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The race was cancelled and participants need to notified via email. Create a new array with only email address to send out the mass email notice.
+
+let emailArr = [];
+
+runners.filter((element) => emailArr.push(element.email));
+
+
+console.log(emailArr)
 
 // Problem 2
+// An anonymous philantropist has agreed to match each racers donation. Use map to update new donation total for each racer.
+let donationMatch = runners.map( (element) => {
+    if (element.donation = element.donation * 2) {
+        return runners;
+    }
+})
+
+console.log(donationMatch)
 
 // Problem 3
+// The elite racers have an ID of 1 -10. Return a new array with only the elite racers in it.
+let eliteRacers = [];
+
+runners.forEach((element) => {
+  if (element.id < 11) {
+    eliteRacers.push(element)
+  }
+})
+
+console.log(eliteRacers);
