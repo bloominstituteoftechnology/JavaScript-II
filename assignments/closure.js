@@ -19,9 +19,7 @@ console.log('\n==== Challenge 2: Create a counter function ====\n')
 
 const counter = () => {
     let count = 0;
-    return () => {
-      return ++count;
-    }
+    return () => ++count;
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
@@ -41,9 +39,7 @@ const counterFactory = () => {
   let increment = () => {
               return ++counter;
           };
-  let decrement = () => {
-              return --counter;
-          };
+  let decrement = () => --counter;
   return {
       increment,
       decrement
