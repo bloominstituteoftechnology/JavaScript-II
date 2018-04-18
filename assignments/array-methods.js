@@ -98,7 +98,7 @@ console.log(generousCompanies);
 /* We sorted the companies by most generous to generous, and tidied up the output to a nice readable string using map */
 
 // Problem 3
-/* As for the companies that donated below the average, they must be going through hard times. It's understandeable. Their employees might not even be paid enough to eat proper meals. Because of our compassion and understanding, we will issue the shirt sizes for these poor people a size smaller than original, so that their poverty will not be so blatantly obvious. 
+/* As for the companies that donated below the average, they must be going through hard times. It's understandable. Their employees might not even be paid enough to eat proper meals. Because of our compassion and understanding, we will issue the shirt sizes for these poor people a size smaller than original, so that their poverty will not be so blatantly obvious. 
 
 Formally, we will return a new array containing people of companies that donated below the average and their corresponding *ahem* "corrected" shirt sizes. Like problem 2, we will output each person-shirt pair as a string so our t-shirt supplier will understand what to do.  */
 const shirtSizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];

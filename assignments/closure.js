@@ -3,20 +3,10 @@
 
 /* Here's one from the precourse days */
 
-const displayClosure = () => {
-	var name = "Obo"
-	return () => {
-		return `First name is ${name}`;
-	}
-}
-
-let myName = displayClosure();
-console.log(myName());
-
 function room() {
-  personA = 34;
+  let personA = 34;
   return function() {
-    personB = 35;
+    let personB = 35;
     return personA + personB;
   }
 }
@@ -59,6 +49,7 @@ const counterFactory = () => {
 };
 
 let letsCount = counterFactory();
+console.log(letsCount);
 console.log(letsCount.increment());
 console.log(letsCount.increment());
 console.log(letsCount.decrement());
