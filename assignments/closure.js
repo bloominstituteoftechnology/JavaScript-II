@@ -1,6 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+let DondePantalones = 'where are my pants?';
+
+function ask() {
+  return DondePantalones;
+}
+console.log(ask());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
