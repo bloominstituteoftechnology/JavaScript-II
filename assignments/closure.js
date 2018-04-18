@@ -1,9 +1,9 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function parent() {
-  var crib = "Holds baby";
+function Dad() {
+  var BabyGirl = "Gives Candy";
   function child() {
-    console.log(crib);
+    console.log(BabyGirl);
   }
   child();
 }
