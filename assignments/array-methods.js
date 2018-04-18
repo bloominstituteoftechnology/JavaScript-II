@@ -56,21 +56,46 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach( (element) => {
+    fullName.push(`${element.first_name} ${element.last_name}`);
+    
+});
+console.log("Challenge 1: Use .forEach() \n");
 console.log(fullName);
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+
+allCaps = runners.map( (runner) => {
+    return runner.first_name.toUpperCase();
+});
+console.log("\nChallenge 2: Use .map() \n");
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+largeShirts = runners.filter( (runner) => {
+    return runner.shirt_size === 'L';
+
+});
+
+console.log("\nChallenge 3: Use .filter() \n");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+ticketPriceTotal = runners.reduce( (totalDonations, runner) => {
+    return totalDonations + runner.donation;
+}, 0);
+
+console.log("\nChallenge 4: Use .reduce() \n");
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +103,44 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// List All the companies names with donations
+
+let companiesDonations = [];
+
+runners.forEach((item) => {
+    companiesDonations.push(`${item.company_name} ${item.donation}`);
+});
+
+console.log("Challenge 5 Problem1: Use .forEach() \n");
+console.log(companiesDonations);
+
 // Problem 2
 
+//What is the average donation
+
+let averageDonations = 0;
+
+averageDonations = runners.reduce( (average, runner) => {
+    average+=runner.donation;
+    return average/=2;
+}, 0);
+
+console.log("\nChallenge 5 Problem1: Use .reduce() \n");
+console.log(Math.round(averageDonations));
+
+
 // Problem 3
+
+// List all premium donator with donations more than $150
+
+let biggerDonations = [];
+
+
+biggerDonations = runners.filter( (runner) => {
+    return runner.donation >= 150;
+
+});
+
+console.log("\nChallenge 5 Problem1: Use .filter() \n");
+console.log(biggerDonations);
+
