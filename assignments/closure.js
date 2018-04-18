@@ -2,15 +2,19 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 let myClosure = ((current_input) => {
-  let last_input = [];
+  let last_input = ["none"];
   return (current_input) => {
     last_input.unshift(current_input);
     return last_input[1];
   }
-})("help");
+})();
 
-myClosure("blah");
+// ---- myClosure returns the argument it was given the previous time it was called.  
+
+console.log(myClosure("blah"));
 console.log(myClosure("blargh"));
+console.log(myClosure("argh"));
+console.log(myClosure("aaaaah"));
 
 
 // ==== Challenge 2: Create a counter function ====
