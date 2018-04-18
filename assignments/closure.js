@@ -25,8 +25,8 @@ console.log(newCounter());
 const counterFactory = () => {
   let factory = 0;
   return {
-    increment: () => factory++,
-    decrement: () => factory--,
+    increment: () => ++factory,
+    decrement: () => --factory,
     value: () => factory,
   };
 };
