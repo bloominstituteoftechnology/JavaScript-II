@@ -1,4 +1,4 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fundraising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -56,28 +56,62 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(obj => fullName.push(`${obj.first_name} ${obj.last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+// let allCaps = [];
+let allCaps = runners.map(obj => obj.first_name.toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+// let largeShirts = [];
+let largeShirts = runners.filter(obj => obj.shirt_size === "L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+// let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((theReducer, obj) => theReducer + obj.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+/* The most obvious problem is figuring out the average donation. We can simply use reduce to sum all donations, then divide by length of runners*/
+let donationTotal = runners.reduce((theReducer, obj) => theReducer + obj.donation, 0); //Exactly the same as challenge 4
+let donationAvg = donationTotal / runners.length;
+console.log(donationAvg);
 
 // Problem 2
+/* Now that we know the average donation, perhaps we'd like to shower a little...extra attention to donors who donated more than the average. We should
+identify the companies that are especially generous. 
+
+To state more formally, we will return an array of strings representing companies that donated above average, with each string containing the name of the company and the amount they donated. The strings will be ordered by the amount of donation, from highest to smallest.*/
+let generousCompanies = runners.filter(obj => obj.donation > donationAvg)
+                        .sort((a, b) => b.donation - a.donation)
+                        .map(obj => `Company ${obj.company_name} donated ${obj.donation}.`);
+console.log(generousCompanies);
+/* We sorted the companies by most generous to generous, and tidied up the output to a nice readable string using map */
 
 // Problem 3
+/* As for the companies that donated below the average, they must be going through hard times. It's understandable. Their employees might not even be paid enough to eat proper meals. Because of our compassion and understanding, we will issue the shirt sizes for these poor people a size smaller than original, so that their poverty will not be so blatantly obvious. 
+
+Formally, we will return a new array containing people of companies that donated below the average and their corresponding *ahem* "corrected" shirt sizes. Like problem 2, we will output each person-shirt pair as a string so our t-shirt supplier will understand what to do.  */
+const shirtSizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+
+const sympathySize = obj => {
+    let sizeIndex = shirtSizes.indexOf(obj.shirt_size);
+    obj.shirt_size = sizeIndex - 1 > 0 ? shirtSizes[sizeIndex - 1] : "XS";
+    return obj;
+};
+
+let miserablePeople = runners.filter(obj => obj.donation < donationAvg)
+                        .sort((a, b) => shirtSizes.indexOf(a.shirt_size) - shirtSizes.indexOf(b.shirt_size))
+                        .map(sympathySize)
+                        .map(obj => `${obj.first_name} ${obj.last_name}'s Shirt Size is ${obj.shirt_size}`);
+
+console.log(miserablePeople);
