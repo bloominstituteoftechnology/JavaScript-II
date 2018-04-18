@@ -17,7 +17,7 @@ console.log(whatAreTheyDoing());
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  count = 0;
+  let count = 0;
   return function() {
     count++;
     return count;
@@ -35,7 +35,7 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  count = 0;
+  let count = 0;
   return {
     increment: function() {
       count++;
