@@ -96,7 +96,7 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1 tally up all the dontations from skinix
+// Problem 1 tally up all the dontations from the Skinix company employees
 let skinixEmployees = runners.filter((runners, index, array) =>{
     return runners.company_name === "Skinix"; 
   })
