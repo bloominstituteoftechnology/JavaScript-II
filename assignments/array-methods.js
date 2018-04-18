@@ -108,12 +108,14 @@ const res = [];
     
 for (let i = 0; i < getDonationsFromEachCompany.length; i++) {
     if (res[res.length - 1] && getDonationsFromEachCompany[i].company_name === res[res.length - 1].company_name) {
-        res[res.length - 1].donations += getDonationsFromEachCompany[i].donation;
+        res[res.length - 1].donation += getDonationsFromEachCompany[i].donation;
     }
     else {
-        res.push({ company: getDonationsFromEachCompany[i].company_name, donations: getDonationsFromEachCompany[i].donation });
+        res.push({ company_name: getDonationsFromEachCompany[i].company_name, donation: getDonationsFromEachCompany[i].donation });
     }
 }
+
+console.log(res)
 
 // Problem 3
 // How many runners come from the same company?
