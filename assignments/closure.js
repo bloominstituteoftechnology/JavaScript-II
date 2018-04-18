@@ -1,16 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-let logger = function (x) {
-  console.log(x);
-};
+simpleClosureFunc = () => {
+  let greeting = 'Hello Govenor!';
+  
+  return () => greeting;
+}
+
+let closureExample = simpleClosureFunc();
+
+console.log(closureExample());
 
 
 // ==== Challenge 2: Create a counter function ====
 counter = () => {
   let count = 0;
   
-  return function () {
+  return  () => {
     count++;
     return count;
   }
@@ -35,7 +41,7 @@ const counterFactory = () => {
 
   // Return an object that has two methods called `increment` and `decrement`.
   return {
-    "increment": function () {
+    "increment": () => {
       counter++
       return counter;
     },
@@ -44,7 +50,7 @@ const counterFactory = () => {
     //   return counter;
     // },
 
-    "decrement": function () {
+    "decrement": () => {
       counter--;
       return counter;
     }
