@@ -34,7 +34,7 @@ let subtract = (param1, param2) => {
     return param1 - param2;
 };
 
-subtract(10, 5);
+subtract(10, 5); 
 
 exampleArray = [1,2,3,4]; 
 
