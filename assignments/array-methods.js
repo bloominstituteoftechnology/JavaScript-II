@@ -91,11 +91,23 @@ runners.filter((elem, i) => {
 console.log(goldDonate);
 
 // Problem 2===Give a list of top 5 companies whose employees donated the most
-let majorDonor = [];
-runners.forEach((elem, i) => majorDonor.push([runners[i].company_name, runners[i].donation]));
-majorDonor.sort((a, b) => b[1] - a[1]);
-
-console.log(majorDonor.slice(0, 5));
+let majorDonor = []; //new array
+runners.filter((elem, i) => majorDonor.push([runners[i].company_name, runners[i].donation])); //
+majorDonor.sort((a, b) => b[1] - a[1]).splice(5, majorDonor.length);
+console.log(majorDonor.map((elem, i) => `${majorDonor[i][0]} donated ${(majorDonor[i][1]).toLocaleString('en-US', {style: 'currency',  currency: 'USD'})}, and is in ${i + 1}${(i => {
+    if (i === 0) {
+        return 'st';
+    }
+    if (i === 1) {
+        return 'nd';
+    }
+    if (i === 2) {
+        return 'rd';
+    }
+    else {
+        return 'th';
+    }
+})(i)} place!`));
 
 // Problem 3 === Convert USD donations to EUR
 let eurDonations = [];
