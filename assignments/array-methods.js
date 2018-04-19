@@ -58,7 +58,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 let fullName = [];
 
-runners.forEach((item) => {fullName.push({"first_name":item.first_name, "last_name":item.last_name})});
+runners.forEach((item) => {fullName.push({"Full Name": `${item.first_name} ${item.last_name}`})});
 
 console.log(fullName);
 
