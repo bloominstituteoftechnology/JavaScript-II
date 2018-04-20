@@ -57,31 +57,31 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 
 let fullName = [];
-runners.forEach((array, first_name, last_name) => {
-    return fullName.push(`${array.first_name} ${array.last_name}`)
+runners.forEach((person) => {
+    return fullName.push(`${person.first_name} ${person.last_name}`)
 })
 console.log(fullName)
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-const newArray = runners.map((array, first_name) => {
-    return allCaps.push(array.first_name.toUpperCase())
+const newArray = runners.map((person) => {
+    return allCaps.push(person.first_name.toUpperCase())
 })
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-largeShirts = runners.filter((array, shirt_size) => {
-    return array.shirt_size === "L"
+largeShirts = runners.filter((person) => {
+    return person.shirt_size === "L"
 });
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce((donation, array) => {
-    return donation + array.donation;
+ticketPriceTotal = runners.reduce((total, person) => {
+    return total + person.donation;
 }, 0)
 console.log(ticketPriceTotal);
 
@@ -92,24 +92,24 @@ console.log(ticketPriceTotal);
 // The organization wants to award organizations that donate more than $200.  
 // Make a list of all the organizational information for the people who donated more than $200.
 let moneyBags = [];
-moneyBags = runners.filter((array, donation) => {
-    return array.donation > 200
+moneyBags = runners.filter((person) => {
+    return person.donation > 200
 })
 console.log(moneyBags);
 // Problem 2
 // They're printing the bibs and the numbers correspond with last names!  
 // The organization needs a list of representatives' last names in alphabetical order.
 let nameBibs = [];
-runners.map((array, last_name) => {
-    nameBibs.push(array.last_name),
+runners.map((person) => {
+    nameBibs.push(person.last_name),
     nameBibs = nameBibs.sort();
 });
 console.log(nameBibs);
 // Problem 3
 // The organization neds to see how many people from Skinix are attending the race.
 let Skinix = []
-Skinix = runners.filter((array, company_name) => {
-    return array.company_name === "Skinix"
+Skinix = runners.filter((person) => {
+    return person.company_name === "Skinix"
 });
 console.log(Skinix)
 console.log(Skinix.length)
