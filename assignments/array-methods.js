@@ -56,21 +56,32 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function(i){
+    fullName.push(`${i.first_name} ${i.last_name}`)
+})
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map((cRunnerInfo) =>{
+    return cRunnerInfo.first_name.toUpperCase()
+});
+// allCaps.toUppercase();
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter((cRunnerInfo) =>{ //filter takes 3 params, ist is the current item, second is the index of that item, third is the entire Aaray
+    return cRunnerInfo.shirt_size === "L"
+});
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((donatedAmount, cRunnerInfo, i, fullRunnerArray) => {  //filter takes 4 params. The last 3 are the same as map and filter. The first is the outcome(this is like the 'values' on a pivot table)
+    return donatedAmount += cRunnerInfo.donation
+},0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +89,45 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
-// Problem 2
+let emails = []
+runners.forEach(function(i) {
+	emails.push(i.email);
+})
+console.log(emails);
 
+
+// Problem 2
+//This doesn't work yet
+
+
+let shirtSizeCount = {
+    "small": 0,
+    "med":0,
+    "large":0
+}
+let smallShirt = [];
+
+runners.forEach(function(i){
+    if(i.shirt_size === "S"){
+        // smallShirt.push(i.first_name)
+        shirtSizeCount.small++     
+    }else if(i.shirt_size === "M"){
+        shirtSizeCount.med++ 
+    }else if(i.shirt_size === "L"){
+        shirtSizeCount.large++ 
+    }
+    
+})
+
+console.log(shirtSizeCount)
+console.log(smallShirt)
 // Problem 3
+
+//find people that work for Skinix
+
+let skinixEmp = runners.filter((current) =>{
+    return current.company_name === 'Skinix'
+})
+
+console.log(skinixEmp)
+
