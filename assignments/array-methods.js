@@ -56,28 +56,56 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach((elem, i) => fullName.push(`${runners[i].first_name} ${runners[i].last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+runners.map((elem, i, arr) => allCaps.push(runners[i].first_name.toUpperCase()));
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+runners.filter((elem, i) => {if (runners[i].shirt_size === "L") largeShirts.push(elem)});
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal.push(runners.reduce((acc, i) => acc + i.donation, 0).toLocaleString('en-US',{style: 'currency', currency: 'USD'}));
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1===Generate an Email List for people who donated more than 150 USD.
+let goldDonate = [];
+runners.filter((elem, i) => {
+    if (runners[i].donation > 150) goldDonate.push(runners[i].email)
+});
 
-// Problem 2
+console.log(goldDonate);
 
-// Problem 3
+// Problem 2===Give a list of top 5 companies whose employees donated the most
+let majorDonor = []; //new array
+runners.filter((elem, i) => majorDonor.push([runners[i].company_name, runners[i].donation])); //
+majorDonor.sort((a, b) => b[1] - a[1]).splice(5, majorDonor.length);
+console.log(majorDonor.map((elem, i) => `${majorDonor[i][0]} donated ${(majorDonor[i][1]).toLocaleString('en-US', {style: 'currency',  currency: 'USD'})}, and is in ${i + 1}${(i => {
+    if (i > 9 && i < 14 ) return 'th';
+    if (i === 0 || i % 10 === 0) return 'st';
+    if (i === 1 || i % 10 === 1) return 'nd';
+    if (i === 2 || i % 10 === 2) return 'rd';
+    else return 'th';
+})(i)} place!`));
+
+// Problem 3 === Convert USD donations to EUR
+let eurDonations = [];
+runners.map((elem, i) => {
+    runners[i].donation = (runners[i].donation * 0.81).toLocaleString('en-EU', {style: 'currency',currency: 'EUR'}),
+    eurDonations.push(elem)
+});
+console.log(eurDonations);
