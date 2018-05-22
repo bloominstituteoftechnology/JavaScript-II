@@ -16,6 +16,10 @@ let subtract = function (param1, param2) {
 };
 subtract(1,2); //?
 
+let substract = (param1, param2) => param1 - param2;
+substract(1,2);
+
+
 exampleArray = [1,2,3,4];
 // const triple = exampleArray.map(function (num) {
 //   return num * 3;
