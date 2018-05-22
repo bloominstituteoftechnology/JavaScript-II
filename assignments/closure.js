@@ -14,7 +14,7 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
   return function () {
-   return count += 1;
+   return ++count;
   }
 };
 
@@ -36,10 +36,10 @@ const counterFactory = () => {
   let counter = 0;
   return {
     'increment': function() {
-      return counter++;
+      return ++counter;
     },
     'decrement': function() {
-      return counter--;
+      return --counter;
     }
   }
 }
