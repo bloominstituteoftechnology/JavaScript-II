@@ -1,5 +1,5 @@
 # JavaScript - II
-With some basic JavaScript principles we can now expand our skills out even further by exploring array methods like:  `.forEach()`, `.map()`, `.reduce()`, and `.filter()`. We can also look at how closures have a large impact on how we write JavaScript.    
+With some basic JavaScript principles we can now expand our skills out even further by exploring array methods like:  `.forEach()`, `.map()`, `.reduce()`, and `.filter()`. We can also look at how closures have a large impact on how we write JavaScript.   
 
 ## Assignment Description
 
