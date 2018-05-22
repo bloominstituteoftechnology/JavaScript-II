@@ -90,14 +90,45 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-// We want to know not which one of these runners is the best runner but which contributed most to the cause. Make an array sorting the names of the biggest contributions to smallest.
-let donationSort = [0];
+// We want to know not which one of these runners is the best runner but which contributed most to the cause. Find out who contributed the most.
+let highestDonation = 0;
+let highestDonor = [];
 runners.map((runner) => {
-    if(runner.donation > donationSort[0])
-        donationSort.unshift(runner.donation);
+    if(runner.donation > highestDonation)
+        highestDonation = runner.donation;
 });
-console.log(donationSort);
+
+highestDonor = runners.filter((runner) => {
+    return runner.donation >= highestDonation;
+});
+console.log(highestDonor);
 
 // Problem 2
+//The t-shirt supplier needs to know how many of each kind of shirt they will need to ship. Make an array for each size.
+let sCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === 'S';
+})
+let mCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === 'M';
+})
+let lCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === 'L';
+})
+let xlCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === 'XL';
+})
+let xxlCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === '2XL';
+})
+let xxxlCount = [];
+sCount = runners.filter((runner) =>{
+    return runner.shirt_size === '3XL';
+})
+
 
 // Problem 3
