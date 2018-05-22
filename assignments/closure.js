@@ -16,10 +16,14 @@ showName ("me", "emm");
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-
-
+	let counter = 0;
+	function add() {
+		return counter += 1;
+	}
+	return add;
 };
 // Example usage: const newCounter = counter();
+const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
 
