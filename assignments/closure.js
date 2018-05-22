@@ -1,9 +1,30 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function bigDaddyFunction(param1){
+  let x = 0;
+
+  function mediumFunction(){
+    x++;
+    console.log(x);
+    return lilBabyFunction;
+
+    function lilBabyFunction(){
+      x += param1;
+      console.log(x);
+      return x;
+    }
+  }
+  console.log(x);
+  return mediumFunction;
+}
+
+bigDaddyFunction(10);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let x = 0;
+    
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
