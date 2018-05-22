@@ -519,3 +519,31 @@ const soldToRunners = shirtsInStock.filter(runner => {
 });
 
 console.log(soldToRunners);
+
+//Problem 4 | Solving for how much each company donated and who is the biggest donator. |
+
+const companyDonators = {};
+
+runners.forEach(runner => {
+    if(companyDonators[runner.company_name] === undefined) {
+      companyDonators[runner.company_name] = {};
+      companyDonators[runner.company_name].donation = runner.donation;
+    }
+    else {
+      companyDonators[runner.company_name].donation += runner.donation;
+    }
+});
+console.log(companyDonators);
+
+let biggestDonation = 0;
+let biggestCompanyDonator;
+
+
+for (let company in companyDonators) {
+    if(biggestDonation < companyDonators[company].donation) {
+        biggestDonation = companyDonators[company].donation;
+        biggestCompanyDonator = company;
+    }
+}
+
+console.log(`${biggestDonation} from ${biggestCompanyDonator}`);
