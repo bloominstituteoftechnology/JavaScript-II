@@ -491,8 +491,20 @@ console.log(ticketPriceTotal)
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1- Match each runner with the company they are loyal to.
+let isLoyal = (data) => `${data.first_name} is loyal to ${data.company_name} `
 
-// Problem 2
+let loyal = runners.map(isLoyal)
 
-// Problem 3
+console.log(loyal)
+
+// Problem 2 The director is corrupt like most donation funded programs. create a function to find out how much of the donatons will the director keep. He wants his fair share to be 65%
+
+let fairShare = runners.reduce((sum, money) => sum + money.donation * 0.65, 0)
+console.log(fairShare)
+
+// Problem 3 The director want go give a prize to the people that donatated over 250 dollars. Find out THE NUMBER OF HOW MANY runners donatated over 250 dollars.
+
+let prize = runners.filter((money) => money.donation > 250)
+
+console.log(prize.length)
