@@ -110,25 +110,31 @@ sCount = runners.filter((runner) =>{
     return runner.shirt_size === 'S';
 })
 let mCount = [];
-sCount = runners.filter((runner) =>{
+mCount = runners.filter((runner) =>{
     return runner.shirt_size === 'M';
 })
 let lCount = [];
-sCount = runners.filter((runner) =>{
+lCount = runners.filter((runner) =>{
     return runner.shirt_size === 'L';
 })
 let xlCount = [];
-sCount = runners.filter((runner) =>{
+xlCount = runners.filter((runner) =>{
     return runner.shirt_size === 'XL';
 })
 let xxlCount = [];
-sCount = runners.filter((runner) =>{
+xxlCount = runners.filter((runner) =>{
     return runner.shirt_size === '2XL';
 })
 let xxxlCount = [];
-sCount = runners.filter((runner) =>{
+xxxlCount = runners.filter((runner) =>{
     return runner.shirt_size === '3XL';
 })
 
+console.log(`We will need ${sCount.length} small, ${mCount.length} medium, ${lCount.length} large, ${xlCount.length} xl, ${xxlCount.length} xxl, and ${xxxlCount.length} 3xl shirts.`);
 
 // Problem 3
+//We want to keep track of the company representation so we will need you to sort the company names alphabetically.
+let sortedCompanies = [];
+sortedCompanies = runners.map(runner => {return runner.company_name});
+sortedCompanies = sortedCompanies.sort();
+console.log(sortedCompanies);
