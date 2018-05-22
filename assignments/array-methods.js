@@ -71,16 +71,12 @@ console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = runners.filter((element) => {
-  return element.shirt_size === 'L';
-});
+let largeShirts = runners.filter((element) => element.shirt_size === 'L');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.reduce((total, element) => {
-  return total += element.donation;
-}, 0);
+let ticketPriceTotal = runners.reduce((total, element) => total += element.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -88,23 +84,16 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // The event director needs to create an email list to spam these donors as next year's event approaches.
-let reminderEmails = runners.map((element) => {
-  return element.email;
-});
+let reminderEmails = runners.map((element) => element.email);
 console.log(`Spam these addresses up next year:`, reminderEmails); 
 
 // Problem 2
 // The event director wants to figure out the average donation amount this year.
-let averageDonation = runners.reduce((avg, element, index, arr) => {
-  return avg += element.donation/arr.length;
-}, 0).toFixed(2);
+let averageDonation = runners.reduce((avg, element, index, arr) => avg += element.donation/arr.length, 0).toFixed(2);
 console.log(averageDonation);
-
 
 // Problem 3
 // The event director wants to be sure that the team focuses all of their flattery, perks and attention to the runners that represent generous donations, i.e., those above averageDonation.
-let whales = runners.filter((element) => {
-  return element.donation > averageDonation;
-});
+let whales = runners.filter((element) => element.donation > averageDonation);
 console.log(`These people get Fiji Water instead of tap:`, whales); 
 
