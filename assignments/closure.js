@@ -54,26 +54,36 @@ console.log(newCounter());
  // `increment` should increment a counter variable in closure scope and return it.
  // `decrement` should decrement the counter variable and return it.
 
- function countUpOrDown(a){
+//  function countUpOrDown(a){
 
-    // function theCounter
-  
-    return function() {
-      let incOrDec = {
-          increment = function(){
-              return a++;
-          },
+//       let countObj = {
+//           incremement = function(){
+//              return a++;
+//           }
 
-          decrement = function(){
-            return a--;
 
-          }
-    
-    };
+//       }
 
-    }  
-}
 
-let inc = counter(2);
 
-newCounter();
+
+//       // const incOrDec = {
+//       //     increment = function(){
+//       //         return a++;
+//       //     },
+
+//       //     decrement = function(){
+//       //       return a--;
+
+//       //     }
+//       // };
+
+//       //   console.log(incOrDec);
+
+
+//     }  
+
+// let inc = countUpOrDown(1);
+// console.log(inc());
+
+
