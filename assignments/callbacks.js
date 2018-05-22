@@ -6,6 +6,7 @@ function firstItem(arr, cb) {
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  cb(arr.length);
 }
 
 function last(arr, cb) {
