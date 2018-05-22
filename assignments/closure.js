@@ -2,12 +2,12 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 function showName (firstName, lastName) {
-let myName = "Hello, my name is"
+	let myName = "Hello, my name is"
 
-function makeFullName () {
-  return myName + firstName + " " + lastName;
-};
-return makeFullName;
+	function makeFullName () {
+		return myName + firstName + " " + lastName;
+	};
+	return makeFullName;
 };
 showName ("me", "emm");
 
