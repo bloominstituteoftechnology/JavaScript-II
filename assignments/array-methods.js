@@ -81,10 +81,20 @@ let ticketPriceTotal = runners.reduce((total, taxable) =>{
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  
+//I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  
+//Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 Alphabetic Company name and how much they donated
+let companyDonations = [];
+runners.forEach((element) => companyDonations.push(`${element.company_name} gave ${element.donation} dollars`));{
+    companyDonations.sort();
+}
+console.log(companyDonations);
 
-// Problem 2
+// Problem 2 Finding out who the biggest people are by shirt size
+let giantPeople = runners.filter((tripleXL) =>{
+    return tripleXL.shirt_size === "3XL"});
+console.log(giantPeople);
 
 // Problem 3
