@@ -9,6 +9,13 @@ With some basic JavaScript principles we can now expand our skills out even furt
 * To test your `console` statements you can run `node /assignments/<fileName>` and see what prints in your terminal. You can also use an online tool like `JSBin`, `REPL.it`, `JSFiddle`, or even your `Chrome developer console`.
 * Once you finish the exercises in each file, commit your code, and push it to your fork. 
 
+### Callbacks
+
+* In the [callbacks.js](assignments/callbacks.js) file you'll be receiving a lot of practice on how to use callbacks to pass around data.
+* Write out each function using the `ES5` `function` keyword syntax.
+* Remember that a callback function is simply a function that is being passed around to other functions.
+* **Stretch Problem** After you're done with all of the functions, go ahead and re-factor all of them to use `ES6` `Arrow Functions`
+
 ### Function Conversion
 You will see more and more arrow functions as you progress deeper into JavaScript.  Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax. 
 
