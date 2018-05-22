@@ -494,9 +494,58 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-//Determine how many donations came from employees of each company
+//Determine how much donations came from employees of each company
 
+function donationsPerCompany(arr) {
+    return arr.reduce(function addItemToCompanyTotals(returnArr, person, ) {
+        let companyAlreadyDonated = false;
+        for (let i = 0; i < returnArr.length; i++) {
+            if (person.company_name === returnArr[i].company_name) {
+                returnArr[i].total_donations += person.donation;
+                companyAlreadyDonated = true;
+                break;
+            }
+        }
+            if (!companyAlreadyDonated) {
+                let newRecord = {
+                    "company_name": person.company_name,
+                    "total_donations": person.donation
+                }
+                returnArr.push(newRecord);
+            }
+        return returnArr;
+    }, []);
+}
+
+console.log(JSON.stringify(donationsPerCompany(runners)));
 
 // Problem 2
+// Return the individuals in original order who contributed more than the median donation amount
+function topHalfByDonations (arr) {
+    let workingArr = arr.slice(0);
+    workingArr.sort(function donationCompare (firstPerson, secondPerson) {
+        return firstPerson.donation - secondPerson.donation;
+    });
+    let medianIndex = Math.floor(workingArr.length/2);
+    let medianDonation = workingArr[medianIndex].donation;
+    let filteredArr = arr.filter(function greaterThanMedianCheck (person, i, arr) {
+        return person.donation >= medianDonation;
+        // console.log(arr);
+    });
+    return filteredArr;
+}
+console.log(JSON.stringify(topHalfByDonations(runners)));
+console.log(runners.length);
+console.log(topHalfByDonations(runners).length);
+
 
 // Problem 3
+//return an array of strings with the following format for each object in runners: `Name${delimiter}${person.first_name} ${person.last_name}\nEmail${delimiter}${person.email}`, as an approximation of CSV
+function toCsvArray (arr, delimiter) {
+    let csvArray;
+    csvArray = arr.map(function entryToCsv (person) {
+        return `Name${delimiter}${person.first_name} ${person.last_name}\nEmail${delimiter}${person.email}`
+    });
+    return csvArray;
+}
+console.log(JSON.stringify(toCsvArray(runners, ",")));
