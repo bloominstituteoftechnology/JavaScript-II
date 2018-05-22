@@ -1,10 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+var randomVar = "I hate"
+function exampleClosure(){
+  return randomVar + " closures";
+}
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = (counter) => {
   // Return a function that when invoked increments and returns a counter variable.
+  function increvar() {
+     var incrementvar = 0;
+    return incrementvar++;
+  }
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
