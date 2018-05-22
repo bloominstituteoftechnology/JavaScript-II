@@ -81,7 +81,22 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+//Print all emails for a mass email announcing the race is cancelled.
+let emails = []
+    runners.forEach(function(runner) {
+        emails.push(runner.email)
+})
+console.log(emails)
 // Problem 2
+//Filter all runners with a donation over 100 for VIP status of 5 minute headstart during the race.
+let veryImportantRunners = runners.filter(function(runner) {return runner.donation >=100})
 
+console.log(veryImportantRunners)
 // Problem 3
+//Return all companies sponsoring more than 1 runner for whatever dumb reason I want.
+let companies = []
+    runners.forEach(function(runner) {
+        companies.push(runner.company)
+    })
+let superCompanies = runners.find((runner) => { return runner.company == this.props.params.id;});
+console.log(superCompanies)
