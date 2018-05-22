@@ -1,11 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function waterTemp(temp) {
+  let waterTemp = temp;
+
+  function waterOrIce() {
+    if (waterTemp <= 32) {
+   return 'Ice Ice Baby';
+    
+    } else {
+      return 'what is bruce lee\'s favorite drink? WATAAA!'
+    }
+    
+  }
+return waterOrIce();
+}
+
+waterTemp(35); //?
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
 };
+
+
+
+
+  // Return a function that when invoked increments and returns a counter variable.
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
