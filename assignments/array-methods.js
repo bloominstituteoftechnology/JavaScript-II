@@ -88,6 +88,21 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+let nameEmail = []
+runners.forEach(runner => 
+    nameEmail.push(`${runner.first_name} ${runner.email}`));
+
+console.log(nameEmail);
+
 // Problem 2
 
+let bigDonors = [];
+bigDonors = runners.filter(runner => 
+    runner.donation > 250);
+console.log(bigDonors);
+
 /* Problem 3 */
+
+let bigDonorsDonationTotal = [];
+bigDonorsDonationTotal = bigDonors.reduce((total, runner) => total+=runner.donation, 0);
+console.log(bigDonorsDonationTotal);
