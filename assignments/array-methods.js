@@ -87,8 +87,8 @@ const calc = (acc, donate) =>
   {return acc + donate;}
 runners.forEach(function (object) {
   ticketPriceTotal.push(object.donation)})
-
-console.log(ticketPriceTotal.reduce(calc));
+ticketPriceTotal = ticketPriceTotal.reduce(calc)
+console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
