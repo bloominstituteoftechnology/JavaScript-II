@@ -130,4 +130,22 @@ console.log(`ticket Price Total: $ ${ticketPriceTotal}`);
                                                     \n 3XL =  ${printing3XShirts.length}`);
 // Problem 2
 
+
+
+// create a new array of object with unique sizes to be printed
+
+
+var printSizes = [];
+runners.filter(function(item){
+  var i = printSizes.findIndex(x => x.shirt_size == item.shirt_size);
+  if(i <= -1){
+        printSizes.push({shirt_size: item.shirt_size});
+  }
+  return null;
+});
+console.log(printSizes);
+
 // Problem 3
+
+//  here we will combine the problem 1 & problem 2 to produce an elegant programmatic solution to 
+// help the race director order the appropriate tShirts in an exact quantity
