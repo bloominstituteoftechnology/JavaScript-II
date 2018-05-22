@@ -1,6 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function funWithClosures() {
+  const funTimes = function() { 
+    console.log(superGreat); }
+  const superGreat = 'I love closures!';
+  return funTimes;
+}
+const funWithClosuresClosure = funWithClosures(); 
+funWithClosuresClosure();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
