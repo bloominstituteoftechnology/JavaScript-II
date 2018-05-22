@@ -56,6 +56,11 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+function namer (value, index, array){
+	fullName.push(runners[index].last_name+" "+runners[index].first_name);
+}
+runners.forEach(namer);
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
