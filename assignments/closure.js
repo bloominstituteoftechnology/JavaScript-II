@@ -46,6 +46,5 @@ const counterFactory = () => {
 }
 
 let count = counterFactory();
-
-console.log(count);
 count.increment();
+count.decrement();
