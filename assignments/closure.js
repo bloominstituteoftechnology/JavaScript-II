@@ -6,12 +6,12 @@ const closure = () => {
       return sushi += 1;
   }  
 };
-let sush = closure();
-console.log(sush());
-console.log(sush());
-console.log(sush());
-console.log(sush());
-console.log(sush());
+let sushi = closure();
+console.log(sushi());
+console.log(sushi());
+console.log(sushi());
+console.log(sushi());
+console.log(sushi());
 
 
 
