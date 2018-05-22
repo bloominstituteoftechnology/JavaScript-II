@@ -19,10 +19,11 @@ return waterOrIce();
 waterTemp(35); //?
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-};
-
-
+let counter = 0;
+const newCounter = () => {return counter++};
+newCounter(); //?
+newCounter(); //?
+newCounter(); //?
 
 
   // Return a function that when invoked increments and returns a counter variable.
