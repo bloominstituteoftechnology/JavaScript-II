@@ -54,30 +54,65 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.
+// Combine both the first and last names into a new array called fullName.
+
 let fullName = [];
+runners.forEach(function (runner) {
+  fullName.push(`${runner["first_name"]} ${runner["last_name"]}`);
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER.
+// Convert each first name into all caps and log the result
+
+const allCaps = runners.map(name => name["first_name"].toUpperCase());
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+// The large shirts won't be available for the event due to an ordering issue.
+// Get a list of runners with large sized shirts so they can choose a different size.
+// Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
+const largeShirts = runners.filter(runner => runner["shirt_size"] === "L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+// The donations need to be tallied up and reported for tax purposes.
+// Add up all the donations into a ticketPriceTotal array and log the result
+
+const ticketPriceTotal = [];
+runners.forEach(function (runner) {
+  ticketPriceTotal.push(runner["donation"]);
+});
+const reducer = (accum, currentVal) => accum + currentVal;
+console.log(ticketPriceTotal.reduce(reducer));
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().
+// I want you to think of potential problems you could solve given the data set and the 5k fun run theme.
+// Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Some people donated the bare minimum. Make a new array populated by the full names of those who donated
+// less than $10, and call them all disgusting cheapskates.
+const names = runners.filter(runner => runner["donation"] < 10);
+const cheapskates = names.map(runner => `${runner["first_name"]} ${runner["last_name"]} is a disgusting cheapskate.`);
+console.log(cheapskates);
 
 // Problem 2
+// Everyone knows last names that begin with W, X, Y, or Z are aliases.
+// Find out who ran under an assumed name and report them (and all their info) in a new array.
+
+const frauds = runners.filter(runner => ["W", "X", "Y", "Z"].includes(runner["last_name"][0]));
+console.log(frauds);
 
 // Problem 3
+// Now we must set our trap. Create a new array of messages to the frauds telling each of them they've won the race.
+
+const messages = [];
+frauds.forEach(function (fraud) {
+  messages.push(`Congratulations, ${fraud["first_name"]} ${fraud["last_name"]}! You won! Come to the prize booth at the local police station to pick up your prize.`);
+});
+console.log(messages);
