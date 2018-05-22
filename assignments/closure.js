@@ -45,7 +45,7 @@ console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
-
+console.log(newCounter());
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 // const counterFactory = () => {
@@ -56,17 +56,24 @@ console.log(newCounter());
 
  function countUpOrDown(a){
 
-//     function theCounter
-//   let incOrDec = {
-//       increment = function(){
-//           return a++;
-//       },
+    // function theCounter
+  
+    return function() {
+      let incOrDec = {
+          increment = function(){
+              return a++;
+          },
 
-//       decrement = function(){
-//         return a--;
+          decrement = function(){
+            return a--;
 
-//       },
+          }
     
-//     };
+    };
 
- }  
+    }  
+}
+
+let inc = counter(2);
+
+newCounter();
