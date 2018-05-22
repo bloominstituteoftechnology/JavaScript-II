@@ -1,14 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function math (a, b) {
+const math = (a, b) => {
   let multi = a * b
   console.log(multi)
 
-  function square (a, b) {
+  const square = (a, b) => {
     let aSquare = Math.sqrt(multi)
     console.log(aSquare)
 
-    function floor (a, b) {
+    const floor = (a, b) => {
       let aFloor = Math.floor(aSquare)
       console.log(aFloor)
     }
@@ -17,6 +17,7 @@ function math (a, b) {
   return square()
 }
 math(100, 3)
+
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
