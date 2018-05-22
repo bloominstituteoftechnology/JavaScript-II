@@ -2,7 +2,7 @@
 // Write a simple closure of your own creation.  Keep it simple!
 function firstName(firstName) {
   return function(lastName) {
-    return `${firstName} ${lastName}`
+    return `${firstName} ${lastName}`;
   }
 }
 const lastName = firstName('Simon');
