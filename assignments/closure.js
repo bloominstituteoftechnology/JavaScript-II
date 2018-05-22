@@ -47,9 +47,10 @@ const counterFactory = () => {
     function decrement() {
       return num--; //?
     }
-    return decrement; //?
+    return decrement(); //?
   }
-  return increment; //?
+  return increment(); //?
 };
 
+counterFactory(); //?
 counterFactory(); //?
