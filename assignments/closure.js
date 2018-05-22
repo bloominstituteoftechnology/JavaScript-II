@@ -33,3 +33,8 @@ const counterFactory = () => {
   };
   return factory;
 };
+
+let countObj = counterFactory();
+console.log(countObj.increment());
+console.log(countObj.increment());
+console.log(countObj.increment());
