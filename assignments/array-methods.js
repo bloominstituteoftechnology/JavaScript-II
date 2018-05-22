@@ -86,7 +86,22 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The event director, still drunk with power, wants a list of all the runners who have donated less than $100, so that he can demand larger donations from them. Create an array of all runners who have donated less than $100 and log the result.
+let smallDonations = runners.filter((runners) => {
+    return runners.donation < 100;
+});
+console.log(smallDonations);
 
 // Problem 2
+// The company "Skinix" has tired of the event director's megalomanic antics. They have decided to withdraw from the race. Create an array of all runners from the company "Skinix" and log it to the console.
+let skinix = runners.filter((runners) => {
+    return runners.company_name === "Skinix";
+});
+console.log(skinix);
 
 // Problem 3
+// Due to the Skinix company withdrawal, the even director needs to know the total of donations from the Skinix company. Sum together the total of donations and log it to the console.
+let skinixDonations = skinix.reduce((donation, skinix) => {
+    return donation += skinix.donation;
+}, 0);
+console.log(skinixDonations);
