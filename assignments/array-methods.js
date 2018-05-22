@@ -94,6 +94,12 @@ console.log(mRunners);
 let doubled = runners.reduce((donation, runner) => {
 	return donation += runner.donation * 2;
 }, 0)
-
 console.log(doubled);
-// Problem 3
+// Problem 3 - someone hacked everyone's email addresses!
+
+let hacked = runners.map(runner => {
+	runner.email = 'OMGIHACKEDYOU@emailAddress.com';
+	return runner;
+})
+
+console.log(hacked);
