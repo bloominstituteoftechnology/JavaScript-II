@@ -87,6 +87,18 @@ console.log(ticketPriceTotal);
 let properName = [];
 allCaps.forEach((name, index) => {return properName.push(name.charAt(0) + name.slice(1,name.length).toLowerCase())})
 console.log(properName);
-// Problem 2 What company donated the most
 
-// Problem 3 Does anybody have the same first name...OR same last name
+// Problem 2 What was the highest donation amount?
+let highestValue = 0;
+runners.forEach(runner => {if (runner.donation > highestValue) {
+  highestValue = runner.donation;
+  return highestValue;
+}})
+console.log("$" + highestValue);
+
+// Problem 3: The community center is partnered with a Swedish health and fitness promotion foundation. The community center would like to report how much money they earned from the runners and want to report using Swedish Krona instead of US Dollars. Convert the donations from USD to SKD. Hint: 1 USD = 8.69 SEK
+let donations = [];
+let kronaDonations = [];
+runners.forEach(runner => {return donations.push(runner.donation)});
+kronaDonations = donations.map(x => Math.floor(x*8.69) + " kr");
+console.log(kronaDonations);
