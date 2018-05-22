@@ -30,4 +30,4 @@ exampleArray = [1,2,3,4];
 // });
 // console.log(triple);
 
-let triple = exampleArray.map = (num) => {return num * 3};
+let triple = exampleArray.map((num) => num * 3);
