@@ -92,9 +92,13 @@ runners.forEach((element) => companyDonations.push(`${element.company_name} gave
 }
 console.log(companyDonations);
 
-// Problem 2 Finding out who the biggest people are by shirt size
+// Problem 2 Finding out who the biggest people are by shirt size, getting their info
 let giantPeople = runners.filter((tripleXL) =>{
     return tripleXL.shirt_size === "3XL"});
 console.log(giantPeople);
 
-// Problem 3
+// Problem 3 First and Last with donation amount and generic thank you
+let judgeyComment = [];
+let judgement = runners.map((element) => judgeyComment.push(`${element.first_name} ${element.last_name} gave ${element.donation} , thanks bud`));
+judgeyComment.push(judgement);
+console.log(judgeyComment);
