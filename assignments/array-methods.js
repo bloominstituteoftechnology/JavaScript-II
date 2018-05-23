@@ -131,5 +131,6 @@ console.log(shirtSizearray3XL.length);
 //Create an array of the top 15 donators names and donations. Find the average amount donated by the top 15.
 
 
+
 // Problem 3
 // Find out which companies had more than one representative.
