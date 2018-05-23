@@ -74,11 +74,94 @@ console.log(largeShirts);
 let ticketPriceTotal = runners.reduce( (acc,cv) => acc += cv.donation, 0);
 console.log(ticketPriceTotal);
 
+console.table(runners)
+
+
+
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - For Each, closure, objects, etc...
+// Create an function that returns an object that has the {key :value} pairs as the {size : total number of orders in that size}
+function getCountBySize(){
+    
+    //Put all valid sizes in an array
+    let sizeArr = ["XS","S","M","L","XL","2XL","3XL"];
+
+    //Create method that increments any size property, parametrically.
+    let sizeCount = {
+        increment : size => ++sizeCount[size]
+    };
+
+    //Initialize all size properties in the object to 0
+    sizeArr.forEach( cv => sizeCount[cv] = 0)
+    
+    //Loop through each value in runners, compare with each value in sizeArr, when a match is found, increment that size.
+    runners.forEach( cvRun => {        
+        sizeArr.forEach( cvSize => {
+            if (cvRun.shirt_size === cvSize) sizeCount.increment(cvSize);
+        })
+    })
+    return sizeCount;
+}
+console.log(getCountBySize())
+
 
 // Problem 2
+// Create a function getDonationMetricsBySize, For each size, find the min, max, avg and total donations and store into an object that can get any value via dot 
+// notation
+// For example
+// getDonationMetricsBySize("xl").xl.avg should give you the average donation for size XL
+// getDonationMetricsBySize("m").m.min should give you the minimum donation for size M
+// getDonationMetricsBySize("s").s.max should give you the maximum donation for size S
+// getDonationMetricsBySize("xxxl").xxxl.total should give you the total donation for size XXXL
+
+function getDonationMetricsBySize(size){
+    
+    let runnersMod = runners.map((cv,ci,arr) => {
+        if (cv.shirt_size === "2XL") {
+            return arr.shirt_size === "XXL"
+        }else if (cv.shirt_size === "2XL"){
+            return arr.shirt_size === "XXXL"
+        }
+    })
+    console.log(runnersMod)
+
+    //Initialize the object
+    let donateBySize = {
+        xs   : {min:0, max:0,total:0,avg:0},
+        s    : {min:0, max:0,total:0,avg:0},
+        m    : {min:0, max:0,total:0,avg:0},
+        l    : {min:0, max:0,total:0,avg:0},
+        xl   : {min:0, max:0,total:0,avg:0},
+        xxl  : {min:0, max:0,total:0,avg:0},
+        xxxl : {min:0, max:0,total:0,avg:0},
+        setMin : (arr,size) => donateBySize[size].min = Math.min(...arr),
+        setMax : (arr,size) => donateBySize[size].max = Math.max(...arr),
+        setTotal : (arr,size) => donateBySize[size].total = arr.reduce( (acc,cv) => acc + cv),
+        setAvg : (arr,size) => donateBySize[size].avg = arr.reduce( (acc,cv) => acc + cv)/arr.length
+    }
+
+    
+    //Create a function that will return an array of donation for a given size
+    let filterBySize = function(size) {
+        return runners.filter( cv => cv.shirt_size === size).map( cv => cv.donation);
+    }
+
+    // Populate each metric by size
+    donateBySize.setMin(filterBySize(size.toUpperCase()),size);
+    donateBySize.setMax(filterBySize(size.toUpperCase()),size);
+    donateBySize.setTotal(filterBySize(size.toUpperCase()),size);
+    donateBySize.setAvg(filterBySize(size.toUpperCase()),size);
+    
+    return donateBySize;
+
+}
+
+console.log(getDonationMetricsBySize("xl").xl.avg) //should give you the average donation for size XL
+console.log(getDonationMetricsBySize("m").m.min) //should give you the minimum donation for size M
+console.log(getDonationMetricsBySize("s").s.max) //should give you the maximum donation for size S
+console.log(getDonationMetricsBySize("xxxl").xxxl.total) //should give you the total donation for size XL
+
 
 // Problem 3
