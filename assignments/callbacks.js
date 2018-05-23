@@ -2,7 +2,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
-  cb(arr);
+  cb(arr[0]);
 }
 
 function getLength(arr, cb) {
@@ -42,4 +42,5 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let newArray = array.map(item => {return item});
 }
