@@ -115,17 +115,20 @@ console.log(getCountBySize())
 // getDonationMetricsBySize("m").m.min should give you the minimum donation for size M
 // getDonationMetricsBySize("s").s.max should give you the maximum donation for size S
 // getDonationMetricsBySize("xxxl").xxxl.total should give you the total donation for size XXXL
+// TODO get it working for XXL and XXXL
 
 function getDonationMetricsBySize(size){
     
-    let runnersMod = runners.map((cv,ci,arr) => {
-        if (cv.shirt_size === "2XL") {
-            return arr.shirt_size === "XXL"
-        }else if (cv.shirt_size === "2XL"){
-            return arr.shirt_size === "XXXL"
-        }
-    })
-    console.log(runnersMod)
+    let runnersMod = runners.map( cv => cv);
+        // if (cv.shirt_size === "2XL") {
+        //     return arr.shirt_size === "XXL"
+        // }else if (cv.shirt_size === "2XL"){
+        //     return arr.shirt_size === "XXXL"
+        // }
+    // console.log(runnersMod.length)
+
+    // console.log(runnersMod)
+    // console.log(runnersMod)
 
     //Initialize the object
     let donateBySize = {
@@ -161,7 +164,7 @@ function getDonationMetricsBySize(size){
 console.log(getDonationMetricsBySize("xl").xl.avg) //should give you the average donation for size XL
 console.log(getDonationMetricsBySize("m").m.min) //should give you the minimum donation for size M
 console.log(getDonationMetricsBySize("s").s.max) //should give you the maximum donation for size S
-console.log(getDonationMetricsBySize("xxxl").xxxl.total) //should give you the total donation for size XL
+console.log(getDonationMetricsBySize("xl").xl.total) //should give you the total donation for size XL
 
 
 // Problem 3
