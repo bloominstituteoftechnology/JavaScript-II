@@ -92,7 +92,44 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //Find out how many of each shirt size there were. 
+// XS, S, M, L, XL, 2XL, 3XL
+let shirtSizearrayXS = [];
+let shirtSizearrayS = [];
+let shirtSizearrayM = [];
+let shirtSizearrayL = [];
+let shirtSizearrayXL = [];
+let shirtSizearray2XL = [];
+let shirtSizearray3XL = [];
+runners.filter(function(item){
+    if (item.shirt_size === 'XS') {
+        return shirtSizearrayXS.push(item.shirt_size)}
+       else if (item.shirt_size === 'S') {
+        return shirtSizearrayS.push(item.shirt_size);
+       } else if (item.shirt_size === 'M') {
+        return shirtSizearrayM.push(item.shirt_size); 
+       } else if (item.shirt_size === 'L') {
+        return shirtSizearrayL.push(item.shirt_size);
+       } else if (item.shirt_size === 'XL') {
+        return shirtSizearrayXL.push(item.shirt_size);
+       } else if (item.shirt_size === '2XL') {
+        return shirtSizearray2XL.push(item.shirt_size);
+       } else if (item.shirt_size === '3XL') {
+        return shirtSizearray3XL.push(item.shirt_size);
+       }
+});
+console.log(shirtSizearrayXS.length);
+console.log(shirtSizearrayS.length);
+console.log(shirtSizearrayM.length);
+console.log(shirtSizearrayL.length);
+console.log(shirtSizearrayXL.length);
+console.log(shirtSizearray2XL.length);
+console.log(shirtSizearray3XL.length);
+// I actually need to work on this! Make it way shorter!
+
+
 // Problem 2
 //Create an array of the top 15 donators names and donations. Find the average amount donated by the top 15.
+
+
 // Problem 3
 // Find out which companies had more than one representative.
