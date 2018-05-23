@@ -108,29 +108,30 @@ console.log(getCountBySize())
 
 
 // Problem 2
-// Create a function getDonationMetricsBySize, For each size, find the min, max, avg and total donations and store into an object that can get any value via dot 
-// notation
+// Create a function getDonationMetricsBySize that has one parameter (size). The size parameter can be "s", "m", "l", "xl", "xxl", etc. 
+// For a given size, the function should be able to return the min, max, avg and total donations for the given size, via dot notation.
+//
 // For example
-// getDonationMetricsBySize("xl").xl.avg should give you the average donation for size XL
-// getDonationMetricsBySize("m").m.min should give you the minimum donation for size M
-// getDonationMetricsBySize("s").s.max should give you the maximum donation for size S
-// getDonationMetricsBySize("xxxl").xxxl.total should give you the total donation for size XXXL
-// TODO get it working for XXL and XXXL
+// getDonationMetricsBySize("xl").xl.avg => should give you the average donation for size XL
+// getDonationMetricsBySize("m").m.min => should give you the minimum donation for size M
+// getDonationMetricsBySize("s").s.max => should give you the maximum donation for size S
+// getDonationMetricsBySize("xxxl").xxxl.total => should give you the total donation for size 3XL
 
 function getDonationMetricsBySize(size){
     
+    //Make a deep copy
     let runnersMod = runners.map( cv => cv);
-        // if (cv.shirt_size === "2XL") {
-        //     return arr.shirt_size === "XXL"
-        // }else if (cv.shirt_size === "2XL"){
-        //     return arr.shirt_size === "XXXL"
-        // }
-    // console.log(runnersMod.length)
+    
+    // Remove 2XL and 3XL with XXL and XXXL as they can't be Object keys (starting with numbers).
+    for (i=0; i<runnersMod.length; i++) {
+        if (runnersMod[i].shirt_size === "2XL") {
+            runnersMod[i].shirt_size = "XXL"
+        }else if (runnersMod[i].shirt_size === "3XL") {
+            runnersMod[i].shirt_size = "XXXL"
+        }    
+    }
 
-    // console.log(runnersMod)
-    // console.log(runnersMod)
-
-    //Initialize the object
+    //Initialize the Dontation by Size object
     let donateBySize = {
         xs   : {min:0, max:0,total:0,avg:0},
         s    : {min:0, max:0,total:0,avg:0},
@@ -141,20 +142,20 @@ function getDonationMetricsBySize(size){
         xxxl : {min:0, max:0,total:0,avg:0},
         setMin : (arr,size) => donateBySize[size].min = Math.min(...arr),
         setMax : (arr,size) => donateBySize[size].max = Math.max(...arr),
-        setTotal : (arr,size) => donateBySize[size].total = arr.reduce( (acc,cv) => acc + cv),
+        setTtl : (arr,size) => donateBySize[size].total = arr.reduce( (acc,cv) => acc + cv),
         setAvg : (arr,size) => donateBySize[size].avg = arr.reduce( (acc,cv) => acc + cv)/arr.length
     }
 
     
     //Create a function that will return an array of donation for a given size
     let filterBySize = function(size) {
-        return runners.filter( cv => cv.shirt_size === size).map( cv => cv.donation);
+        return runnersMod.filter( cv => cv.shirt_size === size).map( cv => cv.donation);
     }
 
     // Populate each metric by size
     donateBySize.setMin(filterBySize(size.toUpperCase()),size);
     donateBySize.setMax(filterBySize(size.toUpperCase()),size);
-    donateBySize.setTotal(filterBySize(size.toUpperCase()),size);
+    donateBySize.setTtl(filterBySize(size.toUpperCase()),size);
     donateBySize.setAvg(filterBySize(size.toUpperCase()),size);
     
     return donateBySize;
@@ -164,7 +165,8 @@ function getDonationMetricsBySize(size){
 console.log(getDonationMetricsBySize("xl").xl.avg) //should give you the average donation for size XL
 console.log(getDonationMetricsBySize("m").m.min) //should give you the minimum donation for size M
 console.log(getDonationMetricsBySize("s").s.max) //should give you the maximum donation for size S
-console.log(getDonationMetricsBySize("xl").xl.total) //should give you the total donation for size XL
+console.log(getDonationMetricsBySize("xxxl").xxxl.total) //should give you the total donation for size XXXL
 
 
 // Problem 3
+//That last one took about 5 hours!!!! I"m done.
