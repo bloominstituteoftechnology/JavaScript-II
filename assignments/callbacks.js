@@ -32,7 +32,8 @@ function contains(item, list, cb) {
    if (list[i] === item) {
       cb(true)
    } 
- }  cb(false);
+ } 
+  cb(false);
 }
 
 /* STRETCH PROBLEM */
