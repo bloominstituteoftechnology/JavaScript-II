@@ -1,10 +1,13 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+let gru=function(param1, cb){
+  return cb(param1,param2);
+}
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
 cb(arr[0]);
-console.log(cb(arr[0]));
 }
+console.log(items,cb)
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
