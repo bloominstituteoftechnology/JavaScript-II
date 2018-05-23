@@ -85,25 +85,26 @@ console.log(ticketPriceTotal);
 //First get a list of companies
 let companies = []
 companies = Array.from(new Set(runners.map(runner => runner.company_name)))
-console.log(companies);
+
 //Then create objects for Each
 companies = companies.map((company) => ( {"name": company,
                                           "donation": 0})  )
-console.log(companies);
+// Add donations per runner to appropriate company
 runners.forEach(runner => {
   let myCompany = companies.find(company => company.name === runner.company_name)
   myCompany.donation += runner.donation;
 })
-
-console.log(companies);
-
 //And find the company that paid the highest in donations
 let greatest = companies[0]
 for (let i = 0; i < companies.length; i++) {
   if(companies[i].donation > greatest.donation)
   { greatest = companies[i];  }
 }
+
 console.log(greatest);
+
+
+
 // Problem 2
 
 // Problem 3
