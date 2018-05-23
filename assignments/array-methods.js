@@ -73,29 +73,79 @@ function combineFirstLast(array){
     });
 }
 combineFirstLast(runners);
-console.log(fullName);
+// console.log(fullName);
 
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+//function is taking in any array as a parameter
+function fnameToCaps(array){
+    //MAP!!!
+    //returns new array, leaves og arr intact
+    //func,currentValue,return required. 
+    //currentValue = value of current element
+    //index = array index of current element
+    //arr = array object the current element belongs to
+    //??? optional 'thisValue' = value to be passsed to func
+        //used for its 'this' value ???
+    allCaps = array.map((currentItem, index, arr) => {
+        // console.log(currentItem);
+        // console.log(index);
+        // console.log(arr);
+        return currentItem.first_name ;
+    });
+}
+fnameToCaps(runners);
+// console.log(allCaps); 
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-console.log(largeShirts);
+//FILTER!!!
+//grabs items from an array that meet search criteria
+//accepts parameters 
+    //(current item, index, entireArray)
+//use comparision operators === ""
+//return statement required, and HAS to return a boolean, 
+    //or it always returns 'false'
+largeShirts = runners.filter((currentValue) => {
+    return currentValue.shirt_size === "L";
+})
+// console.log(largeShirts);
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+//REDUCE!!!
+//use values in array to create something new
+//requires return statement. important to return end value ie '0'
+//
+////syntax//        array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+//func//            required and to be run for each element in array
+//total//           required = initialValue or previuosly returned value of the func
+//currentValue//    required = value of current element
+//currentIndex//    = array index of current element
+//arr//             array object the current element belongs to 
+//intialValue//     optional?  =  value to be passsed as initial value (current example '0')
+//                      //IMPORTANT: must be set at end of func, or creates str
+
+ticketPriceTotal = runners.reduce((donation, currentItem, index, runners) => {
+    return donation += currentItem.donation ;
+},0);
+// console.log(ticketPriceTotal);
+
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//create array with top 10 donors
 
 // Problem 2
+//create separate arrays by shirt size
 
 // Problem 3
+//change all data toUpperCase

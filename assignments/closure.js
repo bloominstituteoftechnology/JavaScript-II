@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const helloWorld = (function(){
+  let howManyWorlds = 0;
+  return function() {
+    return howManyWorlds += 1;
+  }
+})();
+helloWorld();
+helloWorld();
+helloWorld();
 
+console.log(howManyWorlds);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
