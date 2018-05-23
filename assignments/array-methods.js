@@ -56,7 +56,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-runners.forEach((element) => {return fullName.push(element.first_name+' '+element.last_name);})
+runners.forEach((element) => 
+    fullName.push(element.first_name+' '+element.last_name)
+);
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -80,8 +82,15 @@ console.log(ticketPriceTotal);
 // Problem 1: The event director needs a list of companies participating and their emails to send reminder/update emails.
 let companyName = [];
 runners.forEach((element) => companyName.push(element.company_name+' '+element.email));
-console.log(companyName)
+console.log(companyName);
 
-// Problem 2
+// Problem 2: 3XL must be special ordered from a different company. The event director needs a list of runners with 3XL shirts.
+let xxxlShirts = runners.filter((element) => element.shirt_size==="3XL");
+console.log(xxxlShirts);
 
-// Problem 3
+// Problem 3: The event director wants the last name of each participant printed on their shirt. Get a list of all participants last names.
+let lastName = [];
+runners.forEach(element => {
+    lastName.push(element.last_name)
+});
+console.log(lastName);
