@@ -6,7 +6,7 @@ function firstItem(arr, cb) {
 }
 
 //Refactoring
-const firstItem = (arr, cb) => cb(arr[0]);
+const firstItem2 = (arr, cb) => cb(arr[0]);
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
@@ -14,7 +14,7 @@ function getLength(arr, cb) {
 }
 
 //Refactoring
-const getLength = (arr, cb) => cb(arr.length);
+const getLength2 = (arr, cb) => cb(arr.length);
 
 
 function last(arr, cb) {
@@ -23,7 +23,7 @@ function last(arr, cb) {
 }
 
 //Refactoring
-const last = (arr, cb) => cb(arr[arr.length - 1]);
+const last2 = (arr, cb) => cb(arr[arr.length - 1]);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -31,7 +31,7 @@ function sumNums(x, y, cb) {
 }
 
 //Refactoring
-const sumNums => (x, y, cb) => cb(x + y);
+const sumNums2 = (x, y, cb) => cb(x + y);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -39,7 +39,7 @@ function multiplyNums(x, y, cb) {
 }
 
 //Refactoring
-const multiplyNums(x, y, cb) => cb(x * y);
+const multiplyNums2 = (x, y, cb) => cb(x * y);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -52,7 +52,7 @@ function contains(item, list, cb) {
 }
 
 //Refactoring
-const contains = (item, list, cb) => {
+const contains2 = (item, list, cb) => {
   if (list.includes(item)) {
     cb(true);
   } else {
@@ -76,7 +76,7 @@ function removeDuplicates(array, cb) {
 }
 
 //Refactoring
-const removeDuplicates => (array, cb) => {
+const removeDuplicates2 = (array, cb) => {
   const newArr = [];
   array.forEach(num => {
     if (!newArr.includes(num)) {
