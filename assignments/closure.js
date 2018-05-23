@@ -23,19 +23,14 @@ console.log(counter());
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  let num = 0;
-  const counterFunction = () => {
-    function increment(){
-      num++;
-      return num;
-    }
-    return increment();
+  const counterFactory = () => {
+    let count = 0;
+    return {
+      increment: () => (++count),
+      decrement: () => (--count),
+    };
 
-    function decrement(){
-      num--;
-      return num;
-  }
-    return decrement();
-}
-
-console.log(counterFunction('increment')); //? 
+    const newCounterFactory = counterFactory();
+    newCounterFactory.increment(); // 1
+    newCounterFactory.decrement(); // 0
+    newCounterFactory.decrement(); // -1
