@@ -86,7 +86,7 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1 Generate an email list using .map()
+// Problem 1 Generate an email list using .map().
 let runnerEmails = runners.map((runner, index, runners) => {
     return runner.email
 })
@@ -98,7 +98,7 @@ let vips = runners.filter((runner) => {
 })
 console.log(vips);
 
-// Problem 3 How much did each company donate?
+// Problem 3 List company names without dupicates.
 let companyDonationsRaw = runners.map((runner, index, runners) => {
     const obj = {
         "company_name": "",
@@ -119,38 +119,3 @@ console.log(companyNames);
 let companyNamesWithoutDuplicates = Array.from(new Set(companyNames));
 console.log(companyNamesWithoutDuplicates);
 
-let total = companyDonationsRaw.reduce((result, company, index, companyDonationsRaw) => {
-    return result += company.donation
-}, 0)
-console.log(total);
-
-
-let companyDonationsInitial = companyNamesWithoutDuplicates.map((company, index, companyNamesWithoutDuplicates) => {
-    const obj = {
-        "company_name": "",
-        "donation": 0
-    }
-    var banana = Object.create(obj);
-    banana.company_name = companyNamesWithoutDuplicates[index];
-    banana.donation = 0;
-    return banana;  
-})
-console.log(companyDonationsInitial);
-
-console.log(companyDonationsInitial[0].donation += 2);
-console.log(companyDonationsInitial);
-
-companyDonationsRaw.forEach((donation, index, donations) => {
-    var currentCompany = companyDonationsRaw[index].company_name;
-    let selector = companyNamesWithoutDuplicates.filter((runner) => {
-        return runner.donation >= 200
-    })
-    console.log
-})
-
-
-
-
-runners.forEach((runner, index, runners) => {
-    fullName.push(runner.first_name + " " + runner.last_name)
-})
