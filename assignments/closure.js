@@ -1,6 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function deck (){
+  let lands= 32;
+  return lands + "Swamp";
+  function totalLands(){
+  let nonBasicLands=5;
+  return lands+nonBasicLands;
+  }
+  return nonBasicLands;
+} 
+  deck();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
