@@ -95,4 +95,6 @@ theBusinesses.sort();
 console.log(theBusinesses);
 
 // Problem 3
-// ???
+// Photospace has backed out, need a new array with everyone who is not from that company_name
+let keptCompanies = runners.filter( runner => !(runner.company_name == 'Photospace'));
+console.log(keptCompanies);
