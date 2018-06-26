@@ -91,13 +91,28 @@ console.log(donations);
 
 // Problem 3
 // Tallies up participant sizes
-let sizes = {};
-runners.forEach((runner) => {
-  let size = runner["shirt_size"];
-  if (sizes.hasOwnProperty(size)) {
-    sizes[size] ++;
-  } else {
-    sizes[size] = 1;
-  }
-});
-console.log(sizes);
+// let sizes = {};
+// runners.forEach((runner) => {
+//   let size = runner["shirt_size"];
+//   if (sizes.hasOwnProperty(size)) {
+//     sizes[size] ++;
+//   } else {
+//     sizes[size] = 1;
+//   }
+// });
+// console.log(sizes);
+
+
+function sizeTally(objectArray) {
+  return objectArray.reduce(function (acc, obj) {
+    let size = obj["shirt_size"];
+    if (!acc[size]) {
+      acc[size] = 0;
+    }
+    acc[size] ++;
+    return acc;
+  }, {});
+}
+
+var allSizes = sizeTally(runners);
+console.log(allSizes);
