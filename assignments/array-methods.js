@@ -95,13 +95,16 @@ ticketPriceTotal = runners.reduce((acc, val)=>{
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-function donationLargeShirts(arr){
+/** GET TOTAL OF DONATIONS BY SHIRT SIZE */
+function donationLargeShirts(size, oarr, cb){
+    let arr = cb(oarr, size);
     return arr.reduce((acc, val) => {
         return acc + val.donation;
     }, 0);
-}
 
-console.log(donationLargeShirts);
+}
+let total = donationLargeShirts("XL", runners, getShirtArray);
+console.log(total);
 
 
 
