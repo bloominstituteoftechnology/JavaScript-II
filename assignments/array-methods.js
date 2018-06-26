@@ -87,6 +87,15 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+let howManyS = 0
+runners.forEach(element => {
+    if (element.shirt_size === "S") {
+        howManyS +=1;
+    }
+})
+
+console.log(howManyS);
+
 // Problem 2
 
 // Problem 3
