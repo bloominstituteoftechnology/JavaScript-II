@@ -103,12 +103,50 @@ console.log(ticketPriceTotal);
 
 //ideas: alphabetize company names (map), find mean and standard dev of donations (reduce), categorize donations by amount, find which company donated greatest amount (or most frequently)
 
-// Problem 1
+// Problem 1 change donations to Euro (0.86 euro to 1 USD)
 
+let euroDon = [];
+
+euroDon=runners.map((x,runners)=>{
+  return x.donation*.86
+})
+
+console.log(euroDon)
 
 
 // Problem 2
+//find average donation
 
+let donationAverage = [];
+
+donationAverage=runners.reduce((avg,runner)=>{
+  return (avg += runner.donation)/runners.length;
+},0);
+
+console.log(donationAverage)
 
 
 // Problem 3
+// Find number of donations under $50 and over $250
+
+let under50 = [];
+for(let i = 0; i < runners.length; i++) {
+  if(runners[i].donation < 50) {
+    under50.push(runners[i]);
+  }
+}
+
+let under50 = [];
+under50 = runners.filter(x=>{
+  return x.donation<50;
+})
+console.log(under50.length)
+
+
+let over250 = [];
+over250 = runners.filter(x=>{
+  return x.donation>250;
+})
+console.log(over250.length)
+
+ 
