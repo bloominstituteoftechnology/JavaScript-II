@@ -91,14 +91,13 @@ console.log(donations);
 
 // Problem 3
 // Tallies up participant sizes
-let sizes = runners.reduce((allSizes, runner) => {
+let sizes = {};
+runners.forEach((runner) => {
   let size = runner["shirt_size"];
-  if (size in allSizes) {
-    allSizes[size] ++;
+  if (sizes.hasOwnProperty(size)) {
+    sizes[size] ++;
   } else {
-    allSizes[size] = 1;
-    debugger;
+    sizes[size] = 1;
   }
-  return allSizes;
 });
 console.log(sizes);
