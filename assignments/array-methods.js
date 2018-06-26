@@ -103,8 +103,8 @@ console.log(donations);
 // console.log(sizes);
 
 
-function sizeTally(objectArray) {
-  return objectArray.reduce(function (acc, obj) {
+let sizeTally = (objectArray) => {
+  return objectArray.reduce((acc, obj) => {
     let size = obj["shirt_size"];
     if (!acc[size]) {
       acc[size] = 0;
