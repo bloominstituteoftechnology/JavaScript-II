@@ -43,7 +43,7 @@ const counterFactory = () => {
                       return ++param;
             },
             decrement: function decrement () {
-                      return --param;
+                      return param--;
             }
       }  
 };   
