@@ -1,11 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function makeClosure(closeit) {
+  return function(){
+    return closeit + 10;
+  };
+}
+
+var closeit5 = makeClosure(5);
+var closeit10 = makeClosure(10);
+
+console.log(closeit5());
+console.log(closeit10());
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+   counterUp = 0;
+
+  return function () {
+    counterUp += 1;
+    return counterUp;
+  };
 };
+counter();
+counter();
+counter();
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
