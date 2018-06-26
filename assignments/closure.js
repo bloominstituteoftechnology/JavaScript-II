@@ -25,15 +25,11 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
   let counter = 0;
-    return {
-      increment: function() {
-        return(counter += 1);
-      },
-      decrement: function() {
-        return(counter -= 1);
-      }
-    }  
-};
+  return {
+      increment: () => (counter += 1),
+      decrement: () =>(counter -= 1)
+    }
+} 
 
 const cf = counterFactory();
 
