@@ -27,9 +27,12 @@ console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
-console.log();
-console.log();
-console.log();
+console.log(`----------------------------------------------------`);
+console.log(`----------------------------------------------------`);
+console.log(`----------------------------------------------------`);
+console.log(`----------------------------------------------------`);
+console.log(`----------------------------------------------------`);
+
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
@@ -48,12 +51,12 @@ const counterFactory = () => {
       }  
 };   
 const test = counterFactory();
-
+    console.log(`------ Increment starts here --------`);
     console.log(test.increment());
     console.log(test.increment());
     console.log(test.increment());
     console.log(test.increment());
-    console.log();
+    console.log(`--------Decrement starts here---------------------------`);
     console.log(test.decrement());
     console.log(test.decrement());
     console.log(test.decrement());
