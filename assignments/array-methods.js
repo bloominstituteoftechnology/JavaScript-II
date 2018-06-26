@@ -83,15 +83,10 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-let donations = [];
-runners.map(x => {
-    return donations.push(x.donation);
-});
 
-ticketPriceTotal = donations.reduce((total, amount) => {
+ticketPriceTotal = runners.map(x => x.donation).reduce((total, amount) => {
     return total + amount;
 });
-
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -102,11 +97,9 @@ console.log(ticketPriceTotal);
 
 let smallShirts = [];
 
-smallShirts = runners.filter(x => x.shirt_size === "S");
-smallShirtsTotal = smallShirts.reduce((total, amount) => {
+smallShirtsTotal = runners.filter(x => x.shirt_size === "S").reduce((total, amount) => {
     return total + amount.donation;
 }, 0);
-
 console.log(smallShirtsTotal);
 
 // Problem 2
@@ -121,8 +114,7 @@ console.log(largerThanL);
 // Problem 3
 //Average donation of peeps wearing "M" shirts
 
-let averageDonation
-let mediumShirts = [];
+let averageDonation = [];
 
 mediumShirts = runners.filter(x => x.shirt_size === "M");
 averageDonation = mediumShirts.reduce((total, amount) => {
