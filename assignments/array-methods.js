@@ -79,11 +79,15 @@ console.log(allCaps);
 let largeShirts = [];
 largeShirts.push(runners.filter(x => x.shirt_size === 'L'))
 
-console.log(largeShirts);
+// Testing to see if they're actually larges
+// largeShirts.forEach(function(element) {
+//     console.log(element[3]);
+// });
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+console.log(ticketPriceTotal.push(runners.reduce((acc, currentValue) => acc + currentValue.donation, 0))); // The Zero sets the initial value, which if you don't use just finds the value itself from the first index
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
