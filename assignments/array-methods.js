@@ -85,7 +85,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let email = [];
+runners.forEach(function(element){fullName.push(element.email)});
+console.log(email);
 
 // Problem 2
+let ids = [];
+ids = runners.filter(function(element){
+  return element.id;
+});
+console.log(ids);
 
 // Problem 3
+let companyName = [];
+companyName = runners.map(function(element){
+    return element.company_name;
+});
+console.log(companyName);
