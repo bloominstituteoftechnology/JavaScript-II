@@ -82,7 +82,15 @@ console.log(ticketPriceTotal.reduce((total, amount) => total + amount));
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The runners need to be placed in groups with respect to the first letter of their name. Make a list of runners who belong in the "M" group
+let mRunners = runners.filter(runner => runner.first_name.charAt(0) == "M");
+console.log(mRunners);
 
 // Problem 2
+// Each runner will be charged a 2% donation processing fee. Update each of their total donation to reflect the fee and display the list of donations
+let updatedDonations = runners.map(runner => runner.donation += (runner.donation * .02));
+console.log(updatedDonations);
 
 // Problem 3
+// Add up the updated donations and display the result
+console.log(updatedDonations.reduce((total, amount) => total + amount));
