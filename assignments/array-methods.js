@@ -95,12 +95,19 @@ let superDonors = runners.filter((runner) => {
 }).map((runner) => runner.company_name);
 console.log(superDonors);
 
-// Problem 2 // We've decided to only send out a specialized email thank you to super donors, so now we need a list of super donor objects with email address and company name
+// Problem 2 // We've decided to only send out a specialized email thank you to super donors, so now we need a list of super donor objects with email addresses, company names and donation amounts(hint: for filtering)
 //first we are going to transform the entire runners array of objects into an array of objects with only email and company name properties
 let superDonorContact = runners.map((runner) => {
-return {"email":runner.email, "company_name": runner.company_name, "donation": runner.donation}
-}).filter((runner) => runner.donation >= 200); // filtering the mapped list into a smaller list of super donors
+    return {"email":runner.email, "company_name": runner.company_name, "donation": runner.donation};
+}).filter((runner) => runner.donation >= 200); // filtering the mapped list of email, comp names, and donations into a smaller list of super donors.
 console.log(superDonorContact);
 
 // Problem 3
+// Super donor analytics: we want to know how much super donors contributed relative to non super donors. Specifically, we want to know how much of our ticket price total came from donors
+let superDonorTotal = superDonorContact.reduce((total, superdonor) => {
+    return total += superdonor.donation;
+}, 0);
 
+//  
+let superDonorTotalPercentage = superDonorTotal / ticketPriceTotal;
+console.log(superDonorTotalPercentage);
