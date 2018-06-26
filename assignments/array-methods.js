@@ -55,11 +55,12 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
-fullName = runners.forEach(function(name) { 
-    console.log((`${name.first_name} ${name.last_name}`))
-});
-console.log(fullName);
+// let fullName = [];
+// fullName = runners.forEach(function(name) { 
+//     console.log((`${name.first_name} ${name.last_name}`))
+// });
+// console.log(fullName);
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -81,17 +82,40 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce(function(totalDon,don) {
-    return(don.donation);
-});
+let ticketPriceTotal = runners.reduce((totalDon,don) => totalDon += don.donation,0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
-
-// Problem 2
-
-// Problem 3
+let sizes = {};
+let xsmallT = runners.filter(size => size.shirt_size === 'XS')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let smallT = runners.filter(size => size.shirt_size === 'S')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let mediumT = runners.filter(size => size.shirt_size === 'M')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let largeT = runners.filter(size => size.shirt_size === 'L')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let xlargeT = runners.filter(size => size.shirt_size === 'XL')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let xxlargeT = runners.filter(size => size.shirt_size === '2XL')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+let xxxlargeT = runners.filter(size => size.shirt_size === '3XL')
+                    .map(shirt => shirt.shirt_size)
+                    .reduce((total, item) => (total += 1),0);
+                    
+sizes.xsmall = xsmallT;
+sizes.small = smallT;
+sizes.medium = mediumT;
+sizes.large = largeT;
+sizes.xlarge = xlargeT;
+sizes.xxlarge = xxlargeT;
+sizes.xxxlarge = xxxlargeT;
+console.log(sizes);
