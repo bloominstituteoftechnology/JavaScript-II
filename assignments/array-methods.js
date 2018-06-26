@@ -92,7 +92,7 @@ console.log(ticketPriceTotal);
 // Problem 1 // create a list of super donors so we can send them personalized thank yous. The list must be only of company names. A super donor donated 200 or more.
 let superDonors = runners.filter((runner) => {
     return runner.donation >= 200;
-}).map((runner) => runner.company_name);
+}).map((runner) => `Company name: ${runner.company_name}`);
 console.log(superDonors);
 
 // Problem 2 // We've decided to only send out a specialized email thank you to super donors, so now we need a list of super donor objects with email addresses, company names and donation amounts(hint: for filtering)
