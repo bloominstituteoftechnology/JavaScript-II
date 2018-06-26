@@ -80,7 +80,7 @@ console.log(allCaps);
 let largeShirts = [];
 
 runners.filter(x =>  {
-    if (x.shirt_size === "L" || x.shirt_size === "XL" || x.shirt_size === "2XL" || x.shirt_size === "3XL"){
+    if (x.shirt_size === "L") {
         largeShirts.push(x);
     }
 
