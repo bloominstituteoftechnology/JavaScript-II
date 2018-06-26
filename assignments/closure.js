@@ -6,8 +6,8 @@
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
-  return function newCounter() {
-    count += 1;
+  return () => {
+    count++;
     return count;
   }
 };
@@ -29,12 +29,12 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
   let counter = 0; 
   return {
-    increment: function() {
-      counter += 1;
+    increment: () => {
+      counter++;
       return counter;
     },
-    decrement: function() {
-      counter -= 1;
+    decrement: () => {
+      counter--;
       return counter;
     }
   }
