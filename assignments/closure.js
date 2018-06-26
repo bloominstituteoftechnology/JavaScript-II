@@ -3,7 +3,7 @@
 let myName = 'Kyle';
 
 function saysHi() {
-console.log(`Hi, my name is ${myName}!`)
+  console.log(`Hi, my name is ${myName}!`)
 };
 
 myName = 'Jimmy'
@@ -13,6 +13,11 @@ saysHi();
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let total = 0;
+  return function () {
+    total++
+    return total
+  }
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
