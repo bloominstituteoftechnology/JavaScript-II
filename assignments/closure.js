@@ -11,16 +11,13 @@ function iLovePie(){
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
-  function increment() {
-    count = count + 1;
-    return count;
+  // Return a function that when invoked increments and returns a counter variable.
+  const increment = () => {
+    return count + 1;
   }
-  return increment;
+  return increment();
 };
-
-console.log();
 
 
 // Example usage: const newCounter = counter();
@@ -33,4 +30,16 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = {};
+  let i = 0;
+  count.increment = () => {
+    return i + 1;
+  }
+  count.decrement = () => {
+    return i - 1;
+  }  
+  return count;
 };
+
+let x = counterFactory();
+console.log(x.decrement());

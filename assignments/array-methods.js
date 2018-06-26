@@ -81,15 +81,24 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Compile a list of what company a runner represents.
 let companyAffliate = [];
 companyAffliate = runners.map(x => `${x.first_name} ${x.last_name}: ${x.company_name}`);
 console.log(companyAffliate);
 
-// Problem 2
+// Problem 2 - Compile an email list of all participants.
 let emailList = [];
 emailList = runners.map(x => x.email);
 console.log(emailList);
 
-// Problem 3
+// Problem 3 - see how much a ceratin company earned in donations.
+let compDonateTotal = 0;
+const company = 'Gigashots';
+runners.forEach(x => {
+    if (x.company_name === company) {
+        compDonateTotal += x.donation;
+    }
+    return compDonateTotal;
+});
 
+console.log(compDonateTotal);
