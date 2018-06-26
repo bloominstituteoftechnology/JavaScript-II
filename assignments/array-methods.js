@@ -1,7 +1,7 @@
 // A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
-
+// prettier-ignore
 const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
 {"id":2,"first_name":"Whitaker","last_name":"Ierland","email":"wierland1@angelfire.com","shirt_size":"2XL","company_name":"Wordtune","donation":148},
 {"id":3,"first_name":"Julieta","last_name":"McCloid","email":"jmccloid2@yahoo.com","shirt_size":"S","company_name":"Riffpedia","donation":171},
@@ -54,30 +54,62 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.
+// Combine both the first and last names into a new array called fullName.
 let fullName = [];
+runners.forEach(person =>
+  fullName.push(`${person.first_name} ${person.last_name}`)
+);
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+// The event director needs to have all the runner's first names converted to uppercase because the director
+// BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+let allCaps = runners.map(person => person.first_name.toUpperCase());
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+// The large shirts won't be available for the event due to an ordering issue.
+// Get a list of runners with large sized shirts so they can choose a different size.
+// Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+let largeShirts = runners.filter(person => person.shirt_size === "L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+// The donations need to be tallied up and reported for tax purposes.
+// Add up all the donations into a ticketPriceTotal array and log the result
+let ticketPriceTotal = runners.reduce((acc, next) => acc + next.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().
+// I want you to think of potential problems you could solve given the data set and the 5k fun run theme.
+// Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: Project an array of individuals who have donated greater than 200
+// the projected array must have only 2 fields - a fullName field and a donation field
+let greaterDonors = runners
+  .filter(person => person.donation > 200)
+  .map(person => ({
+    fullName: `${person.first_name} ${person.last_name}`,
+    donation: person.donation
+  }));
+console.log(greaterDonors);
 
-// Problem 2
+// Problem 2: Find the person who has the highest donation using .reduce() method
+let mostGenerousDonor = runners.reduce((acc, next) => {
+  if (next.donation > acc.donation) return next;
+  return acc;
+});
+console.log(mostGenerousDonor.first_name);
 
-// Problem 3
+// Problem 3: Using the .reduce() method create an object that contains the number of shirts to order for each size
+// The output object must contain { "M": <number of M>, "L": <number of L> ... }
+let shirtOrders = runners.reduce(
+  (acc, next) => ({
+    ...acc,
+    [next.shirt_size]: (acc[next.shirt_size] || 0) + 1
+  }),
+  {}
+);
+console.log(shirtOrders);
