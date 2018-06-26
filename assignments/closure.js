@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function counter(){
+	let counter = 0;
+} return{ function() {
+	counter = counter + 1;
+	conole.log ("in Anonymous function");
+	return counter;
+}
+}
+
+counter();
 
 
 // ==== Challenge 2: Create a counter function ====
