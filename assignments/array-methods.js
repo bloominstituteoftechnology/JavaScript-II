@@ -56,28 +56,39 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(element=>fullName.push(`${element.first_name} ${element.last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+allCaps=runners.map(x=>x.first_name.toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-console.log(largeShirts);
+largeShirts=runners.filter(x=>x.shirt_size==='L');
+console.log(JSON.stringify(largeShirts));
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal=runners.reduce((accumulator, currentValue) => {return accumulator+currentValue.donation},0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
-
-// Problem 2
-
-// Problem 3
+// Problem 1  Unexpected booking conflicts have forced the community center to change venues get the email of each participant to notify them of the changes.
+let eMail=[];
+runners.forEach(element=>eMail.push(element.email));
+console.log(eMail);
+// Problem 2 Some random person thought wants to bet on the race and believes that the person who will win would be one to wear a xs or s shirt.  Get a list of runners with xs or s shirts for that person to choose to bet on.
+let xsAndsShirts=[];
+xsAndsShirts=runners.filter(x=>x.shirt_size==='S'||x.shirt_size==='XS');
+console.log(JSON.stringify(xsAndsShirts));
+// Problem 3 Just for fun someone wanted to see what all the individual id numbers together would add up to.
+let total=[];
+total=runners.reduce((accumulator, currentValue)=>{return accumulator+currentValue.id},0);
+console.log(total);
