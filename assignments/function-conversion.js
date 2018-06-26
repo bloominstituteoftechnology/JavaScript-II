@@ -11,6 +11,14 @@
 // };
 // add(1,2);
 
+const myFunction = () => {};
+
+const anotherFunction = (param) => {return param;};
+
+const add = (param1, param2) => {return param1 + param2;};
+
+console.log(add(1,2));
+
 let subtract = function (param1, param2) {
   return param1 - param2;
 };
@@ -21,3 +29,7 @@ exampleArray = [1,2,3,4];
 //   return num * 3;
 // });
 // console.log(triple);
+
+const triple = exampleArray.map((num) => {return num * 3;});
+
+console.log(triple);
