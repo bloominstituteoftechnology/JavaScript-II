@@ -60,6 +60,24 @@ console.log(fullName);
 console.log("Hello World");
 
 
+for (i = 0; i < runners.length; i++){
+    let fullName =[];
+    fullName.push(runners[i].first_name);
+    fullName.push(runners[i].last_name);
+    console.log(fullName);
+    }
+  
+  
+  runners.forEach(function(first_name, last_name){
+   let i = 0
+    let fullName = [];
+    fullName.push(runners[i]
+    .first_name
+    .last_name);  
+    i++;
+    console.log(fullName);
+  });
+
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
