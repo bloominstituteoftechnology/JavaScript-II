@@ -1,4 +1,5 @@
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
+// Open PR
 
 // let myFunction = function () {};
 
