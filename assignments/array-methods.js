@@ -92,11 +92,18 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. 
 // Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.map(function (runnerObj) {
-                                    return runnerObj.donation;
-                                  }).reduce(function (accumulator, currentValue) {
-                                    return accumulator + currentValue;
-                                  });
+
+// 1. map() -> reduce()
+// let ticketPriceTotal = runners.map(function (runnerObj) {
+//                                     return runnerObj.donation;
+//                                   }).reduce(function (accumulator, currentValue) {
+//                                     return accumulator + currentValue;
+//                                   });
+
+// 2. reduce()
+let ticketPriceTotal = runners.reduce(function (accumulator, runnerObj) {
+  return accumulator + runnerObj.donation;
+}, 0) 
 
 console.log(ticketPriceTotal);
 
@@ -107,11 +114,9 @@ console.log(ticketPriceTotal);
 // Find out the current amount of donation by institution's students and/or staff
 let donationFromInstitution = runners.filter(function (runnerObj) {
                                               return runnerObj.email.includes('edu')
-                                            }).map(function (runnerObj) {
-                                              return runnerObj.donation;
-                                            }).reduce(function (accumulator, currentValue) {
-                                              return accumulator + currentValue;
-                                            }) 
+                                            }).reduce(function (accumulator, currentObj) {
+                                              return accumulator + currentObj.donation;
+                                            }, 0) 
 
 console.log(`Donation from institutions: $${donationFromInstitution}`);
 
@@ -130,11 +135,9 @@ console.log(`% of L shirt or above: ${percentageOfLargeOrAbove * 100}%`)
 let donationByShirtSize = function (arr, shirtSize) {
   let result = arr.filter(function (runnerObj) {
     return runnerObj.shirt_size === shirtSize;
-  }).map(function (runnerObj) {
-    return runnerObj.donation;
-  }).reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue;
-  })
+  }).reduce(function (accumulator, currentObj) {
+    return accumulator + currentObj.donation;
+  }, 0)
 
   console.log(`${shirtSize}: $${result}`);
   return `${shirtSize}: $${result}`;
