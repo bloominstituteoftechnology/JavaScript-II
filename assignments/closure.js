@@ -10,10 +10,20 @@ function person(firstName, lastName) {
     },
     getFullName: function getFullName() {
       return firstName + " " + lastName;
+    },
+    setFirstName: function setFirstName(fName) {
+      firstName = fName;
+    },
+    setLastName: function setLastName(lName) {
+      lastName = lName;
     }
   };
 }
-console.log(person("Bob", "Jr").getFirstName());
+let someone = person("Bob", "Jr");
+console.log(someone.getFirstName());
+someone.setLastName("Smith");
+console.log(someone.getFullName());
+
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
