@@ -58,9 +58,8 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 
 runners.forEach(x => {
-    let name = (x.first_name);
-    let surname = (x.last_name);
-    fullName.push(name.concat(" " + surname));
+    
+    fullName.push(x.first_name.concat(" " + x.last_name));
     
 })
 console.log(fullName);
@@ -120,3 +119,13 @@ largerThanL = runners.filter(x => x.shirt_size === "XL" || x.shirt_size === "2XL
 console.log(largerThanL);
 
 // Problem 3
+//Average donation of peeps wearing "M" shirts
+
+let averageDonation
+let mediumShirts = [];
+
+mediumShirts = runners.filter(x => x.shirt_size === "M");
+averageDonation = mediumShirts.reduce((total, amount) => {
+    return (total += amount.donation) / mediumShirts.length;
+}, 0);
+console.log (averageDonation);
