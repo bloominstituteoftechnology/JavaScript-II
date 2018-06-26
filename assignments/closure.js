@@ -9,10 +9,10 @@ console.log(rapperString());
 // ==== Challenge 2: Create a counter function ====
 // ==== Challenge 2: Create a counter function ====
 let count=0;
-const counter = () => {
+const counter = () => (count+=1);
   // Return a function that when invoked increments and returns a counter variable.
-  return count+=1;
-};
+//   return count+=1;
+// };
 counter();
 counter();
 console.log(counter()); // 3
