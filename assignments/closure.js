@@ -26,6 +26,19 @@ console.log(currentWave.getValue());//console logs 87
 
 
 // ==== Challenge 2: Create a counter function ====
+//I think this is what was originally wanted
+// const counter = () => {
+//   let count = 0;
+//   return () => count +=1;
+// }
+//
+// let counterA  = counter();
+// console.log(counterA());//console log 1
+// counterA();//1
+// counterA();//2
+// console.log(counterA());//console log 4
+
+//what I initially made
 const counter = () => {
   let count = 0;
 
