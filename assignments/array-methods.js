@@ -55,7 +55,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
+let fullName = [TEST];
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -78,6 +78,6 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
-// Problem 2
+// Problem 2 
 
 // Problem 3
