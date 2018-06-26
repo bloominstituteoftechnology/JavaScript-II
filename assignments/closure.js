@@ -8,10 +8,21 @@ let status = () => {return `${position} ${state} Hooray!`;};
 console.log(status());
 
 // ==== Challenge 2: Create a counter function ====
+let num = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-
+  return num +=1;
 };
+
+const newCounter = counter;
+
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+
+
+console.log(num);
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
