@@ -24,7 +24,7 @@ contains=(item, list, cb)=>(list.indexOf(item)!==-1)?cb(true):cb(false);
 
 /* STRETCH PROBLEM */
 
-removeDuplicates=(array, cb)=>{let singlesOnly={}; array.forEach(function(element){singlesOnly[element]=true}); cb(Object.keys(singlesOnly))};
+removeDuplicates=(array, cb)=>{let singlesOnly={}; array.forEach((element)=>{singlesOnly[element]=true}); cb(Object.keys(singlesOnly))};
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
