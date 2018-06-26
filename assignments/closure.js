@@ -3,8 +3,11 @@
 let hundredWave = () => {
   let remaining = 100;
   return {
-    decrement: function () {
+    killOne: function () {
       remaining -= 1;
+    },
+    killTen: function() {
+      remaining -=10;
     },
     getValue: function () {
       return remaining;
@@ -14,11 +17,11 @@ let hundredWave = () => {
 
 const currentWave = hundredWave();
 console.log(currentWave.getValue());//console logs 100
-currentWave.decrement();//99
-currentWave.decrement();//98
-currentWave.decrement();//97
-currentWave.decrement();//96
-console.log(currentWave.getValue());//console logs 96
+currentWave.killOne();//99
+currentWave.killOne();//98
+currentWave.killTen();//88
+currentWave.killOne();//87
+console.log(currentWave.getValue());//console logs 87
 
 
 
