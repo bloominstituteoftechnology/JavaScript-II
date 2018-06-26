@@ -72,9 +72,9 @@ console.log(fullName);
 let allCaps = [];
 
 runners.map(x => {
-    x.first_name.toUpperCase;
-})
-
+    allCaps.push(x.first_name.toUpperCase());
+   })
+   
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -82,12 +82,24 @@ console.log(allCaps);
 //Get a list of runners with large sized shirts so they can choose a different size. 
 //Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+runners.filter (x => {
+    if (x.shirt_size === "L") {
+        largeShirts.push(x);
+    }
+})
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations 
 //into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
+
+let ticketPriceTotal = runners.reduce(function(donation, x){
+    return donation += x.donation
+},0)
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
