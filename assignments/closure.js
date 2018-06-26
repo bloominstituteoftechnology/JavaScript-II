@@ -8,13 +8,15 @@
 
   // Return a function that when invoked increments and returns a counter variable.
 
-  const counter = (count) => {
+  const counter = () => {
+
+    let count = 0;
     function counterIncrement (){
-      return count++;
+      return ++count;
     }
     return counterIncrement;
   };
-const newCounter = counter(1);
+const newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
@@ -46,7 +48,7 @@ const counterFactory = () => {
                       return ++param;
             },
             decrement: function decrement () {
-                      return param--;
+                      return --param;
             }
       }  
 };   
@@ -56,7 +58,7 @@ const test = counterFactory();
     console.log(test.increment());
     console.log(test.increment());
     console.log(test.increment());
-    console.log(`--------Decrement starts here---------------------------`);
+    console.log(`-------- Decrement starts here ---------------------------`);
     console.log(test.decrement());
     console.log(test.decrement());
     console.log(test.decrement());
