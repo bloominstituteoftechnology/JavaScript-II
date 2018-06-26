@@ -105,4 +105,6 @@ console.log(
         .reduce((total, donation) => total + donation, 0)
   );
 
-// Problem 3
+// Problem 3: The printers need each person's company name to be capitalized to make it easier to input in to their system for t-shirt printing.
+
+console.log(runners.map(runner => runner.company_name.toUpperCase()));
