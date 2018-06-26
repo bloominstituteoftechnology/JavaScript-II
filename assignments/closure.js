@@ -46,4 +46,5 @@ const counterFactory = () => {
 
 const counterUpOrDown = counterFactory();
 
-console.log(counterUpOrDown.decrement())
+console.log(counterUpOrDown.decrement()) // counter starts at 0, goes to -1
+console.log(counterUpOrDown.increment()) // counter goes +1, to 0
