@@ -1,3 +1,5 @@
+//Same thing that's in the JavaScript-I git, was told to ignore
+
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
