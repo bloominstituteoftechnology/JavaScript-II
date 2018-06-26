@@ -77,7 +77,7 @@ let ticketPriceTotal = [];
 let getSum = function(total, num) {
   return total + num.donation;
 }
-ticketPriceTotal = runners.reduce(getSum, 0)
+ticketPriceTotal = runners.reduce(getSum, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -96,7 +96,8 @@ emailsList = runners.map(function (x) `${x.last_name}: ${x.email}`).sort();
 
 console.log(emailsList);
 
-Problem 3: Names of donors who gave over $150 -
+// Problem 3: Names of donors who gave over $150 -
 let donors = [];
-donors = runners.filter(function (x) {if (x.donation > 150) {return `${x.first_name} ${x.last_name}`;});
-console.log(donors)
+let donorsPrelim = runners.filter(function (x) {return x.donation > 150});
+donors = donorsPrelim.map(x => {return `${x.first_name} ${x.last_name}`});
+console.log(donors);
