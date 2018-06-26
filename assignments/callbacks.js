@@ -1,3 +1,4 @@
+/* SKIP */
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
