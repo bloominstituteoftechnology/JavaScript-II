@@ -89,8 +89,18 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 // create a list of super donors so we can send them personalized thank yous. The list must be only of company names. A super donor donated 200 or more.
+let superDonors = runners.filter((runner) => {
+    return runner.donation >= 200;
+}).map((runner) => runner.company_name);
+console.log(superDonors);
 
-// Problem 2
+// Problem 2 // We've decided to only send out a specialized email thank you to super donors, so now we need a list of super donor objects with email address and company name
+//first we are going to transform the entire runners array of objects into an array of objects with only email and company name properties
+let superDonorContact = runners.map((runner) => {
+return {"email":runner.email, "company_name": runner.company_name, "donation": runner.donation}
+}).filter((runner) => runner.donation >= 200); // filtering the mapped list into a smaller list of super donors
+console.log(superDonorContact);
 
 // Problem 3
+
