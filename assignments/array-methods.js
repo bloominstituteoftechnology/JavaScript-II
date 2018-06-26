@@ -94,5 +94,11 @@ let companies = allCompanies.sort().filter((company, index) => allCompanies.inde
 console.log(companies);
 
 // Problem 3: How much as each company donated?
+let firstArray = runners.map(runner => {
+    return {[runner.company_name]: runner.donation};
+}, []);
+let companyDonations = firstArray.reduce((obj, company) => {
+    obj[item.;
+}, {});
 
 console.log(companyDonations);

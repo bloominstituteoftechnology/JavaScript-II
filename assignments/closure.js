@@ -15,10 +15,8 @@ const greetings = () => {
 
 // ==== Challenge 2: Create a counter function ====
 let num = 0;
-const counter = () => {
-  return () => ++num;
-}
-const newCounter = counter();
+const counter = () => ++num;
+const newCounter = counter;
 console.log(newCounter()); // 1
 console.log(newCounter()); // 2
 
