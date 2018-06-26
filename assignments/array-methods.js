@@ -87,23 +87,13 @@ v.push(allCaps.map(x => x.toUpperCase()));
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-findLargeshirts();
+let largeShirts = runners.filter((shirts)=> {
+  return shirts.shirt_size ==="L";
+});
+
 console.log(largeShirts);
 
-function findLargeshirts(){
-  let sizes = []
-  runners.forEach(function (runner){
-    if (sizes[runner.shirt_size]){
-    sizes[runner.shirt_size] += 1
-    } else {
-      sizes[runner.shirt_size] = 1;
-    }
 
-  });
-
-  console.log(sizes);
-}
 
 
 // ==== Challenge 4: Use .reduce() ====
