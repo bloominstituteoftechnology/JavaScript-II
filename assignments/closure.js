@@ -1,10 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+  const square = (x) => {
+    return x * x;
+  }
 
 // ==== Challenge 2: Create a counter function ====
 
   // Return a function that when invoked increments and returns a counter variable.
+
+  const counter = (count) => {
+    function counterIncrement (){
+      return count++;
+    }
+    return counterIncrement;
+  };
+const newCounter = counter(1);
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+
         
 
 // Example usage: const newCounter = counter();
@@ -19,17 +36,22 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
           let param = 0;
 
-          function increment () {
-            return ++param;
-          }
+          return {
+            increment: function increment() {
+                      return param++;
+            },
+            decrement: function decrement () {
+                      return param--;
+            }
+      }  
+};   
+const test = counterFactory();
 
-          function decrement (){
-           return --param;
+    console.log(test.increment());
+    console.log(test.increment());
+    console.log(test.increment());
+    console.log(test.increment());
 
-          }
-
-};
-let count = 8;    
-let test = counterFactory();
-
-    console.log(test.increment);
+    console.log(test.increment());
+    console.log(test.increment());
+    console.log(test.increment());
