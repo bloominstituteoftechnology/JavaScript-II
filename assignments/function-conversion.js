@@ -32,7 +32,7 @@ exampleArray = [1,2,3,4];
 // });
 // console.log(triple);
 
-const triple = () => {exampleArray.map(num => {
+const triple = exampleArray.map(num => {
   return num * 3;
-});};
+});;
 console.log(triple);
