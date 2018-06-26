@@ -1,6 +1,10 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const adder = (x) => (y) => x + y;
 
+const add5 = adder(5)
+
+console.log(add5(10)) // 15
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
