@@ -9,7 +9,7 @@ const thorOdinsonBestLine=()=>{
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let counter=0;
-  return ()=>{counter++;return counter;}
+  return ()=>(++counter)
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
@@ -21,9 +21,9 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  counter=0;
+  let counter=0;
   return {
-    "increment":()=>{counter++;return counter;},
-    "decrement":()=>{counter--;return counter;}
-  }
+    increment:()=>(++counter),
+    decrement:()=>(--counter),
+  };
 };
