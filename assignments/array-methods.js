@@ -110,4 +110,6 @@ console.log(total);
 
 // Problem 2
 
+
+
 // Problem 3
