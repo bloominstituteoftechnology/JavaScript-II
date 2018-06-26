@@ -88,11 +88,36 @@ v.push(allCaps.map(x => x.toUpperCase()));
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+findLargeshirts();
 console.log(largeShirts);
+
+function findLargeshirts(){
+  let sizes = []
+  runners.forEach(function (runner){
+    if (sizes[runner.shirt_size]){
+    sizes[runner.shirt_size] += 1
+    } else {
+      sizes[runner.shirt_size] = 1;
+    }
+
+  });
+
+  console.log(sizes);
+}
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
+let ticketPriceTotal = 0;
+let result=[];
+for (var i = 0; i < runners.length; i++) {
+  result.push(runners[i].donation);
+}
+ticketPriceTotal = result.reduce(
+  ( accumulator, currentValue ) => accumulator + currentValue,
+  0
+);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
