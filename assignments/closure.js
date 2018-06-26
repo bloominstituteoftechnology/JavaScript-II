@@ -1,6 +1,6 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-let simple = () => {};
+let simple = () => {let x = 5};
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {

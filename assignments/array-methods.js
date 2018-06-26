@@ -82,7 +82,8 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// If it was discovered that the shirts ran really small size-wise, you could use .map() in combination with some if statements to bump all of the size up.
 // Problem 2
-
+// If you wanted to recognize everyone who donated over $200 you could use .filter() to get a new list of the big donors.
 // Problem 3
+// You could use reduce to quickly find the runner who raised the most money.
