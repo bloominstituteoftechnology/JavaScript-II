@@ -2,6 +2,10 @@
 
 // let myFunction = function () {};
 
+const myFunction = () => {
+
+}
+
 // let anotherFunction = function (param) {
 //   return param;
 // };
