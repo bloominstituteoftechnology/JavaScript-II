@@ -75,16 +75,28 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 let getSum = function(total, num) {
-  return total + num;
+  return total + num.donation;
 }
-ticketPriceTotal.push(runners.reduce(getSum(runners, 0))
+ticketPriceTotal = runners.reduce(getSum, 0)
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: Get a list of donor company names -
 
-// Problem 2
+let companyNames = [];
+runners.forEach(function (x) {companyNames.push(`${x.company_name}`);});
+console.log(companyNames);
 
-// Problem 3
+// Problem 2: Getting an alphabetical list of last names paired with their associated emails -
+
+let emailsList = [];
+emailsList = runners.map(function (x) `${x.last_name}: ${x.email}`).sort();
+
+console.log(emailsList);
+
+Problem 3: Names of donors who gave over $150 -
+let donors = [];
+donors = runners.filter(function (x) {if (x.donation > 150) {return `${x.first_name} ${x.last_name}`;});
+console.log(donors)
