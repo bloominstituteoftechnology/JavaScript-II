@@ -96,6 +96,13 @@ runners.filter(runner => {if (runner.first_name.startsWith('M')){firstNames.push
 console.log(firstNames);
 
 
-// Problem 2
+// Problem 2: Some companies donated too little money and were convinced to double their contribution if they initially gave less than $200.00.  We want to see how much that number equals now.  
+
+console.log(
+    runners
+        .filter(runner => runner.donation < 200)
+        .map(runner => runner.donation * 2)
+        .reduce((total, donation) => total + donation, 0)
+  );
 
 // Problem 3
