@@ -74,8 +74,7 @@ console.log(JSON.stringify(largeShirts));
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-runners.forEach(element=>ticketPriceTotal.push(element.donation));
-ticketPriceTotal=ticketPriceTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
+ticketPriceTotal=runners.reduce((accumulator, currentValue) => {return accumulator+currentValue.donation},0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -91,6 +90,5 @@ xsAndsShirts=runners.filter(x=>x.shirt_size==='S'||x.shirt_size==='XS');
 console.log(JSON.stringify(xsAndsShirts));
 // Problem 3 Just for fun someone wanted to see what all the individual id numbers together would add up to.
 let total=[];
-runners.forEach(element=>total.push(element.id));
-total=total.reduce((accumulator, currentValue)=>accumulator+currentValue);
+total=runners.reduce((accumulator, currentValue)=>{return accumulator+currentValue.id},0);
 console.log(total);
