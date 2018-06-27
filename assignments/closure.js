@@ -16,12 +16,11 @@ testing(5);
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  let counter = 0;
+  let monkey = 0;
   return function() {
-    return counter += 1;
+    return monkey += 1;
   }
 };
-counter
 const newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
@@ -47,5 +46,7 @@ function counterFactory() {
 
 let myFactory = counterFactory();
 console.log(myFactory.increment());
-
+console.log(myFactory.increment());
+console.log(myFactory.increment());
+console.log(myFactory.decrement());
 console.log(counterFactory());
