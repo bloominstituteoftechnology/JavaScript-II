@@ -70,18 +70,20 @@ for (let i= 0; i < runners.length; i++){
 	console.log(firstName);
 	console.log('\n-----------------');
 	console.log(lastName);
-	console.log('\n-----------------');
+	console.log('\n-------- initial attempt---------');
 	console.log(fullName);
 // now with more 'advanced' method foreach:
-runners.forEach(function(){
-fullName.push(''+firstName[i]+ '' + ' ' +lastName[i]+ '')
-})
-console.log('\n-----------------'); //becasue I like the idea of a kinda markdown in console =D why not lemme be happy
+runners.forEach(function(i){
+fullName.push(''+i.first_name+ ''+' '+i.last_name+'')})
+console.log('\n-------- forEach---------'); //becasue I like the idea of a kinda markdown in console =D why not lemme be happy
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = runners.map()
+let allCaps = runners.map((i)=>{
+	return i.first_name.toUpperCase();
+});
+console.log('\n-------- map ---------'); 
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -93,7 +95,11 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+console.log('\n-------- reduce ---------'); 
+let ticketPriceTotal = runners.reduce(/*can ignore function callback declarion*/(/* parameters of the callbak*/ total, individual) =>{
+	//and then you just add then lol?
+	return total + individual.donation;
+}, /* missed inital value was getting back the list of objects refering to donation*/ 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
