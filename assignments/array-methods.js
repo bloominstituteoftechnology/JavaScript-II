@@ -116,10 +116,23 @@ console.log(company);
 // Problem 2 now let's try to just get the company names if their shirt is M
 console.log('\n-------- compshirt ---------'); 
 let shirtcomp = runners.filter((shirt) => {
-	if (shirt.shirt_size === "L") {
+	if (shirt.shirt_size === "M") {
 		return runners.company_name;
 	}
 }) ;
 console.log(shirtcomp);
 
-// Problem 3
+// Problem 3 something random involving a combo let's sum the ids after filtering for now
+
+let ages = runners
+//FIRST FILTER FOR SHIRT SIZE
+  .filter((a) => {
+    return a.shirt_size === 'M';
+    console.log(a)
+}).map((a) => {
+    return a.id * 7
+}).reduce((sum, a) => {
+    return sum + a.id;
+});
+console.log('\n-------- ages ---------');
+console.log(ages);
