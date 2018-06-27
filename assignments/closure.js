@@ -22,6 +22,7 @@ const counter = () => {
 // newCounter(); // 2
 const newCounter = counter();
 newCounter();
+newCounter();
 
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
