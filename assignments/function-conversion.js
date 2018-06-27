@@ -14,12 +14,21 @@ let anotherFunction = (param) => {
 
 let anotherFunction = param => `${param}`;
 
+//correct way//////////////////////////
+let anotherFunction = (param) => param;
+///////////////////////////////////////
+
 // let add = function (param1, param2) {
 //   return param1 + param2;
 // };
 // add(1,2);
 
 let add = (param1 , param2) => `${param1 + param2}`;
+
+//correct way///////////////////////////////////////
+let add = (param1, param2) => param1 + param2;
+add(1, 2);
+////////////////////////////////////////////////////
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
@@ -28,6 +37,11 @@ let add = (param1 , param2) => `${param1 + param2}`;
 
 let subtract = (param1, param2) => `${param1 - param2}`;
 
+//correct way///////////////////////////////////////
+let subtract = (param1, param2) => param1 - param2;
+add(1, 2);
+////////////////////////////////////////////////////
+
 exampleArray = [1,2,3,4];
 // const triple = exampleArray.map(function (num) {
 //   return num * 3;
@@ -35,3 +49,8 @@ exampleArray = [1,2,3,4];
 // console.log(triple);
 
 const triple = exampleArray.map(num => `${num * 3}`);
+
+//correct way///////////////////////////////////////
+const triple = exampleArray.map((num) => num *3);
+console.log(triple);
+////////////////////////////////////////////////////
