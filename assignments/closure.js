@@ -21,6 +21,7 @@ const counter = () => {
     return counter += 1;
   }
 };
+counter
 const newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
@@ -39,12 +40,12 @@ console.log(newCounter());
 function counterFactory() {
   let counter = 0;
   return {
-    increment: function() counter+=1;
-    decrement: function() counter-=1;
+    increment: function() {return counter+=1},
+    decrement: function() {return counter-=1},
   }
 }
 
 let myFactory = counterFactory();
-myFactory.increment();
+console.log(myFactory.increment());
 
 console.log(counterFactory());
