@@ -60,8 +60,8 @@ findrunner();
 console.log(fullName);
 function findrunner(){
   runners.forEach(function(i) {
-    fullName.push(i.first_name);
-    fullName.push(i.last_name);
+    fullName.push(i.first_name+" "+i.last_name);
+  
 
   });
   JSON.stringify(fullName);
