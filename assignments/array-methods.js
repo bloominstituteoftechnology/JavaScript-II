@@ -83,6 +83,7 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // If it was discovered that the shirts ran really small size-wise, you could use .map() in combination with some if statements to bump all of the size up.
+
 // Problem 2
 // If you wanted to recognize everyone who donated over $200 you could use .filter() to get a new list of the big donors.
 // Problem 3
