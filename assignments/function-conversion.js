@@ -39,7 +39,7 @@ let subtract = (param1, param2) => `${param1 - param2}`;
 
 //correct way///////////////////////////////////////
 let subtract = (param1, param2) => param1 - param2;
-add(1, 2);
+subtract(1, 2);
 ////////////////////////////////////////////////////
 
 exampleArray = [1,2,3,4];
