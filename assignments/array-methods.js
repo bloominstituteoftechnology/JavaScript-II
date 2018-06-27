@@ -56,16 +56,39 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+//normal way because I don't understand this still:
+let firstName = [];
+let lastName = [];
+for (let i= 0; i < runners.length; i++){
+	firstName.push(runners[i].first_name);
+	lastName.push(runners[i].last_name);
+  fullName.push(''+firstName[i]+ '' + ' ' +lastName[i]+ '');
+ //redundant could just push like this:
+ //fullName.push(''+runners[i].first_name+ ''+' '+runners[i].last_name+'');
+}
+	console.log('\n-----------------');
+	console.log(firstName);
+	console.log('\n-----------------');
+	console.log(lastName);
+	console.log('\n-----------------');
+	console.log(fullName);
+// now with more 'advanced' method foreach:
+runners.forEach(function(){
+fullName.push(''+firstName[i]+ '' + ' ' +lastName[i]+ '')
+})
+console.log('\n-----------------'); //becasue I like the idea of a kinda markdown in console =D why not lemme be happy
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map()
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter((shirts) => {
+	return shirts.shirt_size === "L";
+}) [];
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
