@@ -1,5 +1,7 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+// Completed during JS I project
+
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
 }
