@@ -99,17 +99,17 @@ console.log(howManyS);
 // Problem 2
 
 let trumpify = runners.map(element => {
-    return {...element, company_name: "YOUUUUHHHHFIUhhhhhddddd"};
+    element.company_name = "yughhh firrrrdd";
+    return element;
+    // return {...element, company_name: "YOUUUUHHHHFIUhhhhhddddd"};
 });
 console.log(trumpify);
 
 // Problem 3
-let obj = {
-    first: 1,
-    second: 2,
-    third: 3,
-};
 
-let newObj = {uno:1, dos:2, uno:3};
-console.log(obj);
-console.log(newObj);
+let notVerySubtlEmbezzlement = runners.map(element => {
+    element.donation = element.donation + 1000;
+    return element;
+})
+
+console.log(notVerySubtlEmbezzlement);
