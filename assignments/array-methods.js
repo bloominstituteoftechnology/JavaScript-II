@@ -90,7 +90,8 @@ console.log(allCaps);
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter((shirts) => {
 	return shirts.shirt_size === "L";
-}) [];
+}) ;
+console.log('\n-------- filter ---------');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -105,8 +106,20 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 let's get the company names!
 
-// Problem 2
+let company = runners.filter((comp) => {
+	return comp.company_name === "Oyope";
+}) ;
+console.log(company);
+
+// Problem 2 now let's try to just get the company names if their shirt is M
+console.log('\n-------- compshirt ---------'); 
+let shirtcomp = runners.filter((shirt) => {
+	if (shirt.shirt_size === "L") {
+		return runners.company_name;
+	}
+}) ;
+console.log(shirtcomp);
 
 // Problem 3
