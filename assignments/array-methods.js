@@ -94,7 +94,7 @@ let superDonors = runners.filter((runner) => {
     return runner.donation >= 200;
 }).map((runner) => `Company name: ${runner.company_name}`);
 console.log(superDonors);
-
+1
 // Problem 2 // We've decided to only send out a specialized email thank you to super donors, so now we need a list of super donor objects with email addresses, company names and donation amounts(hint: for filtering)
 //first we are going to transform the entire runners array of objects into an array of objects with only email and company name properties
 let superDonorContact = runners.map((runner) => {
@@ -111,3 +111,11 @@ let superDonorTotal = superDonorContact.reduce((total, superdonor) => {
 //  
 let superDonorTotalPercentage = superDonorTotal / ticketPriceTotal;
 console.log(superDonorTotalPercentage);
+
+// we are going to replace company name with "Your Fired!"
+
+let trumpify = runners.map(runner => {
+    return {...runner, 'company_name': 'Yur fired'};
+});
+
+console.log(trumpify)
