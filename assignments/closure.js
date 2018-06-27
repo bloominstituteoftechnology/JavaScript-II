@@ -12,8 +12,6 @@ const counter = () => {
   num = 0;
   return () => ++num;
 };
-
-
 // const newCounter = counter();
 // newCounter(); 
 // newCounter(); 
