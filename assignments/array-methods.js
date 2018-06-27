@@ -89,16 +89,40 @@ let freeShirts = runners.reduce((list, runner) => {
 console.log(freeShirts);
 
 // Problem 2: An alphabeticalized list of all of the different companies participating is needed.
-let allCompanies = runners.map(runner => runner.company_name);
-let companies = allCompanies.sort().filter((company, index) => allCompanies.indexOf(company) === index);
+let companies = runners.reduce((list, runner) => {
+    if (!list.includes(runner.company_name)) {
+        list.push(runner.company_name);
+    }
+    return list.sort();
+}, []);
+
+//first try:
+// let allCompanies = runners.map(runner => runner.company_name);
+// let companies = allCompanies.sort().filter((company, index) => allCompanies.indexOf(company) === index);
 console.log(companies);
 
 // Problem 3: How much as each company donated?
-let firstArray = runners.map(runner => {
-    return {[runner.company_name]: runner.donation};
-}, []);
-let companyDonations = firstArray.reduce((obj, company) => {
-    obj[item.;
+let companyDonations = runners.reduce((list, runner) => {
+    let key = runner.company_name;
+    if (!list.hasOwnProperty(key)) {
+       list[key] = runner.donation;
+    } else {
+        list[key] = list[key] += runner.donation;
+    }
+    return list;
 }, {});
+
+//first try:
+// let firstArray = runners.map(runner => {
+//     return {[runner.company_name]: runner.donation};
+// }, []);
+// let companyDonations = firstArray.reduce((list, obj) => {
+//     for (let key in obj) {
+//         if (obj.hasOwnProperty(key)) {
+//             list[key] = (list[key] || 0) + obj[key];
+//         }
+//         return list;
+//     }
+// }, {});
 
 console.log(companyDonations);
