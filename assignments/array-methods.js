@@ -67,21 +67,24 @@ for (i = 0; i < runners.length; i++){
     console.log(fullName);
     }
   
-  
-  runners.forEach(function(first_name, last_name){
-   let i = 0
-    let fullName = [];
-    fullName.push(runners[i]
-    .first_name
-    .last_name);  
-    i++;
-    console.log(fullName);
-  });
+    let i = 0;
+    runners.forEach(function(first_name, last_name){
+      
+      let fullName = [];
+      fullName.push(runners[i].first_name, runners[i].last_name)
+      console.log(fullName);
+      i++;
+    });
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+let i = 0;
+let allCaps = runners.map(capFirst => {
+  console.log(runners[i].first_name.toUpperCase())
+  i++;
+
+});
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
@@ -94,7 +97,9 @@ let ticketPriceTotal = [];
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  
+// I want you to think of potential problems you could solve given the data set and the 5k fun run theme.
+// Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
 
