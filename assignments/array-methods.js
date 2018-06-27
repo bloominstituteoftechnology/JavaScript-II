@@ -99,7 +99,7 @@ console.log(`\nTotal donations: \n$${finalNum}`);
 
 let whales = runners.filter(function(x) {return x.donation > 200});
 
-let newWhales = []
+let newWhales = [];
 
 whales.forEach(function(x)  {newWhales.push(x.first_name)})
 
@@ -107,10 +107,23 @@ console.log(`\nGuests who donated over $200: \n${newWhales}`)
 
 
 // Problem 2
-
+// let fullName = [];
+// runners.forEach(function(x){fullName.push(x.first_name + " " + x.last_name)})
 //contact info
+let list = [];
+runners.forEach(function(x){list.push(x.first_name + " : " + x.email)});
 
+// let emailList = runners.forEach(function(x){return x.email})
+console.log(`\nEmail list:\n`)
+console.log(list);
 // Problem 3
+//first letter of every runner
+let latsVar = runners.map(function(x){return x['first_name'].charAt((1))})
+console.log(latsVar);
+
+// let allCaps = runners.map(function(x) {return x['first_name'].toUpperCase()})
+
+//Maybe Later stretch
 // companies with more than 1 person
 // runners.filter( function(x){return x.company === })
 
