@@ -62,9 +62,13 @@ console.log(fullName);
 //or//
 
 let conferenceNames = runners.forEach(function(i){
-  fullName.push(i.first_name + ' ' + i.last_name);
+  runners.push(i.first_name + ' ' + i.last_name);
 });
-console.log(fullName);
+console.log(conferenceNames);
+
+//or//
+
+let conferenceNames = runners.forEach((i) => {fullName.push(`${i.first_name} ${i.last_name}`);});
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -120,7 +124,9 @@ console.log(email);
 // Problem 2
 let ids = [];
 ids = runners.filter(function(element){
-  return element.id;
+  if(element.donation > 100){
+    return `Thanks you ${first_name} for the donation`;
+  }
 });
 console.log(ids);
 

@@ -20,6 +20,9 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   let sum = x + y;
   cb(sum);
+
+  //or//
+  cb(x + y);
 }
 
 function multiplyNums(x, y, cb) {
@@ -37,6 +40,11 @@ function contains(item, list, cb) {
     cb(false);
   }
 }
+
+//or//
+
+if(list.includes(item) === true) cb(true);
+else cb(false);
 
 /* STRETCH PROBLEM */
 
