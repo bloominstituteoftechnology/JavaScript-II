@@ -1,4 +1,5 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed
+// updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -54,30 +55,63 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName.
 let fullName = [];
+runners.forEach(function(item){
+  fullName.push(item.first_name + " " + item.last_name)
+})
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all
+// caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+allCaps = runners.map(function(item) {
+  return item.first_name.toUpperCase()
+})
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size.
+ // Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts = runners.filter(function(item) {
+  return item.shirt_size != 'L'
+})
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce(function(ticket, runners) {
+    return ticket += runners.donation
+  }, 0)
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//There's a raffle for a brand new car sponsored by the state government. All government employees
+// are banned from participating in the raffle to avoid controversy. Give back a new array
+// that has no government employees.
+
+let civilians = runners.filter(function(item){
+  return !item.email.includes('.gov')
+})
 
 // Problem 2
+// Anyone donating more than 249 get access to a VIP room and a small thank you basket.
+// Give back a list of VIP members to print name tags and know how many baskets to buy.
+let vips = runners.filter(function(item){
+  return item.donation >= 250;
+})
+
+console.log(vips)
 
 // Problem 3
+// Last year we had some confusion over people with very similar names. To avoid this,
+// we need to print the name tags with the id right next to them! Please get us the print-ready list
+let printList = runners.map(function(item) {
+  return item.first_name + " " + item.last_name + "-" + item.id
+})
+console.log(printList)
