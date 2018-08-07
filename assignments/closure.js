@@ -45,12 +45,12 @@ const counterFactory = (startNumber = 0) => {
     // `increment` should increment a counter variable in closure scope and return it.
     increment: () => {count++; return count},
     // `decrement` should decrement the counter variable and return it.
-    decrement: function() {count--; return count}
+    decrement: () => {count--; return count}
   };
   // Return an object that has two methods called `increment` and `decrement`.
   return counter;
 };
-
+// This function is a possible candidate for a Immediately-invoked function expression
 let myCounter1 = counterFactory(20);
 console.log(myCounter1.increment());
 console.log(myCounter1.increment());
