@@ -84,8 +84,21 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1. Use .forEach() to generate a list of all the emails
+let emailList = [];
+runners.forEach(function(element) {
+  emailList.push(`${element.email}`);
+});
+console.log(emailList);
 
-// Problem 2
+// Problem 2. Use .map() to generate a list of all the company names in lower case.
+let companyList = [];
+companyList.push(runners.map(element => element.company_name.toLowerCase()));
+console.log(companyList);
 
-// Problem 3
+// Problem 3. Use .filter() to find people who donated more than $200 and generate a list of their full name.
+let donerName = [];
+let newArr = []
+newArr.push(runners.filter(element => element.shirt_size === "L"));
+donerName.push()
+console.log(donerName);
