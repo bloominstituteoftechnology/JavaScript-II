@@ -83,63 +83,6 @@ multiplyNums(2, 4, multiplying);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
-  return cb(arr[items.length - 1]);
-}
-
-function getLast(items) {
-  return items[items.length - 1];
-}
-
-last(items, function(getLast){
-  console.log(getLast);
-});
-
-
-
-
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
