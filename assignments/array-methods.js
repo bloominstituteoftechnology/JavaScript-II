@@ -111,9 +111,11 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //Sort the last names by alphabetical order.
-
+// Using map and will reformat in forEach as well.
 // Problem 2
 //Get company names for potential sponsorship list.
+//Will use both map and forEach.
 
 // Problem 3
 //Figure out how many of each size shirt we need.
+//Will use map for a count and reduce to sum....
