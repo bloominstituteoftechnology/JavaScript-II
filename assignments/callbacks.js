@@ -59,8 +59,22 @@ console.log(multiplyNums(4, 2, multiply))
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item, list);
 }
 
+function itemHere(n, arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] === n) {
+      console.log(arr[i]);
+      return true;
+    }
+  }
+  return false;
+}
+
+
+console.log(itemHere('Gum', items));
+// console.log(contains('Gum', items, itemHere));
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
