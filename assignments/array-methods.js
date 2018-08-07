@@ -85,11 +85,18 @@ console.log(ticketPriceTotal);
 // Alphabetical order is hard to do manually and apparently hard for me to do in JS... Return an array with the last names in alphabetical order.
 let lastNameSort = [];
 runners.forEach(function(element) {
-  lastNameSort.push(element.first_name);
+  lastNameSort.push(element.last_name);
+  return lastNameSort.sort(lastNameSort);
 });
 console.log(lastNameSort);
 // Problem 2
-// runnders.reduce((x, y) =>{
-//   if current > highest
-// })
+// We need to hurry this assignment up. List the avg of all donations.
+let avgDonation = runners.reduce((donations, item) =>{
+  return donations += item.donation;
+}, 0)
+avgDonation = avgDonation / runners.length;
+console.log(avgDonation);
 // Problem 3
+// For some reason the shirt company wants their shirt sizes all in lower case.
+let shirtLowerCase = runners.map(x => x.shirt_size.toLowerCase());
+console.log(shirtLowerCase); 
