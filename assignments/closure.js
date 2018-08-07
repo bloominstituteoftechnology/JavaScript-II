@@ -68,10 +68,12 @@ const counterFactory = () => {
   console.log("obj increments to " + obj.count);
   obj.decrement();
   console.log("obj decrements to " + obj.count);
+
+  return obj;
   
 
 };
 
-counterFactory();
+console.log(counterFactory());
 
 // I think this is what the question was asking? If not, we can talk on our 1 on 1's about it.
