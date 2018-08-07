@@ -76,9 +76,24 @@ contains("tent", ["stakes", "tent", "drinks", "food"], function(item, list) {
 });
 
 /* STRETCH PROBLEM */
+let utensils = ["fork", "spoon", "knife", "fork", "spoon", "knife", "spachela"];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  console.log(cb(array));
 }
+
+function dupRemove(arr) {
+  let nonDup = Array.from(new Set(arr));
+  return nonDup;
+}
+
+removeDuplicates(utensils, dupRemove);
+
+// Another way of doing the same thing.
+removeDuplicates(utensils, function(element) {
+  let nonDup = Array.from(new Set(element));
+  return nonDup;
+});
