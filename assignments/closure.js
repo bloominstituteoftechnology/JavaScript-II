@@ -1,11 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function theDarkSide(){
+  let character = "Darth Vader";
 
+  function armChop(){
+    let action = "lightsaber slash";
+    console.log(character + " uses his " + action + " to chop off Lukes arm");
+
+  function darkSideSucks(){
+    let painfulTruth = "I am your Father"
+    console.log(character + " breathes heavy, the replies.. "+ painfulTruth);
+  }
+    darkSideSucks();
+  }
+  armChop();
+}
+
+theDarkSide();
 
 // ==== Challenge 2: Create a counter function ====
+let plusOne = 0;
+
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  
+  return plusOne += 1;
 };
+
+counter();
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
