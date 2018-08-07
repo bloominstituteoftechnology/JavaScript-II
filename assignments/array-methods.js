@@ -110,7 +110,10 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Sort the last names by alphabetical order.
 
 // Problem 2
+//Get company names for potential sponsorship list.
 
 // Problem 3
+//Figure out how many of each size shirt we need.
