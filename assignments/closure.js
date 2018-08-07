@@ -1,12 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-let name = 'SPIDA';
+function jazz() {
+  let name = 'SPIDA';
 
-function dunkIt() {
-  console.log(name + ', with another slam!');
+  function dunkIt() {
+    console.log(name + ', with another slam!');
+  }
+
+  return dunkIt();
 }
 
-dunkIt();
+jazz();
 
 // ==== Challenge 2: Create a counter function ====
 let counter = () => {
