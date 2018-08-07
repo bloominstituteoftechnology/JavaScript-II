@@ -49,22 +49,29 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 
+  let obj = {
+    "count": 0,
+    "increment": function() {
+      obj.count += 1;
+      return obj.count;
+    },
+    "decrement": function() {
+      obj.count -= 1;
+      return obj.count;
+    }
+  };
+  
+  console.log("obj increments to " + obj.count);
+  obj.increment();
+  console.log("obj increments to " + obj.count);
+  obj.increment();
+  console.log("obj increments to " + obj.count);
+  obj.decrement();
+  console.log("obj decrements to " + obj.count);
   
 
 };
 
-let obj = {
-  "count": 0,
-  "increment": function() {
-    obj.count += 1;
-    return obj.count;
-  },
-  "decrement": function() {
-    obj.count -= 1;
-    return obj.count;
-  }
-};
+counterFactory();
 
-console.log(obj["count"]);
-obj.increment();
-console.log(obj.count);
+// I think this is what the question was asking? If not, we can talk on our 1 on 1's about it.
