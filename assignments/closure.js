@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+unction largePiece() {
+  let smallPiece = "This is inside the largePiece";
+    console.log(smallPiece);
 
+  function evenSmallerPiece () {
+    console.log( smallPiece + " " + "and this is inside the smallPiece, which is inside the largePiece.")
+  }
+  evenSmallerPiece();
+}
+
+largePiece();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
