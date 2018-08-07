@@ -14,7 +14,15 @@ greeting();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 0;
+
+  function add() {
+    count += 1;
+  }
   // Return a function that when invoked increments and returns a counter variable.
+  const newCount = counter();
+
+  console.log(newCount());
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
