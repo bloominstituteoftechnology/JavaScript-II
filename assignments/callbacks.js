@@ -5,22 +5,22 @@ function firstItem(arr, cb) {
   return cb(arr);
   }
 
-function findFirst(a) {
-  return a[0];
-}
+  function findFirst(a) {
+    return a[0];
+  }
 
-console.log(firstItem(items, findFirst));
+  console.log(firstItem(items, findFirst));
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr);
 }
 
-function length(item) {
-  return item.length;
-}
+  function length(item) {
+    return item.length;
+  }
 
-console.log(getLength(items, length));
+  console.log(getLength(items, length));
 
 
 function last(arr, cb) {
@@ -28,19 +28,39 @@ function last(arr, cb) {
   return arr[cb(arr)];
 }
 
-function getLastSpot(item) {
-  return item.length-1; 
-}
+  function getLastSpot(item) {
+    return item.length-1; 
+  }
 
-console.log(last(items, getLastSpot));
+  console.log(last(items, getLastSpot));
 
-function sumNums(x, y, cb) {
+function sumNums(x, y, cd) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  let result = x + y;
+
+  function showIt() {
+    console.log(result);
+  }
+
+  showIt();
 }
+
+sumNums(3, 3);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  let product = x * y;
+
+  function showIt2() {
+    console.log(product);
+  }
+
+  showIt2();
 }
+
+multiplyNums(4, 4);
+
+/* STRETCH PROBLEM */
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
