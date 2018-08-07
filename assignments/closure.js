@@ -1,11 +1,32 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const hello = () => {
+  const first = "hello";
 
+  function world() {
+    const second = "world";
+    console.log(`${first} ${second}`);
+  }
+  world();
+};
+
+hello();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let numberCount = 0;
+
+  function nestedFunction() {
+    numberCount++;
+    console.log(numberCount);
+    return numberCount;
+  }
+  nestedFunction();
+  nestedFunction();
 };
+
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
@@ -17,4 +38,19 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let counter = 0;
+    function increment(){
+      counter++;
+      console.log(counter);
+    }
+    function decrement(){
+      counter--;
+      console.log(counter);
+    }
+increment();
+increment();
+increment();
+increment();
+decrement();
 };
+counterFactory()
