@@ -95,6 +95,22 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Director sobered up and wanted everyones first name in lower case
+
+let newCaps  = runners.map( function(item){
+    return item.first_name.toLowerCase();
+
+});
+
+console.log(newCaps);
+
 // Problem 2
 
+let smallShirts = runners.filter(largeShirts => largeShirts["shirt_size"] = "s");
+    
+
+;
+console.log(smallShirts);
+
 // Problem 3
+
