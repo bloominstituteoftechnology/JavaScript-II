@@ -4,8 +4,8 @@ function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
   return cb(arr);
 }
-function first(items) {
-  return items[0];
+function first(item) {
+  return item[0];
 }
 console.log(firstItem(items, first));
 
@@ -15,8 +15,8 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr);
 }
-function length(items) {
-  return items.length;
+function length(item) {
+  return item.length;
 }
 console.log(getLength(items, length));
 
@@ -26,8 +26,8 @@ function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr);
 }
-function lastItem(items) {
-  return items[items.length - 1];
+function lastItem(item) {
+  return item[item.length - 1];
 }
 console.log(last(items, lastItem));
 
