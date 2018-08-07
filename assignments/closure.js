@@ -24,10 +24,6 @@ characterActions("run");
 characterActions("eat");
 
 // ==== Challenge 2: Create a counter function ====
-// const counter = () => {
-//   // Return a function that when invoked increments and returns a counter variable.
-//   return ++counter;
-// };
 
 const counter = function() {
   // Return a function that when invoked increments and returns a counter variable.
