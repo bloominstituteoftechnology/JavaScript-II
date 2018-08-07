@@ -54,18 +54,21 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.  Combine both
+//the first and last names into a new array called fullName.
 let fullName = [];
+runners.forEach(obj => fullName.push(obj.first_name + ' ' + obj.last_name))
 console.log(fullName);
-
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+runners.map(obj => allCaps.push(obj.first_name.toUpperCase()));
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -77,7 +80,17 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Write a function that will take in an array of test scores and returns the rounded average:
+var scores = [100, 92, 74, 86, 91];
+function average(scores) {
+  return Math.round((scores.reduce((total, ele) => total += ele)) / scores.length);
+}
 
 // Problem 2
+//Write a function that will convert an array of speed limits in MPH converted to KPH; 1 mi/h = 1.61 km/h
+
+function convert(mph) {
+  return mph.map(speed => speed * 1.61 + 'Kilometers per hour');
+}
 
 // Problem 3
