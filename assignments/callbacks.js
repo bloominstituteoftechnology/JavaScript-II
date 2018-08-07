@@ -20,7 +20,7 @@ getLength(items, function(length) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr[3]);
+  return cb(arr[arr.length - 1]);
 }
 
 last(items, function(last) {
