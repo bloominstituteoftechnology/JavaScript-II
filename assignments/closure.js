@@ -1,12 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+//Picking up an object
 
+function makeObject() {
+  let object = 'phone';
+
+  function pick() {
+    console.log("Pick up the " + object);
+  }
+  pick();
+}
+makeObject();
 
 // ==== Challenge 2: Create a counter function ====
+let value = 0;
 const counter = () => {
+  increment = 1;
+  value = value + increment;
+  console.log(value);
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
+counter();
 // newCounter(); // 1
 // newCounter(); // 2
 
