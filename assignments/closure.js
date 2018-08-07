@@ -9,7 +9,7 @@ function sayName() {
     console.log(character + " is stealthy");
     
     function weapon() {
-      console.log(character + " likes to use " + myWeapon + " defeat enemies");
+      console.log(character + " likes to use " + myWeapon + " to defeat enemies");
     }
     
     weapon();
