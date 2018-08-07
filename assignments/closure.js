@@ -1,11 +1,39 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function myName() {
+  let name = 'Kevin Sooter';
 
+  function goals() {
+    let myLanguage = 'JS';
+    console.log(name + ' is a Software Dev in the making');
+
+    function languageOfChoice() {
+      console.log(
+        name + ' likes to use ' + myLanguage + ' to create software '
+      );
+    }
+
+    languageOfChoice();
+  }
+
+  goals();
+}
+
+myName();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = (() => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let newCounter = 0;
+  return () => {
+    newCounter += 1;
+    return newCounter;
+  };
+})();
+
+counter();
+
+console.log(counter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
