@@ -22,7 +22,7 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let variable = 0;
   return function() {
-    return ++variable; 
+    return ++variable;
   }
 }
 
