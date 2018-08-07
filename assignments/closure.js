@@ -22,15 +22,17 @@ parent();
 //   // Return a function that when invoked increments and returns a counter variable.
 // };
 
-let count = 0;
-
 const newCounter = function counter(){
-  count += 1;
+  let count = 0;
+  function countUp(){
+    return count++;
+  }
+  countUp();
+  countUp();
+  countUp();
   console.log(count);
 }
 
-newCounter();
-newCounter();
 newCounter();
 
 // Example usage: const newCounter = counter();
@@ -57,6 +59,7 @@ const counterFactory = () => {
   console.log(counterObj.increment());
   console.log(counterObj.increment());
   console.log(counterObj.increment());
+  console.log(counterObj.decrement());
   console.log(counterObj);
 };
 
