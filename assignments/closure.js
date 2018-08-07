@@ -15,12 +15,16 @@ jazz();
 // ==== Challenge 2: Create a counter function ====
 let counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  let value = 0;
-  return () => ++value; 
+  var value = 0;
+  return () => ++value;
 } 
 
 const newCounter = counter();
 
+console.log(counter()());
+console.log(counter()());
+console.log(newCounter());
+console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
 
