@@ -91,7 +91,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//There's a raffle for a brand new car sponsored by the state government. All government employees
+// are banned from participating in the raffle to avoid controversy. Give back a new array
+// that has no government employees.
+
+let civilians = runners.filter(function(item){
+  return !item.email.includes('.gov')
+})
 
 // Problem 2
+// Anyone donating more than 249 get access to a VIP room and a small thank you basket.
+// Give back a list of VIP members to print name tags and know how many baskets to buy.
+let vips = runners.filter(function(item){
+  return item.donation >= 250;
+})
+
+console.log(vips)
 
 // Problem 3
+// Last year we had some confusion over people with very similar names. To avoid this,
+// we need to print the name tags with the id right next to them! Please get us the print-ready list
+let printList = runners.map(function(item) {
+  return item.first_name + " " + item.last_name + "-" + item.id
+})
+console.log(printList)
