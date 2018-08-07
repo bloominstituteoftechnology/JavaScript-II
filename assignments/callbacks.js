@@ -66,9 +66,23 @@ contains("Pencil", items, function(present) {
   console.log(present);
 });
 
+dupArr = [1, 2, 3, 2, 2, 1, 2, 4, 5, 2, 1, 6, 7];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  
+  var dupFree = array.filter((item, position) => {
+    /* 
+      if the first instance of the current item 
+      is equal to the current position then 
+      return that item
+    */
+    return array.indexOf(item) == position;
+  });
+  // Pass the duplicate free array to the callback function.
+  cb(dupFree);
 }
+
+// test the callback
+removeDuplicates(dupArr, (result) => {
+  console.log(result);
+});
