@@ -58,26 +58,85 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 console.log(fullName);
 
+runners.forEach(function(element, index) {
+    fullName.push(element["first_name"] + " " + element["last_name"]);
+});
+
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
 console.log(allCaps); 
+
+runners.map(function(x) {
+    allCaps.push(x.first_name.toUpperCase()); 
+})
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
 console.log(largeShirts);
 
+runners.filter(function(x) {
+    if(x.shirt_size === "L")
+    largeShirts.push(x);
+})
+
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 console.log(ticketPriceTotal);
 
+runners.reduce(function(r, a) {
+    ( r + a.donation);
+}, 0);
+
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// We need an email list of all Runners to send out annual reminders for our marathon event. Collect all runner's emails.
+let emailList = [];
+
+runners.forEach(function(participant) {
+    emailList.push(participant["donation"]);
+});
+
+console.log(emailList);
 
 // Problem 2
+// This year, we are splitting the runners into two teams to see which teams time is the fastest. Place even id numbered runners in teamBlue and odd id numbered runners into teamRed.
+
+let teamBlue = [];
+let teamRed = [];
+
+runners.filter(function(participant) {
+    if(participant.id % 2 === 0) {
+        teamBlue.push(participant);
+    } else {
+        teamRed.push(participant);
+    }
+})
+
+console.log(teamBlue);
+console.log(teamRed);
 
 // Problem 3
+// This year we are making acknowledgements to businesses who donated an oustanding amount to the marathon. If donators donated more than 200, collect their information into the mvpDonator array.
+
+let superNova= [];
+let theFlash = [];
+let babyCheetah = [];
+
+runners.filter(function(participant) {
+    if(participant.donation >= 200) {
+        superNova.push(participant);
+    } else if(participant.donation >= 100) {
+        theFlash.push(participant);
+    } else {
+        babyCheetah.push(participant)
+    }
+})
+
+console.log(superNova);
+console.log(theFlash);
+console.log(babyCheetah);
