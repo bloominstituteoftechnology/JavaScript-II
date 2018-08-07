@@ -1,6 +1,26 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function Lambda() {
+  //   // lexical scope
+  let name = "Joseph";
+    
+  function motivation() {
+  let job = "Software Developer";
+  console.log(name + " hopes to find a job");
+      
+  function employed() {
+         console.log(name + " hopes to get a " + job + " position ");
+       }
+      
+     employed();
+    }
+    
+   motivation();
+   }
+  
+  
+  Lambda();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
