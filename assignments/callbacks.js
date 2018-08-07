@@ -1,11 +1,19 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
+  return cb(arr);
 }
+
+function first(items) {
+  console.log(items[0]);
+}
+
+firstItem(items, first);
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr);
 }
 
 function last(arr, cb) {
@@ -20,12 +28,12 @@ function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
+/* STRETCH PROBLEMS */
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
-
-/* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
