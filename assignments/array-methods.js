@@ -71,7 +71,7 @@ function toUpper(x) {
   return x.toUpperCase();
 };
 let allCaps = [];
-allCaps = runners.map((first_name, runners) => return first_name.toUpperCase());
+allCaps += runners.map((first_name) => { return runners.first_name });
 
 console.log(allCaps);
 
