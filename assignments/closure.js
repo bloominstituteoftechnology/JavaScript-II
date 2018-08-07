@@ -1,11 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+let userName = 'GolemSlayer552';
 
+function welcomeUser() {
+  console.log("Welcome back to the Dark Dungeon " + userName + "!");
+}
+
+welcomeUser(userName);
 
 // ==== Challenge 2: Create a counter function ====
+let countedTimes = 0;
+
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+  countedTimes++;
+  console.log(countedTimes);
 };
+
+counter();
+console.log("You've invoked me once. Hurray.");
+counter();
+console.log("You've invoked me twice, I don\'t think you need to do it anymore haha..");
+counter();
+console.log("You've invoked me three times, please stop.");
+counter();
+console.log("You've invoked me one too many times. User, this isn\'t funny anymore.");
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
