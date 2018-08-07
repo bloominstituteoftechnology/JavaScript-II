@@ -15,18 +15,16 @@ console.log(person());
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   let count = 0;
-  function newCounter() {
-    ++count;
-    return count;
-  }
+  return() => (++count);
 
   // Return a function that when invoked increments and returns a counter variable.
-  return newCounter();
+
 };
 
 const outsideCounter = counter();
-console.log(outsideCounter);
-console.log(outsideCounter);
+console.log(outsideCounter());
+console.log(outsideCounter());
+console.log(outsideCounter());
 
 
 
