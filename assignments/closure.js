@@ -1,11 +1,42 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function SwingSword(name, weapon) {
+  let character = name;
+  console.log("Your character is named " + name);
+
+  function attachWeapon() {
+    let weapons = weapon;
+    console.log(name + " has equiped the " + weapons);
+
+    function attack() {
+      console.log(name + " has attacked the enemie with a " + weapon);
+    }
+
+    attack();
+  }
+
+  attachWeapon();
+}
+
+SwingSword("Kazuma", "Sword");
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+let countNum = 0;
+const counter = function(element) {
   // Return a function that when invoked increments and returns a counter variable.
+
+  function increment() {
+    countNum++;
+    console.log(countNum);
+  }
+
+  increment();
 };
+
+counter();
+counter();
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
