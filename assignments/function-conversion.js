@@ -10,6 +10,8 @@
 //   return param1 + param2;
 // };
 // add(1,2);
+let add = (x, y) => {return x + y};
+console.log(add(1,2));
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
