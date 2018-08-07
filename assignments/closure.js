@@ -1,11 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function sayHi() { //defining
+  let word = 'Hi'; //lexical scope
+
+  function sayName() {
+    let name = 'John';
+    console.log(word + ', ' + name);
+
+    function greeting() {
+      console.log(word + ', how are you ' + name + '?');
+    }
+    greeting();
+  }
+  sayName();
+}
+sayHi(); //invoking
 
 
 // ==== Challenge 2: Create a counter function ====
+let count = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return function() {
+    return ++count;
+  }
 };
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
