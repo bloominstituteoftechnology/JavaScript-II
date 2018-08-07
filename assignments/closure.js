@@ -1,6 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function bestGuitar() {
+  let guitar = "Fender";
+  
+  function theTruth() {
+    return (guitar + " is cleaner and brighter then Gibson");  
 
+  }
+  return theTruth();
+}
+bestGuitar();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
