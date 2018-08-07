@@ -1,11 +1,29 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function cabinet() {
+  let keychain = 'public key';
+
+  function secretDrawer() {
+    console.log(`Secret Drawer has reach to ${keychain}.`);
+  }
+
+  secretDrawer();
+}
+
+cabinet();
 
 // ==== Challenge 2: Create a counter function ====
+let pushUps = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return pushUps++;
 };
+
+counter();
+counter();
+
+console.log(pushUps);
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
