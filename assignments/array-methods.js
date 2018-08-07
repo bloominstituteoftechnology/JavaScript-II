@@ -89,7 +89,31 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Use .map to place runners from last name, first name.
+let lastFirst = [];
+lastFirst = runners.map((element)=>{
+    return (`${element.last_name} ${element.first_name}`);
+});
+console.log(lastFirst);
 
 // Problem 2
+//Use .filter to filter out people with Large shirts and use .reduce to find their donations.
+let largeDonations = [];
+largeDonations = runners.filter((size)=>{
+    return size.shirt_size == "L";
+});
+largeDonations = largeDonations.reduce((theReducer, item)=>{
+    return theReducer += item.donation;
+});
+console.log(largeDonations);
 
 // Problem 3
+//Use filter to find all extra small runner and map to change their last name to "Funsize".
+let smallRunners = [];
+smallRunners = runners.filter((element)=>{
+    return element.shirt_size == "XS";
+});
+smallRunners = smallRunners.map((element)=>{
+    return (`${element.first_name} ${element.last_name = "Funsize"} `);
+});
+console.log(smallRunners);
