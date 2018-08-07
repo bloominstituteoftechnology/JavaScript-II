@@ -27,27 +27,27 @@ function multiplyNums(x, y, cb) {
 
 // testing 
 // -- 1 --
-firstItem(items, (item) => {
+firstItem(items, function(item) {
   console.log(item)
 }); // --> Pencil
 
 // -- 2 --
-getLength(items, (length) => {
+getLength(items, function(length) {
   console.log(length);
 }); // --> 4
 
 // -- 3 -- 
-last(items, (item) => {
+last(items, function(item) {
   console.log(item);
 }); // --> Gum
 
 // -- 4 --
-sumNums(4, 6, (result) => {
+sumNums(4, 6, function(result) {
   console.log(result);
 }); // --> 10
 
 // -- 5 --
-multiplyNums(4, 6, (result) => {
+multiplyNums(4, 6, function(result) {
   console.log(result);
 }); // --> 24
 
