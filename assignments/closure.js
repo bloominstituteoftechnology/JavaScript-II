@@ -1,22 +1,23 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 function sayCar() {
-  // lexical scope
   let favoriteCar = "Tesla Model S";
-  
   function whyLove() {
     console.log(favoriteCar + " is my favorite because it's the FUTURE");
   }
-  
   whyLove();
 }
 sayCar();
 
 // ==== Challenge 2: Create a counter function ====
+let counterVariable = 0;
 const counter = () => {
-  
-  // Return a function that when invoked increments and returns a counter variable.
+  counterVariable++;
+  console.log(counterVariable);
 };
+
+counter();
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
