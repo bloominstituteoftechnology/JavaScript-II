@@ -56,10 +56,33 @@ multiplyNums(5, 6, function(fifth) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return cb(true);
+    }
+  }
+  return cb(false);
 }
+
+contains("Comb", items, function(backpack) {
+  console.log(backpack);
+});
+
+contains("Notebook", items, function(backpack) {
+  console.log(backpack);
+});
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const seen = {};
+  for (let i = 0; i < array.length; i++) {
+    seen[array[i]] = true;
+  }
+  cb(Object.keys(seen));
 }
+
+removeDuplicates(items, function(myArray) {
+  console.log(myArray);
+});
