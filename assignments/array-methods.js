@@ -102,9 +102,84 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Use the .map method to see how much each participant's donation would have been in quarters.
+let donations = [];
+runners.forEach(function (runner) {
+    donations.push(runner["donation"]);
+})
+
+donations = donations.map(x => parseInt(x) * .25);
+
+console.log(donations);
 
 
 // Problem 2
+// Use the .reduce method to find the difference between the highest and lowest donation amount.
+let donations = [];
+
+runners.forEach(function (runner) {
+    donations.push(runner["donation"]);
+});
+
+donations.sort(function (a, b) { return a - b; });
+
+let highestDonation = donations[donations.length - 1];
+let lowestDonation = donations[0];
+
+let difference = highestDonation - lowestDonation;
+
+console.log(difference);
 
 
 // Problem 3
+// Use a .forEach loop to see how many shirts of the most common size have to be ordered.
+
+let shirtSizes = [];
+
+let xl3Counter = 0;
+let xl2Counter = 0;
+let xlCounter = 0;
+let lCounter = 0;
+let mCounter = 0;
+let sCounter = 0;
+let xsCounter = 0;
+
+runners.forEach(function (runner) {
+    shirtSizes.push(runner["shirt_size"]);
+})
+
+shirtSizes.forEach(function (shirt) {
+    if (shirt === "3XL") {
+        xl3Counter += 1;
+    }
+    if (shirt === "2XL") {
+        xl2Counter += 1;
+    }
+    if (shirt === "XL") {
+        xlCounter += 1;
+    }
+    if (shirt === "L") {
+        lCounter += 1;
+    }
+    if (shirt === "M") {
+        mCounter += 1;
+    }
+    if (shirt === "S") {
+        sCounter += 1;
+    }
+    if (shirt === "XS") {
+        xsCounter += 1;
+    }
+})
+
+let counterHolder = [xl3Counter, xl2Counter, xlCounter, lCounter, mCounter, sCounter, xsCounter];
+
+let commonSizeAmount = 0;
+
+counterHolder.forEach(function (counter) {
+    if (counter > commonSizeAmount) {
+        commonSizeAmount = counter;
+    }
+})
+
+console.log(commonSizeAmount);
