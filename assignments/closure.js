@@ -1,14 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function today() {
+
+  let person = "Emily";
+  
+  function goals() {
+    let tools = "MacBook";
+    console.log(person + " is learning to code");
+    
+    function hardware() {
+      console.log(person + " uses her " + tools + " everyday." );
+    }
+    
+    hardware();
+  }
+  
+  goals();
+}
+
+today();
 
 
 // ==== Challenge 2: Create a counter function ====
+// Return a function that when invoked increments and returns a counter variable.
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+  let count = 0;
+  return () => (++count);
+    console.log (counter);
+  };
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
