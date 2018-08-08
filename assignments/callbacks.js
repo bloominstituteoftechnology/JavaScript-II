@@ -14,7 +14,7 @@ firstItem(items, first);
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  console.log(cb(arr);
+  console.log(cb(arr));
  }
  let arrayLength = function(items){
    return items.length;
