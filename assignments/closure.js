@@ -1,9 +1,25 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function getPumped() {
+  let bodyPart = "butt";
 
+  function inspire() {
+    let lazyplace = "couch";
+
+    function doIt() {
+      console.log("Get your " + bodyPart + " off the " + lazyplace + " and get excited about code!");
+    }
+    doIt();
+  }
+  inspire();
+}
+
+getPumped();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 0;
+  return () => (++count);
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
