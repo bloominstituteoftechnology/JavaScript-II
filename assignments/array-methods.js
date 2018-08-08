@@ -93,10 +93,21 @@ const runners = [{
     // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
     
     // Problem 1
-    
-    
+    // Generate an array of company names with their donation amount so that the event director can create sponsorship material. Sort the array by donation amount. 
+    let sponsors = [];
+    runners.forEach(function(runner) {
+        sponsors.push({"company_name": runner.company_name, "donation": runner.donation});
+    });
+    console.log(sponsors.sort(function(a, b) {
+        return a.donation - b.donation;
+    }));
+
     // Problem 2
-    
+    // Oh no! The venue for the run has been washed out, and a new, smaller venue has been procured. The runners will have to be split into two groups to accomodate the run. Output the runners whose last names start with a-m to a new array.
+    let runnerGroupOne = runners.filter(function(runner) {
+        return /^[A-Ma-m]/.test(runner.last_name);
+    });
+    console.log(runnerGroupOne);
     
     // Problem 3
     
