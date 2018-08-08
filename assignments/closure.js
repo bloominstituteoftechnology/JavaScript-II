@@ -1,11 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function GetDressed() {
+  let character = "Knight";
+
+  function wearHelmet() {
+    let helmet = "Lambda Cap"
+    console.log(character + " dons their " + helmet);
+    function grabShield() {
+      console.log(character + " won't wear their " + helmet + " without grabbing their shield as well!");
+    }
+    grabShield();
+  }
+  wearHelmet();
+}
+GetDressed();
+
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let i = 0;
+  return function() { return i++;}
+  };
+
+const newCounter = counter();
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
