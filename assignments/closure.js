@@ -1,11 +1,49 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function writeName(firstName, lastName){
+  let yourNameIs = "Your name is ";
+
+  function writeFullName() {
+
+    return yourNameIs + firstName + lastName;
+  }
+
+  return writeFullName();
+}
+
+writeName("Abdul", "Ahmad");
+
 
 // ==== Challenge 2: Create a counter function ====
+
+const newCounter = count => {
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return count += 1;
 };
+
+return counter();
+
+};
+
+newCounter();
+
+// function newCounter(count) {
+
+//   var count = 0;
+
+
+// const counter = function() {
+//       return count += 1;
+// };
+
+// return counter();
+
+// };
+
+// newCounter();
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
