@@ -19,22 +19,22 @@ This task focuses on getting practice with callback functions by giving you an a
 ### Task 3: Array Methods
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 * [x] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
-* [ ] Complete the problems provided to you
-* [ ] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
+* [x] Complete the problems provided to you
+* [x] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
 
 ### Task 4: Closures
 We have learned that closures allow us to access values in scope that have already been invoked.  
 
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
-* [ ] Review the contents of the [closure.js](assignments/closure.js) file.  
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
-* [ ] Once you have completed this task please submit a pull request against the original fork.  
+* [x] Review the contents of the [closure.js](assignments/closure.js) file.  
+* [x] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [x] Once you have completed this task please submit a pull request against the original fork.  
 
 ## Stretch Goals
 
   
 
-* [ ] Arrow Function Syntax - You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax
+* [x] Arrow Function Syntax - You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax
 
 * [ ] Look up what an IIFE is in JavaScript and experiment with them
