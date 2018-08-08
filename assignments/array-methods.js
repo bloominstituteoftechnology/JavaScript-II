@@ -493,9 +493,33 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // Randomize a jersey number for each representative
+runners.forEach(function(item) {
+  item.jerseyNumber = Math.floor(Math.random() * 100);
+});
+console.log(runners);
 
 // Problem 2
-// Determine if any company sent multiple representatives
+// Determine if any companies sent multiple representatives
+let companyArray = runners.map(function(item) {
+  return item.company_name;
+});
+let isDuplicate = companyArray.some(function(item, idx) {
+  return companyArray.indexOf(item) != idx;
+});
+console.log(isDuplicate);
+// Stretch -- Find which companies sent multiple reprentatives
 
 // Problem 3
 // Calculate the average shirt size
+let avgArr = [];
+function find(v, runners) {
+  runners.forEach(function(a, i) {
+    Object.keys(a).forEach(function(k) {
+      if (a[k] === v) {
+        avgArr.push(v + " found in [" + [i + 1] + "]." + k);
+      }
+    });
+  });
+}
+find("M", runners);
+console.log((avgArr.length / runners.length) * 100);
