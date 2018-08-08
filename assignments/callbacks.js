@@ -16,17 +16,40 @@ function getLength(arr, cb) {
   return cb(arr);
 }
 
+function second(items) {
+  console.log(items.length);
+}
+
+getLength(items, second);
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+
+function third(items) {
+  console.log(items[items.length - 1]);
+}
+
+last(items, third);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+
+sumNums(4, 5, function(fourth) {
+  console.log(fourth);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+
+multiplyNums(5, 6, function(fifth) {
+  console.log(fifth);
+});
 
 /* STRETCH PROBLEMS */
 
