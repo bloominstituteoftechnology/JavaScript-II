@@ -56,28 +56,64 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach((runner) => {
+     fullName.push(`${runner["first_name"]} ${runner["last_name"]}`);
+});
+
 console.log(fullName);
+
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+runners.map((runner) => {
+    allCaps.push(runner["first_name"].toUpperCase());
+})
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+runners.filter((sizes) => {
+    if (sizes["shirt_size"] === "L") largeShirts.push(sizes);
+})
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal.push(runners.reduce((total, next) => {
+   return total += next["donation"];
+}, 0))
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 === An e-mail list needs to be created to send out information about future races. Collect the e-mails of all the runners, put into an array, and log that array.
+let runnerEmails = [];
+runnerEmails.map(runners.forEach((runner) => {
+    return runner["email"];
+}));
 
-// Problem 2
+console.log(runnerEmails);
 
-// Problem 3
+// Problem 2 === There was a flash flood and every runner agreed to donate an additional $5 to the city where the race was being held. Update every runner's donation by $5 and push the runners last name and new donation amount into an array, then log it.
+let newDonationTotals = [];
+runners.forEach((runner) => {
+    runner.donation += 5;
+    newDonationTotals.push(`${runner.last_name}, ${runner.donation}`);
+});
+
+console.log(newDonationTotals);
+
+// Problem 3 === A random dude offers you $10,000 to put a list of the runner's company names into one long string and log it.
+const oneCompanyName = runners.reduce((start, next) => {
+    return start += next.company_name;
+}, "")
+
+console.log(oneCompanyName);
