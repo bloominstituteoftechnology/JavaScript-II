@@ -11,12 +11,14 @@ function faveActivity() {
 console.log(faveActivity());
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const counter = (function () {
+  let count = 0;
+  return function () {count += 1; return count}
+})();
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
