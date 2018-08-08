@@ -91,7 +91,36 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//The event director needs the first names and last names 
+// of each runner along with their email addresses for creating a 
+// contact list for the runners be able to coordinate with each other.
+// Combine both the first and last names into a new array called contactList along with their email addresses.
+let contactList = [];
+
+runners.forEach(function(element) {
+  contactList.push(element.first_name + " " + element.last_name + " " + element.email)
+});
+
+console.log(contactList);
+
 
 // Problem 2
+// The event director needs the list of runners that donated $200 and up so that she knows who to send special gift cards to.
+// Get a list of runners that donated $200 and up so they know who to send the special gift cards to. Return an array named twoHundredUp 
+// that contains information about the runners that donated $200 and up and log the result
+let twoHundredUp = runners.filter((data) => {
+  return data.donation >= 200;
+});
+
+console.log(twoHundredUp);
 
 // Problem 3
+// The event director needs to have all the runner's first names converted to uppercase because they need to print place cards for 
+// an event and would like all runner working at the same companys to sit together. They would like the company names to be printed in all caps
+// so the runners can see the labels clearly and are easily read. Get the list of companies and render them in uppercase.
+// Return an array named companiesInCaps that contains the information needed and log the result.
+const companiesInCaps = runners.map(function(item) {
+  return item.company_name.toUpperCase();
+});
+
+console.log(companiesInCaps); 
