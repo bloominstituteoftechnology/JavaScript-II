@@ -1,6 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function faveActivity() {
+  let person = "Antionette";
+  function action() {
+    
+    console.log(person + " loves to sing!")
+  }
+  action();
+}
+console.log(faveActivity());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
