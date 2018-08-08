@@ -1,11 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function jazz() {
+  let name = 'SPIDA';
 
+  function dunkIt() {
+    console.log(name + ', with another slam!');
+  }
+
+  return dunkIt();
+}
+
+jazz();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+let counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  var value = 0;
+  return () => ++value;
+} 
+
+const newCounter = counter();
+
+console.log(counter()());
+console.log(counter()());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
