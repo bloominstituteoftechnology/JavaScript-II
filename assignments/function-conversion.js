@@ -1,12 +1,12 @@
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
 // let myFunction = function () {};
-let myFunction = ( )=>{};
+let myFunction = ()=>{};
 
 // let anotherFunction = function (param) {
 //   return param;
 // };
-let anotherFunction = param =>;
+let anotherFunction = (param) =>param;
 console.log(anotherFunction(2));
 
 // let add = function (param1, param2) {
@@ -28,5 +28,5 @@ let exampleArray = [1,2,3,4];
 //   return num * 3;
 // });
 // console.log(triple);
-const triple = exampleArray.map(num=> num*3);
+const triple = exampleArray.map((num)=> num*3);
 console.log(triple);
