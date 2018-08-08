@@ -110,5 +110,12 @@ const runners = [{
     console.log(runnerGroupOne);
     
     // Problem 3
-    
+    // The event director would like to make a plaque of the companies who donated at least $200 to the center. Generate a new array containing of the companies who donated at least $200 and capitalize the company names.
+    let spendFil = runners.filter(function(runner) {
+        return runner.donation >= 200;
+    });
+    let spendMap = spendFil.map(function(runner) {
+        return runner.company_name.toUpperCase();
+    });
+    console.log(spendMap);
     
