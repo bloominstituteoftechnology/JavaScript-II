@@ -23,18 +23,18 @@ whatFruit();
 // ==== Challenge 2: Create a counter function ====
 // Return a function that when invoked increments and returns a counter variable.
 
-const counter = (() => {
+const counter = () => {
   let count = 0;
   return function () {
     count += 1;
     return count
   }
-})();
-
-counter();
-counter();
-counter();
-counter();//returns 4
+};
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+newCounter();
+newCounter();//returns 4
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
