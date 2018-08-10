@@ -93,7 +93,36 @@ console.log(sum);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//The event director needs list of all businesses taking part in event converted to uppercase. 
+
+let businesses = [];
+businesses = runners.map(function(runner) {
+	return runner["company_name"].toUpperCase();
+})
+console.log(businesses); 
+
 
 // Problem 2
+//The event director needs to know how many donations was 200 and above.
+
+const arr200 = runners.filter(function(runner) {
+	return runner["donation"] >= 200;
+});
+console.log(arr200.length);
+
 
 // Problem 3
+//The event director needs to know total amount of donations 50 and less.
+
+const arr50 = runners.filter(function(runner) {
+	return runner["donation"] <= 50;
+});
+
+const arrDonation50 = [];
+arr50.forEach(function(runner) {
+	arrDonation50.push(runner.donation);
+});
+
+let sum50 = arrDonation50.reduce((a,b) => a + b);
+console.log(sum50);
+
