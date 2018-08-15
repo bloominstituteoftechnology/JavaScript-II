@@ -1,5 +1,5 @@
 
-# JavaScript - II
+# JavaScript - II - Joseph Thompson
 
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
@@ -33,7 +33,7 @@ We have learned that closures allow us to access values in scope that have alrea
 
 ## Stretch Goals
 
-  
+
 
 * [ ] Arrow Function Syntax - You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax
 
