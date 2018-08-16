@@ -36,10 +36,18 @@ last(items, lastItem);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x, y);
 }
+
+function sumTwoNums(x, y) { //callback function
+  console.log(x + y);
+}
+
+sumNums(45,23, sumTwoNums);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  
 }
 
 function contains(item, list, cb) {
