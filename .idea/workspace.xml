@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faeeb6b2-1182-4567-90c3-f9cc3973fce4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/assignments/array-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/array-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/callbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/callbacks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/closure.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/closure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/function-conversion.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/function-conversion.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="closure.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="closure.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/closure.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -45,9 +43,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function-conversion.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="function-conversion.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/function-conversion.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="26" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -61,6 +63,7 @@
         <option value="$PROJECT_DIR$/assignments/array-methods.js" />
         <option value="$PROJECT_DIR$/assignments/callbacks.js" />
         <option value="$PROJECT_DIR$/assignments/closure.js" />
+        <option value="$PROJECT_DIR$/assignments/function-conversion.js" />
       </list>
     </option>
   </component>
@@ -152,12 +155,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534369886773</updated>
-      <workItem from="1534369888162" duration="17415000" />
+      <workItem from="1534369888162" duration="18505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17415000" />
+    <option name="totallyTimeSpent" value="18505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2579" y="68" width="1151" height="879" extended-state="0" />
@@ -224,9 +227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/function-conversion.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/closure.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -234,6 +234,13 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/function-conversion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
