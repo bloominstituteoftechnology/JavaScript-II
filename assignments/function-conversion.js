@@ -21,3 +21,5 @@
 //   return num * 3;
 // });
 // console.log(triple);
+
+/*Answer*/
