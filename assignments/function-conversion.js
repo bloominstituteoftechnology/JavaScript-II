@@ -30,5 +30,5 @@ subtract(9, 4);
 // });
 // console.log(triple);
 
-var triple = exampleArray.map( x => x * 3);
+const triple = exampleArray.map( x => x * 3);
 triple;
