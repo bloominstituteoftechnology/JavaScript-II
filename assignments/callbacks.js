@@ -2,18 +2,33 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
+
+  let itemChoice = arr[0];
+  cb(itemChoice); 
 }
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  
+  let arrLength = arr.length ;
+  cb(arrLength);
 }
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+
+  let lastItem = arr.pop();
+
+  cb(lastItem);
+
 }
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+
+  let adder = x + y ;
+  
+  cb(adder);
 }
 
 function multiplyNums(x, y, cb) {
