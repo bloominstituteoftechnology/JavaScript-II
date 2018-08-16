@@ -5,7 +5,15 @@
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+let count = 0;
+const addOne = () =>{
+  return ++count;
+}
+return addOne;
 };
+const newCounter = counter();
+newCounter();
+newCounter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
@@ -17,4 +25,20 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+  const increment = () => {
+    return ++count;
+  }
+
+  const decrement = () => {
+    return --count;
+  }
+  return { increment, decrement };
 };
+const countFoo = counterFactory();
+countFoo.increment();
+countFoo.increment();
+countFoo.increment();
+
+countFoo.decrement();
+countFoo.decrement();
