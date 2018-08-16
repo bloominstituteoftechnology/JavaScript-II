@@ -54,30 +54,134 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
-console.log(fullName);
+// The event director needs both the first and last names of each runner for their running bibs.
+// Combine both the first and last names into a new array called fullName.
+
+// console.log(fullName);
+function getFullName (arrObj) {
+  let fullName = [];
+  arrObj.forEach(function(element, i){
+  //   fullName.push(arrObj[i].first_name + ' ' + arrObj[i].last_name);
+  fullName.push(element.first_name  + ' ' + element.last_name);
+  });
+  return fullName;
+}
+
+getFullName(runners);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+// The event director needs to have all the runner's first names converted to uppercase because the director
+// BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+
+// console.log(allCaps);
+function firstNameCaps(arrObj) {
+  let allCaps = [];
+
+  allCaps = arrObj.map( obj => obj.first_name.toUpperCase() );
+  return allCaps;
+}
+
+firstNameCaps(runners);
+
+
+
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-console.log(largeShirts);
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large
+// sized shirts so they can choose a different size. Return an array named largeShirts that contains information
+// about the runners that have a shirt size of L and log the result
+
+// console.log(largeShirts);
+function largeSize(arrObj) {
+  let largeShirts = [];
+
+  largeShirts = arrObj.filter(obj => obj.shirt_size === 'L');
+
+  return largeShirts;
+}
+
+largeSize(runners);
+
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a
+// ticketPriceTotal array and log the result
+;
+// console.log(ticketPriceTotal);
+
+function dontationsTotal(arrObj) {
+  let ticketPriceTotal = [];
+  let initialVal = 0;
+
+  ticketPriceTotal = arrObj.reduce((accum, current) => accum + current.donation, initialVal);
+
+  console.log(ticketPriceTotal);
+  return ticketPriceTotal;
+
+}
+dontationsTotal(runners);
+
+
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential
+// problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using
+// one or many of the array methods listed above.
 
 // Problem 1
+function rebuiltArray(objArr) {
+  let runners2 = [];
+  let tempObj = {};
+
+
+  /*
+  objArr.forEach(function(el, index){
+    runners2.push( {id: el.id,
+                    first_name: el.first_name,
+                    last_name: el.last_name,
+                    donation: el.donation,
+                    shirt_size: el.shirt_size,
+                    work_email: el.email,
+                    company: el.company_name
+                   }
+     );
+
+  });
+*/
+  objArr.forEach(function(el,index){
+    tempObj = Object.assign({   id: el.id,
+                                first_name: el.first_name,
+                                last_name: el.last_name,
+                                donation: el.donation,
+                                shirt_size: el.shirt_size,
+                                work_email: el.email,
+                                company: el.company_name
+    });
+
+    runners2.push(tempObj);
+
+  });
+    return runners2;
+
+}
+
+rebuiltArray(runners);
 
 // Problem 2
+function totalLengthFirstName(arrObj) {
+  return arrObj.map(obj => obj.first_name.length)
+               .reduce((accum, current) => accum + current, 0);
+
+}
+
+totalLengthFirstName(runners);
 
 // Problem 3
+function totalNumLargeDonations(arrObj){
+  return arrObj.filter (obj => (obj.shirt_size === 'L'))
+               .reduce((accum, current) => accum + current.donation, 0);
+}
+
+totalNumLargeDonations(runners);
+
+

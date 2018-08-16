@@ -1,14 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function swag () {
+  let str = 'Do I want Lambda swag?';
+  function getLength(){
+    str +=  ' Yes!';
+    return str;
+  }
+  return getLength;
+}
+let getSwag = swag();
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+// const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+let countUp = function() {
+  let count = 0;
+  let incrementer = function() {
+    count++;
+    return count;
+  };
+  return incrementer;
+};
+
+let counter = countUp();
+counter();
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
