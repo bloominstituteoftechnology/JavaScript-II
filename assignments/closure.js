@@ -2,13 +2,22 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+
+
+
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+
   // Return a function that when invoked increments and returns a counter variable.
+
+
+let tommyCounter = 0;
+
+const counter = () => {
+	return tommyCounter += 1;
 };
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+
+counter(); // 1
+counter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
