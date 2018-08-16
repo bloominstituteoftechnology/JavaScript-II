@@ -14,14 +14,13 @@ firstItem(items, first);
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return cb(arr);
 }
 
-function length(items) {
-  console.log(arr.length);
+function length(items) {  //callback function
+  console.log(items.length);
 }
 
-gotLength(items, length);
+getLength(items, length);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
