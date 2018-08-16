@@ -14,6 +14,7 @@ firstItem(items, first);
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr);
 }
 
 function length(items) {  //callback function
@@ -24,7 +25,14 @@ getLength(items, length);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+
+function lastItem(items) { //callback function
+  console.log(items[items.length-1]);
+}
+
+last(items, lastItem);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
