@@ -88,6 +88,18 @@ function convertAllCaps(arr) {
 let largeShirts = [];
 console.log(largeShirts);
 
+function largeSize(arr) {
+    let largeShirts = arr.filter(items => {
+      if (items.shirt_size === "L") {
+        return items;
+      }
+    });
+
+    console.log(largeShirts);
+}
+
+largeSize(runners);
+
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
