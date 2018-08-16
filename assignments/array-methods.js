@@ -88,7 +88,23 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+let highDoners = [];
+highDoners = runners.filter(runner => {
+    return runner.donation > 100
+});
+console.log(highDoners);
+//{"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 // Problem 2
+let intelRunners = [];
+intelRunners = runners.filter( runner => {
+    return runner.email.includes("intel");
+});
+console.log(intelRunners);
 
 // Problem 3
+
+let predictedDonation = [];
+predictedDonation = runners.reduce((accum, runner) => {
+    return accum + (runner.donation + 50);
+}, 0);
+console.log(predictedDonation);
