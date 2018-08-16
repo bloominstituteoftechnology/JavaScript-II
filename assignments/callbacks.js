@@ -55,4 +55,20 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+const testStretchCB = (array) => {
+  return array.filter((element, index, arr) => {
+    for(let i = index + 1; i < arr.length; i++){
+      if(element === arr[i]){
+        return false;
+      }
+    }
+    return true;
+  });
+}
+
+console.log(removeDuplicates(items, testStretchCB));
+const itemsWithDups = ['Pencil', 'Notebook', 'yo-yo', 'Notebook', 'yo-yo', 'Gum'];
+console.log(removeDuplicates(itemsWithDups, testStretchCB));
