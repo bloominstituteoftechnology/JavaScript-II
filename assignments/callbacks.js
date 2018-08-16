@@ -1,4 +1,4 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', "yo-yo"];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
@@ -75,4 +75,19 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+const duplicates = (array) => {
+  let newArr = [];
+  array.forEach((element) => {
+    if (newArr.includes(element)){
+      console.log(`Duplicate element: ${element} skipped`);
+    } else {
+      newArr.push(element);
+    }
+  });
+  console.log(newArr);
+}
+
+removeDuplicates(items, duplicates);
