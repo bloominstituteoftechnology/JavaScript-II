@@ -117,8 +117,34 @@ console.log(ticketPriceTotal);
 // or many of the array methods listed above.
 
 // Problem 1
+// find the maximum donation
+function getMaxDonor(max, entry) {
+    return max.donation > entry.donation ? max : entry;
+}
+const maxDonor = runners.reduce(getMaxDonor);
+console.log(`\nThe max donor is ${maxDonor.first_name} who gave \$${maxDonor.donation}.`);
 
 // Problem 2
+// get a list of emails
+function getEmail(entry) {
+    return entry.email;
+}
+const emails = runners.map(getEmail);
+console.log("\nEmail list");
+console.log(emails);
 
 // Problem 3
+// get a list of donors who gave at least $200
+function atLeast200(entry) {
+    return entry.donation >= 200;
+}
+
+function thankYouMessage(msg, entry) {
+    return msg + entry.first_name + ' ' + entry.last_name + ', ';
+}
+
+const bigDonors = runners.filter(atLeast200);
+const thanks = bigDonors.reduce(thankYouMessage, "Thanks to our big donors: ");
+
+console.log(`\n${thanks}who each gave at least $200.`);
 
