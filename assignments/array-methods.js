@@ -76,14 +76,7 @@ console.log(allCaps);
 let largeShirts = [];
 
    runners.filter((runner) => {
-     largeShirts.push({
-       "id"         : runner.id,
-       "first_name" : runner.first_name,
-       "last_name"  : runner.last_name,
-       "email"      : runner.email
-       // added it to where only public information could be accessed.
-       // left out donation amount and business name for a reason.
-     });
+     largeShirts.push(runner);
    });
 
 console.log(largeShirts);
@@ -111,5 +104,16 @@ runners.map((runner) => {
 });
 console.log(emailList);
 // Problem 2
-
+// Change array for shirt sizes so only needed information is seen
+runners.filter((runner) => {
+  largeShirtsfiltered.push({
+    "id"         : runner.id,
+    "first_name" : runner.first_name,
+    "last_name"  : runner.last_name,
+    "email"      : runner.email
+    // added it to where only public information could be accessed.
+    // left out donation amount and business name for a reason.
+  });
+});
+console.log(largeShirtsfiltered)
 // Problem 3
