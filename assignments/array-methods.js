@@ -88,12 +88,21 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+
+let func = runners.reduce(function(sum, value) {
+     return sum += value.donation; 
+}, 0);
+
+ticketPriceTotal.push(func); 
+
+console.log(ticketPriceTotal); 
+
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+
 
 // Problem 2
 
