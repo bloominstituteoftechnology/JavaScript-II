@@ -1,8 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-// let 
+let lastName = "Bond";
 
+function DoubleOhSeven() { 
+
+  console.log(`The name's ${lastName}, James ${lastName}`);
+};
+
+DoubleOhSeven();
 
 
 // ==== Challenge 2: Create a counter function ====
@@ -17,9 +23,9 @@ function addOne() {
     console.log(tommyCounter);
 }
 
-addOne();
-addOne();
-addOne();
+// addOne();
+// addOne();
+// addOne();
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
