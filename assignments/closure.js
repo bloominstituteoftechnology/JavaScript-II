@@ -28,14 +28,16 @@ const counterFactory = () => {
  
   let count = 0;
   const increment = () => {
-    return ++count;
+    console.log(++count);
   }
 
   const decrement = () => {
-    return --count;
+    console.log (--count);
   }
    debugger;
-  return { increment, decrement };
+  return { 
+    increment, 
+   decrement };
 };
 const countFoo = counterFactory();
 countFoo.increment();
