@@ -90,7 +90,7 @@ console.log(ticketPriceTotal);
 // Problem 1
 let highDoners = [];
 highDoners = runners.filter(runner => {
-    return runner.donation > 100
+    return runner.donation > 100;
 });
 console.log(highDoners);
 //{"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
