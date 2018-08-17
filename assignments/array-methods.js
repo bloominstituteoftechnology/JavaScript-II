@@ -149,4 +149,28 @@ function filterDonation(arr) {
 filterDonation(runners);
 
 
-// Problem 3
+// Problem 3: Need to count all shirt sizes for a production run
+// Solution 3: 
+
+
+function countShirtSize(arr) {
+  let accumulator3XL = 0;
+  let accumulator2XL = 0;
+  let accumulatorXL = 0;
+  let accumulatorL = 0;
+  let accumulatorM = 0;
+  let accumulatorS = 0;
+  let accumulatorXS = 0;
+  arr.filter((element,index,array) => {
+    if (element.shirt_size === "3XL") {accumulator3XL++;} 
+    if (element.shirt_size === "2XL") {accumulator2XL++;} 
+    if (element.shirt_size === "XL") {accumulatorXL++;} 
+    if (element.shirt_size === "L") {accumulatorL++;} 
+    if (element.shirt_size === "M") {accumulatorM++;}
+    if (element.shirt_size === "S") {accumulatorS++;}
+    if (element.shirt_size === "XS") {accumulatorXS++;}
+  });
+  console.log(`There are ${accumulator3XL} size 3XL, ${accumulator2XL} size 2XL, ${accumulatorXL} size XL, ${accumulatorL} size L, ${accumulatorM} size M, ${accumulatorS} size S and ${accumulatorXS} size XS.`)
+}
+
+countShirtSize(runners);
