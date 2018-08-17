@@ -56,21 +56,44 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+const combineNames = (item) => {
+    fullName.push(item.first_name+' '+item.last_name)
+}
+runners.forEach(combineNames);
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+ 
 let allCaps = [];
+const convertUpper = (item) => {
+    return item.first_name.toUpperCase();
+}
+allCaps = runners.map(convertUpper);
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
 let largeShirts = [];
-console.log(largeShirts);
+const sortLarge = (item) => {
+    return item.shirt_size === "L"
+}
+largeShirts = runners.filter(sortLarge);
+console.log(largeShirts); 
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+
 let ticketPriceTotal = [];
+let donations = [];
+for (i = 0; i < runners.length; i++) {
+    donations.push(runners[i].donation);
+}
+const addTotal = (total, num) => {
+    return total + num;
+}
+ticketPriceTotal = donations.reduce(addTotal);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +101,37 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+//Let's give special recognition to our especially generous donors! Compile a list of all those who donated more than $200.
+
+let superDonors = [];
+const findBigDonors = (item) => {
+    return item.donation > 200;
+}
+superDonors = runners.filter(findBigDonors);
+console.log(superDonors);
+
 // Problem 2
 
+//Let's find out how many people who work for Skinix ran in the event.
+
+let skinixEmployees = [];
+const findSkinix = (item) => {
+    return item.company_name === "Skinix";
+}
+skinixEmployees = runners.filter(findSkinix);
+console.log(skinixEmployees.length);
+
 // Problem 3
+
+//Assuming that you spent $5,000 to hold the event, find the profit by summing up the donations and subtracting the cost of the event.
+
+let profit = [];
+let donations = [];
+for (i = 0; i < runners.length; i++) {
+    donations.push(runners[i].donation);
+}
+const sumDonations = (total, num) => {
+    return total + num;
+}
+profit = donations.reduce(sumDonations, -5000);
+console.log(profit);
