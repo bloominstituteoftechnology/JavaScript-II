@@ -10,12 +10,15 @@ const addition = (a,b) => {
 addition(1,2)
 
 // ==== Challenge 2: Create a counter function ====
+let x = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return console.log(++x)
 };
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter;
+newCounter();
+newCounter();
+newCounter();
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
