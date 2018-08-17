@@ -117,8 +117,23 @@ tallyDonations(runners);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: Need to sort data alphabetically (first_name, last_name, email)
+// Solution 1: create function using .map() and .sort()
 
-// Problem 2
+function sortAlphabetically(arr) {
+  let sorted = [];
+  arr.map((element, item, array) => {
+    sorted.push(element.email);   //could be anything
+  });
+  return sorted.sort();
+}
+
+sortAlphabetically(runners);
+
+
+
+// Problem 2: Need to filter top donations (>250) by first and last name
+// Solut
+
 
 // Problem 3
