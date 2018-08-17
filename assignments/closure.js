@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const myOwnClosure = () => {
+  const myName = 'Paul';
+
+  const nestedClosure = () => {
+    const myHobby = 'Basketball Cards'
+    return `${myName} enjoys collecting ${myHobby}`
+  }
+
+  return nestedClosure;
+}
+
+const something = myOwnClosure();
+something();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
