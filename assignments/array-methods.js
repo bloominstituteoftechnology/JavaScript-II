@@ -96,8 +96,30 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: We need an array filled with objects of all the first and last names of the runners, are you a bad enough dude to be up to the task?
+const firstAndLast = runners.map(item => {
+    return {
+        first_name: item.first_name,
+        last_name: item.last_name,
+    };
+});
 
-// Problem 2
+console.log(firstAndLast);
 
-// Problem 3
+// Problem 2: We need an array filled with  all the runners information that have a donation over 200 big ones. We're putting these generous cats on a secret special government list. What say you?
+const bigDonators = runners.filter(item => {
+    if(item.donation > 200) {
+        return item;
+    }
+})
+
+console.log(bigDonators);
+
+// Problem 3: We need an array filled with the runners that belong to the government. Do it ya flunky.
+const govRunners = runners.filter(currentRunner => {
+    if(currentRunner.email.includes('gov')) {
+        return currentRunner;
+    }
+});
+
+console.log(govRunners);
