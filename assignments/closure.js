@@ -1,10 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const newMessagesFor = (name) => { 
+  const alertUser = (numOfMessages) => {
+    return `Welcome back, ${name}. You have ${numOfMessages} new messages.`;
+  }
+  return alertUser;
+}
 
+const andres = newMessagesFor('Andres');
+console.log(andres(3));
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  const addCount = () => {
+    count++;
+    console.log(count);
+  }
+  return addCount;
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
