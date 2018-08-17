@@ -1,4 +1,4 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Gum'];
 
 function firstItem(arr, cb) {
   cb(arr[0])
@@ -51,7 +51,10 @@ contains("Pencil", items, function(exists) {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+    cb(Array.from(new Set(array))
+)
 }
+
+removeDuplicates(items, function(duplicateFree) {
+    console.log(duplicateFree);
+});
