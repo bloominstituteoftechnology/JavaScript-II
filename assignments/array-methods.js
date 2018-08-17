@@ -133,3 +133,17 @@ let smallShirts = runners.filter((item)=>{
 //   });
   
 //   console.log(smallShirts);
+
+
+
+// This lets me console.log() the final tally.
+
+// let addSmall = (item) => {
+//     for (i=0; i<item.length; i++) {
+//       if (item[i].shirt_size === '2XL') {
+//         small();
+//       }
+//     }
+//   }
+// addSmall(runners);
+// console.log(small()-1);
