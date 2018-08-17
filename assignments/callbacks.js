@@ -13,7 +13,7 @@ firstItem(items, first);
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 
-  return cb(arr);
+  cb(arr);
 }
 
 function length(items) {
@@ -24,7 +24,7 @@ getLength(items,length);
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 
-  return cb(arr);
+  cb(arr);
 }
 
 function lastitem(items,last) {
@@ -35,7 +35,7 @@ last(items, lastitem);
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 
-return cb(x, y);
+cb(x, y);
 }
 
 function addNum(x, y) {
@@ -45,7 +45,7 @@ sumNums(10, 20, addNum);
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 
-  return cb(x, y);
+cb(x, y);
 }
 
 function multiplyNumbers(x, y) {
