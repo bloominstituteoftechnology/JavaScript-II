@@ -1,11 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+// again, im horrible at creating stuff lol but here goes nothing
+function makeClosure() {
+  return "Closure";
+    function logClosure() {
+      console.log(makeClosure());
+    }
+    logClosure();
+  }
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+  let count = 0;
+  return () => (++count);
+}
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
