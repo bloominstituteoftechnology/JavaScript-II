@@ -4,11 +4,20 @@
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+  let total = 0; 
+
+  const addOne = () => {
+     console.log(++total); 
+  }
+
+   return addOne; 
+}
+
+
+const newCounter = counter();
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+newCounter();  
+newCounter(); 
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
