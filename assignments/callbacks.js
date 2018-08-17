@@ -32,9 +32,17 @@ function contains(item, list, cb) {
 }
 
 /* STRETCH PROBLEM */
-
+consoleLog = (value) => {
+    console.log(value)
+}
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let result = array.filter((item, index)  =>  {
+      return array.slice(index + 1).indexOf(item) == -1
+  });
+  cb(result)
 }
+
+removeDuplicates([0,0,1,1,2,2,3,3,4,4,5,5], consoleLog);
