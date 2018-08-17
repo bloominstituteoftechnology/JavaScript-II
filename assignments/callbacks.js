@@ -61,6 +61,17 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 
+// function checkItem(arr, item) {
+//   if (arr.includes(item)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// filterItem(items, 'yo-yo');
+
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
