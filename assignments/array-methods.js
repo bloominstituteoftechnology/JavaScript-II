@@ -60,8 +60,8 @@ console.log(fullName);
 
 function fullNameFunction(arr) {
     let fullName = [];
-    arr.forEach((e,i) => {
-        fullName.push(e.first_name + ' ' + e.last_name);
+    arr.forEach((element,item, array) => {   //array in forEach not used
+        fullName.push(element.first_name + ' ' + element.last_name);
     });
     console.log(fullName);
 }
@@ -89,9 +89,9 @@ let largeShirts = [];
 console.log(largeShirts);
 
 function largeSize(arr) {
-    let largeShirts = arr.filter(items => {
-      if (items.shirt_size === "L") {
-        return items;
+    let largeShirts = arr.filter(item => {
+      if (item.shirt_size === "L") {
+        return item;
       }
     });
 
