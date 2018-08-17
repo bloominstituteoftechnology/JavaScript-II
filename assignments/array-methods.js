@@ -85,10 +85,24 @@ let ticketPriceTotal = runners.reduce( (acc, curr) => acc + curr.donation. 0 );
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve 
+// given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Find the companies who donated over $200 to feature these sponsors:
+let goldSponsors = runners.filter(elem => elem.donation >= 200);
 
 // Problem 2
+// Filter the info to get just the company name of the gold sponsors:
+let goldCompanies = [];
+goldSponsers.forEach( elem => goldCompanies.push(elem.company_name.toUpperCase()) );
 
 // Problem 3
+// Get all names & email addresses to send information to.
+// {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
+let emailContacts = runners.map( elem => {
+    let temp = [];
+    temp = { "name": `${elem.first_name} ${elem.last_name}`, "email": elem.email };
+    return temp;
+ });
+console.log(emailContacts);
