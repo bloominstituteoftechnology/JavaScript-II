@@ -40,16 +40,22 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
 };
 
-var counterFactory = {
-  count: 0,
-  increment: function () {
-    count++;
-    return this.count;
-  },
-  decrement: function () {
-    count--;
-    return this.count;
-  }
+var counterFactory = function () {
+    let count = 0;
 
-
+    let counterObj = {
+      increment: function() {
+        count++;
+        return count;
+      },
+      decrement: function() {
+        count--;
+        return count;
+      }
+    }
+    return counterObj;
 }
+
+var upDown = counterFactory();
+upDown.increment();
+upDown.decrement();
