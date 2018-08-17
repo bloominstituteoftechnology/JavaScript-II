@@ -101,6 +101,37 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+//Let's give special recognition to our especially generous donors! Compile a list of all those who donated more than $200.
+
+let superDonors = [];
+const findBigDonors = (item) => {
+    return item.donation > 200;
+}
+superDonors = runners.filter(findBigDonors);
+console.log(superDonors);
+
 // Problem 2
 
+//Let's find out how many people who work for Skinix ran in the event.
+
+let skinixEmployees = [];
+const findSkinix = (item) => {
+    return item.company_name === "Skinix";
+}
+skinixEmployees = runners.filter(findSkinix);
+console.log(skinixEmployees.length);
+
 // Problem 3
+
+//Assuming that you spent $5,000 to hold the event, find the profit by summing up the donations and subtracting the cost of the event.
+
+let profit = [];
+let donations = [];
+for (i = 0; i < runners.length; i++) {
+    donations.push(runners[i].donation);
+}
+const sumDonations = (total, num) => {
+    return total + num;
+}
+profit = donations.reduce(sumDonations, -5000);
+console.log(profit);
