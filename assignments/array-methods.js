@@ -105,6 +105,15 @@ largeSize(runners);
 let ticketPriceTotal = [];
 console.log(ticketPriceTotal);
 
+function tallyDonations(arr) {
+  let totalDonations = arr.reduce((accumulator, item) => {
+    return accumulator += item.donation;
+  },0);
+  return totalDonations;
+}
+
+tallyDonations(runners);
+
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
