@@ -57,7 +57,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
 runners.forEach(runner => {
-    return fullName.push(`${runner.first_name} ${runner.last_name}`)});
+    fullName.push(`${runner.first_name} ${runner.last_name}`)});
 /*runners.forEach(function(runner){
     fullName.push(`${runner.first_name} ${runner.last_name}`);
 });*/
@@ -96,7 +96,7 @@ console.log(highDoners);
 //{"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 // Problem 2
 let intelRunners = [];
-intelRunners = runners.filter( runner => {
+intelRunners = runners.filter(runner => {
     return runner.email.includes("intel");
 });
 console.log(intelRunners);
