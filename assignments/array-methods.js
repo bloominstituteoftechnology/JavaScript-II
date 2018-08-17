@@ -103,14 +103,49 @@ const largeShirts = ()=>{
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+const ticketPriceTotal = (accumulator,currentValue,i ) => {
+    currentValue = runners[i].donation;
+    return accumulator+currentValue;
+    }
+    runners.reduce(TicketPriceTotal,0);
+    
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//List of all email addresses
+let emails =(items, i)=>{
+    return runners[i].email;
+    }
+    
+    const emailList = runners.map(emails)
+    
+    console.log(emailList);
+    
 
 // Problem 2
+//Only allow to run if donation is greater than $100
+
+const donatedEnough = (donation, i) =>{
+    let amount= runners[i].donation;
+    if (amount >=100){
+        console.log(runners[i].first_name);
+      }
+    }
+    let canrun = runners.filter(donatedEnough);
+    
+    console.log(canrun);
+    
 
 // Problem 3
+//list of all the companies of the runners that participated
+
+const grabemails = (item, i) => {
+    return (runners[i].email)
+  }
+  
+  let companiesWhoParticipated = runners.map(grabemails,0);
+  
+  console.log(companiesWhoParticipated);
+  
