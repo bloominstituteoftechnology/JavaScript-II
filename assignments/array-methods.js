@@ -73,14 +73,32 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.reduce((total, item) => {return total += item.donation})
+const donate = [];
+runners.forEach(item => {donate.push(item.donation)});
+let ticketPriceTotal = donate.reduce((total, item) => {return total += item});
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Create alphabetical list of unique companies that contributed donations
+let listOfSponsors = [];
+runners.forEach(i => {listOfSponsors.push(i.company_name)});
+listOfSponsors.sort();
+let uniqueSponsors = [];
+for (i=0; i<listOfSponsors.length; i++) {
+    if (listOfSponsors[i] !== listOfSponsors[i+1]) {
+        uniqueSponsors.push(listOfSponsors[i]);
+    }
+}
+console.log(uniqueSponsors);
 
-// Problem 2
-
-// Problem 3
+// Problem 2 - Event director wants camel case bibs, because that sounds fun
+let camelName = runners.map(i => {return `${i.first_name.toLowerCase()}${i.last_name}`});
+console.log(camelName)
+// Problem 3 - Total all donations greater than $100
+let moMoney = runners.filter(i => {return i.donation > 100});
+totalBigBucks = [];
+moMoney.forEach(i => {return totalBigBucks.push(i.donation)});
+let bigMoney = totalBigBucks.reduce((total, item) => {return total += item});
+console.log(bigMoney);
