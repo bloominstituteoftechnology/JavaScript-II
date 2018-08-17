@@ -1,73 +1,85 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-function firstItem(arr, cb) {
+
   // firstItem passes the first item of the given array to the callback function.
-	cb = arr[0];
-	console.log(cb);
-	return cb;
+function getFirstElement(arr){
+	return arr[0];
 }
 
-firstItem(items,null);
+function firstItem(arr,cb){
+	return cb(arr);
+}
+
+console.log(firstItem(items,getFirstElement));
+//////////////////////////////////////////////
+
+function getArrLen(arr){
+	return arr.length;
+}
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-	cb = arr.length;
-	console.log(cb);
-	return cb;
-
+	return cb(arr);
 }
+console.log(getLength(items,getArrLen));
+//////////////////////////////////////////////
 
-getLength(items,null);
+function getLast(arr){
+	return arr[arr.length - 1];
+}
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-	arrLength = arr.length;
-	cb = arr[arrLength-1];
-	console.log(cb);
-	return cb;
+	return cb(arr);
 }
 
-last(items,null);
+console.log(last(items,getLast));
+//////////////////////////////////////////////
+
+function getSum(num1,num2){
+	return num1 + num2;
+}
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-	cb = x + y;
-	console.log(cb);
-	return cb;
-
+	return cb(x,y);
 }
 
-sumNums(2,4,null);
+console.log(sumNums(5,9,getSum));
+//////////////////////////////////////////////
+
+function getProd(num1,num2){
+	return num1 * num2;
+}
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-	cb = x * y;
-	console.log(cb);
-	return cb;
-
+	return cb(x,y);
 }
 
-multiplyNums(2,10,null);
+console.log(multiplyNums(2,10,getProd));
+//////////////////////////////////////////////
+
+function doesInclude(item,arr){
+	for(let i=0;i<arr.length;i++){
+		if(item == arr[i]){
+			return true;
+		}
+	}
+	return false;
+}
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-	cb = false;
-
-	for(let i=0;i<list.length;i++){
-		if(item == list[i]){
-			cb = true;
-		}
-	}
-
-	console.log(cb);
-	return cb;
+	return cb(item,list);
 }
 
-// True callback
-contains("Gum",items,null);
 // False callback
-contains("Pack of Smokes",items,null);
+console.log(contains("Lel",items,doesInclude));
+// True callback
+console.log(contains("Gum",items,doesInclude));
 
 /* STRETCH PROBLEM */
 
