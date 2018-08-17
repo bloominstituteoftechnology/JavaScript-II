@@ -56,28 +56,69 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-console.log(fullName);
+runners.forEach(runner => fullName.push(`${runner.first_name} ${runner.last_name}`));
+// console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+let allCaps = runners.map(runner => runner.first_name.toUpperCase());
+// console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-console.log(largeShirts);
+let largeShirts = runners.filter(runner => runner.shirt_size === "L");
+// console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((total, runner) => {
+    return parseInt(total) + parseInt(runner.donation)
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
+/////////////////////////////////////////////////////////////////////////////
 // Problem 1
+// Email each runner with API
 
+async function emailRunners() {
+    // Loops through each runner and emails them
+    for (let runner of runners) {
+        let res = await email(runner.email);
+        if (res.success) console.log("Email sent successfully!", res.email);
+    }
+}
+
+emailRunners();
+
+function email(email) {
+    // Calls email an imitation API and returns a promise
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // Imitate email API w/ timeout
+            resolve({success: true, email: email})
+        }, 1000)
+    })
+}
+
+/////////////////////////////////////////////////////////////////////////////
 // Problem 2
+// Force each runner to pay double the donation
 
+let doubleDonations = runners.map(runner => {return {...runner, donation: runner.donation * 2}});
+
+console.log(doubleDonations);
+
+/////////////////////////////////////////////////////////////////////////////
 // Problem 3
+// Get the quantity of each shirt size so we know how many of each to order
+
+const shirtSizes = runners.reduce( (sizes, runner) => {
+    sizes[runner.shirt_size] = (sizes[runner.shirt_size] || 0) + 1 ;
+    return sizes;
+} , {});
+
+console.log(shirtSizes);
