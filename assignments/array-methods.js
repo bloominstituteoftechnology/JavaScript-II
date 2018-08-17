@@ -106,3 +106,4 @@ let emailContacts = runners.map( elem => {
     return temp;
  });
 console.log(emailContacts);
+
