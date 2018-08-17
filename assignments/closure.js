@@ -1,11 +1,32 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function nameBuilder(firstN,lastN){
+	let message = "You're full name is.. ";
+	function Combine(){
+		return message + firstN + " " + lastN;
+	}
+	return Combine();
+}
+
+console.log(nameBuilder("Joe","Cobblenstein III"));
 
 // ==== Challenge 2: Create a counter function ====
+let count = 0;
+
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+	return function(){
+		count++;
+		console.log(count);
+	}()
+
 };
+
+counter();
+counter();
+counter();
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
