@@ -122,5 +122,15 @@ console.log(companyAlpha.sort());
 
 
 // Problem 3
-let 
 
+let name = []; 
+
+runners.filter(function(person){
+  if(person.first_name.charAt(0) === "S"){
+      return name.push(person.first_name); 
+  } else {
+      person++; 
+  }
+});
+
+console.log(name); 
