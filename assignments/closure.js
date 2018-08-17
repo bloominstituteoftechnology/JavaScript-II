@@ -1,10 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
-
+const looping (arr) => (
+let result = 10;
+for (let i =0; i < arr.length; i++) {
+    if (result > arr.length) {
+      result = result-arr.length;
+    }
+  }
+)
 // ==== Challenge 2: Create a counter function ====
+ // Return a function that when invoked increments and returns a counter variable.
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+  let i = 0;
+  const counting (i) => {
+    i+=1;
+  }
+  counting(i);
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
