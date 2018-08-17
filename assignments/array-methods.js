@@ -133,7 +133,20 @@ sortAlphabetically(runners);
 
 
 // Problem 2: Need to filter top donations (>250) by first and last name
-// Solut
+// Solution 2: 
+
+
+function filterDonation(arr) {
+  let topDonners = [];
+  let minDonation = arr.filter((element,item,array) => {
+    if (element.donation > 250) {
+      console.log(`${element.first_name} ${element.last_name} donated ${element.donation} dollars`)
+    }
+  });
+  return topDonners;
+}
+
+filterDonation(runners);
 
 
 // Problem 3
