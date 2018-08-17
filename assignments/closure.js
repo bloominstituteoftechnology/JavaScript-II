@@ -33,25 +33,27 @@ newCounter();
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
-const counterFactory = {
-  total: 0,
-  plusOne () {
-      return this.total++;
-  },
-  minusOne () {
-    return this.total--;
+
+  // Return an object that has two methods called `increment` and `decrement`.
+  // `increment` should increment a counter variable in closure scope and return it.
+  // `decrement` should decrement the counter variable and return it.
+const counterFactory = () => {
+  let total = 0
+  return {
+    increment: () => {
+      return ++total;
+    },
+    decrement: () => {
+      return --total;
+    }
   }
-};
+}
 
-let counting = counterFactory;
-counting.plusOne();
-counting.plusOne();
-counting.plusOne();
-counting.plusOne();
-counting.plusOne();
-counting.plusOne();
-console.log(counting.total);
-counting.minusOne();
-console.log(counting.total);
-
-
+let counting = counterFactory();
+console.log(counting.increment());
+counting.increment();
+counting.increment();
+counting.increment();
+counting.increment();
+console.log(counting.increment());
+console.log(counting.decrement())
