@@ -77,6 +77,7 @@ console.log(allCaps);
 let largeShirts = [];
 largeShirts = runners.filter(runner => {
     return runner.shirt_size === "L"});
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -84,6 +85,7 @@ console.log(largeShirts);
 let ticketPriceTotal = [];
 ticketPriceTotal = runners.reduce((accumulator, runner) => {
     return accumulator + runner.donation}, 0);
+    
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
