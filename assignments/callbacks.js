@@ -1,29 +1,81 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+// firstItem passes the first item of the given array to the callback function.
+
 function firstItem(arr, cb) {
-  // firstItem passes the first item of the given array to the callback function.
+    return cb(arr);
 }
+
+function first(items) {
+  return(items[0]);
+ } 
+
+firstItem(items, first);
+
+ // getLength passes the length of the array into the callback.
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb(arr);
 }
+
+function length(items) {
+  return(items.length);
+}
+
+getLength(items, length);
+
+// last passes the last item of the array into the callback.
 
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+
+function final(items) {
+  return (items[items.length - 1]);
+}
+
+last(items, final);
+
+ // sumNums adds two numbers (x, y) and passes the result to the callback.
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x, y);
 }
+
+function add(x, y) {
+  return x + y;
+}
+
+sumNums(3, 4, add);
+
+ // multiplyNums multiplies two numbers and passes the result to the callback.
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y);
 }
 
-function contains(item, list, cb) {
+function multiply(x, y) {
+  return x * y;
+}
+
+multiplyNums(3, 4, multiply);
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+
+function contains(item, list, cb) {
+  return cb(item, list);
 }
+
+function includes(item, list) {
+  if (list.includes(item)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+contains('Pencil', items, includes); //returns true
 
 /* STRETCH PROBLEM */
 
