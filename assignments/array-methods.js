@@ -82,8 +82,9 @@ console.log(allCaps);
 let largeShirts = [];
 const largeShirtCB = (item) => {
 	if (item.shirt_size === "L") {
-		console.log("Shirt Size Large!");
-		return `${item.first_name} ${item.last_name}`;
+		let runnerName = `${item.first_name.toString()} ${item.last_name.toString()}`;
+		return runnerName;
+		// Seems array.filter just returns the item if it's in the true case?
 	}
 }
 largeShirts = runners.filter(largeShirtCB);
@@ -93,13 +94,18 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
 
+//ticketPriceTotal = 
+ticketPriceTotal = runners.reduce((accumulator, item) => {
+	return accumulator += item.donation;
+}, 0);
+console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
-
+// Problem 1 Check for donations greater than 100
+let bigSpenders = runners.filter((item) => { return item.donation > 100 });
+console.log(bigSpenders);
 // Problem 2
 
 // Problem 3
