@@ -9,7 +9,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [ ] You are now ready to build this project with your preferred IDE
 * [ ] Use `console.log()` statements to check your work.
 
-### Task 2: Callbacks
+### Task 2: Callzbacks
 This task focuses on getting practice with callback functions by giving you an array of values and instructions on what to do with that array.
 * [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your callback functions.  **Remember that a callback function is a function that is being passed around to other functions.**
 * [ ] Write out each function using the `ES5`  `function` keyword syntax.
