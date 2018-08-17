@@ -1,4 +1,4 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum',];
 
 const firstItem = (arr, cb) => {
   return cb(arr[0]);
@@ -46,7 +46,7 @@ contains("yo-yo", items, console.log);
 
 
 /* STRETCH PROBLEM */
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum',,'Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
