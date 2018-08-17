@@ -74,8 +74,7 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 const donate = [];
-runners.forEach(item => {donate.push(item.donation)});
-let ticketPriceTotal = donate.reduce((total, item) => {return total += item});
+let ticketPriceTotal = runners.reduce((total, item) => {return total += item.donation}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -98,7 +97,5 @@ let camelName = runners.map(i => {return `${i.first_name.toLowerCase()}${i.last_
 console.log(camelName)
 // Problem 3 - Total all donations greater than $100
 let moMoney = runners.filter(i => {return i.donation > 100});
-totalBigBucks = [];
-moMoney.forEach(i => {return totalBigBucks.push(i.donation)});
-let bigMoney = totalBigBucks.reduce((total, item) => {return total += item});
+let bigMoney = moMoney.reduce((total, item) => {return total += item.donation}, 0);
 console.log(bigMoney);
