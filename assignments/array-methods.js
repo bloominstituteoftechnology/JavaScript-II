@@ -120,9 +120,12 @@ console.log(bigSpender);
 let thankYou = [];
 
 thankYou = runners.map((runner) => {
-  return thankYou.push(`${runner.first_name} ${runner.last_name}, we greatly apprectiate your donation!`)
+  return `${runner.first_name} ${runner.last_name}, we greatly apprectiate your donation!`
 });
 
 console.log(thankYou);
 
-//get to the bottom of why I'm only returning the string index
+
+
+
+
