@@ -18,23 +18,17 @@ hi();
 
 
 
-const counter = () => {
+let counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let num = 0;
-  function checkNum() {
-    console.log(num);
-  }
-
-  num++;
   
-  
-  return(checkNum);
+  return counter = () => {num++;return num};
   
 };
-const newCounter = counter();
-newCounter(); // 1
-newCounter(); // 2
-newCounter();
+
+counter();
+counter();
+counter();
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
