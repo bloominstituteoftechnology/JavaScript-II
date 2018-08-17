@@ -70,5 +70,7 @@ const testStretchCB = (array) => {
 }
 
 console.log(removeDuplicates(items, testStretchCB));
+console.log(items);
 const itemsWithDups = ['Pencil', 'Notebook', 'yo-yo', 'Notebook', 'yo-yo', 'Gum'];
 console.log(removeDuplicates(itemsWithDups, testStretchCB));
+console.log(itemsWithDups);

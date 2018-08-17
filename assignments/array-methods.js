@@ -1,4 +1,5 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their 
+// facilities.  Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -64,7 +65,8 @@ let allCaps = runners.map((element) => {return element.first_name.toUpperCase()}
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named 
+// largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter((element) => {return element.shirt_size === 'L';});
 console.log(largeShirts);
 
@@ -77,7 +79,8 @@ let ticketPriceTotal = runners.reduce((total, element) => {
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve
+// 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
 // Creating emailing list for next years 5K fun run
