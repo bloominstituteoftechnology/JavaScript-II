@@ -94,7 +94,12 @@ console.log('Total dontations:', ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - finding mutiple people/customers/users from the same Company
+let companies = runners.filter((cmpy) => {
+
+   return cmpy.company_name ==='Gigashots'
+}) 
+console.log('Running as bunnies for the next 5k:',companies);
 
 // Problem 2
 

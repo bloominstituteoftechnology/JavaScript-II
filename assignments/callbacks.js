@@ -1,4 +1,4 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 const firstItem = (arr, cb) => {
   return cb(arr[0]);
@@ -37,16 +37,25 @@ multiplyNums(3, 4, multiplyNums => {
   console.log(`The total of the numbers are: ${multiplyNums}`)
 })
 
-function contains(item, list, cb) {
+ let contains = (item, list, cb)=> {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   return cb(list.includes(item));
 }
 contains("yo-yo", items, console.log);
+
+
 /* STRETCH PROBLEM */
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
+   let s = new Set(array);
+   let it = s.values();
+   return cb(Array.from(it));
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+removeDuplicates( items, removeDuplicates =>{
+  console.log(`We are removeing all duplicates ${removeDuplicates}`);
+})
