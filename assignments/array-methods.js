@@ -105,6 +105,7 @@ runners.map((runner) => {
 console.log(emailList);
 // Problem 2
 // Change array for shirt sizes so only needed information is seen
+let largeShirtsfiltered = [];
 runners.filter((runner) => {
   largeShirtsfiltered.push({
     "id"         : runner.id,
@@ -115,5 +116,13 @@ runners.filter((runner) => {
     // left out donation amount and business name for a reason.
   });
 });
-console.log(largeShirtsfiltered)
+console.log(largeShirtsfiltered);
 // Problem 3
+// Get a sorted list of companies to send sponsor requests for next year
+let companyList = [];
+
+runners.filter((runner) => {
+  companyList.push(runner.company_name);
+});
+
+console.log(companyList.sort());
