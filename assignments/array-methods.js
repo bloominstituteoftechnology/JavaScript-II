@@ -101,6 +101,16 @@ let companies = runners.filter((cmpy) => {
 }) 
 console.log('Running as bunnies for the next 5k:',companies);
 
-// Problem 2
+// Problem 2 We want all the usersnames of just the email with Weenie Runner added for the 5k Weenie run.
+// This was an idea Wes Boss gave me by taking minutes and spiliting it to calculate them.
+const users = runners.map(item => item.email)
+                      .map(runners => {
+                          const [emailUser] = runners.split('@');
+                          return(`${emailUser} Weenie runner`)
+                        
+                      })
+
+console.log(`${users}`);
+
 
 // Problem 3
