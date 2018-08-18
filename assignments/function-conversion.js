@@ -22,7 +22,7 @@ console.log(subtract(54,12));
 // subtract(1,2);
 
 // exampleArray = [1,2,3,4];
-const triple = (x) => x * 3
+const triple = x => x * 3
 // const triple = exampleArray.map(function (num) {
 //   return num * 3;
 // });
