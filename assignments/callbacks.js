@@ -2,7 +2,18 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[0]) {
+      cb(arr[0])
+    }
+  }
 }
+
+function logFirstItem (item) {
+  console.log(`${item} is the first item in the array!`);
+}
+
+firstItem(items, logFirstItem)
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
