@@ -100,7 +100,47 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Seperate runners into two starting groups, evens and odds.
+const evens = [];
+
+const odds = [];
+
+runners.map(arr => {
+    if (arr.id % 2 === 0) {
+        evens.push(arr.id);
+    } else {
+        odds.push(arr.id);
+    }
+})
+
+console.log(evens);
+console.log(odds);
 
 // Problem 2
+//Create list of emails
+const emails = [];
+
+runners.filter(arr => {
+    emails.push(arr.email);
+})
+
+console.log(emails);
 
 // Problem 3
+//The director wants to emezzle all donations under $100
+const embezzledFunds = [];
+
+runners.filter(arr => {
+    if (arr.donation <= 100) {
+        embezzledFunds.push(arr.donation);
+    }
+})
+
+console.log(embezzledFunds);
+
+const embezzledFundsTotal = embezzledFunds.reduce((accumulator, item) => {
+    const total = accumulator + item;
+    return total;
+}, 0)
+
+console.log(embezzledFundsTotal);
