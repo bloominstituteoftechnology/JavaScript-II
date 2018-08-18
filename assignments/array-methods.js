@@ -493,18 +493,20 @@ let ticketPriceTotal = [];
 const totalDonations = (totalDonations, doners) => {
   totalDonations = 0;
   ticketPriceTotal.push(totalDonations + doners.donation);
-}
-  runners.reduce(totalDonations);
- 
-console.log(ticketPriceTotal.reduce((total, sumDonations) => total + sumDonations));
+};
+console.log(runners.reduce(totalDonations));
+
+const total = ticketPriceTotal.reduce((total, sumDonations) => total + sumDonations);
+
+console.log(total);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-  // Runners emails are needed for next year 5k runs.
+// Runners emails are needed for next year 5k runs.
 let emailList = [];
-const runnersEmails = (emails) => { 
+const runnersEmails = (emails) => {
   emailList += ` ${emails.first_name} ${emails.last_name} ${emails.email}`;
 };
 runners.map(runnersEmails);
@@ -514,9 +516,9 @@ console.log(emailList);
 // Problem 2
 //Names of Sponsers for each runner for marketing purposes
 let sponsers = [];
-const sponserList = (sponser)  => {
-        sponsers += `${sponser.company_name} ${' '}`
- };
+const sponserList = (sponser) => {
+  sponsers += `${sponser.company_name} ${' '}`;
+};
 runners.forEach(sponserList);
 
 console.log(sponsers);
@@ -530,6 +532,3 @@ const runnerNumber = (number) => {
 runners.map(runnerNumber);
 
 console.log(raceNumber);
-
-
-
