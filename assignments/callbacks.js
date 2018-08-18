@@ -46,12 +46,19 @@ contains('gum', items, display);
 
 const stretchArray = [1,5,23,5,7,2,0];
 
-function removeDuplicates(array, cb) {
+const removeDuplicates = (array, cb) => {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  //const filteredArr = array.filter(function(val, index, arr) { return index == self.indexOf(val);});
-  const filteredArr = array.filter(function(elem, index, arr) { return index == self.indexOf(elem);});
-  return cb('Filtered array:', filteredArr);
+  const newArr = [];
+
+  for( let i = 0; i < array.length; i++ )
+  {
+    if( newArr.includes(array[i]) === false ){
+      newArr.push(array[i]);
+    }
+  }
+  return cb("Filtered Array: " + newArr);
 }
+
 removeDuplicates(stretchArray, display);
