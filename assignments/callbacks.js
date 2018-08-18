@@ -53,4 +53,10 @@ contains("yo-yo", items, cb = function() {return contain});
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const names = ["George", "Sira", "Rebecca", "Ronald", "Rebecca", "Tammy", "Ronald"];
 
+const uniqueArray = (arr) => arr.filter(function(elem, p, arr) {
+  return arr.indexOf(elem) == p;
+});
+
+uniqueArray(names);
