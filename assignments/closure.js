@@ -1,11 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const myOwnClosure = () => {
+  const myName = 'Paul';
+
+  const nestedClosure = () => {
+    const myHobby = 'Basketball Cards'
+    return `${myName} enjoys collecting ${myHobby}`
+  }
+
+  return nestedClosure;
+}
+
+const something = myOwnClosure();
+something();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+
+  const increment = () => {
+    console.log(count += 1); // ++count also works
+  }
+  return increment;
 };
+
+const something = counter();
+something();
+something();
+something();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
