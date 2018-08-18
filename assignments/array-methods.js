@@ -107,4 +107,4 @@ let donationAverage = runners.reduce(function(accum, item) {
   return accum + item.donation/runners.length;
 }, 0)
 
-console.log(donationAverage)
+console.log(Math.round(donationAverage))
