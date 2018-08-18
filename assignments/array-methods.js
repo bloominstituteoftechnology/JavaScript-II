@@ -189,9 +189,9 @@ totalNumLargeDonations(runners);
 
 
 // My Stretches
-var clonedArr = JSON.parse(JSON.stringify(runners)) ;
+var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
 
-// sort array of objects by key property
+// 1. Sort array of objects by key property
 function sortByKey(arr, keyVal) {
   let sorted = [];
   let justSortedArr = [];    // debug variable to verify output
@@ -216,3 +216,26 @@ function sortByKey(arr, keyVal) {
 sortByKey(clonedArr, 'first_name');
 sortByKey(clonedArr, 'last_name');
 sortByKey(clonedArr, 'donation');
+
+// deep clone runners
+var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+
+// 2. Add random Dates to clonedArr
+
+// Helper function:  randomly generate Date between start & end dates
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+// create new key: value to add to object  >>     birthday: date
+function addDates(arrObj) {
+  arrObj.forEach( (element) => {
+    Object.assign(element,   { 'birthday' : randomDate(new Date(1953, 0, 1), new Date(2004, 0, 1)) }    );
+  });
+  return arrObj;
+}
+
+addDates(clonedArr);
+
+// 3. Verify sortByKey works on dates  - Yes!
+sortByKey(clonedArr, 'birthday');
