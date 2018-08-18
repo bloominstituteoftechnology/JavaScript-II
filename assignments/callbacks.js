@@ -67,8 +67,8 @@ contains('spoon', items, doesInclude);
 
 /* STRETCH PROBLEM */                                // added space with ' pear' on purpose
 let arrWithDups = [1, 2, 1, 'kiwi', 'apple', 2, 3, 5, ' pear' , 'apple', 4, 5, 3, 4, 'pear', 4, 4, {name: 'Steve'},
-  {name: 'Allison'}, 4, {name: 'Allison'} ];    // does not work with objects in array so well
-
+  {name: 'Allison'}, 4, {name: 'Allison'} ];    // does not work with objects in array so well, need to add
+                                                // logic to deal with objects
 function removeDups(array) {
   let makeSet = array.sort().reduce((accum, current) => {
     const accLength = accum.length;
