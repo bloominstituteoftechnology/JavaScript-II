@@ -40,7 +40,7 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
 };
 
-var counterFactory = function () {
+const counterFactory = function () {
     let count = 0;
 
     let counterObj = {
@@ -56,6 +56,6 @@ var counterFactory = function () {
     return counterObj;
 }
 
-var upDown = counterFactory();
+let upDown = counterFactory();
 upDown.increment();
 upDown.decrement();

@@ -65,10 +65,28 @@ function contains(item, list, cb) {
 
 contains('spoon', items, doesInclude);
 
-/* STRETCH PROBLEM */
+/* STRETCH PROBLEM */                                // added space with ' pear' on purpose
+let arrWithDups = [1, 2, 1, 'kiwi', 'apple', 2, 3, 5, ' pear' , 'apple', 4, 5, 3, 4, 'pear', 4, 4, {name: 'Steve'},
+  {name: 'Allison'}, 4, {name: 'Allison'} ];    // does not work with objects in array so well
+
+function removeDups(array) {
+  let makeSet = array.sort().reduce((accum, current) => {
+    const accLength = accum.length;
+    if( (accLength === 0 || accum[accLength - 1])  !== current) {    // added parenthesis to focus logic
+      accum.push(current);
+    }
+    return accum;
+  }, [] );
+  return makeSet;
+}
+
 
 function removeDuplicates(array, cb) {      // EXAMPLE on MDN
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
+
 }
+
+removeDuplicates(arrWithDups, removeDups);

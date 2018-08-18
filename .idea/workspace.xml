@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faeeb6b2-1182-4567-90c3-f9cc3973fce4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/assignments/callbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/callbacks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/closure.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/closure.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,20 +23,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="callbacks.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="callbacks.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+            <state relative-caret-position="9">
+              <caret line="68" column="11" lean-forward="true" selection-start-line="68" selection-end-line="91" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="closure.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="closure.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/closure.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
+            <state relative-caret-position="252">
+              <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -62,8 +63,8 @@
       <list>
         <option value="$PROJECT_DIR$/assignments/array-methods.js" />
         <option value="$PROJECT_DIR$/assignments/function-conversion.js" />
-        <option value="$PROJECT_DIR$/assignments/callbacks.js" />
         <option value="$PROJECT_DIR$/assignments/closure.js" />
+        <option value="$PROJECT_DIR$/assignments/callbacks.js" />
       </list>
     </option>
   </component>
@@ -81,10 +82,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2596" />
-    <option name="y" value="32" />
+    <option name="x" value="2609" />
+    <option name="y" value="86" />
     <option name="width" value="1151" />
-    <option name="height" value="879" />
+    <option name="height" value="914" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -137,10 +138,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.callbacks.js">
     <configuration name="array-methods.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="array-methods.js" working-dir="$PROJECT_DIR$/assignments" />
+    <configuration name="callbacks.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="callbacks.js" working-dir="$PROJECT_DIR$/assignments" />
+    <list>
+      <item itemvalue="Node.js.array-methods.js" />
+      <item itemvalue="Node.js.callbacks.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.callbacks.js" />
         <item itemvalue="Node.js.array-methods.js" />
       </list>
     </recent_temporary>
@@ -155,15 +162,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534369886773</updated>
-      <workItem from="1534369888162" duration="23023000" />
+      <workItem from="1534369888162" duration="26643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23023000" />
+    <option name="totallyTimeSpent" value="26643000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2596" y="32" width="1151" height="879" extended-state="0" />
+    <frame x="2609" y="86" width="1151" height="914" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -177,7 +184,7 @@
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CSS-X-Fire" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39897698" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43924052" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -196,11 +203,31 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assignments/callbacks.js</url>
+          <line>83</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assignments/callbacks.js</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
         <watch expression="allCaps" />
+        <watch expression="[accLength - 1]" />
+        <watch expression="accum[accLength - 1]" />
+        <watch expression="accLength" />
+        <watch expression="accum" />
+        <watch expression="current" />
+        <watch expression="makeSet" />
       </configuration>
     </watches-manager>
   </component>
@@ -212,10 +239,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
+    <entry file="file://$PROJECT_DIR$/assignments/closure.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+        <state relative-caret-position="252">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -226,13 +256,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/closure.js">
+    <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="9">
+          <caret line="68" column="11" lean-forward="true" selection-start-line="68" selection-end-line="91" selection-end-column="42" />
         </state>
       </provider>
     </entry>
