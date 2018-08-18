@@ -76,4 +76,19 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  cb(array);
 }
+
+function removeItem(arr) {
+  // loop through array with filter method,
+  const arrayUnique = arr.filter(function(item, index){
+    // use .indexOf() to see if an item already exists
+    // if item is greater than the item's index, that means there is a duplicate, in which case, filter it out
+    return arr.indexOf(item) >= index;
+  });
+  console.log(arrayUnique);
+}
+
+removeDuplicates(items, removeItem);
+
+
