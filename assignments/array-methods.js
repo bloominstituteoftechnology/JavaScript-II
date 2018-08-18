@@ -93,7 +93,38 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+   // Console log the company's representives full name with donation who had donated more than $250
+   let completeName = [];
+   completeName = runners.filter(function(element) {
+   	      if(element.donation > 250) {
+   	      	  return element
+   	      }
+   }).map(function(item) {
+   	    return `${item.first_name} ${item.last_name} donated ${item.donation}`;
+   });
+   console.log(completeName);
 
 // Problem 2
-
+//Console log total donation from ID # 20 to ID # 40
+  let total = [];
+  total = runners.filter(function(element){
+  	    if(element.id >=20 && element.id <= 40) {
+  	    	  return element;
+  	    }
+               }).map(function(item){
+  	                    return item.donation;
+               }).reduce(function(previous,current) {
+                        return previous + current;
+        }, 0);
+  
+  console.log(`The totla donations from ID#20 to ID#40 is: ${total}`);
 // Problem 3
+//Console log the representive's first name whose shirt size is "M"
+let fName = [];
+fName = runners.filter( ele => {
+	return ele.shirt_size === "M";
+}).map(function(obj) {
+	return obj.first_name;
+});
+
+console.log(fName);
