@@ -1,11 +1,18 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
-
+var globalscope = "I can be dragged into any function!";
+function saysomething () {return globalscope};
+saysomething();
 // ==== Challenge 2: Create a counter function ====
+var countervariable=0;
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+  countervariable+=1;
 };
+
+counter();
+counter();
+console.log(countervariable);
+// Return a function that when invoked increments and returns a counter variable.
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
