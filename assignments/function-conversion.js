@@ -27,14 +27,15 @@ let  subtract = (param1, param2) => {
 }
 
 subtract(1,2);
+//////////////////////////////////////////////
+
 
  exampleArray = [1,2,3,4];
 // const triple = exampleArray.map(function (num) {
 //   return num * 3;
 // });
 
-const mapped =(num)=>{
+const triple = exampleArray.map( num =>{
     return num * 8;
-  }
-  const triple = exampleArray.map(mapped);
-  console.log(triple)
+});
+console.log(triple)
