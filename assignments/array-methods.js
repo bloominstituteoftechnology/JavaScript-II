@@ -59,21 +59,20 @@ function cbStoreName(item) {
     var character = `${item.first_name} ${item.last_name}`;
     fullName.push(character);
   };
-  
   let fullName = [];
   runners.forEach(cbStoreName);
   console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 function cbToCaps(item) {
-    var firstname=item.first_name;
-    var strfn=firstname.toString();
-    var upperfn=firstname.toUpperCase();
+    var firstname=item.first_name;//Get FIrst name  
+    var strfn=firstname.toString();//Change it ot string
+    var upperfn=firstname.toUpperCase();//CHange string to uppercase
     return upperfn;
     };
+
     let allCaps = [];
     allCaps=runners.map(cbToCaps);
-    console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
@@ -90,7 +89,8 @@ function GetDonation (item) {
   
   let ticketPriceTotal = [];
   runners.forEach(GetDonation);
-  ticketPriceTotal.reduce(function (init, num) { return init+num;});
+  let Total=ticketPriceTotal.reduce(function (init, num) { return init+num;});
+  console.log(Total);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
