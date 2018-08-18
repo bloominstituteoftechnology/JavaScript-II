@@ -56,4 +56,16 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  let finalArray = [];  
+  let reducer = (final, thing) => {
+    if (!(final.includes(thing))) {
+      final.push(thing); 
+    }
+    return final;
+  }
+  return cb(array.reduce(reducer, finalArray));
 }
+
+items.push('Henry', "log", 'Gum', 'Pencil', 'Dog', 'Dog');
+removeDuplicates(items, test);
