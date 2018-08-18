@@ -185,3 +185,34 @@ function totalNumLargeDonations(arrObj){
 totalNumLargeDonations(runners);
 
 
+
+
+
+// My Stretches
+var clonedArr = JSON.parse(JSON.stringify(runners)) ;
+
+// sort array of objects by key property
+function sortByKey(arr, keyVal) {
+  let sorted = [];
+  let justSortedArr = [];    // debug variable to verify output
+  sorted = arr.sort( function(a, b) {
+    arr.forEach( (element) => {             // verify first Letter is uppercase
+      if (element[keyVal] === 'string') {     // ONLY if it is a string
+        element[keyVal][0].toUpperCase() + element[keyVal].slice(1);
+      }
+    });
+
+    if( a[keyVal] < b[keyVal]) return -1;
+    if( a[keyVal] > b[keyVal]) return 1;
+    return 0;
+    });
+
+  sorted.forEach( (element) => justSortedArr.push(element[keyVal]) );
+
+  // return sorted;   return sorted array of objects
+  return justSortedArr;
+}
+
+sortByKey(clonedArr, 'first_name');
+sortByKey(clonedArr, 'last_name');
+sortByKey(clonedArr, 'donation');
