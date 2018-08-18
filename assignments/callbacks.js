@@ -25,22 +25,27 @@ getLength(items, (showLength) => {
 });
 
 
-
-
-
-
+let lastItem = (items.pop);
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  
- }
-
-
+  cb(arr[3]);
+}
+ last(items, (lastItem) => {
+   console.log(lastItem);
+ });
 
 
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+ cb(x + y);
+};
+
+sumNums(5, 10, function(sum) {
+  console.log(`The sum is ${sum}`);
+});
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
