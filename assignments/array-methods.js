@@ -56,28 +56,91 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach((arr) => {
+    fullName.push(`${arr.first_name} ${arr.last_name}`);
+})
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+
+runners.map((arr) => {
+    allCaps.push(arr.last_name.toUpperCase());
+})
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+runners.filter((arr) => {
+    if (arr.shirt_size === 'L' || arr.shirt_size === 'XL' || arr.shirt_size === '2XL' || arr.shirt_size === '3XL') {
+        largeShirts.push(arr);
+    }
+})
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+const ticketPriceTotal = runners.reduce((accumulator, item) => {
+    const total = accumulator + item.donation;
+    return total;
+}, 0)
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Seperate runners into two starting groups, evens and odds.
+const evens = [];
+
+const odds = [];
+
+runners.map(arr => {
+    if (arr.id % 2 === 0) {
+        evens.push(arr.id);
+    } else {
+        odds.push(arr.id);
+    }
+})
+
+console.log(evens);
+console.log(odds);
 
 // Problem 2
+//Create list of emails
+const emails = [];
+
+runners.filter(arr => {
+    emails.push(arr.email);
+})
+
+console.log(emails);
 
 // Problem 3
+//The director wants to emezzle all donations under $100
+const embezzledFunds = [];
+
+runners.filter(arr => {
+    if (arr.donation <= 100) {
+        embezzledFunds.push(arr.donation);
+    }
+})
+
+console.log(embezzledFunds);
+
+const embezzledFundsTotal = embezzledFunds.reduce((accumulator, item) => {
+    const total = accumulator + item;
+    return total;
+}, 0)
+
+console.log(embezzledFundsTotal);
