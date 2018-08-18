@@ -82,13 +82,16 @@ console.log(allCaps);
 let largeShirts = [];
 const largeShirtCB = (item) => {
 	if (item.shirt_size === "L") {
-		let runnerName = `${item.first_name.toString()} ${item.last_name.toString()}`;
-		return runnerName;
-		// Seems array.filter just returns the item if it's in the true case?
+		return;
+		
 	}
 }
-largeShirts = runners.filter(largeShirtCB);
-// largeShirts = runners.filter(shirts => shirts.shirt_size === "L");
+//largeShirts = runners.filter(largeShirtCB);
+largeShirts = runners.filter(shirts => shirts.shirt_size === "L");
+largeShirts = largeShirts.map((item) => {
+	return `Large Shirts: ${item.first_name} ${item.last_name}`;
+});
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -105,7 +108,14 @@ console.log(ticketPriceTotal);
 
 // Problem 1 Check for donations greater than 100
 let bigSpenders = runners.filter((item) => { return item.donation > 100 });
-console.log(bigSpenders);
-// Problem 2
 
-// Problem 3
+// Problem 2 Contact information
+let contactInformation = runners.map((item) => {
+	return `${item.first_name} ${item.last_name} email : ${item.email}`
+});
+console.log(contactInformation);
+// Problem 3 company_name list
+let companies = runners.map((item) => {
+	return item.company_name;
+});
+console.log("Companies:" + companies.sort());
