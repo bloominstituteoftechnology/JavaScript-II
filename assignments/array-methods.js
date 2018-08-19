@@ -62,13 +62,13 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-allCaps.push(runners.map(runner => {return `${runner.first_name.toUpperCase()}`}))
+allCaps = (runners.map(runner => {return `${runner.first_name.toUpperCase()}`}))
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-largeShirts.push(runners.filter(runner => {return runner.shirt_size === 'L'}))
+largeShirts = runners.filter(runner => runner.shirt_size === 'L')
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -83,7 +83,57 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Find all runners who work for a specific company
+let result = [];
+const whoWorksWhere = (company) => {
+    runners.forEach(x => {
+        if(x.company_name === company){
+            result.push(`${x.first_name}`)
+        }  
+    })
+
+    return result;
+}
+
+console.log(whoWorksWhere('Skinte'));
 
 // Problem 2
+// find out how many shirts of each size need to be ordered
+let sizes = [];
+const howManyShirts = () => {
+    let xsmall = 0;
+    let small = 0;
+    let medium = 0;
+    let large = 0;
+    let xlarge = 0;
+    let xxlarge = 0;
+    let xxxlarge = 0;
+    let total = 0;
+    runners.forEach(x => {
+        total++
+        if(x.shirt_size.toUpperCase() === 'XS'){
+            xsmall++;
+        } else if(x.shirt_size.toUpperCase() === 'S'){
+            small++;
+        } else if(x.shirt_size.toUpperCase() === 'M'){
+            medium++
+        } else if(x.shirt_size.toUpperCase() === 'L'){
+            large++;
+        } else if(x.shirt_size.toUpperCase() === 'XL'){
+            xlarge++;
+        } else if(x.shirt_size.toUpperCase() === '2XL'){
+            xxlarge++;
+        } else {
+            xxxlarge++
+        }
+    });
+
+    sizes.push({'XS': xsmall, 'S': small, 'M': medium, 'L': large, 'XL': xlarge, '2XL': xxlarge, '3XL': xxxlarge, 'Total': total});
+
+    return sizes;
+}
+
+console.log(howManyShirts());
+
 
 // Problem 3
