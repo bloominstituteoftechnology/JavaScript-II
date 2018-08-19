@@ -65,6 +65,62 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let num = 0;
+  const addToNum = () => {
+    num++;
+    return num;
+  }
+  const subtractFromNum = () => {
+    num--;
+    return num;
+  }
+  const getCount = () => {
+    return num;
+  }
+  return {increment:addToNum, decrement:subtractFromNum, displayCount:getCount};
 };
 
+let pointCounter = counterFactory();
+let breadInventory = counterFactory();
 
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+pointCounter.decrement();
+breadInventory.decrement();
+breadInventory.increment();
+pointCounter.increment();
+
+console.log(pointCounter.displayCount());
+console.log(breadInventory.displayCount());
