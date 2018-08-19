@@ -1,10 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+const life = (x) => {
+  const shelfLife = x;
+   const avgShelfLife = () => {
+    const myshelfLife = shelfLife * 21;
+     return myshelfLife;
+  }
+   return avgShelfLife();
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+   const newCount = () => {
+    return ++count;
+  }
+  return newCount;
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
