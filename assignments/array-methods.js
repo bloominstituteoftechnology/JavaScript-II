@@ -113,4 +113,10 @@ const users = runners.map(item => item.email)
 console.log(`${users}`);
 
 
-// Problem 3
+// Problem 3 
+// To find who made the smallest donation for the Zombie run
+// Displaying first and last name with their donation.
+let smallestDonation = runners.reduce((donate, index) => { 
+    return donate.donation < index.donation ? donate : index
+               }) 
+   console.log('\n Zombie\'s runners smallest donator:',smallestDonation.first_name, smallestDonation.last_name, '\n Donation ammount:', smallestDonation.donation);
