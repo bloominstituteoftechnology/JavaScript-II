@@ -72,14 +72,26 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.reduce((total, element) => total += element.donation, 0);
+let ticketPriceTotal = runners.reduce((total, element) => total + element.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// We want to fly our biggest donor to Miami for 2 nights at a luxurious resort as a token of our appreciation. Let's find out who it is.
+let findBiggestDonor = runners.reduce((biggestDonor, runner) => (biggestDonor.donation || 0) > runner.donation ? biggestDonor : runner, {});
+console.log(findBiggestDonor);
 
 // Problem 2
+// We've found our biggest donor, and we find out we have an old email she no longer has access to. Let's update that email, or the tickets will never reach her inbox.
+donationTiers.forEach(element => {
+  if (element.email === "ntreslerj@marketwatch.com")
+    element.email = "ntreslerj@gmail.com";
+});
 
 // Problem 3
+// I want to place donors in tiers based on their donation amount. Different prizes for different tiers.
+let donationTiers = runners.filter(element => (element.donation || 0)> 200 ? element.tier = 3 : (element.donation || 0)> 50 ? element.tier = 2 : element.tier = 1);
+donationTiers.sort((a,b) => b.donation - a.donation);
+console.log(donationTiers);
