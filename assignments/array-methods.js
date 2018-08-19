@@ -94,7 +94,63 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+const allSize = {
+    'S': 0,
+    'M': 0,
+    'L': 0,
+    'XL': 0,
+    '2XL': 0,
+    '3XL' : 0
+};
+
+const sizeCounter = (runner) => {
+    switch (runner.shirt_size) {
+        case 'S' :
+        allSize.S += 1;
+        break;
+
+        case 'M' : 
+        allSize.M += 1;
+        break;
+
+        case 'L' : 
+        allSize.L += 1;
+        break;
+
+        case 'XL' :
+        allSize.XL += 1;
+        break;
+
+        case '2XL' :
+        allSize["2XL"] += 1;
+        break;
+
+        case '3XL' :
+        allSize["3XL"] += 1;
+    }
+}
+
+runners.forEach(sizeCounter);
+console.log(allSize);
 
 // Problem 2
+let organization = [];
+const org =  runners.filter(runner => {
+    if (runner.email.includes('.edu') ||
+        runner.email.includes('.org')|| 
+        runner.email.includes('.gov')) {
+            organization.push(runner);
+        }
+})
+
+console.log(organization)
 
 // Problem 3
+
+const companies = [];
+
+const listComps = runners.forEach(runner => {
+   return companies.push(runner.company_name);
+})
+
+console.log(companies.sort())
