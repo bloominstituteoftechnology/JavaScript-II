@@ -115,7 +115,7 @@ console.log(`${users}`);
 
 // Problem 3 
 // To find who made the smallest donation for the Zombie run
-// Displaying first and last name with their donation.
+// Displaying first and last name with their donation ammount.
 let smallestDonation = runners.reduce((donate, index) => { 
     return donate.donation < index.donation ? donate : index
                }) 
