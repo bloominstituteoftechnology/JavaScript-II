@@ -49,35 +49,204 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":45,"first_name":"Falito","last_name":"Karsh","email":"fkarsh18@pcworld.com","shirt_size":"S","company_name":"Mycat","donation":239},
 {"id":46,"first_name":"Reginauld","last_name":"Purselowe","email":"rpurselowe19@thetimes.co.uk","shirt_size":"L","company_name":"Jabbersphere","donation":11},
 {"id":47,"first_name":"Vida","last_name":"Tydd","email":"vtydd1a@dropbox.com","shirt_size":"S","company_name":"Quaxo","donation":55},
-{"id":48,"first_name":"Anderea","last_name":"MacGiolla Pheadair","email":"amacgiollapheadair1b@xing.com","shirt_size":"2XL","company_name":"Kwimbee","donation":214},
+{"id":48,"first_name":"anderea","last_name":"MacGiolla Pheadair","email":"amacgiollapheadair1b@xing.com","shirt_size":"2XL","company_name":"Kwimbee","donation":214},
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
-console.log(fullName);
+// The event director needs both the first and last names of each runner for their running bibs.
+// Combine both the first and last names into a new array called fullName.
+
+// console.log(fullName);
+function getFullName (arrObj) {
+  let fullName = [];
+  arrObj.forEach(function(element, i){
+  //   fullName.push(arrObj[i].first_name + ' ' + arrObj[i].last_name);
+  fullName.push(element.first_name  + ' ' + element.last_name);
+  });
+  return fullName;
+}
+
+getFullName(runners);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+// The event director needs to have all the runner's first names converted to uppercase because the director
+// BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+
+// console.log(allCaps);
+function firstNameCaps(arrObj) {
+  let allCaps = [];
+
+  allCaps = arrObj.map( obj => obj.first_name.toUpperCase() );
+  return allCaps;
+}
+
+firstNameCaps(runners);
+
+
+
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-console.log(largeShirts);
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large
+// sized shirts so they can choose a different size. Return an array named largeShirts that contains information
+// about the runners that have a shirt size of L and log the result
+
+// console.log(largeShirts);
+function largeSize(arrObj) {
+  let largeShirts = [];
+
+  // largeShirts = arrObj.filter(obj => obj.shirt_size === 'L');
+  largeShirts = arrObj.filter(function(element){
+    return element.shirt_size === 'L';
+  });
+
+
+
+  return largeShirts;
+}
+
+largeSize(runners);
+
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a
+// ticketPriceTotal array and log the result
+;
+// console.log(ticketPriceTotal);
+
+function dontationsTotal(arrObj) {
+  let ticketPriceTotal = [];
+  let initialVal = 0;
+
+  ticketPriceTotal = arrObj.reduce((accum, current) => accum + current.donation, initialVal);
+
+  console.log(ticketPriceTotal);
+  return ticketPriceTotal;
+
+}
+dontationsTotal(runners);
+
+
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential
+// problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using
+// one or many of the array methods listed above.
 
 // Problem 1
+function rebuiltArray(objArr) {
+  let runners2 = [];
+  let tempObj = {};
+
+
+  /*
+  objArr.forEach(function(el, index){
+    runners2.push( {id: el.id,
+                    first_name: el.first_name,
+                    last_name: el.last_name,
+                    donation: el.donation,
+                    shirt_size: el.shirt_size,
+                    work_email: el.email,
+                    company: el.company_name
+                   }
+     );
+
+  });
+*/
+  objArr.forEach(function(el,index){
+    tempObj = Object.assign({   id: el.id,
+                                first_name: el.first_name,
+                                last_name: el.last_name,
+                                donation: el.donation,
+                                shirt_size: el.shirt_size,
+                                work_email: el.email,
+                                company: el.company_name
+    });
+
+    runners2.push(tempObj);
+
+  });
+    return runners2;
+
+}
+
+rebuiltArray(runners);
 
 // Problem 2
+function totalLengthFirstName(arrObj) {
+  return arrObj.map(obj => obj.first_name.length)
+               .reduce((accum, current) => accum + current, 0);
+
+}
+
+totalLengthFirstName(runners);
 
 // Problem 3
+function totalNumLargeDonations(arrObj){
+  return arrObj.filter (obj => (obj.shirt_size === 'L'))
+               .reduce((accum, current) => accum + current.donation, 0);
+}
+
+totalNumLargeDonations(runners);
+
+
+
+
+
+// My Stretches
+// var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+
+var resetArr = function(arr) {                     // Easier helper function expression to deep clone
+  return JSON.parse(JSON.stringify(arr));
+};
+
+// 1. Sort array of objects by key property
+function sortByKey(arr, keyVal) {
+  let sorted = [];
+  let justSortedArr = [];    // debug variable to verify output
+  sorted = arr.sort( function(a, b) {
+    arr.forEach( (element) => {             // verify first Letter is uppercase
+      if (typeof(element[keyVal]) === 'string') {     // ONLY if it is a string
+        element[keyVal] = element[keyVal][0].toUpperCase() + element[keyVal].slice(1);
+      }
+    });
+
+    if( a[keyVal] < b[keyVal]) return -1;
+    if( a[keyVal] > b[keyVal]) return 1;
+    return 0;
+    });
+
+  sorted.forEach( (element) => justSortedArr.push(element[keyVal]) );
+
+  return sorted;   // return sorted array of objects
+  // return justSortedArr;
+}
+
+sortByKey(clonedArr, 'first_name');
+// sortByKey(clonedArr, 'last_name');
+// sortByKey(clonedArr, 'donation');
+
+// deep clone runners
+//var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+ var clonedArr = resetArr(runners);
+// 2. Add random Dates to clonedArr
+
+// Helper function:  randomly generate Date between start & end dates
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+// create new key: value to add to object  >>     birthday: date
+function addDates(arrObj) {
+  arrObj.forEach( (element) => {
+    Object.assign(element,   { 'birthday' : randomDate(new Date(1953, 0, 1), new Date(2004, 0, 1)) }    );
+  });
+  return arrObj;
+}
+
+addDates(clonedArr);
+
+// 3. Verify sortByKey works on dates  - Yes!
+sortByKey(clonedArr, 'birthday');
+
+
