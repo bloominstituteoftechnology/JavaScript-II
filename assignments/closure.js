@@ -9,12 +9,12 @@ function swag () {
   return getLength;
 }
 let getSwag = swag();
-
+getSwag();
 
 // ==== Challenge 2: Create a counter function ====
 // const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
@@ -57,7 +57,7 @@ const counterFactory = function () {
 };
 
 // now with arrow function version
-const counterFactory2 = () => {
+const counterFactory_arrow  = () => {
   let count = 0;
 
   let counterObj = {
@@ -74,11 +74,55 @@ const counterFactory2 = () => {
 
 };
 
+letupDown = counterFactory_arrow();
+ letupDown.increment();
+// upDown.decrement();
+
+// now using an IIFE   (design pattern called Self-Executing Anonymous Function
+const counterFactory_IIFE = (function () {
+  let count = 0;
+  let counterObj = {
+    increment: function() {
+      return ++count;
+    },
+    decrement: function () {
+      return --count;
+    }
+  };
+  return counterObj;
+
+})();
+
+counterFactory_IIFE.increment();
+// counterFactory_IIFE.decrement();
+
+var counterFactory_IIFE_arrow = ( () => {
+  let count = 0;
+
+  let counterObj = {
+    increment: function() {
+      count++;
+      return count;
+    },
+    decrement: function() {
+      count--;
+      return count;
+    }
+  };
+  return counterObj;
+
+})();
+
+// increment 10 times, counterFactory.increment() ran once already, so count will be at 11
+function loopIIFE_up10 () {
+  for(let i = 0; i < 10; i++) {
+    counterFactory_IIFE_arrow.increment();
+  }
+}
 
 
+//counterFactory_IIFE_arrow.increment();
+// counterFactory_IIFE_arrow.decrement();
 
-// var upDown = counterFactory();
-
-letupDown = counterFactory2();
-upDown.increment();
-upDown.decrement();
+loopIIFE_up10();  // count at 11
+counterFactory_IIFE_arrow.decrement(); // count at 10
