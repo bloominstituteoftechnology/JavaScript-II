@@ -49,14 +49,14 @@ contains("yo-yo", items, console.log);
 /*uncomment line below to run the fucntion by itself*/
 //const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum',,'Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-function removeDuplicates(array, cb) {
+let removeDuplicates = (array, cb) => {
   // removeDuplicates removes all duplicate values from the given array.
    let s = new Set(array);
    let it = s.values();
    return cb(Array.from(it));
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+};
 removeDuplicates(items, removeDuplicates =>{
-  console.log(`We are removeing all duplicates ${removeDuplicates}`);
+  console.log(`We are removing all duplicates ${removeDuplicates}`);
 })
