@@ -49,7 +49,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":45,"first_name":"Falito","last_name":"Karsh","email":"fkarsh18@pcworld.com","shirt_size":"S","company_name":"Mycat","donation":239},
 {"id":46,"first_name":"Reginauld","last_name":"Purselowe","email":"rpurselowe19@thetimes.co.uk","shirt_size":"L","company_name":"Jabbersphere","donation":11},
 {"id":47,"first_name":"Vida","last_name":"Tydd","email":"vtydd1a@dropbox.com","shirt_size":"S","company_name":"Quaxo","donation":55},
-{"id":48,"first_name":"Anderea","last_name":"MacGiolla Pheadair","email":"amacgiollapheadair1b@xing.com","shirt_size":"2XL","company_name":"Kwimbee","donation":214},
+{"id":48,"first_name":"anderea","last_name":"MacGiolla Pheadair","email":"amacgiollapheadair1b@xing.com","shirt_size":"2XL","company_name":"Kwimbee","donation":214},
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
@@ -95,7 +95,12 @@ firstNameCaps(runners);
 function largeSize(arrObj) {
   let largeShirts = [];
 
-  largeShirts = arrObj.filter(obj => obj.shirt_size === 'L');
+  // largeShirts = arrObj.filter(obj => obj.shirt_size === 'L');
+  largeShirts = arrObj.filter(function(element){
+    return element.shirt_size === 'L';
+  });
+
+
 
   return largeShirts;
 }
@@ -189,7 +194,11 @@ totalNumLargeDonations(runners);
 
 
 // My Stretches
-var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+// var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+
+var resetArr = function(arr) {                     // Easier helper function expression to deep clone
+  return JSON.parse(JSON.stringify(arr));
+};
 
 // 1. Sort array of objects by key property
 function sortByKey(arr, keyVal) {
@@ -197,8 +206,8 @@ function sortByKey(arr, keyVal) {
   let justSortedArr = [];    // debug variable to verify output
   sorted = arr.sort( function(a, b) {
     arr.forEach( (element) => {             // verify first Letter is uppercase
-      if (element[keyVal] === 'string') {     // ONLY if it is a string
-        element[keyVal][0].toUpperCase() + element[keyVal].slice(1);
+      if (typeof(element[keyVal]) === 'string') {     // ONLY if it is a string
+        element[keyVal] = element[keyVal][0].toUpperCase() + element[keyVal].slice(1);
       }
     });
 
@@ -209,17 +218,17 @@ function sortByKey(arr, keyVal) {
 
   sorted.forEach( (element) => justSortedArr.push(element[keyVal]) );
 
-  // return sorted;   return sorted array of objects
-  return justSortedArr;
+  return sorted;   // return sorted array of objects
+  // return justSortedArr;
 }
 
 sortByKey(clonedArr, 'first_name');
-sortByKey(clonedArr, 'last_name');
-sortByKey(clonedArr, 'donation');
+// sortByKey(clonedArr, 'last_name');
+// sortByKey(clonedArr, 'donation');
 
 // deep clone runners
-var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
-
+//var clonedArr = JSON.parse(JSON.stringify(runners));     // deep clone runners
+ var clonedArr = resetArr(runners);
 // 2. Add random Dates to clonedArr
 
 // Helper function:  randomly generate Date between start & end dates
@@ -239,3 +248,5 @@ addDates(clonedArr);
 
 // 3. Verify sortByKey works on dates  - Yes!
 sortByKey(clonedArr, 'birthday');
+
+

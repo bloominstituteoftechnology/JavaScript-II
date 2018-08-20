@@ -71,9 +71,10 @@ let arrWithDups = [1, 2, 1, 'kiwi', 'apple', 2, 3, 5, ' pear' , 'apple', 4, 5, 3
                                                 // logic to deal with objects
 function removeDups(array) {
   let makeSet = array.sort().reduce((accum, current) => {
-    const accLength = accum.length;
-    if( (accLength === 0 || accum[accLength - 1])  !== current) {    // added parenthesis to focus logic
-      accum.push(current);
+    const accLength = accum.length;      // const updated each iteration
+ //   current = JSON.stringify(current);
+    if( accLength === 0 || ( accum[accLength - 1]  !== current) ) {  // compares accum's current value
+      accum.push( current );    //JSON.parse(current)                // with array current value
     }
     return accum;
   }, [] );
