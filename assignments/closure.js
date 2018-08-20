@@ -52,10 +52,33 @@ const counterFactory = function () {
         count--;
         return count;
       }
-    }
+    };
     return counterObj;
-}
+};
 
-let upDown = counterFactory();
+// now with arrow function version
+const counterFactory2 = () => {
+  let count = 0;
+
+  let counterObj = {
+    increment: function() {
+      count++;
+      return count;
+    },
+    decrement: function() {
+      count--;
+      return count;
+    }
+  };
+  return counterObj;
+
+};
+
+
+
+
+// var upDown = counterFactory();
+
+letupDown = counterFactory2();
 upDown.increment();
 upDown.decrement();
