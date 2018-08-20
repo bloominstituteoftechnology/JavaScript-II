@@ -2,49 +2,44 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
-  const fItem = items[0];
-  return fItem;
+  cb(arr[0])
+  return cb;
 }
-const fItem1 = firstItem()
-console.log(fItem1);
+
 
 
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  const gLength = items.length
-  return gLength;
+  cb(arr.getLength)
+  return cb;
 }
-const gLength1 = getLength()
-console.log(gLength1);
+
 
 
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  const last = items[3]
-  return last; 
+  cb(arr[arr.getLength - 1])
+  return cb; 
 }
-const last1 = last()
-console.log(last1);
+
 
 
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  const sum = x + y
-  return sum;
+  cb(x + y)
+  return cb;
 }
-sumNums(3,4);
 
 
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  const product = x*y
-  return product;
+  cb(x * y)
+  return cb;
 }
-multiplyNums(3,4);
 
 
 
