@@ -119,4 +119,4 @@ console.log(`${users}`);
 let smallestDonation = runners.reduce((donate, index) => { 
     return donate.donation < index.donation ? donate : index
                }) 
-   console.log('\n Zombie\'s runners smallest donator:',smallestDonation.first_name, smallestDonation.last_name, '\n Donation ammount:', smallestDonation.donation);
+   console.log('\n Zombies\' run the smallest donator:',smallestDonation.first_name, smallestDonation.last_name, '\n Donation ammount:', smallestDonation.donation);
