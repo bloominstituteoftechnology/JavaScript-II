@@ -8,19 +8,27 @@
 //}
 
 //console.log(greeting());
-var greeting = (function () {
-  var greetingWord = "Hello";
-  return function (name) {
+const greeting = (name) => {
+  let greetingWord = "Hello";
+  return () => {
       return greetingWord + " " + name;
-  }
-})();
+  };
+};
 console.log(greeting("Shannon"));
 
+// const greeting = (name) => {
+//   let greetingWord = "Hello";
+//   const newGreeting = () => {
+//     return greetingWord + " " + name;
+//   };
+//   return newGreeting;
+// };
+
 // ==== Challenge 2: Create a counter function ====
-var add = (function () {
-  var counter = 0;
-  return function () {counter += 1; return counter}
-})();
+const add = () => {
+  let counter = 0;
+  return () => {counter += 1; return counter};
+};
 
   // Return a function that when invoked increments and returns a counter variable.
 
