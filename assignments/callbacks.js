@@ -2,7 +2,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
-  return cb(arr);
+  cb(arr);
 }
 
 function first(items) {
@@ -62,14 +62,15 @@ function contains(item, list, cb) {
 
 let checkItem = function(item, list) {
   if (list.includes(item) === true) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
 contains('Pencil', items, checkItem); // returns true because Pencil exists in array
 contains('tshirt',items, checkItem); // returns false because tshirt doesn't exist inside of the array
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
