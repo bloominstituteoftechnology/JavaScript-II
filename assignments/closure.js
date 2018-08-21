@@ -28,4 +28,21 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  const obj = {
+    increment: function () {
+      var i = 0;
+      const addOne = () => {
+        return i++;
+      }
+      return addOne;
+    },
+    decrement: function () {
+      var i = 0;
+      const minusOne = () => {
+        return i--;
+      }
+      return minusOne;
+    }
+  }
+  return obj;
 };
