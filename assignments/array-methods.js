@@ -102,7 +102,7 @@ const cbBigDonator = (item) => {
 bigDonator = runners.filter(cbBigDonator);
 console.log(bigDonator);
 
-// Problem 2: there are no 3xl t-shirst. Change all 3xl to 2xl.
+// Problem 2: there are no 3xl t-shirst anymore. Change all 3xl to 2xl.
 const cb3XL = (item) => {
   if (item.shirt_size === '3XL') {
     item.shirt_size = '2XL';
@@ -111,5 +111,4 @@ const cb3XL = (item) => {
 runners.forEach(cb3XL);
 console.log(runners);
 
-
-// Problem 3
+// Problem 3: count how many tshirts in each size are wanted.
