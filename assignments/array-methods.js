@@ -109,5 +109,4 @@ console.log(`* Problems I could solve \n
                 ** Get records of all users but a specific key/value or combined such as Fullname \n
                 ** Pull specific records from one object to another, such as passing multiple users under the same subscription \n
                 ** Combine two objects and return a single object, more like a SQL join of two columns and tables. \n
-                ** Search and return page/objects it is referring to.                
-                ** `)
+                ** Search and return page/objects it is referring to.`)
