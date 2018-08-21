@@ -56,28 +56,67 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach((item) => {
+
+    fullName.push(`${item.first_name} ${item.last_name}`)
+
+})
 console.log(fullName);
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+
 let allCaps = [];
-console.log(allCaps); 
+allCaps = runners.map(item =>
+    item.first_name.toUpperCase())
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts = runners.filter((runner) => {
+
+    return runner.shirt_size === 'L'
+})
 console.log(largeShirts);
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+ticketPriceTotal = runners.reduce((acculmulator, total) => {
+    return acculmulator + total.donation
+}, 0)
+
+console.log('Total dontations:', ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - finding mutiple people/customers/users from the same Company
+let companies = runners.filter((cmpy) => {
 
-// Problem 2
+   return cmpy.company_name ==='Gigashots'
+}) 
+console.log('Running as bunnies for the next 5k:',companies);
 
-// Problem 3
+// Problem 2 We want all the usersnames of just the email with Weenie Runner added for the 5k Weenie run.
+// This was an idea Wes Boss gave me by taking minutes and spiliting it to calculate them.
+const users = runners.map(item => item.email)
+                      .map(runners => {
+                          const [emailUser] = runners.split('@');
+                          return(`${emailUser} Weenie runner`)
+                        
+                      })
+
+console.log(`${users}`);
+
+
+// Problem 3 
+// To find who made the smallest donation for the Zombie run
+// Displaying first and last name with their donation ammount.
+let smallestDonation = runners.reduce((donate, index) => { 
+    return donate.donation < index.donation ? donate : index
+               }) 
+   console.log('\n Zombies\' run the smallest donator:',smallestDonation.first_name, smallestDonation.last_name, '\n Donation ammount:', smallestDonation.donation);
