@@ -1,11 +1,59 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function powerUp (x) {
+  let num = 2;
+  function elevate () {
+    num = Math.round(Math.pow(num, x) * 100) / 100;
+    return num;
+  }
+  return elevate;
+}
+
+let bacteriaPopulation = powerUp(1.5);
+let humanPopulation = powerUp(1.1);
+let mosquitoPopulation = powerUp (.9);
+
+console.log(bacteriaPopulation());
+console.log(bacteriaPopulation());
+console.log(bacteriaPopulation());
+console.log(bacteriaPopulation());
+console.log(bacteriaPopulation());
+console.log(bacteriaPopulation());
+console.log(humanPopulation());
+console.log(humanPopulation());
+console.log(humanPopulation());
+console.log(humanPopulation());
+console.log(humanPopulation());
+console.log(humanPopulation());
+console.log(mosquitoPopulation());
+console.log(mosquitoPopulation());
+console.log(mosquitoPopulation());
+console.log(mosquitoPopulation());
+console.log(mosquitoPopulation());
+console.log(mosquitoPopulation());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let num = 0;
+  function increment () {
+    num++;
+    return num;
+  }
+  return increment;
+}
+
+let numeroUno = counter();
+let numeroDos = counter();
+console.log (`Uno, ${numeroUno()}`);
+console.log (`Dos, ${numeroDos()}`);
+console.log (`Uno, ${numeroUno()}`);
+console.log (`Uno, ${numeroUno()}`);
+console.log (`Dos, ${numeroDos()}`);
+console.log (`Dos, ${numeroDos()}`);
+console.log (`Uno, ${numeroUno()}`);
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
@@ -17,4 +65,62 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let num = 0;
+  const addToNum = () => {
+    num++;
+    return num;
+  }
+  const subtractFromNum = () => {
+    num--;
+    return num;
+  }
+  const getCount = () => {
+    return num;
+  }
+  return {increment:addToNum, decrement:subtractFromNum, displayCount:getCount};
 };
+
+let pointCounter = counterFactory();
+let breadInventory = counterFactory();
+
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.increment();
+pointCounter.increment();
+breadInventory.decrement();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+pointCounter.decrement();
+pointCounter.increment();
+breadInventory.increment();
+pointCounter.decrement();
+breadInventory.increment();
+pointCounter.increment();
+pointCounter.decrement();
+breadInventory.decrement();
+breadInventory.increment();
+pointCounter.increment();
+
+console.log(pointCounter.displayCount());
+console.log(breadInventory.displayCount());

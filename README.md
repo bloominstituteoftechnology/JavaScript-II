@@ -37,4 +37,4 @@ We have learned that closures allow us to access values in scope that have alrea
 
 * [ ] Arrow Function Syntax - You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax
 
-* [ ] Look up what an IIFE is in JavaScript and experiment with them
+* [ ] Look up what an IIFE is in JavaScript and experiment with them 
