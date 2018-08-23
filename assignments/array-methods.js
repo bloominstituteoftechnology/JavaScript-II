@@ -56,21 +56,32 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+function totalName (x) {fullName.push(`${x.first_name}` + ' ' + `${x.last_name}`);}
+runners.forEach(totalName)
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+function totalName (x) {allCaps.push(`${x.first_name.toUpperCase()}`)}
+runners.map(totalName);
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+function LS (x) {if (x.shirt_size === 'L') { largeShirts.push(x);
+return largeShirts;}
+}
+
+runners.filter(LS);
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+function total (x,y) {return x + y.donation;}
+ticketPriceTotal.push(runners.reduce(total , 0));
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +89,41 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+/*How many Small Shirts do they need to order*/
+
+let smallShirts = 0;
+function SS (x) {if (x.shirt_size === 'S') {smallShirts = ++smallShirts; return smallShirts;}
+}
+
+runners.filter(SS);
+console.log(smallShirts);
+
 // Problem 2
 
+/*How many people donated $150.00? They get a free cooler. */
+
+let freePrize = 0;
+function big (x) {if (x.donation >=150) {++freePrize;};
+return freePrize;}
+
+runners.filter(big);
+
+
 // Problem 3
+
+/* Runners will run based on the last name. Who is the last runner? */
+
+let runnerZ = '';
+function lastRunner (x,y) {if (y.last_name > x) {runnerZ = y.last_name;}
+return runnerZ;}
+runners.reduce(lastRunner)
+
+
+for (let i = 0;i<runners.length;i++) {
+  if (runners[i].last_name === 'Zebedee') {
+    runnerZ = runners[i];
+  }
+}
+
+runnerZ;
+

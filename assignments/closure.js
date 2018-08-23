@@ -1,10 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function subtract(x,y) {
+  return `This is a subtraction closure. Be amazed! The answer is ${x - y}.`
+}
 
 // ==== Challenge 2: Create a counter function ====
+let upOne = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return ++upOne;
+
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
