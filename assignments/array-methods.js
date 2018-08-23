@@ -468,7 +468,6 @@ console.log(fullName)
 
 let allCaps = (x) => {
     return (x.first_name.toUpperCase());
-    return allCaps;
 }
 console.log(runners.map(allCaps));
 
@@ -491,12 +490,30 @@ console.log(runners.reduce(ticketPriceTotal, 0));
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
-let company = (arr) =>{
-    return arr.company_name;
-}
-console.log(runners.filter(company()));
+cl = console.log
+cl(`sweet`)
+// // Problem 1
+// send a thank you to the comapanies involved.
+const comps = [];
+comapniesInvolved = runners.forEach((x) =>{
+    if(!(comps.includes(x.company_name))){
+        comps.push(x.company_name);
+    }
+    console.log(comps.sort());
+    });
 
 // Problem 2
 
+
+
+
+
 // Problem 3
+
+  const thankYou = runners.filter(item => {
+   return (item.donation > 199); 
+  }).map((item) => {
+    return `Thanks ${item.first_name} for the sizeable donations.`
+  });
+  
+cl(thankYou)
