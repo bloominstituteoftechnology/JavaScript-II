@@ -1,11 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const phrase = (str) => {
+  // Return a function that when invoked increments and returns a counter variable.
+  let variable = 'Your word was: ';
+  const phraseMaker = () => {
+
+    return variable + str ;
+  }
+
+  return phraseMaker();
+};
+
+console.log(phrase('developer'));
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let variable = 0;
+  const counterCall = () => {
+
+    variable++;
+    return variable;
+  }
+
+  return counterCall;
 };
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
