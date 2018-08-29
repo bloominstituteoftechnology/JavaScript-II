@@ -56,28 +56,94 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+let wholeName = runners.forEach((fullNameCallback = ((item)=>{fullName.push(`${item.first_name} ${item.last_name}`)})))
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-console.log(allCaps); 
+let capitalize = runners.map((item) => {
+    return item.first_name.toUpperCase()});
+  console.log(capitalize); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-console.log(largeShirts);
+let bigShirts = runners.filter(item => {
+    return item.shirt_size === "L"
+      });
+    
+    console.log(bigShirts); 
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce(donations = (total, amount) => {return total += amount.donation}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: The organizers of the event want to know how much the average donation was. Use .reduce() to find out the average donation.
 
-// Problem 2
+let donationAverage = runners.reduce(averageAmount = (total, amount, index, array) => {return ticketPriceTotal / array.length});
+console.log(donationAverage);
 
-// Problem 3
+// Problem 2: There will be a small booklet printed for the event, that announces each company, their representative, donation amount, and how to contact them. Create a function that outputs a statement ready for the printer for each runner.
+
+let bookletCopy = runners.map(runnerStatement = (item) => {
+  return `${item.first_name} ${item.last_name} is representing ${item.company_name}, who donated $${item.donation}. If you would like to learn more about ${item.company_name}, you can contact them at ${item.email}.`});
+console.log(bookletCopy);
+
+// Problem 3: The organizers need to know how many of each size shirt to order for the event. Calculate how many of each size are needed.
+
+let smallShirts = runners.filter((item)=>{
+    return item.shirt_size === 'S'});
+  
+  let mediumShirts = runners.filter((item)=>{
+    return item.shirt_size === 'M'});
+  
+  let largeShirts = runners.filter((item)=>{
+    return item.shirt_size === 'L'});
+  
+  let extraLShirts = runners.filter((item)=>{
+    return item.shirt_size === 'XL'});
+  
+  let twoXLShirts = runners.filter((item)=>{
+    return item.shirt_size === '2XL'});
+  
+  
+  console.log(`Order ${smallShirts.length} small shirts, ${mediumShirts.length} medium shirts, ${largeShirts.length} large shirts, ${extraLShirts.length} XL shirts, and ${twoXLShirts.length} 2XL shirts.`);
+
+
+
+// ***Trying to use a counter function***
+
+// const counter = () => {
+//     let count=0; 
+//     const addOne=()=>{return count+=1}
+//     return addOne};
+  
+//   const small = counter();
+//   const medium = counter(); 
+//   const large = counter();
+//   const extraLarge = counter();
+//   const twoXL = counter();
+  
+//   let smallShirts = runners.filter((item)=>{
+//     let smallCount = (item.shirt_size === '2XL');
+//     return smallCount;
+//   });
+  
+//   console.log(smallShirts);
+
+
+
+// This lets me console.log() the final tally.
+
+// let addSmall = (item) => {
+//     for (i=0; i<item.length; i++) {
+//       if (item[i].shirt_size === '2XL') {
+//         small();
+//       }
+//     }
+//   }
+// addSmall(runners);
+// console.log(small()-1);
