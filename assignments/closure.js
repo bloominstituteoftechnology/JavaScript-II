@@ -8,10 +8,10 @@ const firstName = () => {
 		return `Hello, ${name}!`;
 	};
 
-	return helloName();
+	return helloName;
 };
 
-const greeting = firstName;
+const greeting = firstName();
 
 greeting();
 
