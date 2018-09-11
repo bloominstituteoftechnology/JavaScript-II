@@ -56,28 +56,60 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function(runner) {
+    let name = `${runner.first_name} ${runner.last_name}`;
+    fullName.push(name);
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+runners.map(function(runner) {
+    let capName = runner.first_name.toUpperCase();
+    allCaps.push(capName);
+});
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter(runner => runner.shirt_size == 'L');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce(function (total, runner) {
+    return total + runner.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
 
-// Problem 2
+// Problem 1: 
+// The community center wants to determine who their biggest donors are (i.e. greater than $250 donation) and send an email to thank them via mail merge. Please find the biggest donors first. For these donors, create a mail merge object in which the email address is the key and the body copy of the email is the value. The email copy should include their first name and donation amount.
 
-// Problem 3
+let bigSpenders = runners.filter(runner => runner.donation > 250);
+let mailMerge = {};
+bigSpenders.forEach(function(runner){
+    mailMerge[runner.email] = `Hi ${runner.first_name}, thanks for your generous donation of $${runner.donation}! This race would not be possible without your support; we look forward to seeing you at the run!`;
+})
+console.log(mailMerge)
+
+
+// Problem 2: 
+// The community center wants to forecast how many medium sized shirts they will need for next year's run. They expect the proportion of sizes to remain the same but expect the total volume of attendees to go up by 50%.
+let smallShirts = runners.filter(runner => runner.shirt_size == 'S');
+const smallShirtProportion = smallShirts.length/runners.length
+const raceForecast = runners.length * 1.5
+const smallShirtForecast = Math.round(smallShirtProportion * raceForecast)
+console.log(smallShirtForecast)
+
+
+// Problem 3: 
+// The community center wants to do a random giveaway during the race. They've drawn lots and decided that runners who work at companies beginning with "K" will win some prize. Please determine which participants this applies to (new Array) and give a count of them (using reduce).
+let kRunners = runners.filter(runner => runner.company_name.charAt(0) === 'K');
+let kRunnersCount = kRunners.length;
+console.log(kRunners)
+console.log(kRunnersCount)
