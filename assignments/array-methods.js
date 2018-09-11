@@ -121,3 +121,10 @@ specialGift.forEach((runner) => {
 console.log(specialGiftEmails);
 
 // Problem 3
+//Average donation
+
+let totalDonations = runners.reduce((acccumulator, currentValue ) => {
+  return acccumulator + currentValue.donation;
+}, 0);
+let averageDonation = totalDonations/runners.length; 
+console.log(averageDonation);
