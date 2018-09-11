@@ -54,10 +54,10 @@ function contains(item, list, cb) {
 contains('yo-yo', items, (item, list) => {
   for(let i = 0; i < list.length; i++) {
     if(list[i] === item) {
-      return console.log('true');
+      return true;
     }
   }
-  return console.log('false');
+  return false;
 });
 /* STRETCH PROBLEM */
 
