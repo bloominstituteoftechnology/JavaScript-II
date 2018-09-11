@@ -97,12 +97,14 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // Company teams
-// let companies = []; 
+
+// let companies = [];
 // runners.forEach((runner) => {
 //     companies.push(`${runner.company_name}`);
 // });
 //  console.log(companies.sort());
- //^I just wanted to get a list of company names so I didn't have to scroll up.
+ //^I just wanted to get a list of company names so I didn't have to scroll up. And sorted it so that I could grab one that had more than one person
+ 
 
 let skinixTeam = runners.filter((runner) => {
   return runner.company_name === 'Skinix';
