@@ -1,14 +1,43 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function pickTeamMascot(mascotName) {
+  const mascot = mascotName;
+  console.log(`Go ${mascot}!`);
+
+  function mascotCity() {
+    const _city = "Albequerque";
+    console.log(`The ${mascot} are from ${_city}!`);
+
+  }
+  mascotCity();
+}
+pickTeamMascot('Giraffes');
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 0;
+  return () => (++count);
   // Return a function that when invoked increments and returns a counter variable.
 };
+
+const newCounter = counter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+
+
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
