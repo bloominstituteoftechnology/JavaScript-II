@@ -57,7 +57,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
 for (let i = 0; i < runners.length; i++){
-    fullName.push(runners[i].first_name + ' ' + runners[i].last_name);
+    fullName.push(runners[i].first_name + " " + runners[i].last_name);
 }
 console.log(fullName);
 
@@ -72,11 +72,19 @@ for(let i = 0; i < runners.length; i++){
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+for(let i = 0; i < runners.length; i++ ) {
+    if (runners[i].shirt_size === "L") {
+      largeShirts.push(runners[i]);
+    }
+  }
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+for(let i = 0; i < runners.length; i++ ) {
+    ticketPriceTotal += runners[i].donation;
+  }
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
