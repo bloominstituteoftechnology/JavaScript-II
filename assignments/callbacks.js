@@ -93,8 +93,16 @@ contains('yo-yo', items, function(value){
 
 /* STRETCH PROBLEM */
 
+exampleArray = [1,1,1,1,1,1,2,3,4,5,6,7,8,8,8,9,9]
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let deduped = Array.from(new Set(array)); // the Set object only accepts uniques. While this is a technicality, it's nice to know about.
+  return cb(deduped);
 }
+
+removeDuplicates(exampleArray, function(value){
+  console.log(value);
+})
