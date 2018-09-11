@@ -21,27 +21,75 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
+// ========================================================================================================================================= 
+// PROBLEM 1
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function(length) {
+  console.log(length)
+})
+
+// =========================================================================================================================================
+// PROBLEM 2
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
 }
+
+last(items, function(lastItem) {
+  console.log(lastItem)
+});
+
+// =========================================================================================================================================
+// PROBLEM 3
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  let sum = x + y;
+  return cb(sum);
 }
+
+sumNums(3,4,function(sum){
+  console.log(sum);
+})
+
+// =========================================================================================================================================
+// PROBLEM 4
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  let product = x * y;
+  return cb(product);
 }
+
+multiplyNums(3,4,function(product){
+  console.log(product);
+})
+
+// =========================================================================================================================================
+// PROBLEM 5
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if (list.includes(item) === true) {
+    return cb(true);
+  }
+  else {
+    return cb(false);
+  }
 }
+
+contains('yo-yo', items, function(value){
+  console.log(value);
+})
+
+// =========================================================================================================================================
 
 /* STRETCH PROBLEM */
 
