@@ -57,8 +57,8 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
 
-runners.forEach(function(array) {
-  fullName.push(array.first_name + " " + array.last_name)
+runners.forEach(function(item) {
+  fullName.push(item.first_name + " " + item.last_name)
 })
 console.log(fullName);
 
@@ -87,8 +87,11 @@ console.log(ticketPriceTotal);
 // Problem 1
 //Print an email list for marketing purposes:
 let emaillist = [];
-emaillist = runners.filter(item => item.email === "L");
-console.log(largeShirts);
+
+runners.forEach(function(item) {
+  emaillist.push(item.email)
+})
+console.log(emaillist);
 
 // Problem 2
 
