@@ -73,8 +73,21 @@ contains("Gum", items, function(obj) {
 
 /* STRETCH PROBLEM */
 
+let dupes = [1, 1, 2, 3, 3, 4];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let nonDupes = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!nonDupes.includes(array[i])) {
+      nonDupes.push(array[i]);
+    }
+  }
+  return cb(nonDupes);
 }
+
+//ex:
+removeDuplicates(dupes, function(arr) {
+  console.log(arr);
+});
