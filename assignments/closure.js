@@ -1,11 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function mvp(){
+  const name = 'Mookie Betts';
+  function announce(){
+    console.log(`${name} will win the MVP award this year.`);
+  }
+  announce();
+}
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function addOne() {
+    count += 1;
+    return count;
+  };
 };
+
+const newCounter = counter();
+newCounter();
+newCounter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
