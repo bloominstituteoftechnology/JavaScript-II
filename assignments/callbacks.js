@@ -82,8 +82,25 @@ contains('Pencil', items, function(bool) {
 
 /* STRETCH PROBLEM */
 
+// function removeDuplicates(array, cb) {
+//   // removeDuplicates removes all duplicate values from the given array.
+//   // Pass the duplicate free array to the callback function.
+//   // Do not mutate the original array.
+// }
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  const uniqueArr = [];
+
+  for (let i=0; i < array.length; i++) {
+    if (!(uniqueArr.includes(array[i]))) {
+      uniqueArr.push(array[i]);
+    }
+  }
+
+  return cb(uniqueArr);
 }
+
+const arr = ["jasmine", "sumi", "lee", "lee", "sumi", "jasmine"];
+removeDuplicates(arr, function(noDuplicate){
+  console.log(noDuplicate);
+});
