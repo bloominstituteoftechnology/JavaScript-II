@@ -16,12 +16,11 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
 };
 
-// Example usage: 
-// const newCounter = counter();
-// console.log(newCounter());
-// console.log(newCounter());
-// newCounter(); // 1
-// newCounter(); // 2
+// Testing
+const newCounter = counter();
+console.log(newCounter());
+newCounter(); // 1
+newCounter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -38,7 +37,8 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
 };
 
-const counterObj = counterFactory() // count === Object
+//Testing
+const counterObj = counterFactory()
 console.log(counterObj.increment()) // 1
 console.log(counterObj.increment()) // 2
 console.log(counterObj.decrement()) // 1
