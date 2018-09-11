@@ -1,11 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function numberGenerator() {
+  let num = 1;
+  function check() { 
+    console.log(num);
+  }
+  num--;
+  return check;
+}
+
+let number = numberGenerator();
+number();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+function counter () {
+  let count = 0;
+  
+  function counter1 () {
+    count += 1;
+    console.log(count);
+  }
+  return counter1;
+}
+const increment = counter();
+increment();
+increment();
   // Return a function that when invoked increments and returns a counter variable.
-};
+
+
+console.log(counter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
