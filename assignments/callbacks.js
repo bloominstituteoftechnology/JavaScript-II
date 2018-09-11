@@ -18,8 +18,8 @@ function last(arr, cb) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-    let sum = x + y;
-    cb(sum);
+  let sum = x + y;
+  cb(sum);
 }
 
 function multiplyNums(x, y, cb) {
@@ -42,4 +42,12 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let deDuped = [];
+  for (let i = 0; i < array.length; i++) {
+    if (deDuped.indexOf(array[i]) === -1) {
+      deDuped.push(array[i]);
+    }
+  }
+
+  cb(deDuped);
 }
