@@ -1,6 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function outfit(outfitParameter) {
+   const outfit = outfitParameter;
+   const rando = "Pajamas!";
+   console.log(`I'm wearing a ${outfit}`);
+  
+   function shoes(shoeParameter) {
+     const shoes = shoeParameter;
+     const randofoot = "flipflops"
+     console.log(`${outfit} with ${shoes} to be exact`);
+     console.log(`${rando} and ${randofoot} are better!`);
+   }
 
+   shoes("dress shoes");
+ }
+
+ outfit("A suit");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
