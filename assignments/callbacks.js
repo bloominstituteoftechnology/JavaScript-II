@@ -82,20 +82,19 @@ multiplyNums(5, 5, multiply);
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  return cb(item, list);
+  console.log(cb(item, list));
 }
 
 function check(item, list) {
   for (let i = 0; i < list.length; i++) {
-    if (list[i].value === item) {
-      result = true;
-    } else {
-      result = false;
+    if (list[i] === item) {
+      return (true);
     }
   }
+  return (false);
 }
 
-contains(phone, items, check)
+contains('notebook', items, check)
 
 
 // === === === === === === === === === === === === === === === === === === === === === =
