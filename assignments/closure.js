@@ -18,13 +18,17 @@ top();
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = (num = 1) => { 
-	let count = (num) =>  {return num += 1; } count();  
-  // Return a function that when invoked increments and returns a counter variable.
+const counter = (num = 0) => {
+		function count() {
+			num ++; 
+			return num;
+		} 
+return count(); 
+// Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: 
-const newCounter = counter();
-console.log(counter()); // should return 2.
+//const newCounter = counter();
+console.log(counter());
 
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
