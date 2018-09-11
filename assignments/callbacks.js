@@ -37,17 +37,29 @@ function last(arr, cb) {
   return cb(lastItem);
 }
 
-last(items, function(cb) {
-  console.log(cb);
-});
+last(items, console.log);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x,y);
 }
+
+function add(x,y) {
+  console.log(x + y);
+}
+
+sumNums(4,2,add);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x,y);
 }
+
+function multiply(x,y,) {
+  console.log(x * y);
+}
+
+multiplyNums(8,8,multiply);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
