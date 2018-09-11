@@ -29,21 +29,21 @@ newCounter();
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
-let counter1 = function () {
-  let counter2 = 0;
+let counter1 = (function () {
+      let counter2 = 0;
 
-  function changeBy(val) {
-    counter2 += val;
-  }
-  return {
-    increment: function () {
-      changeBy(1);
-    },
-    decrement: function () {
-      changeBy(-1);
-    },
-    value: function () {
-      return counter2;
-    }
-  };
-}
+      function changeBy(val) {
+        counter2 += val;
+      }
+      return {
+        increment: function () {
+          changeBy(1);
+        },
+        decrement: function () {
+          changeBy(-1);
+        },
+        value: function () {
+          return counter2;
+        }
+      };
+    }();
