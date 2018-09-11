@@ -19,17 +19,13 @@ function counter () {
   
   function counter1 () {
     count += 1;
-    return count;
+    console.log(count);
   }
   return counter1;
 }
 const increment = counter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
-
-console.log(c1, c2, c3);
-
+increment();
+increment();
   // Return a function that when invoked increments and returns a counter variable.
 
 
