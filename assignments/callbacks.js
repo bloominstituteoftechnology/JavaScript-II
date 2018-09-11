@@ -29,7 +29,7 @@ function getLength(arr, cb) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  cb(arr[arr.length-1];
+  cb(arr[arr.length-1]);
 }
 
 function sumNums(x, y, cb) {
@@ -59,4 +59,14 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let trackerObj = {};
+  const filteredArr = array.filter( x => {
+    if (trackerObj.hasOwnProperty(x)) {
+      return;
+    }
+    trackerObj[x];
+    return x;
+  });
+
+  cb(filteredArr)
 }
