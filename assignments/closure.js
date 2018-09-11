@@ -45,4 +45,23 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let counterVar = 0;
+  let counterGadget = {};
+  counterGadget.increment = function() {
+    counterVar++;
+    return counterVar;
+  }
+  counterGadget.decrement = function() {
+    counterVar--;
+    return counterVar;
+  }
+  return counterGadget;
 };
+
+gadget1 = counterFactory();
+console.log(gadget1.increment());
+console.log(gadget1.increment());
+console.log(gadget1.increment());
+console.log(gadget1.decrement());
+console.log(gadget1.decrement());
+console.log(gadget1.increment());
