@@ -18,8 +18,9 @@ const counter = () => {
   return goUp;
 };
 let newCounter = counter();
-newCounter();
-console.log(newCounter());
+newCounter(); // 1
+newCounter(); // 2
+console.log(newCounter()); // 3
 // Return a function that when invoked increments and returns a counter variable.
 
 // Example usage: const newCounter = counter();
