@@ -80,7 +80,7 @@ function contains(item, list, cb) {
 
 /* contains('Notebook', items, function(does_contain) {
   console.log(does_contain);
-}); */ 
+}); */
 
 contains('Notebook', items, doesContain => console.log(doesContain));
 

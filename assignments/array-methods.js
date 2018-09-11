@@ -84,7 +84,17 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// filter to find all donations above $250
+const highRollers = runners.filter(runner => runner.donation >= 250); 
+console.log(highRollers);
 
 // Problem 2
+// map and sort to alphabetize last names
+const alphaNames = runners.map(runner => runner.last_name).sort();
+console.log(alphaNames);
 
 // Problem 3
+// map to list companies whose employees donated more than 100
+const goodCos = runners.filter(runner => runner.donation >= 100)
+  .map(runner => runner.company_name);
+console.log(goodCos);
