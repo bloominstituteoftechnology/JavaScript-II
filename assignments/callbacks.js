@@ -75,9 +75,26 @@ contains( "Gum", items, function( condition )
 } );
 
 /* STRETCH PROBLEM */
-
+let sampleArray = [ 4, 4, 5, 6 ];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let newArray = [];
+  for( i = 0; i < array.length; i++ )
+  {
+    let currentElement = array[ i ];
+    let testElement = newArray.find( function( element )
+    {
+      return element === currentElement;
+    } );
+    if( testElement !== currentElement )
+    {
+      newArray.push( currentElement );
+    }
+  }
+  return cb( newArray );
 }
+removeDuplicates( sampleArray, function( newArray ){
+  console.log( newArray );
+} );
