@@ -21,6 +21,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
+const colors = ['Blue' , 'Pink' , 'Mint' , 'Tan'];
+
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
