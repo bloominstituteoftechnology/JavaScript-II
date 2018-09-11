@@ -80,7 +80,21 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Find out how much money will be donated in total after a 17% tax.
+let revenue = runners
+    .map(runner => 0.83 * runner.donation)
+    .reduce((total, net) => total + net, 0);
+console.log(revenue);
 
 // Problem 2
+// Add a jersey number to each runner's information.
+runners.forEach(function(runner) {
+    runner.jersey_num = Math.floor(Math.random() * 100);
+})
 
 // Problem 3
+// Get the information that will be on each player's jersey: Last name in all caps and jersey number.
+jerseyInfo = runners.map(function(runner) {
+    return {'last_name':runner.last_name.toUpperCase(), 'number':runner.jersey_num};
+});
+console.log(jerseyInfo);
