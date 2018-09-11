@@ -104,6 +104,18 @@ console.log(
   Object.entries(countProp(runners, 'company_name'))
   .map(counterStr).join('\n')
 );
+// const onlyKeepProp = prop => (obj, prop) => obj[prop];
+const onlyKeepCompanyName = (obj) => obj['company_name'];//onlyKeepProp('company_name');
+const reduceUnique = (obj, value) => {
+  if (obj.hasOwnProperty(value)) {
+    obj[value] += 1;
+  } else {
+    obj[value] = 1;
+  } 
+  return obj;
+}
+let numPeopleInCompany = Object.entries(runners.map(onlyKeepCompanyName).reduce(reduceUnique , {})).map(counterStr).join('\n');
+console.log(numPeopleInCompany);
 
 // Problem 3 count shirt sizes
 console.log(
