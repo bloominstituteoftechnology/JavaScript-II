@@ -1,10 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 (($) => {
-  let A = '\ud83d\udc45';
+  let A = '\ud83d\ude1b';
   $[`${$}`] = a => A;
   console.log($[`${$}`]());
 })([]);
+
+/*
+function aFunction (anObject){
+  let tongueEmoji = '\ud83d\ude1b';
+  anObject.someFunction = function(parameter){
+    return A; // The parameter does nothing
+  };
+  console.log(anObject.someFunction());
+}
+let newObject = []; // Arrays are objects, too
+aFunction(newObject);
+*/
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
