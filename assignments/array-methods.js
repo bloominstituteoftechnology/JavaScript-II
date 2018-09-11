@@ -126,5 +126,5 @@ console.log(specialGiftEmails);
 let totalDonations = runners.reduce((acccumulator, currentValue ) => {
   return acccumulator + currentValue.donation;
 }, 0);
-let averageDonation = totalDonations/runners.length; 
+let averageDonation = totalDonations/runners.length;
 console.log(averageDonation);
