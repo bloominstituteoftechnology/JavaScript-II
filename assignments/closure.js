@@ -23,12 +23,12 @@ console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
 
-const anotherCounter = counter();
-console.log(anotherCounter());
-console.log(anotherCounter());
-console.log(anotherCounter());
-console.log(anotherCounter());
-console.log(anotherCounter());
+const differentCounter = counter();
+console.log(differentCounter());
+console.log(differentCounter());
+console.log(differentCounter());
+console.log(differentCounter());
+console.log(differentCounter());
 
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
