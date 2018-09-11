@@ -116,7 +116,16 @@ let dontationTotal = runners.reduce((total, runner) => total + runner.donation, 
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+///filter all last names by R and create an array  of objects with last name, email and company
+let last_names = runners.filter(name => name.last_name.charAt(0) == 'R').map(runner => {
+    let  newObj = {};
+    newObj.last_name =  runner.last_name;
+    newObj.company = runner.company_name;
+    newObj.email = runner.email;
 
+    return newObj;
+});
+ console.log(last_names);
 // Problem 2
 
 // Problem 3
