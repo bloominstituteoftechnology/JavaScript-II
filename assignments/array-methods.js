@@ -117,8 +117,9 @@ let dontationTotal = runners.reduce((total, runner) => total + runner.donation, 
 
 // Problem 1
 ///filter all last names by R and create an array  of objects with last name, email and company
-let last_names = runners.filter(name => name.last_name.charAt(0) == 'R').map(runner => {
+let last_names = runners.filter(name => name.last_name.charAt(0) == 'S').map(runner => {
     let  newObj = {};
+    newObj.first_name = runner.first_name;
     newObj.last_name =  runner.last_name;
     newObj.company = runner.company_name;
     newObj.email = runner.email;
@@ -132,3 +133,6 @@ let company_donations = runners.filter(company => company.company_name == "Skini
 console.log(company_donations);
 
 // Problem 3
+//filter participating companies and runners
+let participants = runners.filter(runner => runner.company_name == "Skinix").map(participant => `${participant.company_name}: ${participant.first_name} ${participant.last_name}`);
+console.log(participants);
