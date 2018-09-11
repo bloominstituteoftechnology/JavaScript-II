@@ -491,8 +491,25 @@ const emails = runners
 console.log(emails);
 
 // Problem 2
+// The event committee needs to tier the donations for the program. Group the runners into donor categories based on their contribution (below) and print out the companies in each category
 
-// console.log(bibNumbers);
+// Gold: $300-$250
+// Silver $249 - $150
+// Bronze $149 - below
+
+const gold = runners
+  .filter(runner => runner['donation'] >= 250)
+  .map(company => company['company_name']);
+const silver = runners
+  .filter(runner => runner['donation'] < 250 && runner['donation'] >= 150)
+  .map(company => company['company_name']);
+const bronze = runners
+  .filter(runner => runner['donation'] <= 149)
+  .map(company => company['company_name']);
+
+console.log('Our gold company donors giving between $250-$300 are:', gold);
+console.log('Our silver company donors giving between $150-$249 are:', silver);
+console.log('Our bronze company donors giving between $1-$149 are:', bronze);
 
 // Problem 3
 // Every runner that donated over $150 was entered into a contest to win a new iPad (or something!) Put all the runners that have donated $150 or more into an array and pick a winner.
