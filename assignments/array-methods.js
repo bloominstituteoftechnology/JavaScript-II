@@ -74,6 +74,7 @@ largeShirts = runners.filter(item => item.shirt_size === "L");
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce((total, item) => total += item.donation, 0);
 // console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
