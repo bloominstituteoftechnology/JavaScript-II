@@ -90,7 +90,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Get a list of all the companies that donated more than $100.
+
+let highRollers = runners.filter(money => money.donation < 100).map(item => `${item.company_name} donated more than $100`)
+
+console.log(highRollers)
 
 // Problem 2
+// Create a list with the first and last name plus e-mail.
+let nameAndEmail = [];
+
+runners.forEach(function(item) {
+    nameAndEmail.push(`Name: ${item.first_name} ${item.last_name} E-mail: ${item.email}`)
+});
+
+console.log(nameAndEmail)
 
 // Problem 3
+// Create a list that matches the runner ID with the company they're associated with.
+
+let whosWithWho = [];
+
+runners.forEach(item => whosWithWho.push(`Runner number ${item.id} is with ${item.company_name}`))
+
+console.log(whosWithWho);
