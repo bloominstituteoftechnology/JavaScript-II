@@ -34,4 +34,21 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let val = 0;
+  let obj = {
+    increment: function() {
+      val++;
+      return val;
+    },
+    decrement: function() {
+      val--;
+      return val;
+    }
+  };
+  return obj;
 };
+const newInc = counterFactory();
+newInc.increment(); // 1
+newInc.increment(); // 2
+newInc.decrement(); // 1
+newInc.decrement(); // 0

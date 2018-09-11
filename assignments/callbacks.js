@@ -89,5 +89,5 @@ function removeDuplicates(array, cb) {
 
 //ex:
 removeDuplicates(dupes, function(arr) {
-  console.log(arr);
+  console.log(arr); //logs [1,2,3,4]
 });
