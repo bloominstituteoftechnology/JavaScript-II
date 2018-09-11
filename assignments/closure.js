@@ -1,10 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+const sampleFunc = () => {
+  let variable = 'value'
+  const nestedFunc = () => {
+    console.log(`I want ${variable} from the sampleFunc closure in this nestedFunc!`);
+  }
+  nestedFunc()
+};
+sampleFunc();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
