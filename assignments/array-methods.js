@@ -94,5 +94,17 @@ runners.forEach(function(item) {
 console.log(emaillist);
 
 // Problem 2
+//100 Club, print names of runners with donations >100.
+
+let Club100 = [];
+Club100 = runners.filter(item => item.donation >= 100);
+Club100.forEach(function(item) {
+  Club100.push(item.first_name + ' ' + item.last_name)
+})
+console.log(Club100);
 
 // Problem 3
+//Early discount, print details of first 10 runners to sign up (id: 1-10)
+let earlybird = [];
+earlybird = runners.filter(item => item.id <= 10);
+console.log(earlybird);
