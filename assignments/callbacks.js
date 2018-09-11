@@ -21,29 +21,74 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-const colors = ['Blue' , 'Pink' , 'Mint' , 'Tan'];
 
+// Challenge 1
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+function length(totalItmes){
+  console.log(totalItems);
 }
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+getLength(items, length);
+
+// Challenge 2
+
+function last(arr, cb){
+  return cb(arr.slice(-1)[0]);
 }
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+function lastItem(lastItm){
+  console.log(lastItm);
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+last(items, lastItem);
+
+// Challenge 3
+
+function sumNums(x, y, cb){
+  return cb( x , y);
 }
+
+function getSum(x, y){
+  console.log(x + y);
+}
+
+sumNums(10, 10, getSum);
+
+// Challenge 4
+
+function multiplyNums(x, y, cb){
+  return cb( x , y);
+}
+
+function multiply(x, y){
+  console.log(x * y);
+}
+
+multiplyNums(10, 10, multiply);
+
+// Challenge 5
+
+let colors = ["blue", "red" , "yellow"];
+
+function contains(item, list, cb){
+  for(let i = 0; i<list.length; i++){
+    if(list[i] === item){
+      return cb(true);
+    }else{
+      return cb(false);
+    }
+  }
+};
+
+function DoesItHave(item){
+  console.log(item);
+}
+
+contains("teal", colors, DoesItHave);
 
 /* STRETCH PROBLEM */
 
