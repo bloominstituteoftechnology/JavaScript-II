@@ -38,4 +38,23 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 1
+  return {
+    increment: () => count++,
+    decrement: () => count--
+  }
 }
+
+const superCounter = counterFactory()
+console.log(superCounter.increment())
+console.log(superCounter.increment())
+console.log(superCounter.increment())
+console.log(superCounter.increment())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+console.log(superCounter.decrement())
+
