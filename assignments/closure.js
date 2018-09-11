@@ -8,9 +8,17 @@ console.log(returnClosure());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  num = 1;
   // Return a function that when invoked increments and returns a counter variable.
+  function increment() {
+    console.log(num);
+  }
+  num++;
+  return increment;
 };
-
+const number = counter();
+number();
+number();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2

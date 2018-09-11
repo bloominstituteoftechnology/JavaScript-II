@@ -489,7 +489,35 @@ console.log(ticketPriceTotal.reduce(reducer));
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The event director wants to find all the cheapos on the list and press them to donate more money!
+// Create a list of all the people who have donated less than or equal to $50. The event director wants only their first name, last name, email address, and how much they donated, he doesn't need the rest of their info.
+const chepos = [];
+runners.forEach(function(runner) {
+  if (runner.donation <= 50) {
+    chepos.push(
+      `${runner.first_name} ${runner.last_name} ${runner.email} ${
+        runner.donation
+      }`
+    );
+  }
+});
+console.log(chepos);
 
 // Problem 2
+// log all company names in alph order
+let companyNames = [];
+runners.forEach(function(runner) {
+  companyNames.push(runner.company_name);
+});
+console.log(companyNames.sort());
 
 // Problem 3
+// find amount of medium shirts needed
+
+const mediumShirts = [];
+runners.forEach(function(runner) {
+  if (runner.shirt_size === "M") {
+    mediumShirts.push(runner);
+  }
+});
+console.log(`We need ${mediumShirts.length} medium shirts`);
