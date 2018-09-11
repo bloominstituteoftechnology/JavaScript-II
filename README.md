@@ -4,10 +4,10 @@
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
 ### Task 1: Set Up The Project With Git
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
-* [ ] Use `console.log()` statements to check your work.
+* [X] Fork the project into your GitHub user account
+* [X] Clone the forked project into a directory on your machine
+* [X] You are now ready to build this project with your preferred IDE
+* [X] Use `console.log()` statements to check your work.
 
 ### Task 2: Callbacks
 This task focuses on getting practice with callback functions by giving you an array of values and instructions on what to do with that array.
