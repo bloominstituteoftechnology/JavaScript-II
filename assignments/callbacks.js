@@ -22,9 +22,16 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+function getLength(arr, callback) {
   // getLength passes the length of the array into the callback.
+  return callback(arr);
 }
+
+function arrayLength(arr){
+  return arr.length;
+}
+console.log(getLength(items, arrayLength));
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
