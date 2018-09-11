@@ -48,6 +48,8 @@ const counterFactory = () => {
   return obj;
 };
 const newInc = counterFactory();
+
+//ex:
 newInc.increment(); // 1
 newInc.increment(); // 2
 newInc.decrement(); // 1
