@@ -95,9 +95,9 @@ runners.forEach((bizName) => promoteCompanies.push(bizName.company_name))
 console.log(promoteCompanies)
 
 // Problem 2 - Size of donation = Size of logo on poster. Get all companies who donated at least 200
-let bigBucks = runners.filter(function(runner){
-    if(runner.donation >= 200){
-        return `${runner.company_name}`;
+let bigBucks = runners.filter(function(bigBaller){
+    if(bigBaller.donation >= 200){
+        return `${bigBaller.company_name}`;
     }
 })
 console.log(bigBucks);
