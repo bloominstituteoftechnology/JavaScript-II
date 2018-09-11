@@ -18,12 +18,24 @@ function hello() {
 hello();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+  const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let newCounter = 0;
+
+  function count() {
+    newCounter++;
+    return newCounter;
+  };
+
+  return count;
 };
+const newCounter = counter();
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+   console.log(newCounter());
+   console.log(newCounter());
+   console.log(newCounter());
+   //newCounter(); // 1
+   //newCounter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
