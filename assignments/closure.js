@@ -1,9 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function mathProb() {
+  let x = 3;
+  let y = 2;
+  return x+y;
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let counterVar = 0 += x;
+  return counterVar;
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
