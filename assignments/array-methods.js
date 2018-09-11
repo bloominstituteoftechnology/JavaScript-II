@@ -65,18 +65,16 @@ runners.forEach(function(runner){
     fullName.push(`${runner.first_name} ${runner.last_name}`);
 
 });
-console.log(fullName);
+//console.log(fullName);
 
 //Arrow function 
 runners.forEach(runner => fullNameArrow.push(`${runner.first_name} ${runner.last_name}`));
-console.log(fullNameArrow);
+//console.log(fullNameArrow);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-
-runners.map(function(runner){
-    allCaps.push(runner.first_name.toUpperCase());
+let allCaps = runners.map(function(runner){
+   return runner.first_name.toUpperCase();
 });
 console.log(allCaps); 
 
@@ -87,25 +85,26 @@ console.log(allCapsArrow);
 // // ==== Challenge 3: Use .filter() ====
 // // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 
-let shirt_changes = runners.filter(function(shirts){
+let largeShirts = runners.filter(function(shirts){
     return shirts.shirt_size == 'L';
-});
-
-let largeShirts = shirt_changes.map(function(runner){
+}).map(function(runner){
     return `${runner.first_name} ${runner.last_name} wears a size: ${runner.shirt_size}`;
 });
 
 console.log(largeShirts);
 
 //arrow functions
-let filter_shirts = runners.filter(shirts => shirts.shirt_size == 'L');
-let runner_size = filter_shirts.map(runner => `${runner.first_name} ${runner.last_name} wears a size: ${runner.shirt_size}`)
-console.log(runner_size);
+let filter_shirts = runners.filter(
+    shirts => shirts.shirt_size == 'L'
+    ).map(
+        runner => `${runner.first_name} ${runner.last_name} wears a size: ${runner.shirt_size}`
+    );
+console.log(filter_shirts);
 
 // // ==== Challenge 4: Use .reduce() ====
 // // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-// let ticketPriceTotal = [];
-// console.log(ticketPriceTotal);
+let ticketPriceTotal = [];
+//console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
