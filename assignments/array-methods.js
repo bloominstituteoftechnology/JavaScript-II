@@ -92,7 +92,7 @@ console.log(ticketPriceTotal);
 // Problem 1
 // Get a list of all the companies that donated more than $100.
 
-let highRollers = runners.filter(money => money.donation < 100).map(item => `${item.company_name} donated more than $100`)
+let highRollers = runners.filter(money => money.donation > 100).map(item => `${item.company_name} donated more than $100`)
 
 console.log(highRollers)
 
@@ -101,7 +101,7 @@ console.log(highRollers)
 let nameAndEmail = [];
 
 runners.forEach(function(item) {
-    nameAndEmail.push(`Name: ${item.first_name} ${item.last_name} E-mail: ${item.email}`)
+    nameAndEmail.push(`Name: ${item.first_name} ${item.last_name}     E-mail: ${item.email}`)
 });
 
 console.log(nameAndEmail)
