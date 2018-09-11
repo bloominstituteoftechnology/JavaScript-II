@@ -90,7 +90,18 @@ console.log(ticketPriceTotal);	console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// In a marathon, people move fast. This makes it harder for people who are watching to see each contenstant's last name. We need to capitalize the last names on the t-shirts.
+console.log(runners.map(runner => runner.last_name.toUpperCase()));
 
 // Problem 2
+// Need a list of all the names of the participants to print and check the attendance.
+const allParticipants = runners.reduce(function(allRunners, item){
+    return allRunners + item.runners;
+  }, 0);
 
 // Problem 3
+// Need a list of participants with all their information.
+runners.forEach(function(currentItem){
+    console.log(currentItem);
+  });
+  
