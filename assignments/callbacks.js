@@ -77,6 +77,10 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let uniqueArray = array.filter(function(item, pos, self) {
+    return self.indexOf(item) == pos;
+})
+  cb(uniqueArray);
 }
 
 removeDuplicates(items, function(test){
