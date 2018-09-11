@@ -1,6 +1,7 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const newItems = ['']
 
 /* 
 
@@ -62,13 +63,25 @@ function multiplyNums(x, y, cb) {
 
 console.log(multiplyNums(2, 30, function(x,y){
   return x * y;
-}))
+}));
 
-
+///callback 5
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item, list);
 }
+
+console.log(contains( items[0], items, function(item, list){
+   for(let i = 0; i < items.length; i++){
+     //console.log(list[i], item);
+     if(item === list[i]){
+      return true;
+     }else{
+       return false;
+     }
+   }
+}));
 
 /* STRETCH PROBLEM */
 
