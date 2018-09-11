@@ -108,6 +108,6 @@ console.log(smallerShirts);
 // Problem 3: Gather the email addresses of unruly runners whose donations aren't a multiple of 5 so you can email them en masse to say "why have you done this?"
 let chaoticPeople = [];
 let emails = [];
-chaoticPeople = runners.filter(runner => runner['donation']%5 !== 0)
+chaoticPeople = runners.filter(runner => runner['donation'] % 5 !== 0)
 chaoticPeople.forEach(person => emails.push(person['email']));
 console.log(emails);

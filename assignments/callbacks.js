@@ -88,6 +88,9 @@ contains('no-no', items, function(presence) {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+  let uniques = [];
+  array.filter()
+  return cb(uniques);
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
