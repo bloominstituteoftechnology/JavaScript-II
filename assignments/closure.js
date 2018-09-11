@@ -1,10 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function sing(){
+  let verse1 = 'To the window';
+  console.log(verse1)
+  function singMore(){
+    let verse2 = `${verse1}, to the wall`;
+    console.log(verse2);
+  }
+  singMore();
+}
 
 // ==== Challenge 2: Create a counter function ====
+let num = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  function counting(){
+    num++;
+  } 
+  counting();
+  return num;
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
