@@ -1,11 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function goodMorn(timeOfDay) {
+  const mornNight = timeOfDay
+  console.log(`Good ${mornNight}, Wanda!`)
+}
 
+goodMorn('evening')
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = (num) => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = num
+  while (count < 20) {
+    count++
+  }
+  return count
 };
+
+console.log(counter(7));
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
