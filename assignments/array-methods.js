@@ -84,7 +84,15 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+let estimatedTaxes = runners.reduce(function(total, runners){
+    return ((total + runners.donation)*0.1);
+},0);
+console.log(`the estimated taxes to be taken out is ${Math.round(estimatedTaxes)} dollars`);
 // Problem 2
-
+console.log(`Our total estimated profit is: $${Math.round(totalProfit = ticketPriceTotal - estimatedTaxes)}`);
 // Problem 3
+let futureEmailList = [];
+runners.forEach(function(runners){
+    futureEmailList.push(`${runners.email},${runners.first_name}`);
+});
+console.log(futureEmailList);
