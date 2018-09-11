@@ -1,14 +1,38 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function armory(weapon) {
+  const addedWeapon = weapon;
+
+  function weaponLog() {
+    console.log(`Thanks for donating your ${weapon} to the Armory`)
+  };
+
+  weaponLog();
+}
+
+armory('sword');
+
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function() {
+      count++;
+  }
 };
+
+let increment = counter();
+
+increment(); // 1
+increment(); // 2
+increment(); // 3
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
