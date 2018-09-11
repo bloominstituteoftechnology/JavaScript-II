@@ -1,6 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function sayName(first_name) {
+  let name = first_name;
+  console.log(name);
+  function greetingWithName (greeting) {
+    let greet = greeting;
+    console.log(`${greet} ${name}`);
+    function greetingNameWithEmoji (emoji) {
+      let face = emoji;
+      console.log(`${greet} ${name} ${face}`);
+    }
+    greetingNameWithEmoji(':)');
+  }
+  greetingWithName('Hello');
+}
+sayName('Brandon');
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
