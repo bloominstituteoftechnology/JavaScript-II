@@ -20,10 +20,12 @@ const counter = () => {
   let count = 0;
   return function() {
       count++;
+      console.log(count)
+      return count;
   }
 };
 
-let increment = counter();
+const increment = counter();
 
 increment(); // 1
 increment(); // 2
@@ -32,6 +34,7 @@ increment(); // 3
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
 
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
