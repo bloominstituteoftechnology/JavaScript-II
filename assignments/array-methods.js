@@ -101,7 +101,7 @@ let companies = [];
 runners.forEach((runner) => {
     companies.push(`${runner.company_name}`);
 });
- console.log(companies.sort());
+ console.log(companies.sort()); //I just wanted to get a list of company names so I didn't have to scroll up.
 
 let skinixTeam = runners.filter((runner) => {
   return runner.company_name === 'Skinix';
@@ -123,8 +123,16 @@ console.log(specialGiftEmails);
 // Problem 3
 //Average donation
 
-let totalDonations = runners.reduce((acccumulator, currentValue ) => {
-  return acccumulator + currentValue.donation;
+let totalDonations = runners.reduce((accumulator, currentValue ) => {
+  return accumulator + currentValue.donation;
 }, 0);
 let averageDonation = totalDonations/runners.length;
 console.log(averageDonation);
+
+//Problem 4 because I want to....
+//Team fundraising
+
+let skinixTeamTotal = skinixTeam.reduce(( accumulator, currentValue ) => {
+  return accumulator + currentValue.donation;
+}, 0);
+console.log(skinixTeamTotal); 
