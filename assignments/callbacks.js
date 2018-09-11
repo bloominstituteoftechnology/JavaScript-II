@@ -9,39 +9,93 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
   }
-
-  // Potential Solution:
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
-
-  firstItem(items, function(first) {
-    console.log(first)
-  });
-
 */
+  // Potential Solution:
+  // function firstItem(arr, cb) {
+  //   return cb(arr[0]);
+  // }
+
+  // firstItem(items, function(first) {
+  //   console.log(first)
+  // });
+
+
+
+
+ // getLength passes the length of the array into the callback.
+function getLength(arr, cb) {
+ return cb(items.length)
+}
+
+getLength(items, function(length){
+  console.log(length)
+});
+
+
+
+
+// last passes the last item of the array into the callback.
+function last(arr, cb) {
+  return cb(arr.pop())
+}
+
+last(items, function(lastItem){
+  console.log(lastItem)
+});
+
+// LAST CAN ALSO BE SOLVED THIS WAY:
+function last(arr, cb) {
+  return cb(arr.slice(-1))
+}
+
+last(items, function(lastItem){
+  console.log(lastItem)
+});
+
+
+
+
+// sumNums adds two numbers (x, y) and passes the result to the callback.
+function sumNums(x, y, cb) {
+  return cb(x+y);
+}
+
+sumNums(3, 5, function(add) {
+  console.log(add)
+});
+
+
+
+
+// multiplyNums multiplies two numbers and passes the result to the callback.
+function multiplyNums(x, y, cb) {
+  return cb(x*y);
+}
+
+multiplyNums(3, 5, function(multiply) {
+  console.log(multiply)
+});
 
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+  return cb(items.length)
+ }
+ 
+ getLength(items, function(length){
+   console.log(length)
+ });
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
-}
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
-
-function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+function contains(item, list, cb) {
+  return cb(items === item)
 }
+
+contains(items, 'Pencil', function(check) {
+  console.log(check);
+});
 
 /* STRETCH PROBLEM */
 
