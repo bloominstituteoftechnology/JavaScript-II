@@ -71,9 +71,18 @@ const containCheck = (item, list) => {
 contains("Gum", items, containCheck);
 
 /* STRETCH PROBLEM */
-
+let duplicateArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
+let noDuplicates = [];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+const duplicateRemover = (array) => {
+  return [...(new Set(array)).values()];
+}
+
+console.log(removeDuplicates(duplicateArray, duplicateRemover))
+
