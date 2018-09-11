@@ -1,6 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function choose(pocket) {
+  const mon = pocket;
+  console.log(`I choose you ${mon}!`);
+  debugger;
+
+  function reCall() {
+    const reTurn = "Come Back";
+    console.log(`${reTurn} ${mon}!`);
+    debugger;
+  }
+  reCall();
+}
+
+choose("Pikachu");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
