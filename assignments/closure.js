@@ -23,11 +23,15 @@ myDog("Shep", "Border Collie");
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  const newCounter = 
-  function(){
-    
+  let counting = 0;
+  function countThis(){
+    counting++;
+    return counting;
   }
-};
+  return countThis;
+}
+let newCounter = counter();
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
