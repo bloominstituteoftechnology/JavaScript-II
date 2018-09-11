@@ -457,9 +457,14 @@ const runners = [
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName.
-let fullName = runners.forEach(function(item){
-    return item;
+// let fullName = runners.forEach(function(item){
+//     return item;
+// });
+let fullName = [];
+runners.forEach(function(item) {
+    fullName.push(`${item.first_name} ${item.last_name}`);
 });
+
 
 console.log(fullName);
 
@@ -483,9 +488,32 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // The director wants to play tricks on the runners. Change all shirt sizes from large to small and list their info.
+let changedShirts = [];
+let placeholder = {};
+largeShirts.forEach(function(item) {
+    placeholder = Object.assign({}, item);
+    // new way of doing the same thing on line 494
+    // placeholder = {...item};
+    placeholder.shirt_size = "S";
+    changedShirts.push(placeholder);
+});
+console.log(changedShirts);
 
 // Problem 2
-// The director has decided to steal from the donations. Take away half of each runner's donation.
+// The director has decided to steal from the donations. Take away half of each runner's donation. 
+let newDonations = runners.map(item => item.donation / 2);
+console.log(newDonations);
 
 // Problem 3
 // The director has completely lost his mind. Change every runner's name to "EATS DIRT", make each company name upper case, and remove all of their emails.
+let runnersCopy = {};
+let copyArray = [];
+runners.forEach(function(item) {
+    runnersCopy = Object.assign({}, item);
+    runnersCopy.first_name = "EATS";
+    runnersCopy.last_name = "DIRT";
+    runnersCopy.company_name = item.company_name.toUpperCase();
+    runnersCopy.email = '';
+    copyArray.push(runnersCopy);
+});
+console.log(copyArray);
