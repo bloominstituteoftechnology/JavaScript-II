@@ -28,20 +28,24 @@
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let i = 0;
-  return function temp(){
-    return i++;
-  }
+  return (num1) => i = i+num1;
+  };
 
-};
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
 
 const newCounter = counter();
-console.log(newCounter());
-console.log(newCounter());
-console.log(newCounter());
-console.log(newCounter());
+
+console.log(newCounter(3));
+console.log(newCounter(2));
+
+
+function temp (){
+  return 2;
+}
+
+const num = temp();
 
 
 
@@ -70,11 +74,11 @@ const newCounterFactory = counterFactory();
 
 console.log(newCounterFactory.increment());
 console.log(newCounterFactory.increment());
-console.log(newCounterFactory.increment());
-console.log(newCounterFactory.increment());
-console.log(newCounterFactory.decrement());
-console.log(newCounterFactory.decrement());
-console.log(newCounterFactory.decrement());
-console.log(newCounterFactory.increment());
-console.log(newCounterFactory.increment());
+// console.log(newCounterFactory.increment());
+// console.log(newCounterFactory.increment());
+// console.log(newCounterFactory.decrement());
+// console.log(newCounterFactory.decrement());
+// console.log(newCounterFactory.decrement());
+// console.log(newCounterFactory.increment());
+// console.log(newCounterFactory.increment());
 
