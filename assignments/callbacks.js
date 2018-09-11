@@ -42,6 +42,9 @@ console.log(last(items, function(last){
   return last[last.length-1];
 }));
 
+
+//call back 3
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
     return cb(x, y);
@@ -51,7 +54,7 @@ console.log(sumNums(2, 10, function(x , y){
   return  x + y;
 }));
 
-
+//call back 4
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x, y);
