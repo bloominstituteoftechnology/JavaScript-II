@@ -88,6 +88,11 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+const forTaxes = runners.reduce((total, donations) => total + donations.donation, 0);
+
+ticketPriceTotal.push(forTaxes);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
