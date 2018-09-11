@@ -79,13 +79,24 @@ largeShirts = runners.filter((runner) => {
 let ticketPriceTotal = [];
 ticketPriceTotal = runners.reduce((ticketTotal, runner) => 
     ticketTotal + runner.donation, 0)
-console.log(ticketPriceTotal);
+//console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+//Thank you notes
+let companyDonations = [];
+runners.forEach((company) => companyDonations.push(company.company_name + " " + company.donation));
+//console.log(companyDonations)
 // Problem 2
+let companies = [];
+companies = runners.map(runner => runner.company_name.toUpperCase()).sort();
+
+//console.log(companies)
 
 // Problem 3
+
+let nameSize = [];
+runners.forEach(runner => nameSize.push(runner.first_name + ' ' + runner.last_name + ': ' + runner.shirt_size))
+console.log(nameSize)
