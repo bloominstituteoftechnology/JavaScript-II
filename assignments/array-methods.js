@@ -78,10 +78,21 @@ const ticketPriceTotal = runners.reduce((runnerDonation, runner) => runnerDonati
 console.log(ticketPriceTotal)
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme. 
+// Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//The event director wants to find all the cheapos on the list and press them to donate more money! 
+//Create a list of all the people who have donated less than or equal to $50
+const Cheapos = runners.filter(cheapo => cheapo['donation'] <= 50 )
+console.log(Cheapos)
 
 // Problem 2
+//The event director wants only their first name, last name, email address, and how much they donated, he doesn't need the rest of their info.
+runners.forEach(list => console.log(list['first_name'], list['last_name'], list['email'], list['donation']));
 
 // Problem 3
+//The event director only allows last names to be placed on their bibs and wants them sorted alphabetically 
+let newArr = []
+runners.forEach(list => newArr.push(list['last_name']));
+console.log(newArr.sort())
