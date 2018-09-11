@@ -23,15 +23,16 @@ function anActivity(activityParameter) {
 anActivity("gym");
 // ==== Challenge 2: Create a counter function ====
 
-let counter = 0;
-
-function newCounter() {
-	counter += 1;
-}
-newCounter(); // 1
-newCounter(); // 2
-newCounter(); // 3
-console.log(counter); // 3
+function createCounter() {
+  let counter = 0
+  const myFunction = function() {
+    counter = counter + 1
+     return counter
+   }
+   return myFunction
+ }
+ const newCounter = createCounter()
+ newCounter();
   // Return a function that when invoked increments and returns a counter variable.
 
 // Example usage: const newCounter = counter();
