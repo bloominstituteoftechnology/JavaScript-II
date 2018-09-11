@@ -41,4 +41,27 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+
+  function counter(countBy) {
+    if (countBy === 'increment') {
+      return count += 1;
+    } else if (countBy === 'decrement') {
+      return count -= 1;
+    }
+  }
+
+  return counter;
 };
+
+let anotherCounter = counterFactory();
+console.log(anotherCounter('increment'));  // 1
+console.log(anotherCounter('increment'));  // 2
+console.log(anotherCounter('increment'));  // 3
+console.log(anotherCounter('increment'));  // 4
+console.log(anotherCounter('decrement'));  // 3
+console.log(anotherCounter('decrement'));  // 2
+console.log(anotherCounter('decrement'));  // 1
+console.log(anotherCounter('decrement'));  // 0
+
+
