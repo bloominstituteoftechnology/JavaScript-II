@@ -118,7 +118,7 @@ console.log(ticketPriceTotal);
 //using one or many of the array methods listed above.
 
 // Problem 1 - Each person of the runners representing a school will get an extra gift.
-//Create a list/array of the emails of each runner. 
+//Before assigned gifts, create a list/array of the emails of each runner. 
 
 let emailList = [];
 
@@ -129,10 +129,45 @@ runners.forEach(function(person){
 console.log(emailList);
 
 // Problem 2
+//From the list you just created, create a new list containing only emails ending
+//in "".edu".
+
+function isEdu(email){ 
+    let domainEnd = email.split('.');
+    for(let i=0; i < domainEnd.length; i++){
+        if(domainEnd[i] === 'edu'){
+            return true;
+        }
+    }
+}
+
+
+let eduList = emailList.filter(isEdu);
+
+console.log(eduList);
 
 // Problem 3
+//Now that you have all .edu emails, add a "gift" property to each educator 
+//in the runner array. It can be whatever you like, but all gifts should be the same.
+//NOTE -- This is not finished. What is a better way to sort through all runners in the array, 
+//find emails with a specific ending, and then add a property to those objects?
+function addGift(person){
+    for(let i = 0; i < eduList.length; i++){
+        if(eduList[i] === person.email){
+            person.gift === 'Pencil';
+        }
+        runnersW_Gifts.push(person);
+    }
+}
 
-/*
+const runnersW_Gifts = []; 
+
+runners.forEach(addGift);
+
+console.log(runnersW_Gifts);
+
+
+/* Reference. 
 {"id":5,
 "first_name":"Gussy",
 "last_name":"Raraty",
