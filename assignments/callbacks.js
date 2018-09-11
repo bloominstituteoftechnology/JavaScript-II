@@ -59,14 +59,6 @@ contains('yo-yo', items, (item, list) => {
   }
   return console.log('false');
 });
-// contains('hello', items, function(item, list) {
-//   for(let i = 0; i < list.length; i++) {
-//     if(list[i] === item) {
-//       return console.log('true');
-//     }
-//   }
-//   return console.log('false');
-// });
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
