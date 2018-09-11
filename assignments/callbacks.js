@@ -1,4 +1,7 @@
-// Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a callback function and invoke the function to test your work. 
+//You have been provided an example of a problem and a solution to see how this 
+//works with our items array.  
+//Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -23,25 +26,63 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  return cb(arr.length);
   // getLength passes the length of the array into the callback.
 }
 
+getLength(items, function(arrLength){
+console.log(arrLength);
+});
+
 function last(arr, cb) {
+    return cb(arr[arr.length-1])
   // last passes the last item of the array into the callback.
 }
 
+last(items, function(lastItem){
+  console.log(lastItem);
+})
+
 function sumNums(x, y, cb) {
+  return cb(x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+sumNums(2,3, function(result){
+  console.log(result);
+});
 function multiplyNums(x, y, cb) {
+    return cb(x*y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+multiplyNums(2,3, (result) => console.log(result) );
+
+
+// contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+function contains(item, list, cb) {
+  return cb(function(item, list){
+    let trueItem = "";
+    for(i in list) {
+      if(item === list[i]){
+        trueItem = "true";
+      }
+    }
+
+      if(trueItem){
+        return true;
+      }
+      else if (!trueItem){
+        return false;
+      }
+    }
+
+  )};
+
+  contains('Gum', items, function(bool){console.log(bool);});
+  
+
 
 /* STRETCH PROBLEM */
 
