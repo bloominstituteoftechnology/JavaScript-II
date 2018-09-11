@@ -1,14 +1,33 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function log(dataToLog){
+  let data = dataToLog;
+  function LogToMongo(){
+    debugger
+    console.log(data)
+  }
+  LogToMongo()
+}
+log('Hello world')
+
 
 // ==== Challenge 2: Create a counter function ====
+
 const counter = () => {
+  let i = 1;
+  return(function(){return i++;})
   // Return a function that when invoked increments and returns a counter variable.
 };
+let newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -18,3 +37,6 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+
+
+
