@@ -88,11 +88,9 @@ console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
-// I spent most of my project time helping out another student.
-// I'm running through the rest of these problems quickly so as to
-// finish them in time.
-// Problem 1
 
+// Problem 1
+/* Honestly, I spent most of project time helping other students, and my creative brain isn't working anymore. I don't think I have the time or alertness to think of anything like this.*/
 // Problem 2
 
 // Problem 3
