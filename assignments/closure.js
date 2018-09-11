@@ -23,7 +23,12 @@ function counter () {
   }
   return counter1;
 }
-console.log(counter);
+const increment = counter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+
+console.log(c1, c2, c3);
 
   // Return a function that when invoked increments and returns a counter variable.
 
