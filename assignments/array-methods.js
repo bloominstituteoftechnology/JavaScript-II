@@ -92,8 +92,26 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1 
+// Problem 1: The director wants everyone's last name to end in 'z' because, ya know, power trip.
 
-// Problem 2
+let endWithZ = [];
 
-// Problem 3
+runners.forEach(function(z) { 
+    return endWithZ.push(z.last_name + 'z'); 
+})
+console.log(endWithZ);
+
+// Problem 2: We want to say thank you to everyone who donated more than $200. Bring up their information.
+let thanks = [];
+thanks = runners.filter(function(run) {
+    return run.donation > 200;
+})
+console.log(thanks);
+
+// Problem 3: In order to organize the setup for the race, we want to have the participants sign up in alphabetical order based on their company name.
+
+let companyOrder = [];
+companyOrder = runners.map(function(order) {
+    return order.company_name;
+})
+console.log(companyOrder);
