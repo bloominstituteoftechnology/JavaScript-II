@@ -56,28 +56,48 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach(function(name){
+    let temparr = name.first_name+" "+name.last_name;
+    fullName.push(temparr);
+});
+
 console.log(fullName);
+
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+allCaps= runners.map(array => array.first_name.toLocaleUpperCase());
 console.log(allCaps); 
+
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts = runners.filter(array => array.shirt_size ==="L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce((total,each) => total + each.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - some runner donate more than 200, see who donation more by 200 display runner info.
+let tooMuch = [];
+console.log((tooMuch = runners.filter(more => more.donation >= 200)));
 
-// Problem 2
+// Problem 2 - see who first_name start with F
+let FirstLetter = [];
+console.log(runners.filter(runner => runner.first_name.startsWith('F')));
 
-// Problem 3
+// Problem 3 - said i love runner to every runner name
+let love = [];
+love = runners.map(str => `I love ` + str.first_name);
+console.log(love);
