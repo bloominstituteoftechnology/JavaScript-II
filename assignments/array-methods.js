@@ -55,29 +55,37 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
-console.log(fullName);
+
+runners.forEach(x =>  console.log(`${x['first_name']} ${x['last_name']}`));
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map(x => x['first_name'].toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter(x => x['shirt_size'] === 'L');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((a,b) => a + b.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 Student Discount! Every runner with a .edu email address will receive a discount on concessions. Grab their email addresses to send them the coupon.
+let students = runners.filter(x => /edu$/.test(x.email))
+console.log(students.map(x => x.email))
 
-// Problem 2
+// Problem 2 Disqualified! Skinix has been busted for breaking child labor laws. Given the fact that most of their recruitment took place at the community center in question, the organizers found it would be best to distance themselves from Skinix and their employees. Remove all Skinix employees from the list.
+let filteredRunners = runners.filter(x => x.company_name !== 'Skinix')
 
-// Problem 3
+console.log(filteredRunners)
+
+
+// Problem 3 Limited Match! An eccentric billionaire has decided to help out the Community Center. She has offered to match every donation, as long as that donated amount is divisible by three. How much money will she be donating?
+let eccentricDonation = runners.filter(x => !(x.donation % 3)).reduce((a,b) => a + b.donation, 0 )
+console.log(eccentricDonation)
