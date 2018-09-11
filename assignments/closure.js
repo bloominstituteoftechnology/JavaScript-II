@@ -27,7 +27,7 @@ const counter = () => {
       ++count;
       return count;
     }
-    return counted();
+    return counted;
 };
 
 const newCounter = counter();

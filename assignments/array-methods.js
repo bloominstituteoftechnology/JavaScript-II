@@ -127,5 +127,8 @@ let last_names = runners.filter(name => name.last_name.charAt(0) == 'R').map(run
 });
  console.log(last_names);
 // Problem 2
+//check how much a particular company donated
+let company_donations = runners.filter(company => company.company_name == "Skinix").reduce((total, runner)=> total + runner.donation, 0);
+console.log(company_donations);
 
 // Problem 3
