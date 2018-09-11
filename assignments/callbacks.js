@@ -1,5 +1,6 @@
-console.log('------------ CALLBACKS.JS ------------\n\n');
-
+console.log('\n\n------------------------------------------\n');
+console.log('------------   CALLBACKS.JS   ------------\n');
+console.log('------------------------------------------\n');
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
@@ -85,11 +86,25 @@ console.log('\n\n========== Challenge 5 ?????????????');
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  
+  let tOrF = false;
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      tOrF = true;
+    }
+  }
+  return cb(tOrF);
 }
 
+function doesContain(truf) {
+  if (truf) {
+    console.log("We have it!");
+  } else {
+    console.log("We don't have it");
+  }
+  return;
+}
 
-
+contains('Pencil', items, doesContain);
 
 /* STRETCH PROBLEM */
 // ========== Stretch Challenge 
@@ -100,3 +115,5 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+
+console.log('\n\nEnd of callbacks.js');

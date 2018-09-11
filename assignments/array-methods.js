@@ -97,18 +97,21 @@ console.log('\n\n========== Challenge 5 ==========');
 
 // Problem 1
 // What size shirts do we need?
+console.log('\n=== Problem 1 ===\n');
 const shirtSizes = [];
 runners.forEach(runner => shirtSizes.push(runner.shirt_size));
 console.log(shirtSizes.sort());
 
 // Problem 2
 // Who donated more than $200 and what companies do they represent?
+console.log('\n=== Problem 2 ===\n');
 const bigDonors = runners.filter(runner => runner.donation > 200);
 
 bigDonors.forEach(donor => console.log(`${donor.first_name} ${donor.last_name}, ${donor.company_name}`));
 
 // Problem 3
 // How many of each size shirt do we need?
+console.log('\n=== Problem 3 ===\n');
 
 const allShirts = [
   {"size":"XS", "quantSize" : 0},
