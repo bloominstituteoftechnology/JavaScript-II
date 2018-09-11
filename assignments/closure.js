@@ -1,6 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function adder(num1) {
+  return function (num2) {
+    return num1 + num2;
+  }
+}
+let add5 = adder(5);
+let add7 = add5(7);
+console.log(add7);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
