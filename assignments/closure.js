@@ -1,9 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+const closure = () => {
+  const name = 'Yeet';
+  const rename = () => {
+    let oldName = 'teeY';
+    oldName = name;
+    console.log(oldName);
+  }
+  rename();
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let num = 1;
+  const count = () => {
+    return num++;
+  }
+  return count;
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
