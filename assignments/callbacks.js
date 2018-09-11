@@ -55,11 +55,17 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-
-//   const func = {};
-//   for (let i = 0; i < items.length; i++) {
-//     func[items[i]] = true;      
-//   }
-//   cb(Object.keys(func));     
-// }
-}
+  let newArr = [];
+  for (let i = 0; i < array.length; i++){
+    if (!newArr.includes(array[i])){
+      newArr.push(array[i]);
+    }
+  }
+  return cb(newArr);
+  }
+  
+  function returnX(x){
+    return x;
+  }
+  
+  removeDuplicates(items,returnX);
