@@ -97,11 +97,12 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // Company teams
-let companies = [];
-runners.forEach((runner) => {
-    companies.push(`${runner.company_name}`);
-});
- console.log(companies.sort()); //I just wanted to get a list of company names so I didn't have to scroll up.
+// let companies = []; 
+// runners.forEach((runner) => {
+//     companies.push(`${runner.company_name}`);
+// });
+//  console.log(companies.sort());
+ //^I just wanted to get a list of company names so I didn't have to scroll up.
 
 let skinixTeam = runners.filter((runner) => {
   return runner.company_name === 'Skinix';
@@ -135,4 +136,4 @@ console.log(averageDonation);
 let skinixTeamTotal = skinixTeam.reduce(( accumulator, currentValue ) => {
   return accumulator + currentValue.donation;
 }, 0);
-console.log(skinixTeamTotal); 
+console.log(skinixTeamTotal);
