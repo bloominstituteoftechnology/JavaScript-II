@@ -88,5 +88,7 @@ generousPeople = runners.filter(item => item.donation >= 200);
 console.log(generousPeople);
 // Problem 3
 // Average Donation
-let averageDonation = runners.reduce((total, item) => {return (total += item.donation) / 50}, 0);
+let averageDonation = runners.reduce((total, item) => {
+    return total += item.donation
+}, 0) / runners.length;
 console.log(averageDonation);
