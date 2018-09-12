@@ -61,4 +61,20 @@ let newCounter = {
   return newCounter;
   }
 
-console.log(counterFactory());
+// Testing:
+// console.log(counterFactory());
+// console.log(counterFactory().increment());
+//
+//
+//   const isItWorkingIncrement = counterFactory().increment();
+//
+//   const isItWorkingDecrement = counterFactory().decrement();
+//
+//
+//   console.log(isItWorkingIncrement());
+//   console.log(isItWorkingIncrement());
+//   console.log(isItWorkingIncrement());
+//
+//   console.log(isItWorkingDecrement());
+//   console.log(isItWorkingDecrement());
+//   console.log(isItWorkingDecrement());
