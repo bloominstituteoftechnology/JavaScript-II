@@ -38,17 +38,29 @@ console.log(last(items));
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return x + y;
+  let result = x + y;
+
+  cb(result);
+
 };
 
-console.log(sumNums(3, 2));
+sumNums(3, 2, function(sum){
+
+  console.log(sum);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 
-  return x * y;
+  let result = x * y;
+
+  cb(result);
 
 };
+
+multiplyNums(5, 6, function(total){
+  console.log(total);
+});
 
 console.log(multiplyNums(5,6));
 
