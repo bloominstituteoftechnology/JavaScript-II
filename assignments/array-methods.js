@@ -496,10 +496,10 @@ console.log(ticketPriceTotal);
 let donationRequirement = [];
 runners.filter(function (runners) {
   if (runners.donation < 100) {
-    donationRequirement.push(runners.first_name + ' ' + runners.last_name)
+    donationRequirement.push(runners.first_name + ' ' + runners.last_name, "amount owed:" + (100 - runners.donation));
   }
 })
-console.log(donationRequirement);
+console.log('pony up', donationRequirement);
 
 // Problem 2 the organizer needs a roll put together in aplhabetical order by last name
 let aplhabeticalOrder = [];
