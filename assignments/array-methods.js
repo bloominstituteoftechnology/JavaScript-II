@@ -98,13 +98,6 @@ console.log(ticketPriceTotal);
 // Problem 1
 // Company teams
 
-// let companies = [];
-// runners.forEach((runner) => {
-//     companies.push(`${runner.company_name}`);
-// });
-//  console.log(companies.sort());
- //^I just wanted to get a list of company names so I didn't have to scroll up. And sorted it so that I could grab one to try that had more than one person
-
 // This was the first attempt. Works fine, but wanted something more versatile.
 // let skinixTeam = runners.filter((runner) => {
 //   return runner.company_name === 'Skinix';
@@ -123,7 +116,7 @@ console.log(makeCompanyTeam('Gigashots', runners));
 
 
 // Problem 2
-//Special gift for donating over $100.
+//Special gift email list for donating over $100.
 let specialGift = runners.filter((runner) => {
   return runner.donation > 100;
 });
@@ -165,12 +158,11 @@ let uniqueCompanies = companies.filter(function(item, pos) {
  });
 
 
-const findHighestAverage = (search, array, cb) => {
-  let currentHighestAverage = [0];
+const findHighestAverage = (search, array, teamcb, totalcb) => {
+  let currentHighestAverage = 0;
   let currentHighestCompany = [];
   companies.forEach((company) => {
-    let currentTeamAverage = (cb(company, runners).reduce((accumulator, runner ) => {
-      return accumulator + runner.donation;}, 0)) / cb(company, runners).length;
+    let currentTeamAverage = (totalcb(company, runners, teamcb)) / teamcb(company, runners).length;
     if (currentTeamAverage > currentHighestAverage){
       currentHighestAverage = currentTeamAverage;
       currentHighestCompany = company;
@@ -179,7 +171,7 @@ const findHighestAverage = (search, array, cb) => {
   return `${currentHighestCompany}\'s team raised an average of $${currentHighestAverage} per person!`;
 };
 
- console.log(findHighestAverage(uniqueCompanies, runners, makeCompanyTeam));
+ console.log(findHighestAverage(uniqueCompanies, runners, makeCompanyTeam, companyTeamTotal));
 
 //Problem 5 because this is fun
 //Average donation
