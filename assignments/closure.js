@@ -21,16 +21,16 @@ greeting('Kyran');
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   let count = 0;
-  return increment = () => {
+  return () => {
     return count += 1;
-  };
+};
 }
 
-// const newCounter = counter();
-//
-// console.log(newCounter ());
-// console.log(newCounter ());
-// console.log(newCounter ());
+const newCounter = counter();
+
+console.log(newCounter ());
+console.log(newCounter ());
+console.log(newCounter ());
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
