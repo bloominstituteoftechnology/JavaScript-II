@@ -25,7 +25,7 @@ const counter = () => {
     return count += 1;
   };
 }
-//
+
 // const newCounter = counter();
 //
 // console.log(newCounter ());
@@ -44,21 +44,21 @@ const counter = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 const counterFactory = () => {
-let newCounter = {
-    increment: countItUp = (num) => {
-      let count = num;
-      return increment = () => {
+  let count = 0;
+return {
+    increment:  () => {
+      // let count = 0;
+      // return increment = () => {
         return count += 1;
-    };
+    // };
   },
-  decrement: countItDown =(num) => {
-    let count = num;
-    return decrement = () => {
+  decrement: () => {
+    // let count = 0;
+    // return decrement = () => {
       return count -= 1;
-    };
+    // };
   }
 };
-  return newCounter;
   }
 
 // Testing:
@@ -66,15 +66,11 @@ console.log(counterFactory());
 console.log(counterFactory().increment());
 
 
-  const isItWorkingIncrement = counterFactory().increment(1);
+  const isItWorking= counterFactory();
+  console.log(isItWorking.increment());
+  console.log(isItWorking.decrement());
 
-  const isItWorkingDecrement = counterFactory().decrement(10);
-
-
-  console.log(isItWorkingIncrement());
-  console.log(isItWorkingIncrement());
-  console.log(isItWorkingIncrement());
-
-  console.log(isItWorkingDecrement());
-  console.log(isItWorkingDecrement());
-  console.log(isItWorkingDecrement());
+  console.log(isItWorking.decrement());
+    console.log(isItWorking.increment());
+      console.log(isItWorking.increment());
+        console.log(isItWorking.increment());

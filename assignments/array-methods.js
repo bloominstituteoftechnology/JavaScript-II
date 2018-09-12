@@ -143,7 +143,6 @@ console.log(specialGiftEmails);
 // console.log(skinixTeamTotal);
 
 companyTeamTotal = (company, arr, cb) => {
-  // cb(company, arr);
   let companyTotal = cb(company, arr).reduce((accumulator, runner) => {
     return accumulator + runner.donation;
   }, 0);
@@ -152,12 +151,7 @@ companyTeamTotal = (company, arr, cb) => {
 console.log(companyTeamTotal('Skinix', runners, makeCompanyTeam));
 console.log(companyTeamTotal('Gigashots', runners, makeCompanyTeam))
 
-// function makeCompanyTeam(company, arr){
-//   let companyTeam = arr.filter((entry) => {
-//     return entry.company_name === company;
-//   });
-//   return companyTeam;
-// }
+
 //
 //Problem 4 because this is fun
 //Average donation
