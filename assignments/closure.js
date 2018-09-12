@@ -1,15 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function whoDoneIt() {
+const whoDoneIt = () => {
   const name = 'Greg';
-  console.log(`Did ${name} do it?`);
-  function doneIt() {
-    console.log(`${name} done it!`);
-  }
-  doneIt();
-}
+  const doneIt = () => `Did ${name} do it?`;
+  return `${doneIt()} ${name} done it!`;
+};
 
-whoDoneIt();
+console.log(whoDoneIt());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
@@ -30,18 +27,16 @@ const counterFactory = () => {
   let count = 0;
   // Return an object that has two methods called `increment` and `decrement`.
   const counter = {
+    // `increment` should increment a counter variable in closure scope and return it.
     increment: () => (count += 1),
+    // `decrement` should decrement the counter variable and return it.
     decrement: () => (count -= 1)
   };
-
   return counter;
-  // `increment` should increment a counter variable in closure scope and return it.
-  // `decrement` should decrement the counter variable and return it.
 };
 
 const countGame = counterFactory();
 console.log(countGame.increment());
 console.log(countGame.increment());
-console.log(countGame.decrement());
 console.log(countGame.decrement());
 console.log(countGame.decrement());
