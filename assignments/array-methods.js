@@ -112,7 +112,7 @@ console.log(ticketPriceTotal);
 // console.log(skinixTeam);
 
 //more versatile version of the above:
-function makeCompanyTeam(company, arr){
+makeCompanyTeam = (company, arr) => {
   let companyTeam = arr.filter((entry) => {
     return entry.company_name === company;
   });
@@ -142,7 +142,7 @@ console.log(specialGiftEmails);
 // }, 0);
 // console.log(skinixTeamTotal);
 
-function companyTeamTotal(company, arr, cb){
+companyTeamTotal = (company, arr, cb) => {
   // cb(company, arr);
   let companyTotal = cb(company, arr).reduce((accumulator, runner) => {
     return accumulator + runner.donation;
