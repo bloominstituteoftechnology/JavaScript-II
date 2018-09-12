@@ -32,9 +32,9 @@ function getLength(arr, cb) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  cb(arr[(arr.length - 1)])
+  cb(arr[arr.length - 1])
 }
-
+last(items, hey)
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   cb(x + y)
