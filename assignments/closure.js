@@ -45,14 +45,14 @@ const counter = () => {
   // `decrement` should decrement the counter variable and return it.
 const counterFactory = () => {
 let newCounter = {
-    increment: countItUp = () => {
-      let count = 0;
+    increment: countItUp = (num) => {
+      let count = num;
       return increment = () => {
         return count += 1;
     };
   },
-  decrement: countItDown =() => {
-    let count = 0;
+  decrement: countItDown =(num) => {
+    let count = num;
     return decrement = () => {
       return count -= 1;
     };
@@ -62,19 +62,19 @@ let newCounter = {
   }
 
 // Testing:
-// console.log(counterFactory());
-// console.log(counterFactory().increment());
-//
-//
-//   const isItWorkingIncrement = counterFactory().increment();
-//
-//   const isItWorkingDecrement = counterFactory().decrement();
-//
-//
-//   console.log(isItWorkingIncrement());
-//   console.log(isItWorkingIncrement());
-//   console.log(isItWorkingIncrement());
-//
-//   console.log(isItWorkingDecrement());
-//   console.log(isItWorkingDecrement());
-//   console.log(isItWorkingDecrement());
+console.log(counterFactory());
+console.log(counterFactory().increment());
+
+
+  const isItWorkingIncrement = counterFactory().increment(1);
+
+  const isItWorkingDecrement = counterFactory().decrement(10);
+
+
+  console.log(isItWorkingIncrement());
+  console.log(isItWorkingIncrement());
+  console.log(isItWorkingIncrement());
+
+  console.log(isItWorkingDecrement());
+  console.log(isItWorkingDecrement());
+  console.log(isItWorkingDecrement());
