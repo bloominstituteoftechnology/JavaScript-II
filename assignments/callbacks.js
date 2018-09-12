@@ -1,6 +1,7 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const newItems = ['']
 
 /* 
 
@@ -21,27 +22,66 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
-function getLength(arr, cb) {
+///call back 1
+function getLength(arr, callback) {
   // getLength passes the length of the array into the callback.
+  return callback(arr);
 }
 
+function arrayLength(arr){
+  return arr.length;
+}
+console.log(getLength(items, arrayLength));
+
+//call back 2
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+
+console.log(last(items, function(last){
+  return last[last.length-1];
+}));
+
+
+//call back 3
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+    return cb(x, y);
 }
 
+console.log(sumNums(2, 10, function(x , y){
+  return  x + y;
+}));
+
+//call back 4
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y);
 }
 
+console.log(multiplyNums(2, 30, function(x,y){
+  return x * y;
+}));
+
+///callback 5
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item, list);
 }
+
+console.log(contains( items[0], items, function(item, list){
+   for(let i = 0; i < items.length; i++){
+     //console.log(list[i], item);
+     if(item === list[i]){
+      return true;
+     }else{
+       return false;
+     }
+   }
+}));
 
 /* STRETCH PROBLEM */
 
