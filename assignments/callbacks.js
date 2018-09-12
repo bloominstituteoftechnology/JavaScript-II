@@ -56,26 +56,21 @@ const multi = (x,y) => console.log(x * y);
 sumNums (3, 3, multi);
 
 function contains(item, list, cb) {
-  return cb(item, list);
+  for (let i =0; i< list.length; i++){
+    if( list[i] === item){
+      return cb(true);
+    }
+  }
+  return cb(false);
+}
+
+contains('yo-yo', items, function(dog){
+  console.log(dog);
+})
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
 
 
-function checkItem(item, list){
-  let result ='';
-  for (let i = 0; i < list.length; i++){
-  if (list[i] === item){
-    result = true;
-    break;
-  } else {
-    result = false;
-  }
-}
-console.log(result);
-};
-
-contains('yo-yo', items, checkItem);
 
 
 

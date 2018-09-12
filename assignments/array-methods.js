@@ -95,7 +95,39 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// find people who donated over $200
+
+let bigDonors = [];
+
+bigDonors = runners.filter((info) => {
+    return info.donation >= 200;
+});
+
+console.log(bigDonors);
 
 // Problem 2
+// take bigDonors array and create a new array of their emails and first_name
+
+let marketEmail = [];
+
+runners.forEach(function(run){
+    marketEmail.push(`${run.first_name} ${run.email}`)
+});
+
+console.log(marketEmail);
 
 // Problem 3
+
+// find how much the big donors brought in
+
+let bigDonorCash = [];
+
+bigDonorCash = bigDonors.reduce((money, runner) => {
+    return money + runner.donation;
+}, 0);
+console.log(bigDonorCash);
+
+percentLargeDonor = ((bigDonorCash/ticketPriceTotal)*100);
+console.log(percentLargeDonor);
+
+
