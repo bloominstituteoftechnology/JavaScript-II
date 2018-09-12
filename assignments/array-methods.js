@@ -103,13 +103,23 @@ console.log(ticketPriceTotal);
 //     companies.push(`${runner.company_name}`);
 // });
 //  console.log(companies.sort());
- //^I just wanted to get a list of company names so I didn't have to scroll up. And sorted it so that I could grab one that had more than one person
- 
+ //^I just wanted to get a list of company names so I didn't have to scroll up. And sorted it so that I could grab one to try that had more than one person
 
-let skinixTeam = runners.filter((runner) => {
-  return runner.company_name === 'Skinix';
-});
-console.log(skinixTeam);
+// This was the first attempt. Works fine, but wanted something more versatile.
+// let skinixTeam = runners.filter((runner) => {
+//   return runner.company_name === 'Skinix';
+// });
+// console.log(skinixTeam);
+
+//more versatile version of the above:
+function makeCompanyTeam(company, arr){
+  let companyTeam = arr.filter((entry) => {
+    return entry.company_name === company;
+  });
+  return companyTeam;
+}
+console.log(makeCompanyTeam('Skinix', runners));
+console.log(makeCompanyTeam('Gigashots', runners));
 
 
 // Problem 2
@@ -124,18 +134,36 @@ specialGift.forEach((runner) => {
 console.log(specialGiftEmails);
 
 // Problem 3
+//Team fundraising
+
+//This was the first version, based on my first go at Problem 1
+// let skinixTeamTotal = skinixTeam.reduce(( accumulator, runner ) => {
+//   return accumulator + runner.donation;
+// }, 0);
+// console.log(skinixTeamTotal);
+
+function companyTeamTotal(company, arr, cb){
+  // cb(company, arr);
+  let companyTotal = cb(company, arr).reduce((accumulator, runner) => {
+    return accumulator + runner.donation;
+  }, 0);
+  return companyTotal;
+};
+console.log(companyTeamTotal('Skinix', runners, makeCompanyTeam));
+console.log(companyTeamTotal('Gigashots', runners, makeCompanyTeam))
+
+// function makeCompanyTeam(company, arr){
+//   let companyTeam = arr.filter((entry) => {
+//     return entry.company_name === company;
+//   });
+//   return companyTeam;
+// }
+//
+//Problem 4 because this is fun
 //Average donation
 
-let totalDonations = runners.reduce((accumulator, currentValue ) => {
-  return accumulator + currentValue.donation;
+let totalDonations = runners.reduce((accumulator, runner ) => {
+  return accumulator + runner.donation;
 }, 0);
 let averageDonation = totalDonations/runners.length;
 console.log(averageDonation);
-
-//Problem 4 because I want to....
-//Team fundraising
-
-let skinixTeamTotal = skinixTeam.reduce(( accumulator, currentValue ) => {
-  return accumulator + currentValue.donation;
-}, 0);
-console.log(skinixTeamTotal);
