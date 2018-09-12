@@ -90,4 +90,18 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+  const noDuplicates = [];
+  array.forEach(function(i) {
+    if (!(noDuplicates.includes(i))) {
+      noDuplicates.push(i);
+    }
+  });
+  return cb(noDuplicates);
+} 
+
+const duplicates = [1, 2, 4, 9, 1, 2, 3, 43, 43, 42, "hello", 'HELLO', 'hello', 1, 2];
+/* removeDuplicates(duplicates, function(i) {
+  console.log(i);
+})*/
+
+removeDuplicates(duplicates, result => console.log(result));

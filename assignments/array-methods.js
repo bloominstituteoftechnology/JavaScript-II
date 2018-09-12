@@ -56,9 +56,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-runners.forEach(function(i) {
+/* runners.forEach(function(i) {
   fullName.push(`${i.first_name} ${i.last_name}`)
-});
+}); */
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -98,3 +98,9 @@ console.log(alphaNames);
 const goodCos = runners.filter(runner => runner.donation >= 100)
   .map(runner => runner.company_name);
 console.log(goodCos);
+
+
+// get everyone's name backwards for some reason
+// const backwardsNames = runners.map(runner => (`${runner.last_name.split('').reverse().join(''))} ${(runner.first_name.split('').reverse().join(''))});
+const backwardsNames = runners.map(runner => runner.last_name.split('').reverse().join('') + ' ' + runner.first_name.split('').reverse().join(''))
+console.log(backwardsNames);
