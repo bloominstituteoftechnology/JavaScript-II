@@ -45,11 +45,9 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 
-sumNums(5, 10, function(result) {
-  console.log(result);
-});
+sumNums(5, 10, (result) => { console.log(result) });
 
-function multiplyNums(x, y, cb) {
+function multiplyNums (x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x * y);
 }
