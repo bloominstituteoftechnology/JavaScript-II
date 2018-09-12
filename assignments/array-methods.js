@@ -2,7 +2,8 @@
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
-const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
+const runners = 
+[{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
 {"id":2,"first_name":"Whitaker","last_name":"Ierland","email":"wierland1@angelfire.com","shirt_size":"2XL","company_name":"Wordtune","donation":148},
 {"id":3,"first_name":"Julieta","last_name":"McCloid","email":"jmccloid2@yahoo.com","shirt_size":"S","company_name":"Riffpedia","donation":171},
 {"id":4,"first_name":"Martynne","last_name":"Paye","email":"mpaye3@sciencedaily.com","shirt_size":"XL","company_name":"Wordware","donation":288},
@@ -56,6 +57,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -71,13 +73,22 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+const totalPrice = runners.reduce(function(totalPrice, item){
+    return totalPrice + item.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+let companyMoneyTaxes = [];
+percent = .07;
+runners.forEach(x => companyMoneyTaxes.push(x.donation));
+const totalTaxes = runners.reduce(function(totalTaxes, item){
+    return totalTaxes + item.donation*percent;
+}, 0);
+console.log(totalTaxes)
 // Problem 2
 
 // Problem 3
