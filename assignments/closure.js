@@ -47,16 +47,11 @@ const counterFactory = () => {
   let count = 0;
 return {
     increment:  () => {
-      // let count = 0;
-      // return increment = () => {
         return count += 1;
-    // };
   },
   decrement: () => {
-    // let count = 0;
-    // return decrement = () => {
       return count -= 1;
-    // };
+
   }
 };
   }
