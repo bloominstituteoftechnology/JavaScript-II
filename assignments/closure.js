@@ -1,18 +1,36 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function gnomes(){
-  const hat = red;
-  const height = 3;
+function gnome(){
+  const headDress = 'hat';
+  console.log(`I have a red ${headDress}`);
+
+  function mamaGnome(){
+    console.log(`I have a green ${headDress}`);
+
+    function babyGnome(){
+      console.log(`I have a blue ${headDress}`);
+    }
+
+    babyGnome();
+  }
+
+  mamaGnome();
   
 }
+gnome();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 0;
+  return () => (count++);
   // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+}; 
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+newCounter(); // 1
+newCounter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
