@@ -86,5 +86,13 @@ runners.forEach(arr => allEmails.push(arr.email));
 console.log(allEmails);
 
 // Problem 2
+//all the medium shirt sizes were too small so we need to get a list of all of the runners with medium shirts and change them to a large.
+let midShirts = runners.filter((array) => (array.shirt_size === 'M'));
+midShirts.map(item => item.shirt_size = 'L');
+console.log(midShirts);
+
 
 // Problem 3
+//everyone that donated more then $150 gets put in the front.. sorry kid, it's just the way the world works so make it happen. So get me list of everyone who's donated more than $150!
+let bigDonators = runners.filter((array) => (array.donation > 150));
+console.log(bigDonators);
