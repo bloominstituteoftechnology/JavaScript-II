@@ -8,9 +8,12 @@ function greet() {
 }
 console.log(firstName)
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const newCounter = counter(); => {
+newCounter();
+
   // Return a function that when invoked increments and returns a counter variable.
 };
+console.log(counter)
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
