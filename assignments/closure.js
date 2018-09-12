@@ -17,6 +17,7 @@ const counter = (count => {
     return count;
   }
 })(0);
+const newCounter = counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
