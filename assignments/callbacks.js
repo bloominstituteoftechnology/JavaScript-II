@@ -58,20 +58,16 @@ multiplyNums(5, 10, function(result) {
   console.log(result);
 });
 
-let matchingItems = 0;
+let matchingItem = false;
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   for (let i = 0; i < list.length; i++) {
     if (list[i] === item) {
-      matchingItems++;
+      matchingItem = true;
     }
   }
-  if (matchingItems > 0) {
-    cb(true);
-  } else {
-    cb(false);
-  }
+  cb(matchingItem);
 }
 
 contains("yo-yo", items, function(item) {
