@@ -69,15 +69,16 @@ function checkifTrue(item, list){
   let thisItem = item;
   for(let i = 0; i < list.length; i++);
   if (thisItem === list[i]){
-    console.log(true);
+    return console.log(true);
   }
   else if (thisItem !== list[i]){
-    console.log(false);
+    return console.log(false);
   }
 }
   
 
-contains('Pencil', items, checkifTrue);
+contains('Pencil', items, checkifTrue); // true
+contains('Wood', items, checkifTrue); // false
   
 
 

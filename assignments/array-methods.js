@@ -57,25 +57,39 @@ const runners =
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function(names){
+fullName.push(`${names.first_name} ${names.last_name}`);
+});
 
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+const namesCapped = runners.map(x => x.first_name.toUpperCase());
+allCaps.push(namesCapped);
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+// runners.filter(function (shirt_size){
+// if (runners.shirt_size === 'L'){
+//     largeShirts.push(runners.shirt_size);
+// }
+// });
+
+const Shrts = runners.filter(x => x.shirt_size === 'L');
+largeShirts.push(Shrts);
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-const totalPrice = runners.reduce(function(totalPrice, item){
-    return totalPrice + item.donation;
-}, 0);
+const ticketTotal = runners.reduce((total, donations) => total + (donations.donation), 0);
+ticketPriceTotal.push(ticketTotal);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -89,6 +103,39 @@ const totalTaxes = runners.reduce(function(totalTaxes, item){
     return totalTaxes + item.donation*percent;
 }, 0);
 console.log(totalTaxes)
-// Problem 2
 
-// Problem 3
+
+
+
+
+
+// Problem 2 //Sort Last Names By Alphabetical Order
+const lastnameAlpha = runners.map(x => x.last_name);
+lastnameAlpha.sort();
+console.log(lastnameAlpha);
+
+
+
+
+
+
+// Problem 3 // Sort all emails by @domains Alphabetical order
+const emailDomains = runners.map(x => x.email.split("@"));
+
+for (let i = 0; i < emailDomains.length; i++){
+    emailDomains[i].reverse();
+    emailDomains.sort();
+    // for (let j = 0; i < emailDomains.length; i++){
+    //     emailDomains[j].reverse();
+    // }
+}
+
+emailDomains.sort();
+
+emailDomains.map(x => x.reverse());
+
+for (let j = 0; j < emailDomains.length; j++){
+        console.log(emailDomains[j].join("@"));
+     }
+
+
