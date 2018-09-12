@@ -106,6 +106,7 @@ console.log(runner.last_name, runner.donation)
 let biggestDonations = runners.filter (hundred => hundred.donation >= 290);
 console.log(biggestDonations);
 
+
 // Problem 3
 // Create a array showing the companies names in alphabetical order.
 
@@ -113,3 +114,5 @@ let company = runners.map(function(companyName) {
     return companyName.company_name.sort
     });
     console.log(company)
+
+   
