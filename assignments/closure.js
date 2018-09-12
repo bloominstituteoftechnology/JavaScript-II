@@ -23,8 +23,8 @@ function graphicsCard(manufacturerName) {
 
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-    let count = 0;
-    return count+1;
+     let count = 0;
+   return ++count;
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
