@@ -117,7 +117,7 @@ makeCompanyTeam = (company, arr) => {
     return entry.company_name === company;
   });
   return companyTeam;
-}
+};
 console.log(makeCompanyTeam('Skinix', runners));
 console.log(makeCompanyTeam('Gigashots', runners));
 
