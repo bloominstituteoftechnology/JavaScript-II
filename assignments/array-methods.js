@@ -145,7 +145,7 @@ console.log(companyTeamTotal('Skinix', runners, makeCompanyTeam));
 console.log(companyTeamTotal('Gigashots', runners, makeCompanyTeam))
 
 
-//Problem 4 (still working on it, since I know I already did half this work in companyTeamTotal)
+//Problem 4
 //Company with the highest average donation
 
 let companies = [];
