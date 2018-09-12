@@ -96,8 +96,9 @@ console.log(ticketPriceTotal);
 
 let contestants = [];
 contestants = runners.reduce(function(total, runners) {
-    return `${total} ${runners['email']}`;
-}, 0);
+    total.push(runners.email);
+    return total;
+}, []);
 console.log(JSON.stringify(contestants));
 
 // Problem 2

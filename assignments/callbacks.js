@@ -61,10 +61,29 @@ function multiply(x,y,) {
 
 multiplyNums(8,8,multiply);
 
+
+/////
+
+
 function contains(item, list, cb) {
+  let containsItem = false;
+  
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      containsItem = true;
+
+    }
+
+  }
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(containsItem);
 }
+
+  contains("Pencil", items, function(checkItem) {
+    console.log(checkItem);
+  });
+
 
 /* STRETCH PROBLEM */
 
