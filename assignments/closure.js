@@ -11,10 +11,10 @@ function sportEquip (){
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter =function thisFunctionReturnAFunction(){
+const counter =function(){
   let count=0;
   return function(){
-    return count++;
+    return ++count;
   }
   // Return a function that when invoked increments and returns a counter variable.
 };
