@@ -124,7 +124,9 @@ const emailDomains = runners.map(x => x.email.split("@"));
 
 for (let i = 0; i < emailDomains.length; i++){
     emailDomains[i].reverse();
-    emailDomains.sort();
+    // if (emailDomains[i][0] === '.' ){
+    //     emailDomains.sort();
+    // }
     // for (let j = 0; i < emailDomains.length; i++){
     //     emailDomains[j].reverse();
     // }
@@ -139,3 +141,4 @@ for (let j = 0; j < emailDomains.length; j++){
      }
 
 
+console.log(emailDomains.length);
