@@ -58,14 +58,14 @@ return {
 
 // Testing:
 console.log(counterFactory());
-console.log(counterFactory().increment());
 
 
   const isItWorking= counterFactory();
+
   console.log(isItWorking.increment());
   console.log(isItWorking.decrement());
 
   console.log(isItWorking.decrement());
-    console.log(isItWorking.increment());
-      console.log(isItWorking.increment());
-        console.log(isItWorking.increment());
+  console.log(isItWorking.increment());
+  console.log(isItWorking.increment());
+  console.log(isItWorking.increment());
