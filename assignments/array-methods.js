@@ -160,23 +160,26 @@ runners.forEach((runner) => {
     companies.push(`${runner.company_name}`);
 });
 
+let uniqueCompanies = companies.filter(function(item, pos) {
+  return companies.indexOf(item) == pos;
+ });
+
+
 const findHighestAverage = (search, array, cb) => {
   let currentHighestAverage = [0];
   let currentHighestCompany = [];
   companies.forEach((company) => {
-    let currentTeamTotal = cb(company, runners).reduce((accumulator, runner ) => {
-      return accumulator + runner.donation;
-    }, 0);
-    let currentTeamAverage = currentTeamTotal/cb(company, runners).length;
+    let currentTeamAverage = (cb(company, runners).reduce((accumulator, runner ) => {
+      return accumulator + runner.donation;}, 0)) / cb(company, runners).length;
     if (currentTeamAverage > currentHighestAverage){
       currentHighestAverage = currentTeamAverage;
       currentHighestCompany = company;
     }
-  })
+  });
   return `${currentHighestCompany}\'s team raised an average of $${currentHighestAverage} per person!`;
 };
 
- console.log(findHighestAverage(companies, runners, makeCompanyTeam));
+ console.log(findHighestAverage(uniqueCompanies, runners, makeCompanyTeam));
 
 //Problem 5 because this is fun
 //Average donation
