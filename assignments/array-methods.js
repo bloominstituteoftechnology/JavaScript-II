@@ -490,9 +490,16 @@ console.log(ticketPriceTotal);
 // create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// Find all runners using a .com email ->
+let arr1 = runners.filter(runner => runner.email.substring(runner.email.length - 4, runner.email.length) === '.com');
+console.log(arr1);
 
 // Problem 2
-
+// Total the donation of all runners using a .com email =>
+let donationTotal = arr1.reduce((total, runner) => total += runner.donation, 0);
+console.log(donationTotal);
 
 // Problem 3
+// Single out the even runners
+let arr2 = runners.filter(runner => runner.id % 2 === 0);
+console.log(arr2.length);
