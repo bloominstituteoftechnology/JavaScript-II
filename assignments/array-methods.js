@@ -157,11 +157,10 @@ let uniqueCompanies = companies.filter(function(item, pos) {
   return companies.indexOf(item) == pos;
  });
 
-
 const findHighestAverage = (search, array, teamcb, totalcb) => {
   let currentHighestAverage = 0;
   let currentHighestCompany = [];
-  companies.forEach((company) => {
+  search.forEach((company) => {
     let currentTeamAverage = (totalcb(company, runners, teamcb)) / teamcb(company, runners).length;
     if (currentTeamAverage > currentHighestAverage){
       currentHighestAverage = currentTeamAverage;
