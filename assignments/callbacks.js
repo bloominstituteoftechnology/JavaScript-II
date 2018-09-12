@@ -63,9 +63,11 @@ function contains(item, list, cb) {
 
 
 function checkItem(item, list){
+  let result ='';
   for (let i = 0; i < list.length; i++){
   if (list[i] === item){
     result = true;
+    break;
   } else {
     result = false;
   }
@@ -73,7 +75,7 @@ function checkItem(item, list){
 console.log(result);
 };
 
-contains('Gum', items, checkItem);
+contains('yo-yo', items, checkItem);
 
 
 
