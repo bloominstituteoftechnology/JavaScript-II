@@ -152,8 +152,33 @@ console.log(companyTeamTotal('Skinix', runners, makeCompanyTeam));
 console.log(companyTeamTotal('Gigashots', runners, makeCompanyTeam))
 
 
-//
-//Problem 4 because this is fun
+//Problem 4 (still working on it, since I know I already did half this work in companyTeamTotal)
+//Company with the highest average donation
+
+let companies = [];
+runners.forEach((runner) => {
+    companies.push(`${runner.company_name}`);
+});
+
+const findHighestAverage = (search, array, cb) => {
+  let currentHighestAverage = [0];
+  let currentHighestCompany = [];
+  companies.forEach((company) => {
+    let currentTeamTotal = cb(company, runners).reduce((accumulator, runner ) => {
+      return accumulator + runner.donation;
+    }, 0);
+    let currentTeamAverage = currentTeamTotal/cb(company, runners).length;
+    if (currentTeamAverage > currentHighestAverage){
+      currentHighestAverage = currentTeamAverage;
+      currentHighestCompany = company;
+    }
+  })
+  return `${currentHighestCompany}\'s team raised an average of $${currentHighestAverage} per person!`;
+};
+
+ console.log(findHighestAverage(companies, runners, makeCompanyTeam));
+
+//Problem 5 because this is fun
 //Average donation
 
 let totalDonations = runners.reduce((accumulator, runner ) => {
