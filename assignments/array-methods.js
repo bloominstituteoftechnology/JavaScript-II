@@ -109,18 +109,6 @@ console.log(makeCompanyTeam('Gigashots', runners));
 
 
 // Problem 2
-//Special gift email list for donating over $100.
-
-let specialGift = runners.filter((runner) => {
-  return runner.donation > 100;
-});
-let specialGiftEmails = [];
-specialGift.forEach((runner) => {
-  specialGiftEmails.push(`${runner.first_name} ${runner.last_name}. Donation Amount: $${runner.donation}. Email: ${runner.email}`);
-});
-console.log(specialGiftEmails);
-
-// Problem 3
 //Team fundraising
 
 companyTeamTotal = (company, arr, cb) => {
@@ -132,7 +120,7 @@ companyTeamTotal = (company, arr, cb) => {
 console.log(companyTeamTotal('Skinix', runners, makeCompanyTeam));
 console.log(companyTeamTotal('Gigashots', runners, makeCompanyTeam))
 
-//Problem 4
+//Problem 3
 //Company with the highest average donation
 
 let companies = [];
@@ -160,6 +148,18 @@ const findHighestAverage = (search, array, teamcb, totalcb) => {
 
  console.log(findHighestAverage(uniqueCompanies, runners, makeCompanyTeam, companyTeamTotal));
 
+ // Problem 4
+ //Special gift email list for donating over $100.
+
+ let specialGift = runners.filter((runner) => {
+   return runner.donation > 100;
+ });
+ let specialGiftEmails = [];
+ specialGift.forEach((runner) => {
+   specialGiftEmails.push(`${runner.first_name} ${runner.last_name}. Donation Amount: $${runner.donation}. Email: ${runner.email}`);
+ });
+ console.log(specialGiftEmails);
+ 
 //Problem 5 because this is fun
 //Average donation
 
