@@ -1,11 +1,40 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function anActivity(activityParameter) {
+  let activity = activityParameter;
+  console.log(`Hey, lets go to the ${activity}`);
 
+  function boringActivity() {
+    let boring = "Calculus HW";
+    console.log(
+      `Hey, let's not go to the ${activity} and do our ${boring} instead.`
+    );
+    function funActivity() {
+      let fun = "Ice Cream";
+      console.log(
+        `${boring} is lame, and I'm too lazy for the ${activity}, let's instead go out for ${fun}`
+      );
+    }
+    funActivity();
+  }
+  boringActivity();
+}
+anActivity("gym");
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+
+function createCounter() {
+  let counter = 0
+  const myFunction = function() {
+    counter = counter + 1
+     return counter
+   }
+   return myFunction
+ }
+ const newCounter = createCounter()
+ newCounter();
   // Return a function that when invoked increments and returns a counter variable.
-};
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
