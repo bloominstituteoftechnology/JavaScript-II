@@ -1,11 +1,40 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+ function simpleClosure() {
+   insideFunction = function() {
+     console.log('The function is coming from inside the function')
+   }
+   insideFunction();
+ }
+
+simpleClosure();
 
 
 // ==== Challenge 2: Create a counter function ====
+// const counter = () => {
+//   let num = 0;
+//   function goUp() {
+//     num++;
+//     return num;
+//   }
+//   return goUp;
+// };
+ // Return a function that when invoked increments and returns a counter variable.
+// let new_counter = counter();
+
+// console.log(new_counter());
+// console.log(new_counter());
+// console.log(new_counter());
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+  debugger
+  let count = 0;
+  return () => (++count)
+
+}
+
+console.log(counter()());
+console.log(counter()());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
