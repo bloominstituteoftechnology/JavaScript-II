@@ -1,11 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
-
+function House() {
+  let occupants = 4;
+  this.howManyOccupants = function() {
+    console.log("There are " + occupants + " people living in this house.");
+  }
+}
+let myHouse = new House();
+//myHouse.howManyOccupants();
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const adder =(function () {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();
+adder();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
