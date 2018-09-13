@@ -1,11 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function parent() {
+  let name = "dad";
+  function child() {
+    //name=="dad" is in the closure here
+  }
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 0;
   // Return a function that when invoked increments and returns a counter variable.
+  return () => { 
+    count++; 
+    return count; 
+  };
 };
+
+let newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
