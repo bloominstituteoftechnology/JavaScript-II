@@ -61,16 +61,23 @@ multiplyNums(3, 4, (result) => {
 });
 
 function contains(item, list, cb) {
-  for (i = 0; i < list.length; i++) {
-    if (list[i] == item) return true; 
+   for (i = 0; i < list.length; i++) {
+    if (list[i] == item) return cb(true); 
   }
-  return false
+  return cb(false);
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+contains('Pencil', items, function(flag) {
+  console.log(flag); // should be false
+});
 
-console.log(contains('Pencil', items));
-console.log(contains('Dog', items));
+contains('Dog', items, function(flag) {
+  console.log(flag); // should be false
+});
+
+// (contains('Pencil', items));
+// console.log(contains('Dog', items));
 
 /* STRETCH PROBLEM */
 
