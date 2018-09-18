@@ -1,76 +1,49 @@
-// Create a callback function and invoke the function to test your work.
-//You have been provided an example of a problem and a solution to see how this works with our items array.
-// Study both the problem and the solution to figure out the rest of the problems.
-
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
-
-/*
-
-  //Given this problem:
-
-  function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
+// ==== Challenge 1: Write your own closure ====
+// Write a simple closure of your own creation.  Keep it simple!
+function sayHello() {
+  let name = "Jim";
+  function slang() {
+    // accessing myName outside this function using a closure
+    console.log("Yo " + name)
   }
-
-  // Potential Solution:
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
-
-  firstItem(items, function(first) {
-    console.log(first)
-  });
-
-*/
-
-
-function getLength(arr, cb,) {
-return cb(arr);  // getLength passes the length of the array into the callback.
+  // calling slang inside sayHello()
+  slang();
 }
-
-getLength(items.length, function() {
-  console.log(items.length)
-});
+console.log(sayHello());
 
 
+// ==== Challenge 2: Create a counter function ====
+const counter = () => {
+  let count = 0;
+  return () => (++count);
+  // Return a function that when invoked increments and returns a counter variable.
+};
 
+// Stretch Solution
 
+// Example usage: const newCounter = counter();
+// newCounter(); // 1
+// newCounter(); // 2
+const newCounter = counter();
+console.log(newCounter()) // 1
+console.log(newCounter()) // 2
+console.log(newCounter()) // 3
+console.log(newCounter()) // 4
+console.log(newCounter()) // 5
 
+// ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
+const counterFactory = () => {
+  let count = 0;
+  return {
+    increment: () => (++count),
+    decrement: () => (--count),
+  };
+  // Return an object that has two methods called `increment` and `decrement`.
+  // `increment` should increment a counter variable in closure scope and return it.
+  // `decrement` should decrement the counter variable and return it.
+};
 
-
-
-
-
-function last(arr, cb) {
-return cb(arr[3]);  // last passes the last item of the array into the callback.
-}
-
-last(items, function(last){
-  console.log(last)
-})
-
-
-
-
-//Start off !
-function sumNums(x, y, cb) {
-return cb(arr)  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
-
-sumNums(items )
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
-
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
-
-/* STRETCH PROBLEM */
-
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-}
+const newCounterFactory = counterFactory();
+newCounterFactory.increment(); // 1
+newCounterFactory.decrement(); // 0
+newCounterFactory.decrement(); // -1
