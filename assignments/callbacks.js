@@ -24,10 +24,18 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+function myFunction(arrayLength){
+  return arrayLength;
+}
+
+getLength(items, myFunction);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1])
 }
 
 function sumNums(x, y, cb) {

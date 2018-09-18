@@ -1,13 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-// const name = "Barbara";
+const name = "Barbara";
 
-// function myName(){
-//   console.log (`My name is ${name}`);
-// }
+function myName(){
+  console.log (`My name is ${name}`);
+}
 
-// myName();
+myName();
 
 
 
