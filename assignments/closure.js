@@ -11,7 +11,7 @@ function firstName() {
 }
 firstName();
 
-// console.log(firstName(fullName));
+// console.log(fullName);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = function () {
