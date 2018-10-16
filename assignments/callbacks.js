@@ -73,7 +73,7 @@ contains("Gum", items, function(bul){
   console.log(bul)
 }); */
 
-
+/*
 function cB(item, list) {
   let newArr = [];
   for (let i = 0; i < list.length; i++){
@@ -89,7 +89,17 @@ function cB(item, list) {
     return false;
   }
 }
-console.log(cB('Gum', items)); 
+console.log(cB('Gum', items)); */
+function contains(item, list, cb){
+return cb(list.indexOf(item) !== -1)
+}
+
+contains("Gum", items, function(bul){
+  console.log(bul)
+});
+contains("Yum", items, function(bul){
+  console.log(bul)
+});
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {

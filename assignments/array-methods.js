@@ -87,7 +87,7 @@ let firstLast =[];
  runners.forEach(element => firstLast.push(`${element.first_name} ${element.last_name}`));
 console.log(firstLast);
 // Problem 3 find how many runners do not wear small of medium shirts
-let big = runners.filter(element => element.shirt_size != 'S');
+let big = runners.filter(element => element.shirt_size !== 'S');
 
-console.log(big.filter(element => element.shirt_size != 'M'));
+console.log(big.filter(element => element.shirt_size !== 'M'));
 
