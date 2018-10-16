@@ -94,8 +94,16 @@ contains('yo-yo', items, function(result){
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+// function removeDuplicates(array, cb) {
+//   // removeDuplicates removes all duplicate values from the given array.
+//   // Pass the duplicate free array to the callback function.
+//   // Do not mutate the original array.
+// }
+
+function removeDuplicates(array, cb){
+  return cb(Array.from(new Set (array)));
 }
+
+removeDuplicates([2, 2, 5, 10, 1, 5], function(result){
+  console.log(result);
+})
