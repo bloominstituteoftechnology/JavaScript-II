@@ -5,21 +5,19 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 
 ## Task 1: Set Up The Project With Git
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
-* [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
+* [x] You are now ready to build this project with your preferred IDE
+* [x] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
 
 
 ## Task 2: Callbacks
 
 This task focuses on getting practice with callback functions by giving you an array of values and instructions on what to do with that array.
 
-* [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your callback functions.
+* [x] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your callback functions.
 
-* [ ] Write out each function using the `ES5`  `function` keyword syntax.
-
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [x] Solve the problems listed.
 
 ## Task 3: Array Methods
 
@@ -38,7 +36,7 @@ We have learned that closures allow us to access values in scope that have alrea
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
 * [ ] Review the contents of the [closure.js](assignments/closure.js) file.  
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [ ] Solve the problems listed.
 * [ ] Once you have completed this task please submit a pull request against the original fork.  
 
 ## Stretch Goals
