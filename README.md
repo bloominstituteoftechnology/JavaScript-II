@@ -27,9 +27,9 @@ Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array w
 
 * [x] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
-* [ ] Complete the problems provided to you
+* [x] Complete the problems provided to you
 
-* [ ] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
+* [x] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
 
 ## Task 4: Closures
 
