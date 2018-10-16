@@ -95,4 +95,10 @@ console.log(runners.map(e => [e.first_name, e.email]));
 const KwimbeeRunners = runners.filter(e => e.company_name === 'Kwimbee');
 
 console.table(KwimbeeRunners);
+
 // Problem 3
+// find how many tshirts are needed for each size, just console log pleaseee....
+console.log(runners.reduce((obj, e) => {
+  obj[e.shirt_size] = obj[e.shirt_size] ? obj[e.shirt_size]+1 : 1;
+  return obj;
+}, {}));
