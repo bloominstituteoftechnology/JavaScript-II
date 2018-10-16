@@ -26,24 +26,56 @@ function getLength(arr, callback) {
 }
 getLength(items, function(length) {
   console.log(length)
-})
+});
 
-function last(arr, cb) {
+function lastItem(arr, callback) {
+  return callback(arr[3]);
   // last passes the last item of the array into the callback.
 }
 
-function sumNums(x, y, cb) {
+lastItem(items, function(last) {
+  console.log(last)
+});
+
+
+function sumNums(x, y, callback) {
+  return callback(x, y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+const add = function(x, y) {
+  console.log(x + y)
+}
 
-function multiplyNums(x, y, cb) {
+sumNums(5, 2, add)
+
+function multiplyNums(x, y, callback) {
+  return callback(x, y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-function contains(item, list, cb) {
+const times = function(x, y) {
+  console.log(x * y)
+}
+multiplyNums(3, 5, times)
+
+function contains(item, list, callback) {
+  return callback(item, list);
+  
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+const inBackPack = function(item, list) {
+  for (let i = 0; i < items.length; i++) {
+    if (list[i] === item) {
+      console.log(true);
+    } else if (list[i] !== item) {
+      console.log(false);
+    
+    }
+  }
+}
+contains('Pencil', items, inBackPack )
+
 
 /* STRETCH PROBLEM */
 
