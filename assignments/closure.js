@@ -1,5 +1,19 @@
+console.log(`\nCLOSURE`);
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const multiply = function(a) {
+  return function(b) {
+    return a * b;
+  }
+}
+
+const multiplyByTwo = multiply(2);
+console.log(`2 x 2 = ${multiplyByTwo(2)}`);
+console.log(`10 x 2 = ${multiplyByTwo(10)}`);
+
+const multiplyByFive = multiply(5);
+console.log(`2 x 5 = ${multiplyByFive(2)}`);
+console.log(`10 x 5 = ${multiplyByFive(10)}`);
 
 
 // ==== Challenge 2: Create a counter function ====
