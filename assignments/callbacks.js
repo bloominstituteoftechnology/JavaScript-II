@@ -69,7 +69,7 @@ multiplyNums(3, 7, function(x, y) {
   console.log(x * y);
 });
 
-
+/********   5   ***********/
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
