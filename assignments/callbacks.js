@@ -65,11 +65,7 @@ multiplyNums(2, 4, multiply);
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
- if (cb(list.includes(item))) {
-   return true;
- } else {
-   return false;
- }
+  if (cb(list.includes(item))) { return true; } else { return false; }
 }
 
 
@@ -79,4 +75,9 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  const noDuplicate = array.filter((item, i, array2) => {
+    return i === array2.indexOf(item);
+  })
+  return cb(noDuplicate);
 }
