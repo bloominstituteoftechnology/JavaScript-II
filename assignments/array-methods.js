@@ -84,6 +84,9 @@ console.log(largeShirts);
 let ticketPriceTotal = [];
 const calc = (acc, donate) =>
 {return acc + donate}
+runners.forEach(function (object) {
+    ticketPriceTotal.push(object.donation)})
+ticketPriceTotal = ticketPriceTotal.reduce(calc))
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
