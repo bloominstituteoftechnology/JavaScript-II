@@ -91,6 +91,8 @@ console.log(emailList);
 console.log(runners.map(e => [e.first_name, e.email]));
 
 // Problem 2
+// Filter runner from company "Kwimbee"
+const KwimbeeRunners = runners.filter(e => e.company_name === 'Kwimbee');
 
-
+console.table(KwimbeeRunners);
 // Problem 3
