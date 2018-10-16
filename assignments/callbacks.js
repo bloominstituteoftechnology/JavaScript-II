@@ -2,29 +2,31 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+ 
 
   //Given this problem: 
   
-  function firstItem(arr, cb) {
+  function firstItem(arr, callback) {
     // firstItem passes the first item of the given array to the callback function.
   }
 
   // Potential Solution:
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
+  function firstItem(arr, callback) {
+    return callback(arr[0]);
   }
 
   firstItem(items, function(first) {
     console.log(first)
   });
 
-*/
 
-
-function getLength(arr, cb) {
+function getLength(arr, callback) {
+  return callback(arr.length);
   // getLength passes the length of the array into the callback.
 }
+getLength(items, function(length) {
+  console.log(length)
+})
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
