@@ -59,4 +59,27 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let newArray = array.map(item => item);
+  newArray.sort();
+  for(let i = 1; i < newArray.length; i++){
+    if(newArray[i] === newArray[i-1]){
+      newArray.splice(i,1);
+      i--;
+    }
+  }
+  return cb(newArray);
+}
+
+
+function removeDuplicates2(array, cb) {
+  // removeDuplicates removes all duplicate values from the given array.
+  // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
+  let newArray = [];
+  for (i=0;i<array.length;i++){
+    if(newArray.indexOf(array[i]) === -1 ){
+      newArray.push(array[i]);
+    }
+  }
+  return cb(newArray);
 }
