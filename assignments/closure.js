@@ -4,8 +4,17 @@
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let countSuccess = 0;
+  return () => (++countSuccess); 
   // Return a function that when invoked increments and returns a counter variable.
 };
+
+const beanCounter = counter();
+console.log(beanCounter())
+console.log(beanCounter())
+console.log(beanCounter())
+console.log(beanCounter())
+console.log(beanCounter())
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
