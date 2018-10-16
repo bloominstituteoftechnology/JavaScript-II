@@ -74,4 +74,11 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const duplicateFreeArr = [];
+  array.forEach((element, i) => {
+    duplicateFreeArr.includes(element) ? false : duplicateFreeArr.push(element);
+  });
+  cb(duplicateFreeArr);
 }
+const data = [1, 1, 4, 3, 6, 7, 8, 9, 5, 0, 3];
+removeDuplicates(data, arr => console.log(arr, "stretch problem"));
