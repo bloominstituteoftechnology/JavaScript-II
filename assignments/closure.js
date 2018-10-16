@@ -34,6 +34,7 @@ console.log(newCounter());
 const counterFactory = () => {
   let number = 0
   const newObj = {
+<<<<<<< HEAD
     increment: function () {
     return number++
     },
@@ -43,6 +44,19 @@ const counterFactory = () => {
   }
   console.log(newObj.increment());
   console.log(newObj.decrement());
+=======
+    increment() {
+      return number++
+    },
+   decrement() {
+     return number--
+    } 
+  }
+  let plus = increment();
+  let minus = newObj.decrement;
+  console.log(plus);
+  console.log(minus);
+>>>>>>> 98e55a6533562fb2e350449cb58786309f6cef24
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
