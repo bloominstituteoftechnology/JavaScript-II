@@ -40,5 +40,7 @@ contains(0, a, console.log); // false
 
 /* STRETCH PROBLEM */
 
-const removeDuplicates = (arr, cb) => cb(new Set(arr));
+const removeDuplicates = (arr, cb = x => x) => cb(new Set(arr));
 removeDuplicates(a, console.log); // { 1, 5, 2, 3, 4 }
+
+module.exports = { removeDuplicates };
