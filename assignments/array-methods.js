@@ -102,6 +102,19 @@ const bigDonorFilter = runners.filter(isBigDonor);
 console.log(bigDonors)
 
 // Problem 2
-
+// Copy all email addresses for sale
+let emailList = [];
+runners.forEach(function(item) {
+    emailList.push(`${item.email}`);
+})
+console.log(emailList);
 
 // Problem 3
+// List all companies involved in alphabetical order for promotional material
+// I know this is similar to problem #2, but I was having a hard time coming up with anything and running out of time.
+let companyList = [];
+runners.forEach(function(runner) {
+    companyList.push(`${runner.company_name}: ${runner.donation}`);
+    companyList.sort();
+})
+console.log(companyList);
