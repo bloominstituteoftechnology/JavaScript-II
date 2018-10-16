@@ -39,7 +39,7 @@ function first(items) {
 
 // Anonymous Function Approach
 function firstItem(arr, cb) {
-  return cb(arr);
+  return cb(arr[0]);
 }
 
 firstItem(items, function(first) {
@@ -47,6 +47,8 @@ firstItem(items, function(first) {
 });
 
 // firstItem(items, first); // Pencil
+
+
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
