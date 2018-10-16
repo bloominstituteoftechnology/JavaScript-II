@@ -94,17 +94,15 @@ let mailingList = runners.map((runner) => {
 });
 console.log(mailingList);
 // Problem 2
-// The event director wants a list of the companies that have runners at the event.
+// The event director wants a list of each runner's company that have runners at the event.
 let company = runners.map(runner => runner["company_name"])
 
-console.log(company.sort())
+console.log(company.sort());
 
 // Problem 3
 // The event director now wants to know how many runners from each company there are.
-let mostRunners = company.reduce((total, runner, index, array) => {
-    if (runner[index] === runner[index + 1]) {
-       
-   }
-        
-}, {});
+let mostRunners = company.reduce(function (total, runner) {
+    total[runner] = total[runner] ? total[runner] + 1 : 1
+    return total;
+} , {});
 console.log(mostRunners);
