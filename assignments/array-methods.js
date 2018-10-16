@@ -56,28 +56,59 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function(item) {
+    fullName.push(item['first_name']+' '+item['last_name'])   
+})
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+runners.map(function(item) {
+    allCaps.push(item.first_name.toUpperCase());
+})
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+runners.filter(function(item) {
+    if (item.shirt_size === 'L') {largeShirts.push(item);}
+})
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
+let ticketPriceTotal = runners.reduce((total, runners) => {
+    return total + runners.donation;
+},0)
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+//An employee skimmed 50 dollars/person from the donations. Fix the donation values listed to show true donation values.
+let trueDonations = [];
+runners.reduce((total, object) => {
+    total = object.donation;
+    let count = total + 50;
+    return trueDonations.push(count);
+},0)
+console.log(trueDonations.reduce((a,b) => a+b));
 // Problem 2
+//People can't tell the difference between lowercase l and capital I, so make the first and last names uppercase.
+let readingIsHard = [];
+runners.forEach((item) => readingIsHard.push(item.first_name.toUpperCase()+' '+item.last_name.toUpperCase()));
+console.log(readingIsHard);
 
 // Problem 3
+//someone stole account information for the singup and the organizers have to compare an updated email list to the original
+
+let eMails = runners.reduce(function(acc, item) {
+    return acc += `${item.email},  `;
+},'' )
+
+console.log(eMails);
+
