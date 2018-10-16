@@ -64,4 +64,10 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array.reduce((a, e) => {
+    a.indexOf(e) >= 0 || a.push(e);
+    return a;
+    }, []))
 }
+
+removeDuplicates([1,2,3,4,2,4,2,5], e => console.log(`No duplicate: `, e));
