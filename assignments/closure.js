@@ -1,14 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+let yodel = "yodel le something something, wooooooooo";
 
+function doAYodel() {
+  return yodel;
+}
 
+console.log(doAYodel());
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return () => (++count);
 };
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter();
+newCounter(); // 1
+newCounter(); // 2
+console.log(counter(4)); 
+// need to work on the above, dont fully understand yet
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
