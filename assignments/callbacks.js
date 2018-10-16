@@ -92,10 +92,17 @@ contains('Notepad', items, function(item){
 /*************************************************************
  ********************** STRETCH PROBLEM **********************
  *************************************************************/
+let duplicates = ['red', 'green', 'orange', 'green', 'purple', 'yellow', 'blue', 'yellow', 'pink'];
 
-// Hint: Use filter()
-function removeDuplicates(array, cb) {
+// Use IIFE
+let removeDuplicates = (array, cb) => {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  array = Array.from(new Set(array));
+
+  cb (array); // displays unique array
 }
+
+removeDuplicates(duplicates, function displayArray(array){console.log(array)}); // ['red', 'green', 'orange', 'purple', 'yellow', 'blue', 'pink'];
+console.log(duplicates);                                                        // ['red', 'green', 'orange', 'green', 'purple', 'yellow', 'blue', 'yellow', 'pink'];
