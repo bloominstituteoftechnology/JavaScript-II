@@ -105,6 +105,42 @@ let jerseys = runners.map((value) => {
     return `${value.id} - ${value.last_name}`
 });
 
-console.log(jerseys)
+console.log(jerseys);
 
 // Problem 3
+// Number of shirts to order for each size
+let xSmall = runners.filter((value) => {
+    return value.shirt_size == 'XS';
+}).length;
+
+let small = runners.filter((value) => {
+    return value.shirt_size == 'S';
+}).length;
+
+let medium = runners.filter((value) => {
+    return value.shirt_size == 'M';
+}).length;
+
+let large = runners.filter((value) => {
+    return value.shirt_size == 'L';
+}).length;
+
+let xLarge = runners.filter((value) => {
+    return value.shirt_size == 'XL';
+}).length;
+
+let x2Large = runners.filter((value) => {
+    return value.shirt_size == '2XL';
+}).length;
+
+let x3Large = runners.filter((value) => {
+    return value.shirt_size == '3XL';
+}).length;
+
+console.log(xSmall);
+console.log(small);
+console.log(medium);
+console.log(large);
+console.log(xLarge);
+console.log(x2Large);
+console.log(x3Large);
