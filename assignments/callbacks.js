@@ -53,7 +53,10 @@ multiplyNums(2,4, e => {console.log(`The product is: ${e}`)});
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return list.indexOf(item) < 0 ? cb(false) : cb(true);
 }
+
+contains('yo-yo', items, e => {console.log(`The array contains a yo-yo: ${e}`)});
 
 /* STRETCH PROBLEM */
 
