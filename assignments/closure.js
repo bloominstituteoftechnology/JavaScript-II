@@ -14,21 +14,18 @@ Greet(hello);
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   let count = 0;// Return a function that when invoked increments and returns a counter variable.
-  // debugger;
-  function Counting(){
-    // debugger;
-    return count += 1;
-  }
-  Counting()
-  return count;
-  // debugger;
+  
+  return () => (++count);
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
-const newCounter = counter;
-console.log(counter());
-console.log(counter());
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -37,4 +34,21 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+  IncDecrementer = {
+    incrementer: function(){
+      return ++count;
+    },
+    decrementer: function(){
+      return --count;
+    }
+  }
+  return IncDecrementer;
 };
+
+const diffCounter = counterFactory();
+console.log(diffCounter.incrementer());
+console.log(diffCounter.incrementer());
+console.log(diffCounter.incrementer());
+console.log(diffCounter.decrementer());
+console.log(diffCounter.decrementer());
