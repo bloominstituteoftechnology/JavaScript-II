@@ -55,10 +55,14 @@ function multiplyNums(x, y, cb) {
 
 multiplyNums(4, 7, callback);
 
+
+// Problem 5: return True or false if the item is in the array
 function contains(item, list, cb) {
-    // contains checks if an item is present inside of the given array/list.
-    // Pass true to the callback if it is, otherwise pass false.
+    return cb(list.includes(item) ? true : false);
 }
+
+contains("Gum", items, callback);
+contains("Lunch", items, callback);
 
 /* STRETCH PROBLEM */
 
