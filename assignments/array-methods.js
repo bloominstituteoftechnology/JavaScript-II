@@ -74,7 +74,9 @@ console.log(allCaps);
 let largeShirts = [];
 let largeShirt = 'L';
 runners.filter(item => {
-    if(item.shirt_size === largeShirt){largeShirts.push(`${item.first_name} ${item.last_name} ${item.email}`)};
+    if (item.shirt_size === largeShirt) {
+        largeShirts.push(`${item.first_name} ${item.last_name} ${item.email}`)
+    }
 }, 0 );
 
 console.log(largeShirts);
