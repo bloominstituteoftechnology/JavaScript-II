@@ -67,9 +67,26 @@ contains("yo-yo", items, function(cb){
 });
 
 /* STRETCH PROBLEM */
+const items2 = ['Notebook', 'yo-yo', 'Gum', 'Gum', 'Notebook'];
+
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
+  // let unique = [...new Set(array)];
+  // console.log(unique)
+  let unique = []
+  return cb(unique = console.log([...new Set(array)])
+  )
+  }
+
+
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+
+
+
+removeDuplicates(items2, function(cb){
+  cb; 
+})
+
+
