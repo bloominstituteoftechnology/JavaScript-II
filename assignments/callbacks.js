@@ -76,8 +76,41 @@ contains('Gum', items, function(inside) {
 
 /* STRETCH PROBLEM */
 
+const animals = ["cat", "cat", "dog", "giraffe", "cat", "dog", "pig", "cow"];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDupes = [];
+  
+  noDupes = array.filter(function(item, index) {
+    return array.indexOf(item) >= index;
+  });
+
+  return cb(noDupes);
 }
+//   let unique = array.filter((duplicate) => {
+//     return duplicate.array === array;
+//   });
+// }
+
+
+//   const noDuplicates = array;
+//   noDuplicates.push("");
+//   for (let i=0; i<array.length; i++) {
+//     if (array.includes(array[i])) {
+//       noDuplicates.splice(i-1, 1);
+//     } else {
+//       continue;
+//     };
+//   }
+
+//   return cb(noDuplicates);
+
+
+// }
+
+removeDuplicates(animals, function(remove) {
+  console.log(remove);
+});

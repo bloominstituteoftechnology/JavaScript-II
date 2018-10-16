@@ -18,18 +18,33 @@ favCandy("Reese\'s")
 
 
 // ==== Challenge 2: Create a counter function ====
-let counter = 0;
+// let counter = 0;
 
-function add() {
-  counter +=1;
+// function add() {
+//   counter +=1;
+// };
+
+// add();
+// add();
+// add();
+// add();
+
+// console.log(counter);
+
+const counter = () => {
+  let count = 0;
+  
+  return () => (++count);
+  // Return a function that when invoked increments and returns a counter variable.
 };
 
-add();
-add();
-add();
-add();
-
-console.log(counter);
+// Example usage: const newCounter = counter();
+const newCounter = counter();
+console.log(newCounter()) // 1
+console.log(newCounter()) // 2
+console.log(newCounter()) // 3
+console.log(newCounter()) // 4
+console.log(newCounter()) // 5
 
 // ========== ^ this was very difficult for me for some reason. 
 
