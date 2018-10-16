@@ -92,6 +92,26 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+let allEmails = [];
+runners.forEach(myFunction);
+
+function myFunction(theItem) {
+    allEmails.push(theItem.email)
+}
+console.log(allEmails);
+
 // Problem 2
 
+let siliconValley = [];
+siliconValley = runners.map(function(info) {
+    return info.company_name.toLowerCase();
+})
+console.log(siliconValley);
+
 // Problem 3
+
+let stingy = [];
+stingy = runners.filter((dataSet) => {
+    return dataSet.donation < 100;
+})
+console.log(stingy);
