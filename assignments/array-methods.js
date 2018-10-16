@@ -492,5 +492,13 @@ console.log(donations, "problem 1");
 
 // Problem 2
 // count small shirt size
+let smallShirts = runners.reduce(
+  (total, units) => (total + units.shirt_size === "s" ? 1 : 0),
+  0
+);
+console.log(smallShirts, "problem 2");
 
 // Problem 3
+// get all emails
+let emails = runners.map(element => element.email);
+console.log(emails, "problem 3");
