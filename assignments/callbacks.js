@@ -90,3 +90,11 @@ removeDuplicates(items2, function(cb){
 })
 
 
+let greeting;
+
+(function yellGreeting(greeting){
+  greeting = "hello there";
+  return console.log(greeting.toUpperCase());
+  ;
+})();
+
