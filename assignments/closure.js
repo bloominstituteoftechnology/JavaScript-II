@@ -13,12 +13,10 @@ announce('hello')
 // ==== Challenge 2: Create a counter function ====
 function counter() {
   // Return a function that when invoked increments and returns a counter variable.
-    let count = 0;
-    return function () {
-      ++count; 
-    } 
+  let count = 0;
+  return () => (++count);
 };
- const newCounter = counter();
+const newCounter = counter();
 // const counter = () => {
 //   let count = 0;
 //   return () => (++count);

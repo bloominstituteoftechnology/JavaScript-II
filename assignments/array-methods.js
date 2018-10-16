@@ -114,7 +114,7 @@ console.log(emailList);
 // I know this is similar to problem #2, but I was having a hard time coming up with anything and running out of time.
 let companyList = [];
 runners.forEach(function(runner) {
-    companyList.push(`${runner.company_name}: ${runner.donation}`);
+    companyList.push(`${runner.company_name}: $${runner.donation}`);
     companyList.sort();
 })
 console.log(companyList);
