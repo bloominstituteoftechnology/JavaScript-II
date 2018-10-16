@@ -12,14 +12,17 @@ function Greet(param){
 Greet(hello);
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  let count = 0;// Return a function that when invoked increments and returns a counter variable.
+function counter(){
+  let count = 0;
+  //console.log("Counter activated");
+  function incrementer(){
+    //console.log("Incrementer activated");
+    return ++count;
+  }
+  return incrementer;
+}
+
   
-  return () => (++count);
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
 const newCounter = counter();
 console.log(newCounter());
 console.log(newCounter());
