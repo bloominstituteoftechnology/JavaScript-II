@@ -101,7 +101,7 @@ runners.forEach(function(emails){
 console.log(nameAndEmail);
 // Problem 2
 const bigSpenders =  runners.filter((mula) =>{
-    return mula.donation > 200;
+    return mula.donation > 250;
   });
  
   console.log(bigSpenders)
