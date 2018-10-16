@@ -47,6 +47,6 @@ function contains(item, list, cb) {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-  let unique = (...new Set(array));
+  let unique = [...new Set(array)];
   cb(unique);
 }
