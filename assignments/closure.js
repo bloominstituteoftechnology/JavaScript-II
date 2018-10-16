@@ -1,6 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function recordBirth(subjectDes) {
+  const designation = subjectDes;
+  const movement = "breeched";
+  const locationStatus1 = "Chest cavity.";
+  console.log(`Test Subject ${designation} successfully ${movement} its embryotic sac. Location: ${locationStatus1}`);
 
+  function recordExit() {
+    const locationStatus2 = "Extracorpus.";
+    console.log(`Test Subject ${designation} successfully ${movement} host confines. Location: ${locationStatus2}`);
+  };
+
+  recordExit();
+};
+
+recordBirth("Alpha");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
