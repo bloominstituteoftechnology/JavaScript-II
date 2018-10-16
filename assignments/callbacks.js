@@ -86,7 +86,7 @@ contains('Pencil', items, function(result){
 })
 
 /* STRETCH PROBLEM */
-const arrayWithDuplicates = [1, 2, 2, 3, 3, 3, 4, 4];
+const arrayWithDuplicates = [1, 2, 2, 3, 3, 3, 4, 4]
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
@@ -99,13 +99,10 @@ console.log(removeDuplicates(arrayWithDuplicates, function(array){
     
   let noDuplicatesArray = [];
   array.forEach(item => {
-    if(array.indexOf(item) === array.lastIndexOf(item)) {
-      noDuplicatesArray.push(item);
-    } else if (array.indexOf(item) !== array.lastIndexOf(item)) {
-          if (!noDuplicatesArray.includes(item)) {
+      if (!noDuplicatesArray.includes(item)) {
           noDuplicatesArray.push(item);  
-          }
       }
+      
   });
   return noDuplicatesArray;
 }));
