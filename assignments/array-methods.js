@@ -512,6 +512,23 @@ let gold = runners
     .map(item => `${item.first_name} ${item.last_name}`);
 // console.log(gold);
 
-// Problem 2
+// Sort students by shirt size
+
+let shirtSizes = {
+    L: [],
+    M: [],
+    S: []
+};
+
+shirtSizes['L'] = runners.filter(item => item.shirt_size === 'L');
+shirtSizes['M'] = runners.filter(item => item.shirt_size === 'M');
+shirtSizes['S'] = runners.filter(item => item.shirt_size === 'S');
+console.log(shirtSizes);
 
 // Problem 3
+// associate donation total to each company name.
+
+let donors = runners.map(item => item.company_name);
+/* prettier-ignore */
+donors.forEach(company => donors[company] = runners.filter(item => item.company_name === company).map(item => item.donation).reduce((total, item) => total + item))
+console.log(donors);
