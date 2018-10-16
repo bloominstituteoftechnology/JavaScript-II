@@ -107,8 +107,8 @@ const containsItem = function(item, arr) {
   }
 };
 
-contains("Notebook", items, containsItem); // True
-contains("Phone", items, containsItem); // False
+// contains("Notebook", items, containsItem); // True
+// contains("Phone", items, containsItem); // False
 
 /* STRETCH PROBLEM */
 
