@@ -42,22 +42,22 @@ last(items, function(lastItem) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb(x, y);
+  return cb(x + y);
 }
 
-const add = function(x, y){
-  console.log(x + y);
+const add = function(x){
+  console.log(x);
 }
 
 sumNums(5,2,add);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  return cb(x, y);
+  return cb(x * y);
 }
 
-function multiply(x, y){
-  console.log(x * y);
+const multiply = function(x){
+  console.log(x);
 }
 
 multiplyNums(2, 4, multiply);
