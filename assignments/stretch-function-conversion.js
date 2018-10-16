@@ -6,6 +6,7 @@ let anotherFunction = param => param;
 
 
 let add = (param1, param2) => param1 + param2;
+
 add(1, 2);
 
 let subtract = (param1, param2) => param1 - param2;
