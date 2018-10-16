@@ -14,9 +14,18 @@ const sayName = (name) => {
 sayName('Trai');
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-    // Return a function that when invoked increments and returns a counter variable.
+const counter = (count) => {
+    console.log(count);
+
+    function newCounter() {
+        console.log(++count);
+    }
+
+    newCounter();
 };
+
+counter(3);
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
