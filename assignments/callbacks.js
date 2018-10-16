@@ -2,6 +2,7 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+
 /* 
 
   //Given this problem: 
