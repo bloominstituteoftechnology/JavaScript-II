@@ -25,28 +25,28 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
-  cb(arr.length);
+  return cb(arr.length);
 }
 
 function last(arr, cb) {
-  cb(arr[arr.length - 1]);
+  return cb(arr[arr.length - 1]);
 }
 
 function sumNums(x, y, cb) {
-  cb(x + y);
+  return cb(x + y);
 }
 
 function multiplyNums(x, y, cb) {
-  cb(x * y);
+  return cb(x * y);
 }
 
 function contains(item, list, cb) {
-  cb(list.includes(item));
+  return cb(list.includes(item));
 }
 
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   let unique = [...new Set(array)];
-  cb(unique);
+  return cb(unique);
 }
