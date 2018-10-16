@@ -2,6 +2,9 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+const itemsWdup = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil', 'yo-yo', 'Dance'];
+
+
 
 /* 
 
@@ -61,7 +64,7 @@ multiplyNums(3, 5, function(multi){
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  
+
   let bCheck = false;
     if (list.includes(item)) {
       return cb (!bCheck);
@@ -74,11 +77,21 @@ function contains(item, list, cb) {
 contains('Pencil', items, function(avail){
   console.log(avail);
 });
-
+ 
 /* STRETCH PROBLEM */
-
+let dupFree = [];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  array.forEach(function(itemsDup){
+    if (itemsDup.includes(array)) {
+      dupFree.push(`${array}`);
+    }
+    return cb(dupFree);
+  });
 }
+
+removeDuplicates(itemsWdup, function(noDup){
+  console.log(dupFree);
+});

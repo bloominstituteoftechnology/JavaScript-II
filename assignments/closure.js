@@ -20,14 +20,14 @@ myFunction('October');
 
 // ==== Challenge 2: Create a counter function ====
 
-const counter = (/*times, cb*/) => {
+const counter = (times/*, cb*/) => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
   
-  // for(let i = 0; i < times; i++){
-  // return cb(() => (++count));
-  // }
-  return () => (++count);
+  for(let i = 0; i < times; i++){
+  return ++count;
+  }
+  // return () => (++count);
 
   
   // function countIt() {
@@ -42,11 +42,15 @@ const counter = (/*times, cb*/) => {
 
 
 // Example usage: 
-const newCounter = counter();
+// const newCounter = counter(arg);
 // console.log(newCounter(3, cbFunct)); // 1
-console.log(newCounter()); // 2
+// console.log(newCounter()); // 2
+console.log(counter(10));
 // console.log(newCounter()); // 3
 // console.log(newCounter()); // 4
+
+
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -55,5 +59,18 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+//   let countN = 0;
+
+//   let innerFunct = function increment() {
+//     console.log(countN);
+//     return ++countN;
+//   }
+//   increment();
+
+//   return () => (--countN);
+
 };
 
+// const counterNew = counterFactory();
+// const counterIncre = innerFunct();
+// console.log(counterNew());
