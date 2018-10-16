@@ -9,7 +9,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [ ] Clone the forked project into a directory on your machine
 * [ ] You are now ready to build this project with your preferred IDE
 * [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.   -->
-
+<!-- 
 
 ## Task 2: Callbacks
 
@@ -19,7 +19,7 @@ This task focuses on getting practice with callback functions by giving you an a
 
 * [ ] Write out each function using the `ES5`  `function` keyword syntax.
 
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4. -->
 
 ## Task 3: Array Methods
 
