@@ -75,7 +75,7 @@ console.log(allCaps);
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter((value) => {
-    return value.shirt_size = 'L';
+    return value.shirt_size == 'L';
 })
 
 console.log(largeShirts);
@@ -100,5 +100,11 @@ let premiumRunners = runners.filter((value) => {
 console.log(premiumRunners);
 
 // Problem 2
+// The running announcer needs to be able to quickly state the last name of a runner when seeing their jersey number as they announce progress throughout the event.
+let jerseys = runners.map((value) => {
+    return `${value.id} - ${value.last_name}`
+});
+
+console.log(jerseys)
 
 // Problem 3
