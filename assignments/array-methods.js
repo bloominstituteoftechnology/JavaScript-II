@@ -100,5 +100,18 @@ runners.forEach(function(emails){
 
 console.log(nameAndEmail);
 // Problem 2
-
+const bigSpenders =  runners.filter((mula) =>{
+    return mula.donation > 200;
+  });
+ 
+  console.log(bigSpenders)
 // Problem 3
+
+const longestName = runners.reduce(function (a, b) {
+       if (a.first_name > b.first_name ) {
+         return a.first_name.length
+      } else {
+        return b.first_name.length
+       }
+     }  ) 
+     console.log(longestName)
