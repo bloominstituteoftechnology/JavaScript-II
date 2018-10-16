@@ -43,15 +43,17 @@ last(items, callback);
 
 // Problem 3: Adding Numbers Together
 function sumNums(x, y, cb) {
-    // sumNums adds two numbers (x, y) and passes the result to the callback.
     return cb(x + y);
 }
 
 sumNums(4, 7, callback);
 
+// Problem 4: Multiply numbers and pass result
 function multiplyNums(x, y, cb) {
-    // multiplyNums multiplies two numbers and passes the result to the callback.
+    return (cb(x * y));
 }
+
+multiplyNums(4, 7, callback);
 
 function contains(item, list, cb) {
     // contains checks if an item is present inside of the given array/list.
