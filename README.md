@@ -25,7 +25,7 @@ This task focuses on getting practice with callback functions by giving you an a
 
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
-* [ ] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
+* [x] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
 * [ ] Complete the problems provided to you
 
