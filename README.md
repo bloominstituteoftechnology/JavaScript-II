@@ -1,4 +1,4 @@
-
+<!-- 
 # JavaScript - II
 
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
@@ -8,7 +8,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [ ] Fork the project into your GitHub user account
 * [ ] Clone the forked project into a directory on your machine
 * [ ] You are now ready to build this project with your preferred IDE
-* [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
+* [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.   -->
 
 
 ## Task 2: Callbacks

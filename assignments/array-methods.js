@@ -53,6 +53,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
+
+console.log("Arrays");
+console.log("challenge 1");
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
