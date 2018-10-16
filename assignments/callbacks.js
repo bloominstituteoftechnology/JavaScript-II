@@ -73,15 +73,17 @@ multiplyNums(6, 3, multiply);
 function contains(item, list, cb) {
     // contains checks if an item is present inside of the given array/list.
     // Pass true to the callback if it is, otherwise pass false.
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] === item) {
-            return true;
-        } else {
-            return false;
+    for (let i = 0; i < item.length; i++) {
+        if (item[i] === list) {
+            return cb(true);
         }
-        cb(result);
     }
-}
+    return cb(false);
+};
+
+contains(items, 'yo-yo', function(arrItem) {
+    console.log(arrItem ? 'yo-yo is in the list' : 'yo-yo is not in the list');
+});
 
 
 /* STRETCH PROBLEM */
