@@ -67,7 +67,8 @@ function contains(item, list, callback) {
 const inBackPack = function(item, list) {
   for (let i = 0; i < items.length; i++) {
     if (list[i] === item) {
-      console.log(true);
+      // console.log(true);
+      return true
     } else if (list[i] !== item) {
       console.log(false);
     
