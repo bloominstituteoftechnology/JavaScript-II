@@ -92,6 +92,8 @@ contains('Notepad', items, function(item){
 /*************************************************************
  ********************** STRETCH PROBLEM **********************
  *************************************************************/
+
+// Hint: Use filter()
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
