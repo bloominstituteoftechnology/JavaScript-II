@@ -38,7 +38,10 @@ last(items, e => {console.log(`The last item in the array is: ${e}`)});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x+y);
 }
+
+sumNums(2,4, e => {console.log(`The sum is: ${e}`)});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
