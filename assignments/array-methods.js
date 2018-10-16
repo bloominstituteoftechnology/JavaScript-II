@@ -529,6 +529,11 @@ console.log(shirtSizes);
 // associate donation total to each company name.
 
 let donors = runners.map(item => item.company_name);
-/* prettier-ignore */
-donors.forEach(company => donors[company] = runners.filter(item => item.company_name === company).map(item => item.donation).reduce((total, item) => total + item))
+donors.forEach(
+    company =>
+        (donors[company] = runners
+            .filter(item => item.company_name === company)
+            .map(item => item.donation)
+            .reduce((total, item) => total + item))
+);
 console.log(donors);
