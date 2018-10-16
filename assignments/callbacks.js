@@ -75,9 +75,9 @@ function contains(item, list, cb) {
     // Pass true to the callback if it is, otherwise pass false.
     for (let i = 0; i < list.length; i++) {
         if (list[i] === item) {
-            let result = true;
+            return true;
         } else {
-            let result = false;
+            return false;
         }
         cb(result);
     }
