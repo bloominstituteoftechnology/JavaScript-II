@@ -65,9 +65,13 @@ function contains(item, list, cb) {
   return cb(item, list);
 }
 
-contains(item, list, function(array));
-  console.log(array);
-
+const containing = function(item, list) {
+  if (list.includes(item)) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
 
 /* STRETCH PROBLEM */
 
