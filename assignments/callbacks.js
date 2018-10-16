@@ -26,16 +26,20 @@ function callback(param) {
     console.log(param);
 }
 
-// Problem 1: Get Length
+// Problem 1: Getting Length of an Array
 function getLength(arr, cb) {
     return cb(arr.length);
 }
 
 getLength(items, callback);
 
+
+// Problem 2: Getting Last Item of an Array
 function last(arr, cb) {
-    // last passes the last item of the array into the callback.
+    return cb(arr[arr.length - 1]);
 }
+
+last(items, callback);
 
 function sumNums(x, y, cb) {
     // sumNums adds two numbers (x, y) and passes the result to the callback.
