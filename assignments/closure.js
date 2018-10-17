@@ -10,15 +10,19 @@ function outter(){
 outter();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counters = () => {
   let count = 0;
-  return function(){++count;};
+  function add1(){
+    count+=1
+    return count;
+  } 
+  return add1;
   // Return a function that when invoked increments and returns a counter variable.
 };
-const newCounter = counter();
-console.log(newCounter());
-newCounter();
-newCounter();
+const newCounters = counters();
+newCounters();
+newCounters();
+newCounters();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
