@@ -17,17 +17,22 @@ dog();
 
 
 // ==== Challenge 2: Create a counter function ====
-let count = 0;
+
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  count++;
-  return count;
+  let count = 0;
+
+  return function () {
+    count++;
+    return count;
+  }
 };
 // Example usage: const newCounter = counter(); <== i think these parentheses are incorrect?
 // newCounter(); // 1
 // newCounter(); // 2
 
-const newCounter = counter;
+const newCounter = counter();
+newCounter();
 newCounter();
 newCounter();
 newCounter();

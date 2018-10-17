@@ -64,8 +64,8 @@ console.log("_________")
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-
-runners.forEach(function(ele) {
+// runners.forEach(cb);
+runners.forEach(function(ele) { // so this is a callback right?
     fullName.push(`${ele.first_name} ${ele.last_name}`)
 });
 
@@ -74,9 +74,9 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-
+// allCaps = runners.map(cb); // cb should return something. eg return ele.first_name.toUpperCaser(); return whatever ur pushing
 runners.map(function(ele) {
-    allCaps.push(`${ele.first_name.toUpperCase()}`)
+    allCaps.push(`${ele.first_name.toUpperCase()}`) // so wrong technically?
 });
 
 console.log(allCaps); // diff between .map and .forEach?
