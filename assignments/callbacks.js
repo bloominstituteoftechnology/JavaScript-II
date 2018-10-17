@@ -60,10 +60,10 @@ multiplyNums(2, 3, function (product) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-    return cb(item in list);
+    return cb(items.includes(item));
 }
 
-contains('cat', items, function (inList) {
+contains('Kevin', items, function (inList) {
     console.log(inList)
 });
 
