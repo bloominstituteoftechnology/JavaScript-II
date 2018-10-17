@@ -1,11 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const fun = () => {
+  return ('this is an example of function scope aka local scope');
+}
+
 
 // ==== Challenge 2: Create a counter function ====
+let enumb = 0;
 const counter = () => {
+
+  return (enumb++)
   // Return a function that when invoked increments and returns a counter variable.
 };
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
