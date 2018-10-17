@@ -1,14 +1,32 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const currentCash = 0;
+
+function currentMoney(name) {
+  const sentence = 'your wallet has this much in it:'
+
+  function createStatement() {
+    console.log(`Hi ${name}, ${sentence} ${currentCash}`);
+  };
+
+  createStatement();
+};
+
+currentMoney('me');
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = () => { 
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  
+  return () => (++count);
 };
+
+const newCounter = counter();
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+//console.log(newCounter()); // 1
+//console.log(newCounter()); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
