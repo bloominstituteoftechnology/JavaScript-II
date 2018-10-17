@@ -85,14 +85,14 @@ function removeDuplicates(array, cb) {
   let noDupes = [];
   
   noDupes = array.filter(function(item, index) {
-      return array.indexOf(item) >= index; //if it shows up later on don't bother
+      return index <= array.indexOf(item); 
   });
 
   return cb(noDupes);
 }
 
-// testArr = [1,1,2,3,4,1];
+testArr = [1,5,2,5,3,4,2,1];
 
-// removeDuplicates(testArr, function(result){
-//   console.log(result);
-// })
+removeDuplicates(testArr, function(result){
+  console.log(result);
+})
