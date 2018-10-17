@@ -1,14 +1,14 @@
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
-const myFunction = () => {
-};
+const myFunction = () => 'hello';
+console.log(myFunction());
 
 // let anotherFunction = function (param) {
 //   return param;
 // };
 
-const anotherFunction = (param) => {
-};
+const anotherFunction = (param) => param;
+console.log(anotherFunction('Kevin'));
 
 // let add = function (param1, param2) {
 //   return param1 + param2;

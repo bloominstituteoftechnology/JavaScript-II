@@ -4,7 +4,7 @@ const myFunc = () => {
     let name = 'Kevin Marker';
     const printName = () => {
         console.log(name);
-    }
+    };
     return printName;
 };
 
@@ -34,4 +34,30 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+    let i = 0;
+
+    function change(val) {
+        i += val;
+    }
+
+    return {
+        inc: () => change(1),
+        dec: () => change(-1),
+        val: () => i
+    }
 };
+const counter1 = counterFactory();
+console.log(counter1.val());
+counter1.inc();
+console.log(counter1.val());
+counter1.inc();
+console.log(counter1.val());
+counter1.inc();
+console.log(counter1.val());
+counter1.inc();
+console.log(counter1.val());
+counter1.dec();
+console.log(counter1.val());
+
+
+

@@ -102,10 +102,11 @@ let donorLevel = [];
 runners.forEach(item => {
     donorLevel.push(`${item.company_name} ${item.donation}`);
 });
-console.log(fullName);
+console.log(donorLevel);
 
 // Problem 3 What is the average donation per shirt size
-// let average = [];
-// runners.forEach(item => {
-//     average.push()
-// })
+let average = [];
+runners.forEach(item => {
+    average.push(`${item.shirt_size} ${item.donation}`);
+});
+console.log(average);
