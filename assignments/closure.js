@@ -2,10 +2,14 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 function speak() {
-  console.log("Ello ello ello");
-  // debugger;
+  let name = "John";
+  function displayName() {
+    alert(`Hello my name is ${name}`);
+  }
+  return displayName;
 }
-speak();
+const speakNow = speak();
+speakNow();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
@@ -39,4 +43,11 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let baseValue = 0;
+
+  theCounter = function change (increment, decrement) {
+    baseValue 
+  }
 };
+
+

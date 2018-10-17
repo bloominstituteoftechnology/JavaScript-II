@@ -91,6 +91,7 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Get all emails
 
 let allEmails = [];
 runners.forEach(myFunction);
@@ -101,6 +102,7 @@ function myFunction(theItem) {
 console.log(allEmails);
 
 // Problem 2
+// Turn the company names into lower case - Silicon Valley style
 
 let siliconValley = [];
 siliconValley = runners.map(function(info) {
@@ -109,6 +111,7 @@ siliconValley = runners.map(function(info) {
 console.log(siliconValley);
 
 // Problem 3
+// Find who donated less than 100
 
 let stingy = [];
 stingy = runners.filter((dataSet) => {
