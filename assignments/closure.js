@@ -1,11 +1,28 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function outter(){
+  let outterVar = 0;
+  function inner(){
+    console.log(outterVar);
+  }
+  inner();
+}
+outter();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counters = () => {
+  let count = 0;
+  function add1(){
+    count+=1
+    return count;
+  } 
+  return add1;
   // Return a function that when invoked increments and returns a counter variable.
 };
+const newCounters = counters();
+newCounters();
+newCounters();
+newCounters();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
