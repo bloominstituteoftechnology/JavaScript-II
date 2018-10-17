@@ -100,3 +100,8 @@ let bigContributors = [];
 
 bigContributors = largeDonos.reduce((total, amount) => ({ donation: (total.donation + amount.donation) }));
 console.log(bigContributors);
+
+let donors = runners.map (item => item.company_name);
+/* prettier-ignore */
+donors.forEach(company => donors[company] = runners.filter(item => item.company_name === company).map(item => item.donation).reduce((total, item) => total + item))
+console.log (donors);

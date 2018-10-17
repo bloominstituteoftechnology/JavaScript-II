@@ -6,10 +6,10 @@ function square(){
   function logNum(){
     console.log(num);
   }
-
+ 
   num = num**2;
-
   return logNum;
+ 
 
 }
 let number = square();
