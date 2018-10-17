@@ -1,14 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const sampleString = "Hi";
+
+function sampleFunction(stringParameter){
+	const word = stringParameter;
+	const number = 1;
+	function sampleNestedFunction(){
+		return word + number;
+	}
+	return sampleNestedFunction();
+}
+
+console.log( sampleFunction(sampleString) );
 
 // ==== Challenge 2: Create a counter function ====
+
+//function counter(){
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+	var c = 1;
+	function increment(){
+		return c++;
+	}
+	return increment;
+}
+
+// Example usage: 
+const newCounter = counter();
+console.log(newCounter()); // 1
+console.log(newCounter()); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
