@@ -1,6 +1,6 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', ''];
 
 /*
 
@@ -63,16 +63,17 @@ last(items,callback0);
 
 function sumNums(x, y) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  let output = (x + y);
+  let outPut = (x + y);
   return outPut;
 }
 
-publishSum(sumNums()) {
-  let pub = console.log(sumNums());
+function publishSum(x, y, sumNums) {
+  let pub = console.log(sumNums(x , y));
   return pub;
 }
 
-publishSum(sumNums(10,20));
+publishSum(10,20, sumNums);
+
 
 function multiplyNums(x, y) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -89,22 +90,20 @@ publishMul(multiplyNums(4,3));
 
 
 
-function contains(item, list, cb) {
-  tOrF = [];
+function contains(item, list) {
+  let tOrF = [];
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  for (let i = 0 ; i < list. length; i++){
-    if (list[i].item. !== '') {
+  for (let i = 0 ; i < list.length; i++){
+    if (list[i] === item) {
       console.log(true);
-      tOrF.push(true);
-    } else {
-      console.log(false);
-      tOrF.push(true);
+      return tOrF.push(true);
+    }
     }
   }
-  return (Callback => {return console.log(tOrF)};
+  // return (Callback => {return console.log(tOrF)});
 }
-contains(items,arr.length,);
+contains(items[0],items);
 
 /* STRETCH PROBLEM */
 
