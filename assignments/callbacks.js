@@ -23,24 +23,25 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+    // getLength passes the length of the array into the callback.
     return cb(arr.length);
 }
 
-getLength(items, function(length) {
+getLength(items, function (length) {
     console.log(length)
 });
 
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+    // last passes the last item of the array into the callback.
     return cb(arr[arr.length - 1]);
 }
 
 last(items, function (item) {
     console.log(item);
 });
+
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+    // sumNums adds two numbers (x, y) and passes the result to the callback.
     return cb(x + y);
 }
 
@@ -49,7 +50,7 @@ sumNums(2, 3, function (sum) {
 });
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+    // multiplyNums multiplies two numbers and passes the result to the callback.
     return cb(x * y);
 }
 
@@ -58,8 +59,8 @@ multiplyNums(2, 3, function (product) {
 });
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+    // contains checks if an item is present inside of the given array/list.
+    // Pass true to the callback if it is, otherwise pass false.
     return cb(items.includes(item));
 }
 
@@ -69,8 +70,16 @@ contains('Kevin', items, function (inList) {
 
 /* STRETCH PROBLEM */
 
+const arr = [1, 2, 3, 3, 5, 7, 3, 10, 12, 11, 5, 2, 11, 87, 54, 67, 87];
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+    // removeDuplicates removes all duplicate values from the given array.
+    // Pass the duplicate free array to the callback function.
+    // Do not mutate the original array.
+    let unique_array = Array.from(new Set(array));
+    return cb(unique_array);
 }
+
+removeDuplicates(arr, function (remove) {
+    console.log(remove);
+});
