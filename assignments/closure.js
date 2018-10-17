@@ -54,22 +54,47 @@ console.log(newCounter());
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
-const counterFactory = (currentNumber, modifierType) => {
-  // Return an object that has two methods called `increment` and `decrement`.
-  if (modifierType === "increment") {
-    function add() { return console.log(currentNumber+= 1);
-    }add()
+// const counterFactory = (currentNumber, modifierType) => {
+//   // Return an object that has two methods called `increment` and `decrement`.
+//   if (modifierType === "increment") {
+//     function add() { return console.log(currentNumber+= 1);
+//     }add()
     
-  }
-  if (modifierType === "decrement") {
-    function minus() { return console.log(currentNumber-= 1);
-    }
-    minus();
-  }
+//   }
+//   if (modifierType === "decrement") {
+//     function minus() { return console.log(currentNumber-= 1);
+//     }
+//     minus();
+//   }
 
-  // `increment` should increment a counter variable in closure scope and return it.
-  // `decrement` should decrement the counter variable and return it.
-};
+//   // `increment` should increment a counter variable in closure scope and return it.
+//   // `decrement` should decrement the counter variable and return it.
+// };
 
-counterFactory(3, "increment");
-counterFactory(1, "decrement");
+
+let counterFactory = () => {
+    // Return an object that has two methods called `increment` and `decrement`.
+    // console.log(currentNumber)
+    let counter = 0;
+    console.log(counter);
+    // return counter;
+    
+      return {
+      increment: () => ++counter,
+      decrement: () => --counter
+    }  
+
+    // `increment`() => ++counter,
+    //   decrement: () => --counter
+    // }   should increment a counter variable in closure scope and return it.
+    // `decrement` should decrement the counter variable and return it.
+  }
+counterFactory()
+newCounter2 = counterFactory();
+console.log(newCounter2.increment());
+console.log(newCounter2.decrement());
+
+
+
+  // counterFactory(3, "increment");
+// counterFactory(1, "decrement");

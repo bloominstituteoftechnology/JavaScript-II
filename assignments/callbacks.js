@@ -75,8 +75,7 @@ function removeDuplicates(array, cb) {
   // let unique = [...new Set(array)];
   // console.log(unique)
   let unique = []
-  return cb(unique = console.log([...new Set(array)])
-  )
+  return cb(unique = console.log([...new Set(array)]))
   }
 
 
@@ -87,7 +86,7 @@ function removeDuplicates(array, cb) {
 
 removeDuplicates(items2, function(cb){
   cb; 
-})
+});
 
 
 // let greeting;
