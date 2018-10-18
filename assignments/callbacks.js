@@ -44,7 +44,7 @@ function last(arr, cb) {
 }
 
 const theLast =  function(arr){
-  console.log(arr.pop());
+  console.log(arr[arr.length-1]);
 }
 
 last(items, theLast);

@@ -65,22 +65,33 @@ console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-
-fullName.map(function(parameter2) {
-  allCaps.push(parameter2.toUpperCase());
+const newUpperCase = runners.map( function(item) {
+  return item.first_name.toUpperCase();
 });
 
-console.log(allCaps);
+console.log(newUpperCase);
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+const largeShirts = runners.filter((data) =>{
+  return data.shirt_size === 'L';
+});
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+const ticketPriceTotal = runners.reduce(function(mytotal, id) {
+  return mytotal + id.donation;
+}, 0);
+
+console.log(ticketPriceTotal);
+
+// OR
+
+const ticketPriceTotal = runners.reduce ((totalfunds, runner) => totalfunds + runner.donation,0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
