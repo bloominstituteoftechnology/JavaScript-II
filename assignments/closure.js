@@ -36,13 +36,13 @@ whoIsThatPokemon()
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
    let count = 0;
-   console.log(count)
+   console.log("default value of counter", count)
    // debugger
       // Return a function that when invoked increments and returns a counter variable.
   return () => {
         count ++;
-            debugger
-          console.log(count)
+            // debugger
+          console.log("closure function operated counter:", count)
         return count;
   }
 };

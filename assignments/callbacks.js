@@ -4,6 +4,9 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+
+const items2 = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Gum', 'yarn', 'yo-yo' ];
+// console.log(items2)
 /* 
 
   //Given this problem: 
@@ -61,27 +64,39 @@ multiplyNums(3, 4, function(mult){
   console.log("the multiplied value is: ", mult)
 })
 
+// alternative way if multiplyNums has return cb(x,y)
+// function multiplying(x, y) {
+//   console.log(x * y);
+//   return x * y;
+// }
+
+// multiplyNums(2, 4, multiplying)
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  for (let i = 0; i< item.length; i++){
-    list = items.length;
-    if (item[i] === list){
-      debugger
-      return true
-      // return cb(item[i])
-      debugger
-    } else {
-      return false;
-      debugger
-    }
-   console.log(cb(item[i]))
-  }
+   return cb(item, list)
+  // return cb(item, list)
+  // console.log(cb(item, list))
 }
 
-contains(items, function(checkItem){
- console.log("did this work? ", checkItem)
-})
+// researched "includes" method from MDN
+function inventory(item, list){
+  return list.includes(item)
+}
+
+
+  contains("Gum", items, inventory)
+  console.log(contains("Gum", items, inventory))
+    console.log(contains("Pen", items, inventory))
+
+// contains("Gum", items, function(inventory){
+//     console.log(inventory.includes)
+// })
+
+// contains(items, "pencil", {
+//  console.log("did this work? ", checkItem, itemListed)
+// })
 
 /* STRETCH PROBLEM */
 
@@ -89,4 +104,18 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array)
 }
+
+function removeThem(array){
+  return array.filter(function(item, index){
+    return array.indexOf(item) >= index;
+  });
+}
+
+   removeDuplicates(items, removeThem)
+   console.log(removeDuplicates(items, removeThem));
+
+// created duplicate items array to check if it worked
+    removeDuplicates(items2, removeThem)
+    console.log("Removed duplicates from array of items2:", removeDuplicates(items2, removeThem))
