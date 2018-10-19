@@ -2,10 +2,29 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+const myAge = function() {
+  let age = 1;
+  return function() {
+    return age++;
+  }
+} ();
+console.log(myAge());
+console.log(myAge());
+console.log(myAge());
+
+
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = function () {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let count = 0;
+  return function() {
+    return count++;
+  }
+} ();
+
+console.log(counter())
+console.log(counter())
+console.log(counter())
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
