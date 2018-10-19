@@ -78,8 +78,22 @@ contains('Hat', items, inList); // Should return false
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+
+
+// removeDuplicates removes all duplicate values from the given array.
+// Pass the duplicate free array to the callback function.
+// Do not mutate the original array.
+let myArray = [1, 2, 2, 3];
+
+function removeDuplicates(arr, cb) {
+  return cb(arr);
 }
+
+function removeDuplicatesUsingFilter(arr) {
+  let unique_array = arr.filter(function(elem, index, self) {
+        return index === self.indexOf(elem);
+    });
+  return unique_array;
+}
+
+console.log(removeDuplicates(myArray,removeDuplicatesUsingFilter));
