@@ -500,13 +500,47 @@ function ticketDonations(arr) {
     return acc + currentValue;
   });
 }
-console.log(ticketDonations(runners));
+// console.log(ticketDonations(runners));
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Find all donators that donated over 150 as a special recognition ceremony will be held for them.
+function bigDonations(arr) {
+  const largeDonations = arr.filter(runner => {
+    if (runner.donation > 250) {
+      return true;
+    }
+  });
+  const firstLast = largeDonations.map(runner => {
+    return `${runner.first_name}, ${runner.last_name}`;
+  });
+  return firstLast;
+}
+// console.log(bigDonations(runners));
 
 // Problem 2
+// The boss wants all of the runners sorted by largest donations first.
+function sortBy(arr) {
+  return arr.sort((a, b) => {
+    return b.donation - a.donation;
+  });
+}
+// console.log(sortBy(runners));
 
 // Problem 3
+// Give the program the ability to search the array for a given name
+//
+function search(arr, search) {
+  let result = [];
+  arr.forEach(runner => {
+    Object.values(runner).forEach(value => {
+      if (value === search) {
+        result.push(runner);
+      }
+    });
+  });
+  return result;
+}
+// console.log(search(runners, 'Olsen'));
