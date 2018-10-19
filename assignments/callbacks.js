@@ -1,4 +1,5 @@
-// Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  
+// Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -24,24 +25,52 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+getLength(items, function(length) {
+  console.log(length);
+})
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+last(items, function(last) {
+  console.log(last);
+})
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  const sum = x + y;
+  return cb(sum);
 }
+sumNums(4, 8, function(sum) {
+  console.log(sum);
+})
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  const multiply = x * y;
+  return cb(multiply);
 }
+multiplyNums(5, 3, function(multiply) {
+  console.log(multiply);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if(list.indexOf(item) !== -1) {
+    cb(true);
+  }
+  else {
+    cb(false);
+  }
 }
+const example = [3, 6, 7, 34, 12, 56, 8];
+contains(10, example, function(bool) {
+  console.log(bool);
+})
 
 /* STRETCH PROBLEM */
 
@@ -49,4 +78,13 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDuplicates = array.filter(function(element, index, arr) {
+    return index === arr.indexOf(element);
+  })
+  return cb(noDuplicates);
 }
+
+const hasDublicates = [3, 6, 7, 3, 34, 12, 56, 8, 7];
+removeDuplicates(hasDublicates, function(arr) {
+  console.log(arr);
+})
