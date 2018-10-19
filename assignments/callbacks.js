@@ -44,14 +44,14 @@ function sumNums(x, y, cb) {
   return cb = x + y;
 }
 
-console.log(sumNums(5, 3, sumNums()));
+console.log(sumNums(5, 3));
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb = x * y;
 }
 
-console.log(multiplyNums(5,5, multiplyNums()));
+console.log(multiplyNums(5,5));
 
 // const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -60,16 +60,16 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
 
     for (let i=0; i < list.length; i++) {
-      if (item === list[i]) {
-        return cb = true;  
+      if (list.includes(item)) {
+        return true;  
       }
       else {
-        return cb = false;
+        return false;
       }
     }
 }
 
-console.log(contains('yo-yo', items, contains()));
+console.log(contains('yo-yo', items));
 
 /* STRETCH PROBLEM */
 
