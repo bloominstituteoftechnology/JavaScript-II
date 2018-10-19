@@ -485,7 +485,24 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// ==== C5.1 ====
+// Yo, gimme their emails, Imma doxx em! In Order!
+let emails = [];
+emails = runners.map(e => e.email);
+console.log(emails.sort());
 
 // Problem 2
+// ==== C5.2 ====
+// I need their names backwards. I installed a mirrored monitor
+let mirrored = [];
+mirrored = runners.map(e => e.first_name + " " + e.last_name);
+console.log(mirrored.map(e => e.split``.reverse().join``));
 
 // Problem 3
+// ==== C5.3 ====
+// Give me the Initials of the people who haven't donated more than $50
+let inits = [];
+inits = runners
+  .filter(e => e.donation <= 50)
+  .map(e => e.first_name[0] + e.last_name[0]);
+console.log(inits);
