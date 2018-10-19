@@ -1,7 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const  whoIsThatPokemon = () => {
+  let pokemon = "Pikachu"
+      console.log(pokemon)
+        // debugger;
+      espeon()
+        const espeon = (pokemon) => {
+          pokemon = "Espeon";
+           console.log(pokemon);
+           debugger;
+        }
+}
 
+function whoIsThatPokemon2 () {
+  let pokemon = "Pikachu"
+      console.log(pokemon)
+   
+      espeon()
+        function espeon () {
+          pokemon = "Espeon";
+           console.log(pokemon);
+    
+        }
+}
+
+// whoIsThatPokemon()
+whoIsThatPokemon2()
+
+console.log(whoIsThatPokemon());
+console.log(whoIsThatPokemon2());
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
