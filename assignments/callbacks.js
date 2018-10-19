@@ -61,10 +61,10 @@ function contains(item, list, cb) {
 
     for (let i=0; i < list.length; i++) {
       if (list.includes(item)) {
-        return true;  
+        return cb = true;  
       }
       else {
-        return false;
+        return cb = false;
       }
     }
 }

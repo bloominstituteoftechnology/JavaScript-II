@@ -11,15 +11,12 @@ function myClosure() {
 }
 myClosure();
 
+
 // ==== Challenge 2: Create a counter function ====
-const newCounter = counter(x) => {
+const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  return x = x + 1;
-}
-counter();
-counter();
-
-
+  
+};
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
