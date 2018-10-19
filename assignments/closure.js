@@ -1,5 +1,6 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+console.log(`********* closure.js challenges *********`)
 
 const  whoIsThatPokemon = () => {
   let pokemon = "Pikachu"
@@ -8,7 +9,7 @@ const  whoIsThatPokemon = () => {
         const espeon = (pokemon) => {
           pokemon = "Espeon";
            console.log(pokemon);
-           debugger;
+           // debugger;
         }
           espeon()
 }
@@ -28,15 +29,28 @@ const  whoIsThatPokemon = () => {
 whoIsThatPokemon()
 // whoIsThatPokemon2()
 
-console.log(whoIsThatPokemon());
+// console.log(whoIsThatPokemon);
 // console.log(whoIsThatPokemon2());
+
+
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+   let count = 0;
+   console.log(count)
+   // debugger
+      // Return a function that when invoked increments and returns a counter variable.
+  return () => {
+        count ++;
+            debugger
+          console.log(count)
+        return count;
+  }
 };
+
+const newCounter = counter();
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+newCounter(); // 1
+newCounter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
