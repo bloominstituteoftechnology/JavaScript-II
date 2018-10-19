@@ -40,11 +40,23 @@ last(items, function(lastItem) {
 });
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  const add = x + y;
+  return cb(add);
 }
+
+sumNums(1, 2, function(add) {
+  console.log(add);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  const multi = x * y;
+  return cb(multi);
 }
+
+multiplyNums(2, 3, function(multi) {
+  console.log(multi);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
