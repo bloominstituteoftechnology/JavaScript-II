@@ -14,11 +14,11 @@ let anotherFunction = (param) => {return param};
 //   return param1 + param2;
 // };
 
-let adder = (param1, param2) => { 
+let add = (param1, param2) => { 
     return param1 + param2;
 };
 
-adder(1,2);
+add(1,2);
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
