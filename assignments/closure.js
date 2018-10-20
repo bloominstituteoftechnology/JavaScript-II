@@ -1,26 +1,28 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 function add (x) {
-  let addMe = x;
    return function (y) {
     return x + y;
   }
 }
- let addThree = add(3);
-let addSix = add(6);
-let addTen = add(10);
-add(3);
+const addThree = add(3);
+const addSix = add(6);
+const addTen = add(10);
+console.log(addThree(2));
+console.log(addTen(2));
+console.log(addSix(2));
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-  let counter = 0;
-  return function () {
-    return ++counter;
+const increment = (function(count) {
+  return function() {
+    count += 1;
+    return count;
   }
-};
-const newCounter = counter();
+}(0)); 
 
+console.log(increment());
+console.log(increment());
+console.log(increment());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
