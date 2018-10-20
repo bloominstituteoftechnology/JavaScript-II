@@ -39,3 +39,24 @@ const triple = exampleArray.map(num => {
 });
 
 console.log(triple);
+
+//IIFE
+// (function () {
+//     statements
+// })();
+
+const helloWorld = (function() {
+    return `Hello World`;
+})();
+
+helloWorld;
+
+const quadruple = (function() {
+    exampleArray.map(num => {
+        return num *4;
+    });
+})();
+
+quadruple;
+// I think it may be undefined, because when map creates a new array,
+// it is inside the IIFE. Variables inside the IIFE cannot be accessed from the outside.
