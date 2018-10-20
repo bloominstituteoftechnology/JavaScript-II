@@ -55,25 +55,42 @@ sumNums(5, 10, function (sum) {
 
 function multiplyNums(x, y, cb) {
     // multiplyNums multiplies two numbers and passes the result to the callback.
+    cb(x*y);
 }
+multiplyNums(5,4,consoleLog);
 
+
+// contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
     list.forEach(function (object) {
         if (object === item) {
             cb(true)
         }
     })
-    // contains checks if an item is present inside of the given array/list.
-    // Pass true to the callback if it is, otherwise pass false.
+
 }
-contains('Music', items, function(trueItem) {
+
+contains('Music', items, function (trueItem) {
     console.log(trueItem);
 });
 
+
+
+
+
+
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+let array = [1,2,1,3,5,6,3,5,7,3,5];
+noDuplicate = [];
+
+function removeDuplicates(arr) {
+    arr.filter() 
+    return noDuplicate;
     // removeDuplicates removes all duplicate values from the given array.
     // Pass the duplicate free array to the callback function.
     // Do not mutate the original array.
-}
+
+
+removeDuplicates(array);
