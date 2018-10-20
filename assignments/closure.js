@@ -20,9 +20,16 @@ function Lambda(cohortP) {
 }
 Lambda("CSPT3");
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = () =>  {
+  console.log(counter++);
+  
+
   // Return a function that when invoked increments and returns a counter variable.
-};
+}
+
+
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
