@@ -134,3 +134,9 @@ function sortSizes (){
     console.log(filterThem(runners, "3XL"))
 }
 sortSizes();
+
+// Problem 3
+//  Adds a Runner to the runner array
+
+runners.push({"id":51,"first_name":"Justin","last_name":"Smith","email":"jsmith93@live.com","shirt_size":"M","company_name":"Sunoco","donation":168});
+sortByCompany();
