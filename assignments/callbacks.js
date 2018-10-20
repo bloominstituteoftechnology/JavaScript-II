@@ -77,8 +77,32 @@ contains("Gum",items,(e)=>{
 })
 /* STRETCH PROBLEM */
 
+// const  dupeArray= ["duplicate","duplicate","duplicate","unique"];
+
+// function removeDuplicates(array, cb) {
+//   // removeDuplicates removes all duplicate values from the given array.
+//   // Pass the duplicate free array to the callback function.
+//   // Do not mutate the original array.
+//   normalizedArray=[];
+//   for(let i = 0; i < array.length ;i++){
+//     cb(array[i])
+//   }
+//   //  return normalizedArray;
+// }
+
+// console.log(removeDuplicates(dupeArray,e=>{
+//   console.log(e)
+// }))
+
+const  dupeArray= ["duplicate","duplicate","duplicate","unique"];
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+   const normalizedArray= array.filter((x,i)=>{
+    return (array.indexOf(x)===i)
+  });
+   cb(normalizedArray)
 }
+
+removeDuplicates(dupeArray,e=>{
+  console.log(e)
+})
