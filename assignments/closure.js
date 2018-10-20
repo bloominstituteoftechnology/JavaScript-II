@@ -2,16 +2,24 @@
 // Write a simple closure of your own creation.  Keep it simple!
 let favCandy = "jelly beans";
 function trickOrTreat() {
-  return "Trick or treat can I have some "+favCandy+"?";
+  return `Trick or treat can I have some ${favCandy}?`;
 }
 
+let otherCandy = "candy corn";
+function sorry() {
+  favCandy = "chocolate bars";
+  return `Sorry, we don't have any ${favCandy}!`;
+  
+}
 
 console.log(trickOrTreat());
+console.log(sorry(otherCandy));
 
 // ==== Challenge 2: Create a counter function ====
+
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  let count = 0;
+  let count = 0;  
   return() => ++count;
 
 };
