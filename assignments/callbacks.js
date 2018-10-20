@@ -76,18 +76,16 @@ contains('yo-yo',items,function(con){
 //end of test
 
 /* STRETCH PROBLEM */
-const array = ['a','f','g','d','a','d','f','h','h','s','a'];
+const test = ['a','f','g','d','a','d','f','h','h','s','a'];
 
 function removeDuplicates(array, cb) {
 
   let remDupes = [];
   remDupes = Array.from(new Set(array));
-
-console.log (array)
-return (remDupes);
+  return (remDupes);
 
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
-console.log(removeDuplicates(array));
+console.log(removeDuplicates(test));
