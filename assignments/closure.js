@@ -20,16 +20,18 @@ myFunction();
 // newCounter(); // 1
 // newCounter(); // 2
 
-let myCounter = 0;
-const newCounter = () => {
-  const counter = () => myCounter++;
-  counter();
-  console.log(myCounter);
-};
- newCounter(); // 1
- newCounter(); // 2
- newCounter(); // 3
- newCounter(); // 4
+const newCounter = (() => {
+  let counter = 0;
+  return function () {
+    counter += 1; 
+    console.log(counter); 
+    return counter}
+})();
+
+newCounter(); //1
+newCounter(); //2
+newCounter(); //3
+newCounter(); //4
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
