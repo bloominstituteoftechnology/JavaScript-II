@@ -466,7 +466,7 @@ function full_name(arr) {
   return fullName;
 }
 
-// console.log(full_name(runners));
+console.log(full_name(runners));
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -476,7 +476,7 @@ function all_caps(arr) {
   });
   return allCaps;
 }
-// console.log(all_caps(runners));
+console.log(all_caps(runners));
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
@@ -488,7 +488,7 @@ function findShirtSize(arr) {
   });
   return largeShirts;
 }
-// console.log(findShirtSize(runners));
+console.log(findShirtSize(runners));
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
@@ -500,7 +500,7 @@ function ticketDonations(arr) {
     return acc + currentValue;
   });
 }
-// console.log(ticketDonations(runners));
+console.log(ticketDonations(runners));
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
@@ -518,7 +518,7 @@ function bigDonations(arr) {
   });
   return firstLast;
 }
-// console.log(bigDonations(runners));
+console.log(bigDonations(runners));
 
 // Problem 2
 // The boss wants all of the runners sorted by largest donations first.
@@ -527,7 +527,7 @@ function sortBy(arr) {
     return b.donation - a.donation;
   });
 }
-// console.log(sortBy(runners));
+console.log(sortBy(runners));
 
 // Problem 3
 // Give the program the ability to search the array for a given name
@@ -543,4 +543,4 @@ function search(arr, search) {
   });
   return result;
 }
-// console.log(search(runners, 'Olsen'));
+console.log(search(runners, 'Olsen'));
