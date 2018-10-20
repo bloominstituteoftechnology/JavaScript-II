@@ -58,7 +58,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullNames = [];
 runners.forEach(
     function(runner) {
-        var currentFullName = runner.first_name + " " + runner.last_name;
+        let currentFullName = runner.first_name + " " + runner.last_name;
         fullNames.push(currentFullName); 
         
 })
@@ -67,7 +67,7 @@ console.log(JSON.stringify(fullNames));
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+
 const allCap = runners.map(function(currentItem) {
     return currentItem['first_name'].toUpperCase()
     
@@ -86,7 +86,7 @@ console.log(JSON.stringify(largShirts));
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
 const totalDonations = runners.reduce(function(totalD,runner){
     return totalD + runner.donation;
     
