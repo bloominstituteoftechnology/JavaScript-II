@@ -15,17 +15,19 @@ myClosure();
 // ==== Challenge 2: Create a counter function ====
 
 
-  var number = 1; // name is a local variable created by init
-
-function counter(number) {
-  // newCounter();    
-  function newCounter(number) { // displayName() is the inner function, a closure
-    return number = number + 1; // use variable declared in the parent function    
+function counter() {
+  var x = 0;
+  function newCounter() {
+    return x = x + 1;
   }
   newCounter();
+  return newCounter;
 }
 
-console.log(counter(number));
+var number = counter();
+
+console.log(number());
+console.log(number());
 
 
 

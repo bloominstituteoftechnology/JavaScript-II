@@ -63,9 +63,10 @@ function contains(item, list, cb) {
     }
 }
 
-contains('yo-yo', items, function(result) {
-  console.log(result);
-});
+// contains('Notebook', items, function(result) {
+//   console.log(result);
+// });
+
 
 /* STRETCH PROBLEM */
 
