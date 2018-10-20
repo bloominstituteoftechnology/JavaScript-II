@@ -2,7 +2,7 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 function myClosure() {
-    name = 'lad';
+    const name = 'lad';
     helloClosureMyOldFriend();
 
     function helloClosureMyOldFriend() {
@@ -13,10 +13,24 @@ myClosure();
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-  
-};
+
+
+  var number = 1; // name is a local variable created by init
+
+function counter(number) {
+  // newCounter();    
+  function newCounter(number) { // displayName() is the inner function, a closure
+    return number = number + 1; // use variable declared in the parent function    
+  }
+  newCounter();
+}
+
+console.log(counter(number));
+
+
+
+
+// console.log(counter(1));
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
