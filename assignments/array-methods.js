@@ -54,23 +54,44 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName.
 let fullName = [];
+
+runners.forEach(runner => {
+  let combinedFirstAndLast = runner.first_name + ' ' + runner.last_name;
+  fullName.push(combinedFirstAndLast);
+});
+
 console.log(fullName);
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+
+allCaps = runners.map(runner => {
+  return runner.first_name.toUpperCase()
+})
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+largeShirts = runners.filter(runner => {
+  if (runner.shirt_size === "L"){
+    return true;
+  }
+})
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+ticketPriceTotal = runners.reduce(function(accumulator, currentValue){
+  return accumulator + currentValue.donation;
+}, 0)
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +99,53 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// The company needs to get all the emails in order to do a marketing campaign for their next run.
+let emails = [];
+
+runners.forEach(runner => {
+  let email = runner.email;
+  emails.push(email);
+});
+
+console.log(emails);
+
 // Problem 2
 
+// Before the competition, a local store sponsor held a giveaway for the attendees and Anderea from Kwimbee won. The store has to verify that the person actually attended the race in order to provide the price.
+
+let winner = [];
+winner = runners.filter(runner => {
+  if (runner.company_name === "Kwimbee" && runner.first_name === "Anderea"){
+    return true;
+  } else return false;
+})
+
+console.log(winner)
+
 // Problem 3
+// The local community center wants to honor the top 10 donators for their contribution. Provide a list of the highest donators.
+
+// name and donation:
+let nameAndDonations = []
+
+runners.forEach(runner => {
+  let nameAndDonation = []
+  let name = runner.first_name + ' ' + runner.last_name;
+  let donation = runner.donation;
+  nameAndDonation.push(name,donation)
+  nameAndDonations.push(nameAndDonation);
+});
+
+nameAndDonations.sort(function(a,b){
+  return b[1] - a[1];
+});
+
+let topTen = []
+topTen = nameAndDonations.slice(0,10);
+
+console.log(topTen);
+
+
+
+
+console.log(emails);

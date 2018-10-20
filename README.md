@@ -5,10 +5,10 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 
 ## Task 1: Set Up The Project With Git
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
-* [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
+* [X] Fork the project into your GitHub user account
+* [X] Clone the forked project into a directory on your machine
+* [X] You are now ready to build this project with your preferred IDE
+* [X] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
 
 
 ## Task 2: Callbacks
@@ -43,6 +43,6 @@ We have learned that closures allow us to access values in scope that have alrea
 
 ## Stretch Goals
 
-* [ ] Arrow Function Syntax - [Check out this awesome guide for ES6 arrow syntax](https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26). You will see more and more arrow functions as you progress deeper into JavaScript. Use the [stretch-function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax. 
+* [ ] Arrow Function Syntax - [Check out this awesome guide for ES6 arrow syntax](https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26). You will see more and more arrow functions as you progress deeper into JavaScript. Use the [stretch-function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax.
 
 * [ ] Look up what an IIFE is in JavaScript and experiment with them
