@@ -86,8 +86,15 @@ contains("Gum", items, function(index, input) {
 
 /* STRETCH PROBLEM */
 
+const logDeDuped = (array) => console.log(array);
 function removeDuplicates(array, cb) {
+  let mirrored = [...array];
+  let deDupe = mirrored.filter((x, i, thisArr) => {
+    return thisArr.indexOf(x) == i;
+  })
+  cb(deDupe);
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+removeDuplicates(["test", "test", "duplicateTest", "test"], logDeDuped);
