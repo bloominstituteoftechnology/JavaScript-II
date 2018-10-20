@@ -88,19 +88,15 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  let results = [];
-  array.sort();
-  console.log(array);
-  for (let i = 0; i < array.length - 1; i++) {
-    if (array[i] !== array[i+1]) {
-      results.push(array[i]);
-    }
-  }
+  let results = array.filter(function(element, index) {
+    return array.indexOf(element) == index;
+  });
+  
   return cb(results);
 }
 
-let testArray = [1,2,'2','2',3,3,4,120,5,6,120,6,6,4,7,9];
+let testArray = [1,2,'2','2',3,3,4,120,5,'cat',6,120,6,'cat',6,4,7,9];
 
 removeDuplicates(testArray, function(result) {
   console.log(result);
-})
+});
