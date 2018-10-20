@@ -1,12 +1,43 @@
 // ==== Challenge 1: Write your own closure ====
+// console.log(`******************** closure ********************`);
 // Write a simple closure of your own creation.  Keep it simple!
-
+function bestSnacks() {
+  let snack = "popcorn";
+  console.log(snack);
+  // debugger;
+  carrots();
+  function carrots() {
+    snack = "carrots";
+    // debugger;
+  }  
+}
+bestSnacks();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counterInitializer =  () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  debugger;
+  return () => {
+    count += 1;
+    debugger;
+    console.log(count);
+  }
 };
-// Example usage: const newCounter = counter();
+
+const counter = counterInitializer();
+
+counter();
+counter();
+counter();
+
+
+
+
+
+
+//Example usage: 
+// const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
 
