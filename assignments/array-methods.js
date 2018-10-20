@@ -108,14 +108,31 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // Honor various donors by separate them by donation amount (e.g. Gold donors, Silver donors, etc.)
-// Map, to create arrays for each tier
+// Filter, to create arrays for each tier
+let bronzeDonors = [];
+let silverDonors = [];
+let goldDonors = [];
+
+runners.filter(function(runner){
+    if (runner.donation > 50 && runner.donation < 100 ) {
+        bronzeDonors.push(`${runner.first_name} ${runner.last_name}, ${runner.company_name}`);
+    } else if (runner.donation > 100 && runner.donation < 200 ) {
+        silverDonors.push(`${runner.first_name} ${runner.last_name}, ${runner.company_name}`);
+    } else if (runner.donation > 200) {
+        goldDonors.push(`${runner.first_name} ${runner.last_name}, ${runner.company_name}`);
+    }
+})
+console.log(bronzeDonors);
+console.log(silverDonors);
+console.log(goldDonors);
 
 
 // Problem 2
 // Create custom number cards for companies by grouping them into separate arrays
-// Also could use map for the same reason as above
+// Also could use filter
+
 
 // Problem 3
 // See which group donated the most altogether
-// first map to separate them by company
+// first filter to separate them by company
 // reduce to add them up
