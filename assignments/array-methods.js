@@ -100,5 +100,12 @@ highRollers = runners.filter(function (item) {
 })
 console.log(highRollers);
 // Problem 2
+// The organizers need a list to keep track of the attendance.  Create an array with the names of the runners alphabetized by last names
+let attendanceList = [];
+attendanceList = runners.map(function (item) {
+  return `${item.last_name}, ${item.first_name}`
+}).sort();
+console.log(attendanceList);
+
 
 // Problem 3
