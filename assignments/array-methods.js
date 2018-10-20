@@ -107,5 +107,13 @@ attendanceList = runners.map(function (item) {
 }).sort();
 console.log(attendanceList);
 
-
 // Problem 3
+// The organizers want a list of the runners organized by their employers.  Create an object that lists all of the individual companies represented, with an array assigned to each one listing their employees.
+let companyGroups = {};
+runners.forEach(function (item) {
+  let company = ""
+  company = item["company_name"];
+  if (companyGroups[company] === undefined) return companyGroups[company] = [`${item.first_name} ${item.last_name}`];
+  else return companyGroups[company].push(`${item.first_name} ${item.last_name}`);
+})
+console.log(companyGroups);
