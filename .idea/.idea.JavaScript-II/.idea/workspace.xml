@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a132bfb6-21c5-47cf-8900-f1b34e6b6b93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.JavaScript-II/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JavaScript-II/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/callbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/callbacks.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,13 +38,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="3806" />
+          <entry key="js" value="3874" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="3806" />
+          <entry key="JavaScript" value="3874" />
         </counts>
       </usages-collector>
     </session>
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/closure.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="561">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -67,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+            <state relative-caret-position="468">
+              <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -114,8 +113,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="996" />
-    <option name="width" value="933" />
+    <option name="x" value="967" />
+    <option name="width" value="962" />
     <option name="height" value="1088" />
   </component>
   <component name="ProjectView">
@@ -174,12 +173,12 @@
       <workItem from="1540042659780" duration="9108000" />
       <workItem from="1540053218575" duration="207000" />
       <workItem from="1540057416672" duration="184000" />
-      <workItem from="1540059507946" duration="550000" />
+      <workItem from="1540059507946" duration="1699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13387000" />
+    <option name="totallyTimeSpent" value="14536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -191,7 +190,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="797" y="0" width="746" height="870" extended-state="0" />
+    <frame x="774" y="0" width="769" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24489796" />
@@ -253,23 +252,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/closure.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="561">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+        <state relative-caret-position="468">
+          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

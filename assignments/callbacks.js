@@ -79,14 +79,13 @@ contains('Music', items, function (trueItem) {
 /* STRETCH PROBLEM */
 
 let array = [1, 2, 1, 3, 5, 6, 3, 5, 7, 3, 5];
-noDuplicate = [];
 
 function removeDuplicates(arr, cb) {
     // removeDuplicates removes all duplicate values from the given array.
     // Pass the duplicate free array to the callback function.
     // Do not mutate the original array.
     
-    uniqueValues = arr.filter(function(item, position) {
+    let uniqueValues = arr.filter(function(item, position) {
         return arr.indexOf(item) == position;
     });
     
