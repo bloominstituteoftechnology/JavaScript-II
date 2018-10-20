@@ -27,10 +27,27 @@ const counter = () => {
 counter();
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
-// ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
+// ==== Challenge 3: Create a counter function 
+// with an object that can increment and decrement ====
 
 const counterFactory = () => {
-    // Return an object that has two methods called `increment` and `decrement`.
-    // `increment` should increment a counter variable in closure scope and return it.
-    // `decrement` should decrement the counter variable and return it.
+    let counter = 0;
+    let myFunctions = {
+        increment: function() {
+            console.log(counter+=1)
+        },
+        
+        decrement: function() {
+            console.log(counter-= 1)
+        }
+    };
+    
+    return myFunctions;
 };
+// `increment` should increment a counter variable in closure scope and return it.
+// `decrement` should decrement the counter variable and return it.
+let newFactory = counterFactory();
+console.log(newFactory.increment());
+console.log(newFactory.increment());
+console.log(newFactory.increment());
+console.log(newFactory.decrement());

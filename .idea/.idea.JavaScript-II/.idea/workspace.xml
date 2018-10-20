@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a132bfb6-21c5-47cf-8900-f1b34e6b6b93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assignments/callbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/callbacks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.JavaScript-II/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JavaScript-II/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/closure.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/closure.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,24 +39,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="3874" />
+          <entry key="js" value="4804" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="3874" />
+          <entry key="JavaScript" value="4804" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/closure.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state relative-caret-position="522">
+              <caret line="45" column="2" lean-forward="true" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -63,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -94,9 +95,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/assignments/array-methods.js" />
-        <option value="$PROJECT_DIR$/assignments/closure.js" />
         <option value="$PROJECT_DIR$/assignments/stretch-function-conversion.js" />
         <option value="$PROJECT_DIR$/assignments/callbacks.js" />
+        <option value="$PROJECT_DIR$/assignments/closure.js" />
       </list>
     </option>
   </component>
@@ -113,8 +114,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="967" />
-    <option name="width" value="962" />
+    <option name="x" value="1045" />
+    <option name="width" value="883" />
     <option name="height" value="1088" />
   </component>
   <component name="ProjectView">
@@ -173,12 +174,12 @@
       <workItem from="1540042659780" duration="9108000" />
       <workItem from="1540053218575" duration="207000" />
       <workItem from="1540057416672" duration="184000" />
-      <workItem from="1540059507946" duration="1699000" />
+      <workItem from="1540059507946" duration="4588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14536000" />
+    <option name="totallyTimeSpent" value="17425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,7 +191,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="774" y="0" width="769" height="870" extended-state="0" />
+    <frame x="836" y="0" width="706" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24489796" />
@@ -252,23 +253,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/closure.js">
+    <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="468">
+          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/callbacks.js">
+    <entry file="file://$PROJECT_DIR$/assignments/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/closure.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+        <state relative-caret-position="522">
+          <caret line="45" column="2" lean-forward="true" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
