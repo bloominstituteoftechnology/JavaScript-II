@@ -1,5 +1,5 @@
 // ==== Challenge 1: Write your own closure ====
-// console.log(`******************** closure ********************`);
+console.log(`******************** closure ********************`);
 // Write a simple closure of your own creation.  Keep it simple!
 function bestSnacks() {
   let snack = "popcorn";
@@ -17,10 +17,10 @@ bestSnacks();
 const counterInitializer =  () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
-  debugger;
+  // debugger;
   return () => {
     count += 1;
-    debugger;
+    // debugger;
     console.log(count);
   }
 };
