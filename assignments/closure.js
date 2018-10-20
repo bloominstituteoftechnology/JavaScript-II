@@ -1,6 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function anime() {
+  let name = "One Piece";
+  function displayAnime() {
+    alert(name);
+  }
+  displayAnime();
+}
+anime();
+
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
