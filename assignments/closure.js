@@ -4,20 +4,17 @@
 var x = 10;
 
 function multipl() {
-   x * x;
-} 
-
-
-
+  x * x;
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let cou = 0;
-  return function(){
-    cou++
+  return function() {
+    cou++;
     console.log(cou);
-  }
+  };
 };
 
 const blahh = counter();
