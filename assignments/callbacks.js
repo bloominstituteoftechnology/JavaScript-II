@@ -75,8 +75,21 @@ contains('car', items, function(contains) {
 
 /* STRETCH PROBLEM */
 
+const array = ['array', 'hello', 'hello', 'goodbye'];
+function consoleThis(arr) {
+  console.log(arr);
+}
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let removedDups = [];
+  array.forEach(item => {
+    if (!removedDups.includes(item)) {
+      removedDups.push(item);
+    }
+  });
+  cb(removedDups);
 }
+
+removeDuplicates(array, consoleThis);
