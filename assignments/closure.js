@@ -8,11 +8,11 @@ const closure = () => {
     return candidClosure;
   }
   
-  return closeItOut();
+  return closeItOut;
 }
 console.log(closure());
 const newCandid = closure();
-console.log(newCandid)
+console.log(newCandid())
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
