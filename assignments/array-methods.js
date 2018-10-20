@@ -62,9 +62,11 @@ let fullName = [];
 console.log(fullName);
 
  runners.forEach(function(getNames){
+    //  if (getNames["first_name"] && getNames["last_name"]){
        let names = getNames.first_name + " " + getNames.last_name;
        fullName.push(names)
-       console.log(names)
+    //    console.log(names)
+    //  }
  });
 
 // ==== Challenge 2: Use .map() ====
@@ -73,6 +75,9 @@ console.log(fullName);
 let allCaps = [];
 console.log(allCaps); 
 
+const capAll = runners.map((capitalize) => {
+   allCaps.push(capitalize.first_name.toUpperCase())
+});
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  
 //Get a list of runners with large sized shirts so they can choose a different size. 
