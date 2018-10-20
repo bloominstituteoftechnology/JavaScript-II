@@ -63,16 +63,15 @@ contains("Gum", items, function(item) {
 });
 
 /* STRETCH PROBLEM */
-
+const newArray = [];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  const newArray = array.filter((x, i) => {
-    for (let j = 0; j < array.length; j++) {
-      if (x === array[j] && j !== i) {
-        return x;
-      }
+  const subArray = array.filter((x, i, a) => {
+    if (newArray.includes(x)) {
+    } else {
+      newArray.push(x);
     }
   });
   cb(newArray);
