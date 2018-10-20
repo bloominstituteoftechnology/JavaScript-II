@@ -1,11 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function chest(){
+  let gold = "Gold";
+  imRich();
+  function imRich(){
+    console.log(`I have ${gold}!`);
+  } 
+}
+chest();
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let x = 0;
+  const plus = function(){
+    return x++;
+  }
+  return plus;
+  };
+const newCounter = counter();
+newCounter();
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
