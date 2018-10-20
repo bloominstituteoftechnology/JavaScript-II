@@ -62,11 +62,8 @@ let fullName = [];
 console.log(fullName);
 
  runners.forEach(function(getNames){
-    //  if (getNames["first_name"] && getNames["last_name"]){
        let names = getNames.first_name + " " + getNames.last_name;
        fullName.push(names)
-    //    console.log(names)
-    //  }
  });
 
 // ==== Challenge 2: Use .map() ====
@@ -84,12 +81,31 @@ const capAll = runners.map((capitalize) => {
 //Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
 console.log(largeShirts);
+// const theShirts = runners.filter((runner) => {
+//     // let lg = runner.shirt_size === "L";
+//     largeShirts.push(runner.shirt_size === "L");
+// });
 
+const theShirts = runners.filter((runner) => {
+    if(runner.shirt_size === "L"){
+      largeShirts.push(runner.shirt_size);
+    }
+  })
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. 
 //Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 console.log(ticketPriceTotal);
+const totalPrices = runners.reduce((total, runner) => {
+        ticketPriceTotal.push(total + runner.donation);
+        return total + runner.donation;
+}, 0);
+console.log(totalPrices)
+
+const totalPrices2 = runners.reduce((total, runner) => {
+    return total + runner.donation
+}, 0)
+console.log(totalPrices2)
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce(). 
@@ -97,7 +113,33 @@ console.log(ticketPriceTotal);
 //Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Get all the emails from the users
+        let emailInfo = [];
+        console.log(emailInfo)
+
+    //   const theEmails = runners.forEach = (racer) => {
+    //          emailInfo.push(racer.email)
+    //    }
+
+       runners.forEach(function(racer){
+        emailInfo.push(racer.email)
+       })
 
 // Problem 2
+ // The event director finally calmed down and asked for the names to be all lower case this time.
+ let lowerCaseNames = [];
+
+ const lower = runners.map((firstNames) => {
+    return  lowerCaseNames.push(firstNames.first_name);
+ });
+ console.log(lowerCaseNames)
 
 // Problem 3
+// refund runners with last names beginning with S, as they never received their bibs for their races!
+
+let refunds = [];
+console.log(refunds)
+const refund = runners.filter((moneyBack) => {
+    if (moneyBack.last_name >= "S")
+    return refunds.push(moneyBack.last_name);
+})
