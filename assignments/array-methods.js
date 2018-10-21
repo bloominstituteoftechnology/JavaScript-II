@@ -64,11 +64,11 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // }
 
 // console.log(fullName);
-
+let fullName =[]
 runners.forEach(function(runner){
-    console.log(runner.first_name + ' ' + runner.last_name)
+    return fullName.push(runner.first_name + ' ' + runner.last_name)
 })
-
+console.log(fullName)
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -90,15 +90,50 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+
+
+let donationSum = 0
+for (let i = 0; i < runners.length; i++) {
+    donationSum += runners[i].donation;
+}
+
 let ticketPriceTotal = [];
-console.log(runners.donation)
+runners.reduce(function(total, amount) {
+    return ticketPriceTotal.push(total + amount.donation)
+}, 0)
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// get name of runners that order small and med size shirts.
+let smallAndMed = []
+runners.filter(function(outOfStock) {
+    if (outOfStock.shirt_size === "S" || outOfStock.shirt_size === "M") {
+        return smallAndMed.push(outOfStock.first_name + ' ' + outOfStock.last_name)
+    }
+})
+
+console.log(smallAndMed)
 
 // Problem 2
-
+// create a new array and sort the donation amount to make it easier to read.
+let sortedDonation = []
+runners.map(function(amount) {
+    return sortedDonation.push(amount.donation)
+})
+let newSortedArray = sortedDonation
+newSortedArray.sort(function(a, b){
+    return a - b;
+})
+console.log(newSortedArray)
 // Problem 3
+//get the company name and the amount of donation.
+let companyDonation = []
+runners.forEach(function(companyAmount) {
+    console.log(companyAmount.company_name + ' donated ' + companyAmount.donation)
+})
+
+console.log(companyDonation)
