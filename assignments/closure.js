@@ -1,14 +1,36 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+let firstFunction = function(){
+  var index = 'result 1';
+  return function(){
+    return index;
+    } 
+  }
+  let secondFunction= function(){
+    var index = 'result2 ';
+    console.log (firstFunction()());
+  }
+  secondFunction();
+
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+  
+
+
+function counter() {
+  var currentCount = 1;
+
+  return function() {
+    return currentCount++;
+  };
+}
+
+var newCounter = counter();
+
+console.log(newCounter() ); // 1
+console.log(newCounter() ); // 2
+console.log(newCounter() ); // 3
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
