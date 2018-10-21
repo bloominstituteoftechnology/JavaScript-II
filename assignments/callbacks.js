@@ -80,7 +80,7 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 function contains(item, list, cb) {
-  return cb (item,list)
+  return cb (item,list);
 }
 
 
