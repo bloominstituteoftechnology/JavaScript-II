@@ -97,6 +97,25 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Average donation
+
+let totalDonation = [];
+totalDonation = runners.reduce((previousValue, currentItem) => previousValue + currentItem.donation,0)
+var avarageDonation = ticketPriceTotal/runners.length;
+console.log (avarageDonation);
+
 // Problem 2
 
+// How many people partisipate in the run from Wordtune?
+var skinixRunners = [];
+console.log(skinixRunners);
+skinixRunners.push(runners.filter((runner)=>runner.company_name === "Skinix"));
+
 // Problem 3
+//The largest donation
+
+
+let fatDonor =[];
+
+fatDonor.push(runners.filter((runner)=>runner.donation > 250));
+console.log(fatDonor);
