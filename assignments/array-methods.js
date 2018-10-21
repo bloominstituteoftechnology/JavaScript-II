@@ -1,4 +1,5 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  
+//Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -53,31 +54,125 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
+
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach( function(runner){
+    fullName.push(runner.first_name+ ' ' + runner.last_name);
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+allCaps = runners.map(function(runner){
+    return runner.first_name.toUpperCase();
+});
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. 
+// Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+runners.filter(function(runner){
+    if(runner.shirt_size === 'L'){
+        largeShirts.push(runner);
+    }
+});
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce(function(total, runner){
+    return total + runner.donation;
+},0);
 console.log(ticketPriceTotal);
 
+
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+//  Now that you have used .forEach(), .map(), .filter(), and .reduce().  
+//  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  
+//  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// What fields do we have availble for the runners? Create an array with the keys that represent each object. 
+//  This will help us to see clearly what kind of data we have available for further examination
+let keySample = [];
+keySample = Object.keys(runners[0]);
+console.log(keySample);
+
+//  Now that you have that cleared out, let's focus on donations. 
+//  Create an array that tells us how many donations we had in the following ranges:
+//  0 - 50
+//  51 - 100
+//  101 - 150
+//  > 150
+//  Log results 
+let donationRanges = [0, 0, 0, 0];
+
+// ES5 format:
+// for(let i = 0; i < runners.length; i++){
+//     if(runners[i].donation <= 50){
+//         donationRanges[0] += 1;
+//     }
+//     else if (runners[i].donation <= 100){
+//         donationRanges[1] += 1;
+//     }
+//     else if (runners[i].donation <= 150){
+//         donationRanges[2] += 1;
+//     }
+//     else {
+//         donationRanges[3] += 1;
+//     }
+// }
+
+// ES6 format
+runners.forEach(function(runner){
+    switch (true) {
+        case (runner.donation <= 50): 
+        donationRanges[0] += 1;
+        break;
+        case (runner.donation <= 100): 
+        donationRanges[1] += 1;
+        break;
+        case (runner.donation <= 150): 
+        donationRanges[2] += 1;
+        break;
+        case (runner.donation > 151): 
+        donationRanges[3] += 1;   
+        break;
+    
+        default: console.log('Invalid entry');
+    }
+});
+
+console.log('Number of donations in the range of 0 - $50:   ' + donationRanges[0]);
+console.log('Number of donations in the range of $51 - $100:    ' + donationRanges[1]);
+console.log('Number of donations in the range of $101 - $150:   ' + donationRanges[2]);
+console.log('Number of donations greater than $150:     ' + donationRanges[3]);
 
 // Problem 2
+//  We are very grateful and want to send thank you cards to the representatives that assisted to the run. 
+//  Create an array with all emails to send the cards.
+
+let emailsArray = [];
+emailsArray = runners.map(runner => runner.email);
+
+console.log('emails '+ emailsArray)
 
 // Problem 3
+//  The team in charge of communicating to the runners that chose size L on their shirts that there was
+//  and ordering issue with their shirts, will be sending an automated email with current updates about their order. 
+//  Use the largeShirts array of object and create an array containing only the emails
+//  of the partipants whose order had issues.
+
+let emailAffectedRunners = [];
+emailAffectedRunners = largeShirts.map(runner => runner.email);
+console.log(emailAffectedRunners);
+
+
+
+
+
