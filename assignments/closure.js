@@ -29,10 +29,6 @@ var number = counter();
 console.log(number());
 console.log(number());
 
-
-
-
-// console.log(counter(1));
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
