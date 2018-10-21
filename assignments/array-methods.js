@@ -87,7 +87,7 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 
 const ticketPriceTotal = runners.reduce(function(accumulator, currentValue) {
-    console.log(accumulator);
+    // console.log(accumulator);
   return accumulator + currentValue.donation;
 }, 0);
 console.log(ticketPriceTotal);
@@ -96,7 +96,25 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+const largeSizeLargeDonors = runners.filter(function(runner) {
+    if ((runner.shirt_size >= 'S') && (runner.donation > 140)) {
+        return true;
+    }
+});
+const smallSizeLargeDonorsList = largeSizeLargeDonors.map(function(runner) {
+    return ` ${runner.first_name}`
+});
+console.log(`The first name of the small sized runners with Large donations are: ${smallSizeLargeDonorsList} `)
 
 // Problem 2
 
+const company_list = runners.filter(function(runner) {
+    if (runner.donation > 280) {
+        return true;
+    }
+});
+const largeDonorCompanyList = company_list.map(function(company_list) {
+    return company_list.company_name;
+});
+console.log(`The biggest donor are employees of the following company: ${largeDonorCompanyList}.`);
 // Problem 3

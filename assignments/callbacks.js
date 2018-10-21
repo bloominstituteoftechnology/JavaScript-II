@@ -1,6 +1,6 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'yo-yo', 'Pencil'];
 
 /* 
 
@@ -26,18 +26,18 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
    return cb(arr.length);
 }
-getLength(items, function(cb) {
-  console.log(cb);
-});
+// getLength(items, function(result) {
+//   console.log(result);
+// });
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
 }
 
-last(items, function(result) {
-  console.log(result);
-})
+// last(items, function(result) {
+//   console.log(result);
+// });
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the cb to the callback.
@@ -64,7 +64,21 @@ function contains(item, list, cb) {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+
+  let newArr = [];
+  // let len = array.length;
+  for (let i=0; i < array.length; i++) {
+    /* If newArr doesn\'t contain a char in original */
+      if (newArr.indexOf(array[i]) === -1) {
+        newArr.push(array[i]);
+      }
+  }
+  cb(newArr);
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
 }
+removeDuplicates(items, function(result) {
+  console.log(result);
+});
