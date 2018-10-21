@@ -7,12 +7,18 @@ function logIt() {
 logIt();
 
 // ==== Challenge 2: Create a counter function ====
-// const counter = () => {
-//   const count = 0;
-//   let result
-//   // Return a function that when invoked increments and returns a counter variable.
-//   function () => count++:
-// };
+const counter = () => {
+  let increment = 0;
+  return () => increment++;
+}
+
+const newCounter = counter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+console.log(newCounter());
+
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
