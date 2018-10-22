@@ -39,13 +39,17 @@ const counterFactory = () => {
   let tracker = 0;
   return {
     increment: () => tracker++,
-    decrement: () => tracker--
+    decrement: () => tracker--,
+    value: () => tracker
   }
 };
 const test = counterFactory();
+console.log(test.value());
 test.increment();
 test.increment();
-console.log(test.increment());
+console.log(test.value());
 test.decrement();
 test.decrement();
-console.log(test.decrement());
+test.decrement();
+test.decrement();
+console.log(test.value());
