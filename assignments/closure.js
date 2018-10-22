@@ -38,12 +38,8 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
   let tracker = 0;
   return {
-    increment: function () {
-      return tracker++;
-    },
-    decrement: function () {
-      return tracker--;
-    }
+    increment: () => tracker++,
+    decrement: () => tracker--
   }
 };
 const test = counterFactory();
