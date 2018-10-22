@@ -171,6 +171,7 @@ console.log('emails '+ emailsArray)
 let emailAffectedRunners = [];
 emailAffectedRunners = largeShirts.map(runner => runner.email);
 console.log(emailAffectedRunners);
+console.log('test console.log');
 
 
 
