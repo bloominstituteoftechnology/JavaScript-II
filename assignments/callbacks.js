@@ -121,7 +121,6 @@ function findDuplicate(arrayOfItems){
 }
 
 removeDuplicates(arrayContainsDuplicate, findDuplicate);
-console.log('test change')
 
 
 
