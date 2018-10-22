@@ -22,26 +22,117 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
+
+
+//#1
+
+// getLength passes the length of the array into the callback.--------------------------------------
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function (length) {
+  console.log(length);
+})
+
+
+
+//#2
+
+//--------------------------------------------------------------------------------------------------
+
+ // last passes the last item of the array into the callback.
+
+
 
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  lastItem = arr.length;
+  return cb(arr[lastItem - 1]);
 }
+
+last(items, function (lastOne) {
+  console.log(lastOne);
+})
+
+// function last (arr) {
+//   lastItem = arr.length;
+//   return arr[lastItem -1];
+// }
+// console.log(last (items));
+
+
+
+//#3
+
+//--------------------------------------------------------------------------------------------------
+
+// sumNums adds two numbers (x, y) and passes the result to the callback.
+
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb( x + y );
 }
+
+sumNums(5,4, (sums) => console.log(sums));
+
+
+
+
+
+
+//#4
+
+//--------------------------------------------------------------------------------------------------
+
+// multiplyNums multiplies two numbers and passes the result to the callback.
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb( x * y );
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+multiplyNums(5,4, (multiples) => console.log(multiples));
+
+
+
+
+
+
+
+//#5
+
+//--------------------------------------------------------------------------------------------------
+
+// contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+
+  ///look up .some
+
+function contains(item, list, cb) {
+  let result;
+  for (i = 0; i < list.length ; i++) {
+    if (item === list[i]) {
+      result = true;
+      break
+    } else {
+      result = false;
+    } 
+  } return cb(result);
+  }
+
+  contains('Gum', items, (contained) => console.log(contained)); //should return true
+  contains('hat', items, (contained) => console.log(contained)); //should return false
+ 
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------
+
+
 
 /* STRETCH PROBLEM */
 
@@ -50,3 +141,7 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+
+
+
+//brett madrid
