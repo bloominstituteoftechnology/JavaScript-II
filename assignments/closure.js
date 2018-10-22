@@ -22,20 +22,36 @@ fullname();
 // ==== Challenge 2: Create a counter function ====
 // Return a function that when invoked increments and returns a counter variable.
 
-let x = 0;
-function counter() {
-  x++
-  function alert() {
-  console.log(x);
-} alert() } 
+// let x = 0;
+// function counter() {
+//   x++
+//   function alert() {
+//   console.log(x);
+// } alert() } 
 
-counter();
-counter();
-counter();
+// counter();
+// counter();
+// counter();
+
+
+let counter = function() {
+  let x = 0;
+  return increment;
+  
+  function increment() {
+    x++;
+    return x;
+  } 
+} 
+
+const newCounter = counter();
+
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 
 
 
-///////I have tried this 50 different ways and I can't get it to work. 
 
 
 // Example usage: const newCounter = counter();
