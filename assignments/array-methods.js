@@ -59,10 +59,12 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 
 let fullName = [];
-runners.forEach(function (runners) {
-  let name = runners.first_name + " " + runners.last_name;
-  fullName.push(name)
-})
+runners.forEach(function (y) {
+
+var x = y.first_name + " " + y.last_name; 
+fullName.push(x);
+
+});
 console.log(fullName);
 
 
@@ -77,12 +79,9 @@ console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
 
-allCaps = runners.map(function (runners) {
-    allCaps = runners.first_name.toUpperCase();
-    return allCaps;
-})
+
+var allCaps = runners.map((y) => y.first_name.toUpperCase())
 
 console.log(allCaps); 
 
@@ -147,7 +146,23 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//The marketing team needs a list of all runners email addresses to send out newsletters, please put all emails into a new array.
+var emails = runners.map((y) => y.email);
+
+console.log(emails);
 
 // Problem 2
+//Please provide the marketting team with the runners who donated more than 200$ so they can be sent a special bib to be worn during the race, also log a count of how many special bibs we will need for the race
+
+var filteredBibs = runners.filter((x) => x.donation >= 200);
+
+console.log(filteredBibs);
+console.log(filteredBibs.length);
 
 // Problem 3
+
+//marketting needs a list of all of the company names the runners work at so that they can be added to the banner, return a new array with all of the companies the runners work at
+
+var company_name = runners.map((y) => y.company_name);
+
+console.log(company_name);
