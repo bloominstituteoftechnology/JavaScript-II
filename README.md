@@ -17,15 +17,15 @@ This task focuses on getting practice with callback functions by giving you an a
 
 * [X] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your callback functions.
 
-* [ ] Write out each function using the `ES5`  `function` keyword syntax.
+* [X] Write out each function using the `ES5`  `function` keyword syntax.
 
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [X] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
 
 ## Task 3: Array Methods
 
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
-* [ ] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
+* [X] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
 * [ ] Complete the problems provided to you
 
