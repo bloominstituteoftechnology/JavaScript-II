@@ -17,21 +17,19 @@ function sayName(nameParameter) {
 } sayName("Connor"); // sayName
 
 // ==== Challenge 2: Create a counter function ====
-// const counter = () => {
-//   // Return a function that when invoked increments and returns a counter variable.
-//   const addOne = 0;
-//   return function () {
-//     addOne += 1;
-//     return addOne;
-//   }
-// }();
-// counter();
-// counter();
-// counter();
+const counter = () => {
+   let count = 0;
+   return function(){
+     return count++;
+   };
+};
 
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
