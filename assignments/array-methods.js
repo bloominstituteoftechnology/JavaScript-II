@@ -100,6 +100,38 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// The event director needs a roster of all the companies that are attending the fund raiser.
+
+let companies = [];
+
+runners.forEach(function(comp) {
+    companies.push(comp.company_name)
+});
+
+console.log(companies);
+
 // Problem 2
 
+// The event director once again got VERY DRUNK. He requested all last names be capitalized.
+
+let allCaps2 = [];
+
+allCaps2 = runners.map(last => {
+    return last.last_name.toUpperCase()
+});
+
+console.log(allCaps2); 
+
 // Problem 3
+
+// High roller club. The event director wants to host a special night for those who donated over $200, he needs a list. 
+
+let high_roller = [];
+
+high_roller = runners.filter(high => {
+    if (high.donation > 199) {
+        return `${high}`
+    }
+});
+
+console.log(high_roller);
