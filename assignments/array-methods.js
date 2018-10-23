@@ -77,14 +77,41 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((sum, item) => sum + item.donation, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The director needs a list of all participant's first names and email addresses in the following way: "First Name: Email Address". The first name is to be capitalized.
+let problemOne = []
+
+runners.forEach(items => {
+  problemOne.push(`${items.first_name.toUpperCase()}: ${items.email}`);
+});
+
+console.log(problemOne);
 
 // Problem 2
+// The person making the shirts is unable to group things by size on their own because they are too busy. Create an array for each size that has information about the runner.
+let small = runners.filter(items => items.shirt_size === 'S');
+let medium = runners.filter(items => items.shirt_size === 'M');
+let large = runners.filter(items => items.shirt_size === 'L');
+let extraLarge = runners.filter(items => items.shirt_size === 'XL');
+let twoExtraLarge = runners.filter(items => items.shirt_size === '2XL');
+let threeExtraLarge = runners.filter(items => items.shirt_size === '3XL');
+
+console.log(small);
+console.log(medium);
+console.log(large);
+console.log(extraLarge);
+console.log(twoExtraLarge);
+console.log(threeExtraLarge);
 
 // Problem 3
+// The director needs the names of the runners organized in Last, First Name order for professionalism. Help him so he doesn't get angry!
+let lastFirst = runners.map(items => `${items.last_name}, ${items.first_name}`);
+
+console.log(lastFirst);
