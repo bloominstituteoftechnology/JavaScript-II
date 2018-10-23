@@ -78,10 +78,11 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // One lucky winner will receive a prize. Choose a random winner via email and output the email of the winning winner that won the winnings. :D
-function random(array) {
-    return array[Math.floor(Math.random() * runners.email)];
-}
-random();
+let randomRunner = (runners[Object.keys(runners)[Math.floor(Math.random()*Object.keys(runners).length)]]);
+
+console.log(randomRunner.email);
+//^^If you want to output the entire user data for the winner, then take off `.email` in the console.log statement (I do not take credit for the solution to this as I found the structure on stackoverflow, but I did manipulate the answer to fit the array above and to what I wanted)
+
 // Problem 2
 
 // Problem 3
