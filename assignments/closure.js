@@ -1,11 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function whatsGood () {
+  let whats = `what's `;
+  function sayGood () {
+    let good = `good?`;
+    console.log(whats + good);
+  }
+}
 
+whatsGood();
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+const counter = (function(n) {
+  return function() {
+    n += 1;
+    return n;
+  }
+}(0)); 
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2

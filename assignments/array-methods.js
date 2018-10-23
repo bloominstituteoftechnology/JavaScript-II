@@ -56,21 +56,43 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach(function(names) {
+    fullName.push(names.first_name + " " + names.last_name)
+});
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+
+allCaps = runners.map(x => {
+    return x.first_name.toUpperCase()
+});
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+largeShirts = runners.filter(runner => {
+    if (runner.shirt_size === "L") {
+        return `${runner}`
+    }
+});
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+ticketPriceTotal = runners.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue.donation;
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +100,38 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// The event director needs a roster of all the companies that are attending the fund raiser.
+
+let companies = [];
+
+runners.forEach(function(comp) {
+    companies.push(comp.company_name)
+});
+
+console.log(companies);
+
 // Problem 2
 
+// The event director once again got VERY DRUNK. He requested all last names be capitalized.
+
+let allCaps2 = [];
+
+allCaps2 = runners.map(last => {
+    return last.last_name.toUpperCase()
+});
+
+console.log(allCaps2); 
+
 // Problem 3
+
+// High roller club. The event director wants to host a special night for those who donated over $200, he needs a list. 
+
+let high_roller = [];
+
+high_roller = runners.filter(high => {
+    if (high.donation > 199) {
+        return `${high}`
+    }
+});
+
+console.log(high_roller);
