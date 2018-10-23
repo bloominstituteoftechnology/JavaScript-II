@@ -42,3 +42,21 @@ sayName('Joseph');
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  const counterFactory = () => {
+    let count = 0;
+    let increment = () => ++count;
+    let decrement = () => --count;
+    let countObject = {
+      increment, decrement
+    }
+    return countObject;
+  }
+
+  const newCounter2 = counterFactory();
+
+  console.log(newCounter2.decrement());
+  console.log(newCounter2.decrement());
+  console.log(newCounter2.increment());
+  console.log(newCounter2.increment());
+  console.log(newCounter2.increment());
+  console.log(newCounter2.increment());
