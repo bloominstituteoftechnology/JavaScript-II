@@ -65,12 +65,18 @@ multiplyNums(5, 5, multiply);
 // contains checks if an item is present inside of the given array/list.
 // Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
-  if (cb(list.includes(item))) {
-    return true;
+  if (list.includes(item)) {
+    cb(true);
   } else {
-    return false;
+    cb(false);
   }
 }
+
+const contained = function(item) {
+  console.log(item);
+}
+
+contains('Pencil', items, contained);
 
 /* STRETCH PROBLEM */
 
