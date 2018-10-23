@@ -79,10 +79,16 @@ const contained = function(item) {
 contains('Pencil', items, contained);
 
 /* STRETCH PROBLEM */
+// removeDuplicates removes all duplicate values from the given array.
+// Pass the duplicate free array to the callback function.
+// Do not mutate the original array.
 
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-
+  const newArray = array.filter((item, i) => array.indexOf(item) === i)
+  cb(newArray);
 }
+
+removeDuplicates(items, function (result) {
+  console.log(result);
+});
+
