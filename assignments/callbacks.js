@@ -59,9 +59,9 @@ function contains(item, list, cb) {
 //////////////////////////////////////////////////
 // Test bench                                   //
 //////////////////////////////////////////////////
-// function myCallBack(param){
-//   console.log(param);
-// }
+ function myCallBack(param){
+   console.log(param);
+ }
 
 // function testLength(){
 //   getLength(items, myCallBack);
@@ -92,9 +92,20 @@ function contains(item, list, cb) {
 //////////////////////////////////////////////////
 
 /* STRETCH PROBLEM */
+let dupeArray = [1, 3, 2, 5, 3, 2, 5, 1, 7]
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDuplicates = [];
+  for (let i in array){
+    if (noDuplicates.includes(array[i]) == false){
+      noDuplicates.push(array[i]);
+    }
+  }
+  cb(noDuplicates);
 }
+
+removeDuplicates(dupeArray, myCallBack);
+
