@@ -58,7 +58,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullNameArray = [];
 let fullName = runners.forEach(name => fullNameArray.push(`${name.first_name} ${name.last_name}`));
 
-console.log(fullName);
+console.log(fullNameArray);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -82,9 +82,16 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1. The run has been rescheduled due to weather conditions that are unfit to be out in, get a list of the first name and email of each runner.
+let firstEmail = runners.map(item => `${item.first_name} ${item.email}`);
 
+console.log(firstEmail);
 
 // Problem 2 The event director needs a list of all the company names to see which companies are participating in the run.
+let company = runners.map(item => `${item.company_name}`);
 
+console.log(company);
 
 // Problem 3 The event director wants you to get a list of all last names and make them lowercase, because why not.
+let lastNames = runners.map(item => item.last_name.toLowerCase());
+
+console.log(lastNames);
