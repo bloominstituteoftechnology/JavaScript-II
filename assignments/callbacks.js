@@ -44,16 +44,29 @@ last(items, function(lastElem) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+ return cb(x+Y)
 }
+
+sumNumst(items, function(x,y) {
+  console.log(x+y)
+})
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x*y)
 }
+
+multiplyNums(items, function(x,y) {
+  console.log(x*y)
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+let filteredArray = arr.filter(function(elem) {
+  return elem === list
+});
 
 /* STRETCH PROBLEM */
 
