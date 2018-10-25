@@ -2,10 +2,10 @@
 // Write a simple closure of your own creation.  Keep it simple!
 function chest(){
   let gold = "Gold";
-  imRich();
   function imRich(){
     console.log(`I have ${gold}!`);
   } 
+  imRich();
 }
 chest();
 
