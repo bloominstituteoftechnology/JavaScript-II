@@ -12,17 +12,17 @@ const counter = () => {
   let counter = 0;
   return function() {
     counter++;
-    console.log(counter);
+    return counter;
   }
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
 const newCounter = counter();
-newCounter();
-newCounter();
-newCounter();
-newCounter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
