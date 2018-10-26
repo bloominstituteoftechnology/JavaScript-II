@@ -58,15 +58,10 @@ function contains(item, list, cb) {
   let tempArr = [];
   for(let i = 0; i < list.length; i++){
     if(list[i] === item){
-      tempArr.push(item);
+      return cb(true);
     }
   }
-  if(tempArr.length > 0){
-    cb(true);
-  }
-  else {
-    cb(false);
-  }
+  return cb(false);
 }
 
 /* STRETCH PROBLEM */
