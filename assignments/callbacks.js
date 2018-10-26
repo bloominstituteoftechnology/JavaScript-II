@@ -70,7 +70,6 @@ function contains(item, list, cb) {
 }
 
 /* STRETCH PROBLEM */
-
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
