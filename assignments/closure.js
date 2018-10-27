@@ -1,22 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-const fun = () => {
-  return ('this is an example of function scope aka local scope');
-}
+
+const bigbox = () =>{
+  let random = 'randomness';
+  const smallbox = () =>{
+    let fibo = "patterns in randomness";
+    return(`${random} ${fibo}`);
+  }
+  console.log(smallbox());
+  return(random);
+  }
+  console.log(bigbox());
+
 
 
 // ==== Challenge 2: Create a counter function ====
-let enumb = 0;
-const counter = () => {
+const counter= () => {
+  let x = 0;
+  // Closure here
+  const newCounter= () => {
+    return x = x + 1;
+  }
+  // newCounter();
+  return newCounter;
+}
+const number = counter();
 
-  return (enumb++)
-  // Return a function that when invoked increments and returns a counter variable.
-};
-
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+console.log(number());
+console.log(number());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
