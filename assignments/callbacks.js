@@ -45,8 +45,8 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 
-sumNums(num1, num2, function(sumNums){
-  console.log(sumNums);
+sumNums(x, y, function(sumNums){
+  console.log(sumNums(3, 4));
 });
 
 function multiplyNums(x, y, cb) {
