@@ -14,23 +14,8 @@ const  whoIsThatPokemon = () => {
           espeon()
 }
 
-// function whoIsThatPokemon2 () {
-//   let pokemon = "Pikachu"
-//       console.log(pokemon)
-   
-//       espeon()
-//         function espeon () {
-//           pokemon = "Espeon";
-//            console.log(pokemon);
-    
-//         }
-// }
 
 whoIsThatPokemon()
-// whoIsThatPokemon2()
-
-// console.log(whoIsThatPokemon);
-// console.log(whoIsThatPokemon2());
 
 
 // ==== Challenge 2: Create a counter function ====
@@ -77,5 +62,12 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
 };
 const counter2 = counterFactory();
-console.log(counter2.increment(3))
+
 counter2.increment()
+counter2.increment()
+
+console.log(counter2.increment())
+
+counter2.decrement()
+
+console.log(counter2.decrement())

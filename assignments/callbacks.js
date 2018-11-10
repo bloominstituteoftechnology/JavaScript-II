@@ -26,41 +26,41 @@ const items2 = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Gum', 'yarn', 'yo-yo' ];
 
 */
 console.log(`********* callback.js challenges *********`)
-function getLength(arr, cb) {
+const getLength = (arr, cb) => {
   // getLength passes the length of the array into the callback.
    return cb(arr.length)
 }
 
-getLength(items, function(theLength){
+getLength(items, (theLength) => {
   console.log("getLength function: ", theLength)
 })
 
-function last(arr, cb) {
+const last = (arr, cb) => {
   // last passes the last item of the array into the callback.
   return cb(arr.length - 1)
 }
 
-last(items, function(lastItem){
+last(items, (lastItem) =>{
   console.log(`lastItem function: ${lastItem}`);
   console.dir(lastItem);
 })
 
 
-function sumNums(x, y, cb) {
+const sumNums = (x, y, cb) => {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   return cb(x + y);
 }
 
-sumNums(3, 4, function(sum){
+sumNums(3, 4, (sum) => {
   console.log('the sum is: ', sum)
 })
 
-function multiplyNums(x, y, cb) {
+const multiplyNums = (x, y, cb) => {
   return cb(x * y)
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-multiplyNums(3, 4, function(mult){
+multiplyNums(3, 4,(mult) => {
   console.log("the multiplied value is: ", mult)
 })
 
@@ -72,7 +72,7 @@ multiplyNums(3, 4, function(mult){
 
 // multiplyNums(2, 4, multiplying)
 
-function contains(item, list, cb) {
+const contains = (item, list, cb) => {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
    return cb(item, list)
@@ -81,7 +81,7 @@ function contains(item, list, cb) {
 }
 
 // researched "includes" method from MDN
-function inventory(item, list){
+const inventory = (item, list) =>{
   return list.includes(item)
 }
 
@@ -100,14 +100,14 @@ function inventory(item, list){
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+const removeDuplicates = (array, cb) => {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
   return cb(array)
 }
 
-function removeThem(array){
+const removeThem =(array) =>{
   return array.filter(function(item, index){
     return array.indexOf(item) >= index;
   });

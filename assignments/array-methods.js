@@ -61,8 +61,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 console.log(fullName);
 
- runners.forEach(function(getNames){
-       let names = getNames.first_name + " " + getNames.last_name;
+ runners.forEach((getNames) => {
+       // let names = getNames.first_name + " " + getNames.last_name;
+       let names = `${getNames.first_name} ${getNames.last_name}`
        fullName.push(names)
  });
 
@@ -121,7 +122,7 @@ console.log(totalPrices2)
     //          emailInfo.push(racer.email)
     //    }
 
-       runners.forEach(function(racer){
+       runners.forEach((racer) => {
         emailInfo.push(racer.email)
        })
 
