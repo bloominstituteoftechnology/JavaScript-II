@@ -77,10 +77,10 @@ removeDuplicates(drinks, cb);
 // Without using the Set, order preserved
 
 function unique(arr, cb) {
-  var seen = {}, result = [];
-  var len = arr.length;
-  for (var i = 0; i < len; i++) {
-    var el = arr[i];
+  let seen = {}, result = [];
+  let len = arr.length;
+  for (let i = 0; i < len; i++) {
+    let el = arr[i];
     if (!seen[el]) {
       seen[el] = true;
       result.push(el);
