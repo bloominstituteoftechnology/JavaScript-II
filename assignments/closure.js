@@ -1,14 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const simple = () => {
+  myName = "Kelly";
+  return insideFunction = () => {
+    return (myName + " is learning.");
+  }
+}
+const saying = simple(); // equals whatever simple() returns, which is the insideFunction()
+console.log(saying()); // console logs what the insideFunction() returned, whih is the saying
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  myCount = 0;
+  return innerCounter = () => {
+    myCount += 1;
+    return myCount;
+  }
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
+// Testing
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+const anotherCounter = counter();
+console.log(anotherCounter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
