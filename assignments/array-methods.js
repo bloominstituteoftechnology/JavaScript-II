@@ -71,7 +71,7 @@ let allCaps = [];
 
 // ES5:
 //allCaps = runners.map(function(x) {return x.first_name.toUpperCase()});
-
+// ES6:
 allCaps = runners.map(x => x.first_name.toUpperCase());
 console.log(allCaps); 
 
@@ -91,7 +91,39 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// List company name and total donations for each company.
+companies = []
+
+function companyDonations(object, result) {
+    result.push({"company_name":object.company_name, "donation":object.donation})
+}
+
+runners.forEach(x => companyDonations(x, companies));
+console.log(companies); // non-combined company donations
+
+result = Object.create(null);
+companies.forEach(function (a) {
+
+        result[a.company_name] = (result[a.company_name] || 0) + a.donation;
+
+});
+console.log(result); // consolidated company donations
+
 
 // Problem 2
+// Sort total donations per company, biggest total donations first
+sortedArray = [];
+for (let item in result) {
+    sortedArray.push([item, result[item]]);
+}
+sortedArray.sort(function(a,b) {
+    return b[1]-a[1]; // uses comparer function
+});
+
+console.log(sortedArray);
 
 // Problem 3
+// Runners whose last name starts with T
+let runnersT = [];
+runnersT.push(runners.filter(x => x.last_name.startsWith("T")));
+console.log(runnersT);
