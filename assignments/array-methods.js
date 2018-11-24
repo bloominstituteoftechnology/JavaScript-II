@@ -56,28 +56,74 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function (x) { fullName.push(x.first_name + ' ' + x.last_name) })
+
+// without using forEach:
+//for(let i=0; i<runners.length; i++) {
+//    fullName.push(runners[i].first_name + ' ' + runners[i].last_name)
+//}
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+
+// ES5:
+//allCaps = runners.map(function(x) {return x.first_name.toUpperCase()});
+// ES6:
+allCaps = runners.map(x => x.first_name.toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts.push(runners.filter(x => x.shirt_size === "L"));
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal.push(runners.reduce( (total, curr) => total + curr.donation, 0));
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// List company name and total donations for each company.
+companies = []
+
+function companyDonations(object, result) {
+    result.push({"company_name":object.company_name, "donation":object.donation})
+}
+
+runners.forEach(x => companyDonations(x, companies));
+console.log(companies); // non-combined company donations
+
+result = Object.create(null);
+companies.forEach(function (a) {
+
+        result[a.company_name] = (result[a.company_name] || 0) + a.donation;
+
+});
+console.log(result); // consolidated company donations
+
 
 // Problem 2
+// Sort total donations per company, biggest total donations first
+sortedArray = [];
+for (let item in result) {
+    sortedArray.push([item, result[item]]);
+}
+sortedArray.sort(function(a,b) {
+    return b[1]-a[1]; // uses comparer function
+});
+
+console.log(sortedArray);
 
 // Problem 3
+// Runners whose last name starts with T
+let runnersT = [];
+runnersT.push(runners.filter(x => x.last_name.startsWith("T")));
+console.log(runnersT);
