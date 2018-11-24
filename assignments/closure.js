@@ -15,8 +15,7 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   myCount = 0;
   return innerCounter = () => {
-    myCount += 1;
-    return myCount;
+    return myCount += 1;
   }
 };
 // Example usage: const newCounter = counter();
@@ -37,4 +36,19 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  myCounter = 0;
+  return counterObject = {
+    "increment": function() {
+      return myCounter += 1;
+    },
+    "decrement": function() {
+      return myCounter -= 1;
+    }
+  }
 };
+
+const newCounting = counterFactory();
+console.log(newCounting.increment());
+console.log(newCounting.increment());
+console.log(newCounting.increment());
+console.log(newCounting.decrement());
