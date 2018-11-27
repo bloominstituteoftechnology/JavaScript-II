@@ -1,4 +1,5 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for 
+// some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
@@ -54,30 +55,132 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a 
+// new array called fullName. 
+
 let fullName = [];
-console.log(fullName);
+
+runners.forEach(function(runner) {
+  fullName.push(runner.first_name + " " + runner.last_name);
+})
+
+// console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
-// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+// The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. 
+// Convert each first name into all caps and log the result
+
 let allCaps = [];
-console.log(allCaps); 
+allCaps = runners.map(function(runner) {
+  return runner.first_name.toUpperCase();
+});
+
+// console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a 
+// different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
 let largeShirts = [];
-console.log(largeShirts);
+
+largeShirts = runners.filter(function(runner) {
+  return runner.shirt_size === 'L';
+});
+
+// console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+
+ticketPriceTotal = runners.reduce(function(acc, prev) {
+  acc += prev.donation;
+  return acc;
+}, 0);
+
+// console.log(ticketPriceTotal);
+
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data 
+// set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
 
+// We didn't make enough money. Hit up all the runners at big companies or schools and select the three lowest ranking donators. 
+
+let bottomThree = [];
+
+bottomThree = runners.reduce(function(acc, runner) {
+  function isBig(str) {
+    return runner.email.includes(str);
+  }
+  if(isBig('@mit') || isBig('@intel') || isBig('@ibm') || isBig('@yale') || isBig('@samsung')) {
+    acc.push(runner);
+  }
+
+  return acc
+    .sort(function(a, b) {
+    return a.donation > b.donation;
+  }).filter(function(runner, index) {
+    if(index < 3) {
+      return runner;
+    }
+  });
+}, []);
+
+// console.log(bottomThree);
+
 // Problem 2
 
+// The course itself has become very dangerous due to lava and such. we must partner up runners. 
+// Give me back an array with pairs as sub arrays including just first and last names
+
+pairs = [];
+
+pairs = runners
+
+// sort by last name
+.sort(function(a, b) {
+  return a.last_name < b.last_name
+})
+
+// reduce to array of objects containing only first name and last name
+.reduce(function(acc, runner) {
+  acc.push({
+    first_name: runner.first_name,
+    last_name: runner.last_name
+  })
+  return acc;
+}, [])
+
+// reduce to array of subarrays containing two objects each
+.reduce(function(acc, runner, index, array) {
+  if(index === 0 || index % 2 === 0) {
+    acc.push(array.slice(index, index + 2))
+  }
+  return acc;
+}, [])
+
+// console.log(pairs);
+
 // Problem 3
+
+// There was another ordering issue. Only give Tshirts to the top ten doners. Return an array of objects containing
+//  a thank you message with an email we can send to our automated mailer.
+
+topDonator = runners.sort(function(a, b) {
+  return a.donation > b.donation;
+}).filter(function(runner, index, array) {
+  return index > array.length - 11;
+}).reduce(function(acc, current, index) {
+
+  acc.push({
+    message: `Dear ${current.first_name} ${current.last_name}, 
+    You are one of the top 10 doners. Thank you so much. To show our appreciation, here is your complimentary ${current.shirt_size} T-Shirt.`,
+    email: current.email
+  })
+  return acc;
+},[]);
+
+console.log(topDonator);
