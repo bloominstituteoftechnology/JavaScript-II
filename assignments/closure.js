@@ -28,10 +28,10 @@ const counterFactory = () => {
   let counter = 0;
   let increment = () => counter += 1;
   let decrement = () => counter -= 1;
-  let resObj = { increment, decrement };
+  let countObj = { increment, decrement };
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  return resObj;
+  return countObj;
 };
 let foo = counterFactory();
 console.log(foo.decrement());
