@@ -112,6 +112,14 @@ runners.map(function(currentValue){
 console.log(massMail);
 
 // Problem 2
+// You need to send a personalized thank you to those that donated over 200
 
+let bigHeart = [];
+
+bigHeart.push(runners.filter((currentValue) =>{
+    return currentValue.donation > 200;
+    }));
+
+console.log(bigHeart);
 
 // Problem 3
