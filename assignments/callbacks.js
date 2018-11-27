@@ -67,7 +67,7 @@ const word = 'Pencil';
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  if (list.includes(word)){
+  if (list.includes(item)){
     return cb(true);
   } else {
   return cb(false);
@@ -80,8 +80,17 @@ contains(word, items, function(contain){
 
 /* STRETCH PROBLEM */
 
+const moreItems = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'pens', 'Pencil', 'Textbook', 'Notebook'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(Array.from(new Set(array)));
 }
+
+removeDuplicates(moreItems, function(removed) {
+  console.log(removed);
+})
+
+// console.log(moreItems);
