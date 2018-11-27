@@ -34,20 +34,27 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
   // last passes the last item of the array into the callback.
-function last(arr, cb) {
-  return cb(arr[arr.length-1])
-}
+// function last(arr, cb) {
+//   return cb(arr[arr.length-1])
+// }
 
-const callBack = function(last) {
-  console.log(last)
-}
+// const callBack = function(last) {
+//   console.log(last)
+// }
 
-last(items, callBack);
+// last(items, callBack);
 
 
-function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+// function sumNums(x, y, cb) {
+//   return cb(x+y);
+// }
+
+// const callBack = function(sum) {
+//   console.log(sum);
+// }
+
+// sumNums(2,4,callBack);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
