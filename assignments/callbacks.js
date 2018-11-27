@@ -67,7 +67,6 @@ multiplyNums(12, 5, function (holder) {
 });
 
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function contains(item, list, cb) {
