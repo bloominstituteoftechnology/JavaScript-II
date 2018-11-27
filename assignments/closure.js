@@ -1,6 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function welcome(student) {
+  const studentName = student;
+  console.log(`Hello ${studentName}, welcome to Lambda!`);
+
+  function info() {
+    console.log(`${studentName}, remember to check your syllabus!`)
+  }
+  info()
+};
+
+welcome("Rusty");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
