@@ -68,10 +68,17 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 // multiplyNums(2,3,callBack);
 
-function contains(item, list, cb) {
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+// function contains(item, list, cb) {
+//   cb(list.includes(item))
+// }
+// const callBack = function(bool) {
+//   console.log(bool);
+// }
+
+// contains("Paper", items, callBack);
 
 /* STRETCH PROBLEM */
 
