@@ -1,13 +1,28 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const favName = "Barcelona";
+const rivalName= "Madrid";
+
+function favTeam(){
+  console.log(`my favorite team is ${favName}`)
+function rivTeam(){
+  console.log(`I really hate the team ${rivalName}`)
+}
+rivTeam();
+}
+
+favTeam();
+
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+count = 0;
+const counter = (count) => {
   // Return a function that when invoked increments and returns a counter variable.
 };
+
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
+ counter(count); // 1
 // newCounter(); // 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
