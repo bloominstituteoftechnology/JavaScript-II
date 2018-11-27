@@ -24,29 +24,78 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function (length){
+  console.log(length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+
+last(items, function (lastItem){
+  console.log(lastItem);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+
+sumNums(10, 15, function(summed){
+  console.log(summed);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+
+multiplyNums(5, 10, function(multiplied){
+  console.log(multiplied);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  // use .indexOf
+  let check = false;
+  // if (list.indexOf(item) > -1) {
+  //   check = true
+  // };
+  // Use for/in
+  for(let index in list) {
+    console.log(index);
+    if (list[index] === item) {
+      check = true;
+    }
+  }
+  return cb(check);
 }
 
+contains('yo-yo', items, function(result){
+  console.log(result);
+});
+
 /* STRETCH PROBLEM */
+const moreItems = ['yo-yo', 'Pencil', 'Notebook', 'yo-yo', 'Gum', 'yo-yo', 'Gum', 'Pencil'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let deDupedArray = [];
+  for (index in array){
+    // check if each item is in the deDupedArray, if not add it
+    if(deDupedArray.indexOf(array[index]) === -1) { 
+      deDupedArray.push(array[index]);
+    }
+  }
+  return cb(deDupedArray);
 }
+
+removeDuplicates(moreItems, (result) => console.log(result));
+console.log(moreItems);
