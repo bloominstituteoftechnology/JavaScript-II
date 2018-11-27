@@ -483,8 +483,37 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Create an email list to be pulled for Marketing to send out instructions to runners
+const emails = runners.map(runner => runner.email);
+console.log(emails);
 
-// Problem 2
+// Problem 2 - Create a list that puts the runner's first/last names along with their company into a string that says "FirstName LastName is from CompanyName"
+const whereFrom = runners.map(
+  runner =>
+    `${runner.first_name} ${runner.last_name} is from ${runner.company_name}.`
+);
+console.log(whereFrom);
 
-// Problem 3
+// Problem 3 - Create an array that lists each person corresponding to their unique ID number. Ex: "Shell Baine's ID number is 50."
+const identifications = runners.map(
+  runner =>
+    `${runner.first_name} ${runner.last_name}'s ID number is ${runner.id}.`
+);
+console.log(identifications);
+
+// Bonus! - Create an array of runners that randomly assigns a color for the runner to wear at the 5k Fun Run event
+function getRandomColor() {
+  const randomNum = Math.random();
+  if (randomNum < 0.2) return "red";
+  if (randomNum < 0.4) return "green";
+  if (randomNum < 0.6) return "purple";
+  if (randomNum < 0.8) return "pink";
+  if (randomNum < 1) return "yellow";
+}
+const wearColors = runners.map(
+  runner =>
+    `${runner.first_name} ${runner.last_name} should wear ` +
+    getRandomColor() +
+    "."
+);
+console.log(wearColors);
