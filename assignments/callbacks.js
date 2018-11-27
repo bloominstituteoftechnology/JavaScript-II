@@ -2,8 +2,8 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
 
+/*
   //Given this problem: 
   
   function firstItem(arr, cb) {
@@ -18,13 +18,19 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   firstItem(items, function(first) {
     console.log(first)
   });
-
 */
+
 
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 }
+function getLength(arr, cb){
+  return cb(arr.length);
+}
+getLength(items, function(length){
+console.log(length)
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
