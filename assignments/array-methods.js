@@ -1,6 +1,9 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a 
+// small donation on their behalf for some much needed updates to their facilities.  Each business has assigned 
+// a representative to attend the event along with a small donation.
 
-// Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
+// Scroll to the bottom of the list to use some advanced array methods to help the event director gather some
+// information from the businesses.
 
 const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
 {"id":2,"first_name":"Whitaker","last_name":"Ierland","email":"wierland1@angelfire.com","shirt_size":"2XL","company_name":"Wordtune","donation":148},
@@ -53,31 +56,120 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
+//Array name: runners
+//Object format: id, first_name, last_name, email, shirt_size, company_name, donation
+
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
-console.log(fullName);
+let fullNames = [];
+runners.forEach(runner => fullNames.push(runner.first_name + ` ` + runner.last_name));
+console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map(runner => runner.first_name.toLocaleUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter(runner => runner.shirt_size === "L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce((total, runner) => total + runner.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The event director wants to display the full names of all the runners on the t-shirts in alphabetical order!
+// Return an array of full names of the runners based on the alphabetical order of their last names!
+let names = runners.map(runner => {
+    return { 
+        "first_name": runner.first_name, 
+        "last_name": runner.last_name 
+    }
+});
+
+function sortByLastName(runnerA, runnerB) {
+    let a = runnerA.last_name.toLowerCase();
+    let b = runnerB.last_name.toLowerCase();
+
+    return a < b ? -1 : a > b;
+}
+
+names.sort(sortByLastName);
+let sortedFullNames = names.map(nameCombo => nameCombo.first_name + ` ` + nameCombo.last_name);
+
+console.log(sortedFullNames);
 
 // Problem 2
+// The event director wants a list of companies, each with their designated runners.
+// If there are multiple runners for a company, sort them by last name ascending.
+// This means an array of company objects, each with a company name and an array of runners.
+function companyExists(companyName, list) {
+    return list.filter(item => item.name === companyName).length > 0;
+}
+
+function createCompany(companyName) {
+    return {
+        "name": companyName,
+        "runners": []
+    };
+}
+
+function getCompanyIndex(companyName, list) {
+    let index = -1;
+    list.forEach((company, i) => {
+        if (company.name === companyName) {
+            index = i;
+        }
+    });
+    return index;
+}
+
+let companies = [];
+
+runners.forEach(runner => {
+    if (!companyExists(runner.company_name, companies)) {
+        companies.push(createCompany(runner.company_name));
+    }
+    let index = getCompanyIndex(runner.company_name, companies);
+    companies[index].runners.push({
+        "id": runner.id,
+        "first_name": runner.first_name,
+        "last_name": runner.last_name,
+        "email": runner.email,
+        "shirt_size": runner.shirt_size,
+        "donation": runner.donation
+    });
+})
+
+companies.forEach(company => {
+    if (company.runners.length > 1)
+    {
+        company.runners.sort(sortByLastName);
+    }
+});
+
+console.log(companies);
+console.log(companies.map(company => company.name));
+console.log(companies.map(company => company.runners.length));
 
 // Problem 3
+// The event director changed their mind, and decided that they only needed a list of the companies with the total donations
+// for all of their runners. This list should be ordered descending- that is, the highest donation should be first in the list.
+companies.forEach(company => {
+    company.totalDonation = company.runners.reduce((accumulator, runner) => accumulator + runner.donation, 0);
+})
+
+function sortCompaniesDonationDescending(companyA, companyB) {
+    return companyB.totalDonation < companyA.totalDonation ? -1 : companyB.totalDonation > companyA.totalDonation;
+}
+
+companies.sort(sortCompaniesDonationDescending);
+
+console.log(companies.map(company => company.name));
+console.log(companies.map(company => company.totalDonation));
