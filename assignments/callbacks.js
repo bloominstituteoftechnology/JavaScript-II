@@ -39,8 +39,7 @@ last(items, function(lastItem) {
 
 // sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, cb) {
-  const add = x + y;
-  return cb(add);
+  return cb(x + y);
 }
 function log(total) {
   console.log(total);
@@ -48,7 +47,10 @@ function log(total) {
 sumNums(3, 4, log);
 
 // multiplyNums multiplies two numbers and passes the result to the callback.
-function multiplyNums(x, y, cb) {}
+function multiplyNums(x, y, cb) {
+  return cb(x * y);
+}
+multiplyNums(5, 10, log); // using the log function from the problem above as a callback
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
