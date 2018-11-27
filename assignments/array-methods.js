@@ -92,12 +92,17 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1 -- use .map() to change dollars to euros 
-const euroDonations = runners.map(function(element) {
-    return element.donation * 0.89;
-});
+// const euroDonations = runners.map(function(element) {
+//     return element.donation * 0.89;
+// });
 
-console.log(euroDonations);
+// console.log(euroDonations);
 
-// Problem 2
+// Problem 2 -- use .filter() to find out who donated more than 100 dollars
+// const largeDonation = runners.filter(function(element) {
+//     return element.donation > 100;
+// });
+
+// console.log(largeDonation);
 
 // Problem 3
