@@ -3,7 +3,13 @@
 const Name = () => {
   let name = "Hamza";
   let lastName = "Elkhoudiri";
-  return () => `${name} ${lastName}`;
+  return () => {
+    const age = 25;
+    `${name} ${lastName}`;
+    () => {
+      `${age}`;
+    };
+  };
 };
 
 const name = Name();

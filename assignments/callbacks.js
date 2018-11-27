@@ -24,7 +24,7 @@ function getLength(arr, cb) {
   cb(arr.length);
 }
 
-getLength(items, function(item) {
+getLength(items, item => {
   console.log(item);
 });
 
@@ -32,7 +32,7 @@ function last(arr, cb) {
   cb(arr[arr.length - 1]);
 }
 
-last(items, function(item) {
+last(items, item => {
   console.log(item);
 });
 
@@ -40,7 +40,7 @@ function sumNums(x, y, cb) {
   cb(x + y);
 }
 
-sumNums(1, 3, function(cb) {
+sumNums(1, 3, cb => {
   console.log(cb);
 });
 
@@ -48,15 +48,25 @@ function multiplyNums(x, y, cb) {
   cb(x * y);
 }
 
-multiplyNums(1, 3, function(cb) {
+multiplyNums(1, 3, cb => {
   console.log(cb);
 });
 
+// function contains(item, list, cb) {
+//   cb(list.includes(item));
+// }
+
+// contains("Gum", items, cb => {
+//   console.log(cb);
+// });
+
 function contains(item, list, cb) {
-  cb(list.includes(item));
+  for (let char in list) {
+    console.log(char);
+  }
 }
 
-contains("Gum", items, function(cb) {
+contains("Gum", items, cb => {
   console.log(cb);
 });
 
