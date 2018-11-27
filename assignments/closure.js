@@ -17,7 +17,6 @@ const counter = () => {
   return () => {
     return count ++;
   }
-  console.log(count);
 };
 //counter();
 // Example usage: 
@@ -33,4 +32,31 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 1;
+  return {
+    "increment" : () => count ++,
+    "decrement" : () => count --
+  };
 };
+
+const newCounterFactory = counterFactory();
+console.log(newCounterFactory.increment());
+console.log(newCounterFactory.increment());
+console.log(newCounterFactory.decrement());
+console.log(newCounterFactory.decrement());
+console.log(newCounterFactory.increment());
+console.log(newCounterFactory.increment());
+console.log(newCounterFactory.increment());
+
+// const incrementCounterFactory = counterFactory().increment;
+// console.log(incrementCounterFactory());
+// console.log(incrementCounterFactory());
+// console.log(incrementCounterFactory());
+// console.log(incrementCounterFactory());
+
+// const decrementCounterFactory = counterFactory().decrement;
+// console.log(decrementCounterFactory());
+// console.log(decrementCounterFactory());
+// console.log(decrementCounterFactory());
+// console.log(decrementCounterFactory());
+
