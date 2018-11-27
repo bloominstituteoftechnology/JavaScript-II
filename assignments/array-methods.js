@@ -80,6 +80,11 @@ console.log(allCaps);
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+
+largeShirts = runners.filter((runner) => {
+    return runner.shirt_size === "L";
+})
+
 console.log(largeShirts);
 
 
@@ -90,7 +95,11 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+ticketPriceTotal = runners.reduce((total, runner) => {
+    return total += runner.donation;
+}, 0);
+
+console.log(`The ticket price total is: ${ticketPriceTotal}`);
 
 
 
@@ -102,6 +111,40 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Creates a list of donars over $200
+let topDonors = [];
+topDonors = runners.filter((runner) => {
+    return runner.donation > 200;
+});
+
+topDonors.forEach((runner) => {
+    console.log(`Name: ${runner.first_name} ${runner.last_name} - $${runner.donation}`);
+});
+
+
+
+
 // Problem 2
 
+// Creates an array of only email contacts
+let emailList = [];
+emailList = runners.map((runner) => {
+    return runner.email;
+});
+
+console.log(emailList);
+
 // Problem 3
+
+// Function that filters runners by company
+
+function companyRunners(arr, company) {
+    let filteredArr = [];
+    filteredArr = arr.filter((runner) => {
+        return runner['company_name'] === company;
+    })
+
+    return filteredArr;
+}
+
+console.log(companyRunners(runners, 'Skinix'));
