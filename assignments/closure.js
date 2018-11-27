@@ -1,11 +1,41 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function greetUser(username, UserAuthentication){
+  let userAuth = UserAuthentication;
+  const usernameHolder = username;
+  if(userAuth == 0){
+    console.log(`Hello ${usernameHolder}`);
+  debugger;
+  }
+  function signOut(){
+    const goodbyeString = "Goodbye, please visit us again"
+    console.log(`${goodbyeString} ${usernameHolder}`)
+    userAuth = 1;
+    debugger;
+    function welcomeBack(){
+      const welcomeBackString = "Welcome Back,";
+      console.log(`${welcomeBackString} ${usernameHolder}`)
+    }
+    welcomeBack();
+  }
+  signOut();
+}
+
+greetUser("Kieran", 0);
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+const counter = (() => {
+    // Return a function that when invoked increments and returns a counter variable.
+    let counter = 0;
+    return function () {
+      counter += 1; return counter
+    }
+})();
+
+counter();
+counter();
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
