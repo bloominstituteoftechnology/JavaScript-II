@@ -1,15 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-for(var i =0; i<5; i++) {
-  (function() {
-    var savingI = i;
-    
-    //timer callback executes after loop
-    setTimeout( function() {
-      console.log(`number from timer callback ${savingI}`);
-    }, 1000);
-  })();
-}
+function simpleEx(exampleString) {
+  const holdingStringForClosure = exampleString;
+
+  function closureOverExample() {
+    console.log(`I have access to ${holdingStringForClosure}`);
+  }
+
+  closureOverExample();
+};
+
+simpleEx("hello");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
