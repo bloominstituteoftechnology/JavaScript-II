@@ -74,18 +74,11 @@ function contains(arr, list, cb) {
 }
 
 const check = function(arr, list){
-  for(let i = 0; i < arr.length; i++){
-    for(let x = 0; x < list.length; x++){
-      debugger;
-      if(arr[i] !== list[x]){
-        debugger;
-      }
-    }
-  }
+  return arr.includes(list)
 }
 
 
-console.log(contains(items, ['Gum'], check))
+console.log(contains(items, 'cat', check))
 
 /* STRETCH PROBLEM */
 
