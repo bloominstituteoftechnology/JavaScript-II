@@ -128,6 +128,12 @@ const shirtSizeList = runners.map((runner) => {
 
 console.log(shirtSizeList.sort().join("\n"));
 
-// Problem 3 - Tally up the number of each size of shirt
+// Problem 3 - List of companies and donation amount for tax write off receipts
 
+let deductionReceipts = [];
 
+runners.forEach((company) => {
+    deductionReceipts.push({company: `${company.company_name}`, amount: `$${company.donation}.00`});
+})
+
+console.log(deductionReceipts);
