@@ -44,12 +44,22 @@ sumNums(2,7,log);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+multiplyNums(5,5,log);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
+  for(let i = 0; i<list.length; i++){
+    if(list[i] == item){
+      return cb(true);
+    } else{
+      return cb(false);
+    }
+  }
   // Pass true to the callback if it is, otherwise pass false.
 }
+contains("Matt", ["Matt", "Nick", "Andrew"], log);
 
 /* STRETCH PROBLEM */
 
