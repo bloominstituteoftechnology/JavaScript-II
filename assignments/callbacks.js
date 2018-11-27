@@ -70,9 +70,24 @@ contains('Pencil', items, function(bool) {
 })
 
 /* STRETCH PROBLEM */
+const dupArray = [1, 3, 5, 3, 8, 9, 10, 9, 20, 20, 30, 100];
+const uniques = [];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  uniques.push(array[0]);
+  for (let i = 1; i < array.length; i++) {
+    if (uniques.includes(array[i])) {
+      // do nothing
+    } else {
+      uniques.push(array[i]);
+    }
+  }
+  return cb();
 }
+
+removeDuplicates(dupArray, function() {
+  console.log(uniques);
+})
