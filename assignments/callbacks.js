@@ -39,16 +39,28 @@ last (items, function(last){
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x,y);
 }
+const add = function(x,y){
+  console.log (x +y)
+}
+sumNums(34,45,add);
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x,y);
 }
+const multiply = function(x,y){
+  console.log(x * y)
+}
+multiplyNums(600, 700, multiply);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for (let i= 0; i<arr.length; i++){
+
 }
+console.log(contains);
 
 /* STRETCH PROBLEM */
 
