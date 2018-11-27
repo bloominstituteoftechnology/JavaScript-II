@@ -2,7 +2,8 @@
 
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
-const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
+const runners = [
+{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
 {"id":2,"first_name":"Whitaker","last_name":"Ierland","email":"wierland1@angelfire.com","shirt_size":"2XL","company_name":"Wordtune","donation":148},
 {"id":3,"first_name":"Julieta","last_name":"McCloid","email":"jmccloid2@yahoo.com","shirt_size":"S","company_name":"Riffpedia","donation":171},
 {"id":4,"first_name":"Martynne","last_name":"Paye","email":"mpaye3@sciencedaily.com","shirt_size":"XL","company_name":"Wordware","donation":288},
@@ -56,28 +57,77 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(element => {
+    fullName.push(`${element.first_name} ${element.last_name}`)
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+const allCaps = runners.map(function(curRunner){
+    return curRunner.first_name.toUpperCase();
+});
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-console.log(largeShirts);
+const largeShirts =runners.filter(function (runner) {
+    return runner.shirt_size === 'L';
+});
+
+largeShirts.forEach(runner => {
+    console.log(`${runner.first_name} ${runner.last_name} ordered a large shirt and will need to choose another shirt. Reach out to them at ${runner.email}`)
+});
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
+const ticketPriceTotal = runners.reduce(function(total, donation){
+   return total + donation.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Email donators over $200 saying thank you
+const topDonators = runners.filter(function (runner) {
+    return runner.donation > 199;
+});
+topDonators.forEach(runner => {
+    console.log(`${runner.first_name} ${runner.last_name} donated $${runner.donation}! Make sure to email them saying thank you for the large donation at: ${runner.email}`);
+});
 
 // Problem 2
+//Sort runners by alphabetical order
+let sortByFirstName = [];
+runners.forEach(function(runner){
+     sortByFirstName.push(runner.first_name);
+});
+console.log(sortByFirstName.sort());
 
 // Problem 3
+//If there are more than two runners for a company store it.
+let multipleRunners = [];
+runners.forEach(function(runner){
+    multipleRunners.push(runner.company_name);
+});
+function duplicates(array) {
+    var company = {};
+    var result = [];
+
+    array.forEach(function (item) {
+      if(!company[item])
+          company[item] = 0;
+        company[item] += 1;
+    })
+
+    for (let runner in company) {
+       if(company[runner] >= 2) {
+           result.push(runner);
+       }
+    }
+    return result;
+}
+console.log(duplicates(multipleRunners));
