@@ -13,9 +13,16 @@ function sayHello(name) {
 sayHello("Alex");
 
 // ==== Challenge 2: Create a counter function ====
+var counting = 1;
 const counter = () => {
+  return counting++;
   // Return a function that when invoked increments and returns a counter variable.
 };
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
