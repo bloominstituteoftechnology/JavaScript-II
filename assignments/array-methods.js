@@ -504,6 +504,15 @@ for (let i = 0; i < runners.length; i++) {
 }
 console.log(extraShirts);
 
-// Problem 2
+// Problem 2: Our tags only fit names up to 15 letters.
+let limitedLetters = [];
 
-// Problem 3
+
+// Problem 3: First 20 to signup get VIP access to after-party.
+let vipAccess = [];
+for (let i = 0; i < runners.length; i++) {
+    if (runners[i].id < 21) {
+        vipAccess.push(runners[i]);
+    }
+}
+console.log(vipAccess);

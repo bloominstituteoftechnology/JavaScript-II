@@ -1,11 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function bread(meme) {
+  const memeHolder = meme;
+  console.log(`Let's get this ${meme}!`);
+  //debugger;
 
+  function sandwhich() {
+    const food = "sammiches.";
+    console.log(`Yeah let's get ${memeHolder} for ${food}`)
+    //debugger;
+  }
+  sandwhich();
+}
+bread("bread");
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
 };
+var add = (function () {
+  var counter = 0;
+  return function () {
+    counter += 1;
+    return counter
+  }
+})();
+
+console.log(add());
+console.log(add());
+console.log(add());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
