@@ -123,3 +123,12 @@ bigHeart.push(runners.filter((currentValue) =>{
 console.log(bigHeart);
 
 // Problem 3
+// Your boss wants to know how much each company donated
+
+let contributions = [];
+
+runners.forEach(function(currentValue){
+    contributions.push(`${currentValue.company_name} ${currentValue.donation}`);
+  });
+
+console.log(contributions.sort());
