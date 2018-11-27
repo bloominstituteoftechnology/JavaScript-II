@@ -60,6 +60,8 @@ function contains(item, list, cb) {
   for (let i= 0; i<arr.length; i++){
 
 }
+
+//let largeShirts = runners.filter(function(item){return item.shirt_size==="L"}
 console.log(contains);
 
 /* STRETCH PROBLEM */

@@ -78,7 +78,16 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+//I want to get a letter out to the companies whose employees are running and getting them to try and donat
+let company = runners.map(function(item){return item.company_name});
+console.log(company);
 // Problem 2
-
+// How much money would we have if everyone doubled the donation to get to our goal of $14000
+let fundgoal = runners.reduce(function (totalDonation,currentValue) {return totalDonation + currentValue.donation;},7043 );
+console.log(fundgoal);
+//we made it!
 // Problem 3
+// Lets see how much we need if our goal is $30,000
+let biggoal = runners.reduce(function (totalDonation,currentValue) {return totalDonation - currentValue.donation;},30000 );
+console.log(biggoal);
+// only about $23000 off from our stretch goal!
