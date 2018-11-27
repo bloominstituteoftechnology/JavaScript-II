@@ -81,7 +81,10 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+const ticketPriceTotal = runners.reduce(function(totalValue, currentValue){
+    return totalValue + currentValue.donation;
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
