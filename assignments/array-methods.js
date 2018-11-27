@@ -105,6 +105,16 @@ let thankYou = runners.map(function(element){
 
 console.log(thankYou)
 
-// Problem 2
+// Problem 2 - Getting names of each company and counting how many of each
+
+let company = [];
+
+company = runners.filter(function(element){
+    return element.company_name === 'Skinte'
+    
+})
+const count = company.length
+
+console.log(count);
 
 // Problem 3
