@@ -99,8 +99,37 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: if donations are over 50 dollars then gather the emails of the individuals to send a special thank you.
+let runnerMail = [];
+let runnerabv50 = [];
+runnerabv50 = runners.filter(function(value){
+    return value.donation > 50;
+});
 
-// Problem 2
+
+runnerabv50.forEach(function(value){
+ runnerMail.push(`${value.email}`)
+ 
+});
+console.log(runnerMail)
+
+// Problem 2: Find which company donated the most and output: companyName donationValue.
+let maxVal = 0;
+let biggestCompany = [];
+
+runners.forEach(function(value){
+    if(value.donation > maxVal){
+        maxVal = value.donation;
+    }
+});
+
+runners.filter(function(value){
+    if(value.donation === maxVal){
+        console.log(`${value.company_name} ${maxVal}`);
+        return;
+    }
+});
+
+
 
 // Problem 3
