@@ -27,5 +27,5 @@ let substract = (param1,param2)=>{return param1-param2};
 //   return num * 3;
 // });
 // console.log(triple);
-//let exampleArray = [1,2,3,4,5,6];
-console.log(exampleArray.map(num => num*3));
+let exampleArray = [1,2,3,4,5,6];
+console.log(exampleArray.map(num =>{return num * 3} ));
