@@ -64,9 +64,18 @@ function contains(item, list, cb) {
 contains(["String"], [1, 2, 3, 4, 5, 6, 7, 8, 9], log); // using the log function from one of the problem above as a callback
 
 /* STRETCH PROBLEM */
+// removeDuplicates removes all duplicate values from the given array.
+// Pass the duplicate free array to the callback function.
+// Do not mutate the original array.
 
+const duplicateArray = [1, 3, 6, 4, 8, 2, 1, 6, 4, 3, 9, 1, 5];
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  const noDublicatesArray = array.filter(function(item, index) {
+    return array.indexOf(item) === index;
+  });
+  cb(noDublicatesArray.sort());
 }
+function consoleLog(total) {
+  console.log(total);
+}
+removeDuplicates(duplicateArray, consoleLog);
