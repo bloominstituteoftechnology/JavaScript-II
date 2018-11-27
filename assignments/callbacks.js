@@ -21,53 +21,53 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-// function getLength(arr, cb) {
-//   // getLength passes the length of the array into the callback.
-//   return cb(arr.length);
-// }
+function getLength(arr, cb) {
+  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
+}
 
-// getLength(items, function (length) {
+getLength(items, function (length) {
+  console.log(length);
+});
+
+// Using function expressions
+
+// const lengthOfArray = function (length) {
 //   console.log(length);
-// });
-
-// // Using function expressions
-
-// // const lengthOfArray = function (length) {
-// //   console.log(length);
-// // }
-
-// // getLength(items, lengthOfArray);
-
-
-// function last(arr, cb) {
-//   // last passes the last item of the array into the callback.
-//   // return cb(arr.pop()); // removes item from original array
 // }
 
-// last(items, function (lastItem) {
-//   console.log(lastItem);
-// })
-
-// function sumNums(x, y, cb) {
-//   // sumNums adds two numbers (x, y) and passes the result to the callback.
-//   return cb(x + y);
-// }
-
-// sumNums(2, 10, function (answer) {
-//   console.log(answer);
-// });
-
-// function multiplyNums(x, y, cb) {
-//   // multiplyNums multiplies two numbers and passes the result to the callback.
-//   return cb(`${x} * ${y} equals ${x * y}`);
-// }
-
-// multiplyNums(12, 5, function (holder) {
-//   console.log(holder);
-// });
+// getLength(items, lengthOfArray);
 
 
-// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+function last(arr, cb) {
+  // last passes the last item of the array into the callback.
+  // return cb(arr.pop()); // removes item from original array
+}
+
+last(items, function (lastItem) {
+  console.log(lastItem);
+})
+
+function sumNums(x, y, cb) {
+  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
+}
+
+sumNums(2, 10, function (answer) {
+  console.log(answer);
+});
+
+function multiplyNums(x, y, cb) {
+  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(`${x} * ${y} equals ${x * y}`);
+}
+
+multiplyNums(12, 5, function (holder) {
+  console.log(holder);
+});
+
+
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function contains(item, list, cb) {
