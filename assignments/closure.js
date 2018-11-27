@@ -1,11 +1,37 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function layerOne(holder) {
+  const top = holder;
+  console.log(`${top}`);
+
+  function layerTwo() {
+    const middle = "This is the middle";
+    console.log(`${top} and ${middle}`);
+
+    function layerThree() {
+      const bottom = "This is the bottom";
+      console.log(`${top} and ${middle} and ${bottom}`);
+    }
+    layerThree();
+  }
+  layerTwo();
+}
+
+layerOne("This is the top");
+
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  return function () {
+    let counter = 0;
+    return counter++;
+  }
 };
+
+counter();
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
