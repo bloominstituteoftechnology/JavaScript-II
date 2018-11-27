@@ -87,12 +87,62 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+/* 
+The event director wants to further analyze the donations made to see how he can improve the amount for future races. 
+First, the event director wants the average donation amount.
+Then, he wants the number of runners who donated less than the average amount and more than the avereage amount.
+*/
 
+const donationAvg = ticketPriceTotal / runners.length;
+console.log(donationAvg);
 
+const lessAvg = 
+runners.filter((runner) => {
+    return runner.donation < donationAvg;
+});
+console.log(lessAvg.length);
+
+const aboveAvg = 
+runners.filter((runner) => {
+    return runner.donation > donationAvg;
+});
+console.log(aboveAvg.length);
 
 // Problem 2
+/* 
+The event director needs to make the order to buy the shirts. 
+Assist the director by providing him with the number of each shirt sizes he needs to purchase.
+*/
 
-
+const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
+let shirtArray = []
+for (let i=0; i<shirtSizes.length; i++){
+    shirtArray.push(
+        runners.filter(runner => 
+            runner.shirt_size === shirtSizes[i]
+        )
+    );
+    console.log(`${shirtSizes[i]}: ${shirtArray[i].length}`)
+}
 
 // Problem 3
+/* 
+The event director wants to write Thank-You letters to some of his favorite companies. 
+Write a program which takes in any given company name and outputs a thank you note addressing the company, 
+stating the number of runners, and providing the total amount of money donated by those runners.
+*/
 
+const companyExample = 'Livetube'
+
+let companyDonations = [];
+runners.filter(runner => {
+    if (runner.company_name === companyExample) {
+        return companyDonations.push(runner.donation);
+    }
+});
+let companyTotal = 
+companyDonations.reduce((total, amount) => {
+    return total += amount;
+}, 0);
+
+console.log(`Thank you ${companyExample}! You're company had ${companyDonations.length} runner(s) and donated a total of ${companyTotal}.`);
