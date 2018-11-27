@@ -99,4 +99,8 @@ let topDonors = runners.filter(function(runner){
 })
 console.log(topDonors);
 
-// Problem 3
+// Problem 3 
+let specialMessage = topDonors.map(function(donor){
+    return `${donor.first_name}, thank you for your wonderful donation of $${donor.donation}. We look forward to seeing you and the rest of the ${donor.company_name} family at the race!`
+})
+console.log(specialMessage);
