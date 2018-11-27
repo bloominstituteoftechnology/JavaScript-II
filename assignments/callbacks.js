@@ -84,14 +84,19 @@ contains("Pencil", items, function(checkItem) {
 // removeDuplicates removes all duplicate values from the given array.
 // Pass the duplicate free array to the callback function.
 // Do not mutate the original array.
+const itemsdup = ["Pencil", "Notebook", "yo-yo", "Gum", "Pencil", "Gum"];
 
 function removeDuplicates(array, cb) {
-let uniqueArray = [];
-array.filter(function (value) {
-  if (uniqueArray.indexOf(value))
-  })
+  let uniqueArray = [];
+  array.forEach(function(currentValue) {
+    if (uniqueArray.indexOf(currentValue) === -1) {
+      uniqueArray.push(currentValue);
+    }
+  });
+
+  return cb(uniqueArray);
 }
 
-removeDuplicates(items, function () {
-  console.log;
+removeDuplicates(itemsdup, function(checkdups) {
+  console.log(checkdups);
 });
