@@ -56,9 +56,17 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 // sumNums(2,4,callBack);
 
-function multiplyNums(x, y, cb) {
+
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+// function multiplyNums(x, y, cb) {
+//   return cb(x*y);
+// }
+
+// const callBack = function(mult) {
+//   console.log(mult);
+// }
+
+// multiplyNums(2,3,callBack);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
