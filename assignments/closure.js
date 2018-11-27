@@ -1,6 +1,18 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const simpleClosure = ()=> {
+  const amountOfChildren = ["Pedro", "Alan", "Samantha"]
+  function childClosure() {
+    let nameOfChild = "Pedro"
+    function grandChild() {
+      let nameOfGChild = "Mike"
+      console.log(`This is simpleClosure. I have ${amountOfChildren.length} children. My oldest child's name is ${nameOfChild}, and his son's name is ${nameOfGChild}`)
+    }
+    grandChild();
+  }
+  childClosure();
+};
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
