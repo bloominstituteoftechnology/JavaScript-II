@@ -52,10 +52,16 @@ function multiplyNums(x, y, cb) {
 }
 multiplyNums(5, 10, log); // using the log function from the problem above as a callback
 
+// contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+  if (item.length === 0 || list.length === 0) {
+    cb(false);
+  } else {
+    cb(true);
+  }
 }
+contains(["String"], [1, 2, 3, 4, 5, 6, 7, 8, 9], log); // using the log function from one of the problem above as a callback
 
 /* STRETCH PROBLEM */
 
