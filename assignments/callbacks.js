@@ -83,4 +83,23 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  let arrayCopy = array.slice(0);
+  return cb(arrayCopy);
 }
+
+const testArray = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'a', 'b', 'a', 'Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+removeDuplicates(testArray, function(arrayCopy) {
+  let singleWords = [];
+
+  arrayCopy.forEach(word => {
+    if(singleWords.indexOf(word) < 0) {
+      singleWords.push(word);
+    }
+  });
+
+  console.log(singleWords);
+
+})
+
