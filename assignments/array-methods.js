@@ -128,21 +128,23 @@ for (let i=0; i<shirtSizes.length; i++){
 // Problem 3
 /* 
 The event director wants to write Thank-You letters to some of his favorite companies. 
-Write a program which takes in any given company name and outputs a thank you note addressing the company, 
+Write a function which takes in any given company name and outputs a thank you note addressing the company, 
 stating the number of runners, and providing the total amount of money donated by those runners.
 */
 
-const companyExample = 'Livetube'
+function companyLetter(companyExample) {
+    let companyDonations = [];
+    runners.filter(runner => {
+        if (runner.company_name === companyExample) {
+            return companyDonations.push(runner.donation);
+        }
+    });
+    let companyTotal = 
+    companyDonations.reduce((total, amount) => {
+        return total += amount;
+    }, 0);
 
-let companyDonations = [];
-runners.filter(runner => {
-    if (runner.company_name === companyExample) {
-        return companyDonations.push(runner.donation);
-    }
-});
-let companyTotal = 
-companyDonations.reduce((total, amount) => {
-    return total += amount;
-}, 0);
+    return (`Thank you ${companyExample}! You're company had ${companyDonations.length} runner(s) and donated a total of ${companyTotal}.`);
+}
 
-console.log(`Thank you ${companyExample}! You're company had ${companyDonations.length} runner(s) and donated a total of ${companyTotal}.`);
+console.log(companyLetter('Skinix'));
