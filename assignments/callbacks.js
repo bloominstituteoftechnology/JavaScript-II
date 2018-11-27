@@ -55,13 +55,18 @@ multiplyNums(5, 10, log); // using the log function from the problem above as a 
 // contains checks if an item is present inside of the given array/list.
 // Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
-  if (item.length === 0 || list.length === 0) {
-    cb(false);
-  } else {
-    cb(true);
+  let presentItem = false;
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      presentItem = true;
+    }
   }
+  cb(presentItem);
 }
-contains(["String"], [1, 2, 3, 4, 5, 6, 7, 8, 9], log); // using the log function from one of the problem above as a callback
+function loggyLog(answer) {
+  console.log(answer);
+}
+contains("Pen", items, loggyLog); // using the log function from one of the problem above as a callback
 
 /* STRETCH PROBLEM */
 // removeDuplicates removes all duplicate values from the given array.
