@@ -21,27 +21,57 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
-function getLength(arr, cb) {
+function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
+  cb(arr.length);
 }
+
+getLength(items, function(length){
+  console.log(length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  cb(arr[arr.length-1]);
 }
+
+last(items, function(last){
+  console.log(last);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  cb((x+y));
 }
+
+sumNums(2, 4, function(sum){
+  console.log(sum);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb((x*y));
 }
+
+multiplyNums(2, 4, function(res){
+  console.log(res);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  const found = list.filter(current => {
+    return (current === item);
+  });
+  if(found.length === 0){
+    console.error(`Can't find ${item} in ${list}`); //This outputs an error if console if we can't find the searched item.
+  }
+  cb(found[0]); //found[0] because filter returns an array, but we only want the item.
 }
+
+contains('yo-yo', items, function(item){
+  console.log(item); 
+});
 
 /* STRETCH PROBLEM */
 
