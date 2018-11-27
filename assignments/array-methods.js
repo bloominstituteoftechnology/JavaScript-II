@@ -111,6 +111,8 @@ console.log(emails)
 // Problem 2
 //Company Gigashots decided to sponsor their runners with extra 100$
 
+//First get all company employees so we know whos getting the 100$ than add 100 to their donation amount in the main array
+
 const gigashotEmployees = [];
 
 runners.filter(currentValue => {
