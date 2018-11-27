@@ -38,20 +38,45 @@ getLength(items, (length) => {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+  cb(items[items.length-1]);
+};
+last(items, lastItem => {
+  console.log(`The last item is ${lastItem}.`);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  cb(x + y);
+};
+sumNums(2, 5, sum => {
+  console.log(`The sum is ${sum}.`);
+});
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+  cb(x * y);
+};
+multiplyNums(3, 7, product => {
+  console.log(`The product is ${product}.`);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  const isPresent = () => {
+    for (let i = 0; i < items.length; i++) {
+      if (items[i] === list) {
+        return true;
+      }
+    } return false;
+  };
+  cb(isPresent());
+};
+contains(items, 'chum', result => {
+  console.log(result ? 'This is present in the array' : 'This is not present in the array');
+});
+
 
 /* STRETCH PROBLEM */
 
