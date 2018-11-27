@@ -85,4 +85,13 @@ contains("Pencil", items, function(checkItem) {
 // Pass the duplicate free array to the callback function.
 // Do not mutate the original array.
 
-function removeDuplicates(array, cb) {}
+function removeDuplicates(array, cb) {
+let uniqueArray = [];
+array.filter(function (value) {
+  if (uniqueArray.indexOf(value))
+  })
+}
+
+removeDuplicates(items, function () {
+  console.log;
+});
