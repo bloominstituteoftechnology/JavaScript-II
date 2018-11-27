@@ -17,7 +17,7 @@ This task focuses on getting practice with callback functions by giving you an a
 
 - [x] Write out each function using the `ES5` `function` keyword syntax.
 
-- [ ] Solve the problems listed. Save the stretch problems until you have completed Tasks 1-4.
+- [x] Solve the problems listed. Save the stretch problems until you have completed Tasks 1-4.
 
 ## Task 3: Array Methods
 
