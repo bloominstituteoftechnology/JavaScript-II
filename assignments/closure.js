@@ -1,14 +1,34 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function closure(){
+  const hello = "Hello";
+  console.log(hello);
+
+  function closure2(){
+    const secondLevel = "second level";
+    console.log(`${hello} ${secondLevel}`)
+
+    function third(){
+      const thirdLevel = "Third level";
+      console.log(`${hello} ${secondLevel} and ${thirdLevel}`);
+    }
+  }
+}
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let num = 0;
+  return function(){
+    num++;
+    console.log(num);
+    return num;
+  };
 };
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter();
+newCounter();// 1
+newCounter();// 2
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
