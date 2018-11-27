@@ -81,7 +81,47 @@ console.log(ticketPriceTotal);
 
 // Problem 1 find all runners who donated more than $100
 
+let highDonors = runners.filter((runner)=>{return runner.donation>100});
+console.log(highDonors);
 
-// Problem 2
+// Problem 2 We'd like to give a special 'thank you' shirt to all runners who donated more than 200. Let's get the counts for their shirt sizes
 
-// Problem 3
+// First get an array with the shirt sizes of the high dollar donors:
+let shirtSizes = [];
+for(let i = 0; i<highDonors.length;i++){
+  if(!shirtSizes.includes(highDonors[i].shirt_size)){
+    shirtSizes.push(highDonors[i].shirt_size);
+  }
+}
+//test line
+console.log(shirtSizes);
+
+//Now, let's iterate over the above array, and get counts for each size, so we'll know how many to ordering
+//first create object that will keep track of numbers of each size; each size will be initialized to 0:
+const sizeCounts = {};
+shirtSizes.forEach((element)=>{
+  sizeCount[element] = 0;
+});
+
+//for testing
+
+console.log(sizeCounts);
+
+//get counts and update in sizeCounts
+
+
+shirtSizes.forEach((element)=>{
+
+  sizeCounts[element] = highDonors.reduce((number, donor)=>{
+    return number+=(donor.shirt_size===element);
+  },0);
+});
+//for testing
+console.log(JSON.stringify(sizeCounts));
+
+
+// Problem 3 We'd like to send all the non-high donors a thank-you card. Get their names for the mailing list.
+
+let everybodyElse = runners.filter((runner)=>{return !highDonors.includes(runner)});
+
+console.log(everybodyElse);
