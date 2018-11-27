@@ -91,6 +91,7 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
   let newSet= new Set(array);
+  console.log(newSet)
     cb(newSet);
 }
 

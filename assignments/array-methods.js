@@ -95,6 +95,31 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Let's make a mailing list:
+
+let mailList = [];
+runners.forEach(element => {
+    mailList.push(element.email);
+})
+console.log(mailList);
+
 // Problem 2
 
+// Let's find the Big Donors
+
+bigDonors = runners.filter(element => element.donation >=100);
+
+console.log(bigDonors);
+
+
 // Problem 3
+
+// We need the names in Last Name, First Name format
+
+
+
+let lastThenFirst = [];
+runners.forEach(element => {
+    lastThenFirst.push(`${element['last_name']}, ${element['first_name']}`);
+})
+console.log(lastThenFirst);
