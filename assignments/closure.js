@@ -6,16 +6,13 @@ let man = "Man";
 function superheroName() {
   const wonderGal = "Wonder";
   console.log(`I am ${wonderGal} ${woman}`);
-  debugger;
 
   function superMan() {
     const superGuy = "Super";
     console.log(`I am ${superGuy} ${man}`);
-    debugger;
 
     function mixUp() {
       console.log(`I am ${superGuy} ${woman} ${wonderGal} ${man}`);
-      debugger;
 
     }
 
@@ -31,7 +28,19 @@ superheroName();
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+
+  return function() {
+    count++;
+    return count;
+  }
+
 };
+
+const newCounter = counter();
+
+newCounter();
+newCounter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
