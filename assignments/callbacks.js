@@ -24,15 +24,30 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+getLength(items, function(length) {
+  console.log(length)
+  
+});
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length -1]);
 }
+ last(items, function(lastItem) {
+  console.log(lastItem);
+ });
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+ // sumNums adds two numbers (x, y) and passes the result to the callback.
+ return cb(x,y);
 }
+const sum = function(x,y) {
+  console.log(x + y)
+};
+sumNums(6,4,sum);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
