@@ -1,5 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function saySomething(theThing){
+  const theSaying = theThing;
+  console.log(theThing)
+  debugger;
+  function saySomethingElse(){
+    console.log(`There's a closure in my boot! and I think it's this: ${theSaying}`);
+    debugger;
+  }
+  saySomethingElse();
+}
+
+saySomething('Hello World!')
 
 
 // ==== Challenge 2: Create a counter function ====
