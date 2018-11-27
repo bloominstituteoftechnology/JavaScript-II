@@ -59,7 +59,7 @@ function contains(item, list, cb) {
 contains('Pencil', items, (cb) => (console.log(cb)));
 
 // solution two 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 function contains(item, list, cb) {
   // checks if an item is present inside of the given array/list.
@@ -71,9 +71,12 @@ function contains(item, list, cb) {
   }
   return cb(false);
 }
-contains('Pencil', items, function (cb) {
-  console.log(cb)
+
+contains('dfjkl', items, function (cb) {
+  console.log(cb);
 })
+
+
 
 // false
 
@@ -88,4 +91,4 @@ function removeDuplicates(array, cb) {
     return array.indexOf(acc) === curr;
   }))
 }
-
+removeDuplicates(items, (cb) => (console.log(cb)));
