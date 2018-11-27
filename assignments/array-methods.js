@@ -504,9 +504,14 @@ for (let i = 0; i < runners.length; i++) {
 }
 console.log(extraShirts);
 
-// Problem 2: Our tags only fit names up to 15 letters.
-let limitedLetters = [];
+// Problem 2: For the runners, we want big bold letters with last name, and small letters with their first name.
+let runTags = [];
 
+for (let i = 0; i < runners.length; i++) {
+    runTags.push(runners[i].last_name.toUpperCase());
+    runTags.push(runners[i].first_name.toLowerCase());
+}
+console.log(runTags);
 
 // Problem 3: First 20 to signup get VIP access to after-party.
 let vipAccess = [];
