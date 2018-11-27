@@ -105,4 +105,11 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // console.log(largeDonation);
 
-// Problem 3
+// Problem 3 -- use .forEach() to create mailing list 
+
+// let mailList = []
+// runners.forEach(function(element){
+//     mailList.push(element.email);
+// })
+
+// console.log(mailList)
