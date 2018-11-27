@@ -83,6 +83,8 @@ contains('Hobbits', items, function(val){
 //   // removeDuplicates removes all duplicate values from the given array.
 //   // Pass the duplicate free array to the callback function.
 //   // Do not mutate the original array.
-//   const tempArray = array.map();
-//   return cb(tempArray.reduce())
+
+//  });
 // }
+
+// console.log(removeDuplicates([1, 1, 3, 4, 5, 5, 5]));

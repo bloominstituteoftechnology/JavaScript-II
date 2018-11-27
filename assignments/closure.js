@@ -15,7 +15,7 @@ logHobbits();
 // newCounter(); // 1
 // newCounter(); // 2
 
-//^^ I don't really get what I'm supposed to do with any of that so I'm just going to write my own from scratch vv
+//^^ I don't really get what I'm supposed to do with any of that example code so I'm just going to write my own from scratch vv
 
 let counter = 0;
 function newCounter(){
@@ -26,13 +26,15 @@ function newCounter(){
 newCounter();
 newCounter();
 newCounter();
-console.log(counter);
 //should be 3
-newCounter();
-newCounter();
-newCounter();
 console.log(counter);
+
+newCounter();
+newCounter();
+newCounter();
 //should be 6
+console.log(counter);
+
 
 
 
@@ -44,3 +46,26 @@ console.log(counter);
 //   // `increment` should increment a counter variable in closure scope and return it.
 //   // `decrement` should decrement the counter variable and return it.
 // };
+
+let counterFactorycount = 0;
+
+const counterFactory = {
+  increment: function(){
+    return counterFactorycount += 1;
+  },
+  decrement: function(){
+    return counterFactorycount -= 1;
+  }
+};
+
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.decrement();
+counterFactory.decrement();
+counterFactory.decrement();
+counterFactory.decrement();
+counterFactory.decrement();
+//should be -1
+console.log(counterFactorycount);
