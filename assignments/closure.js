@@ -58,3 +58,7 @@ const counterFactory = (() => {
     }
   }
 })();
+
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.decrement();
