@@ -114,3 +114,9 @@ let smallShirts = runners.filter(function(lessThanMed){
 console.log(smallShirts);
 
 // Problem 3
+// Whoops, race location has been changed to all the way across the Atlantic.
+// Convert the donation currency to euros.
+let newMoney = runners.map(function(changeCurrency){
+    return changeCurrency.donation*.89;
+});
+console.log(newMoney);
