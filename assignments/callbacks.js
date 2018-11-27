@@ -60,10 +60,10 @@ function multiplyNums(x, y, cb) {
 
 multiplyNums(3, 4, function(times){
   console.log(times)
-});
+}); 
 
 function contains(item, list, cb) {
-
+  return cb (list.every(function(item){ return item.length > 0 })); 
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
