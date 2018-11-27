@@ -68,7 +68,7 @@ console.log(fullName);
 
 const allCaps = runners.map(function(currentValue){
     return currentValue.first_name.toLowerCase()
-})
+});
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -92,6 +92,21 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+const Emails = runners.map((currentValue) => { //Grabs all the runners emails
+    return currentValue.email;
+});
+console.log(Emails);
+
 // Problem 2
 
+const smallShirts = runners.filter((currentValue) => {
+    return currentValue.shirt_size === "S";
+});
+console.log(smallShirts);
+
 // Problem 3
+
+const comName = runners.map((currentValue) => { //Grabs all the runners companies names
+    return currentValue.company_name;
+});
+console.log(comName);
