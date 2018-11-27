@@ -77,11 +77,11 @@ function contains(item, list, cb) {
     if (list[i] === item) {
       return cb(true);
     }
-    return cb(false);
   };
+  return cb(false);
 };
-// prettier-ignore
-contains("Notebook", items, function (holder) {
+
+contains("yo-yo", items, function (holder) {
   console.log(holder);
 });
 
