@@ -68,14 +68,12 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
   for (i = 0; i < list.length; i++) {
     if (item === list[i]) {
-      cb(true);
-    }
-    else {
-    return cb(false);
+      return cb(true);
     }
   }
+  return cb(false);
 }
-contains(gum, items, function(packed) {
+contains('Laser', items, function(packed) {
   console.log(packed)
 });
 
