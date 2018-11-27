@@ -13,9 +13,11 @@ itemStorage();
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  let count = 1;
+  let count = 0;
+  debugger;
   return () => {
-    return count ++;
+    debugger;
+    return ++ count;
   }
 };
 //counter();
@@ -34,8 +36,8 @@ const counterFactory = () => {
   // `decrement` should decrement the counter variable and return it.
   let count = 1;
   return {
-    "increment" : () => count ++,
-    "decrement" : () => count --
+    "increment" : () => ++ count,
+    "decrement" : () => -- count
   };
 };
 
