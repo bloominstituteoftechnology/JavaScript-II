@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function outerLayer() {
+  const privateVar = 4; // This variable is in the closure of the "outerLayer" when you console.log closureExample()
+  function innerLayer() {
+    debugger;
+    return privateVar + 4;
+  }
+  return innerLayer;
+}
 
+const closureExample = outerLayer();
+console.log(closureExample());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
