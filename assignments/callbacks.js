@@ -66,7 +66,7 @@ function contains(item, list, cb) {
 function loggyLog(answer) {
   console.log(answer);
 }
-contains("Pen", items, loggyLog); // using the log function from one of the problem above as a callback
+contains("Pen", items, loggyLog);
 
 /* STRETCH PROBLEM */
 // removeDuplicates removes all duplicate values from the given array.
