@@ -466,7 +466,7 @@ runners.forEach(function (person) {
 // runners.forEach(person => {
 //   fullName.push(`${person.first_name} ${person.last_name}`);
 // });
-
+console.log("Runner full names:");
 console.log(fullName);
 
 
@@ -483,6 +483,7 @@ const allCaps = runners.map(function (name) {
 //   return `${name.first_name.toUpperCase()}`;
 // });
 
+console.log("Runner names all caps:");
 console.log(allCaps);
 
 
@@ -499,18 +500,44 @@ const largeShirts = runners.filter(function (runner) {
 //   return runner.shirt_size === "2XL";
 // });
 
+console.log("Customers who ordered Large shirts:");
 console.log(largeShirts);
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+// let ticketPriceTotal = [];
+
+const ticketPriceTotal = runners.reduce((total, ticket) => {
+  return total += ticket.donation;
+}, 0); // returns total population in a number, 0 is the start value
+
+console.log(`Total ticket price is: $${ticketPriceTotal}`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - array of emails
 
-// Problem 2
+const runnerEmails = runners.map((runner) => {
+  return runner.email;
+});
+console.log("Runner Emails:");
+console.log(runnerEmails);
 
-// Problem 3
+
+// Problem 2 - organized array of company names
+
+const companyNames = runners.map((runner) => {
+  return runner.company_name;
+});
+console.log("Ordered company names:");
+console.log(companyNames.sort());
+
+// Problem 3 - average donation
+
+const avgDonation = runners.reduce((total, donationAmt) => {
+  return total += donationAmt.donation / runners.length;
+}, 0);
+
+console.log(`Average donation amount: $${Math.floor(avgDonation)}`);
