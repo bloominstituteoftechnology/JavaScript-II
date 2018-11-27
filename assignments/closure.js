@@ -62,4 +62,9 @@ console.log(newCounterFactory.decrement());
 console.log(newCounterFactory.decrement());
 console.log(newCounterFactory.decrement());
 console.log(newCounterFactory.decrement());
+<<<<<<< HEAD
 
+=======
+// console.log(newCounterFactory;
+// console.log(newCounterFactory;
+>>>>>>> 4b3b8d52d39eb89de404edd86e559eb0cad6eb95
