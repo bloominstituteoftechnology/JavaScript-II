@@ -82,8 +82,24 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+const newItems = ['Pencil', 'Notebook', 'yo-yo', 'Gum', "Notebook"];
+
+function removeDuplicates(array, cb) {
+  newList = []
+  for (let i=0; i < array.length; i++) {
+    if (newList.includes(array[i]) === false) {
+      newList.push(array[i]);
+    }
+  }
+  return cb(newList);
 }
+
+const callBack = function(lst) {
+  console.log(lst)
+}
+
+removeDuplicates(newItems, callBack);
