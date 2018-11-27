@@ -24,10 +24,10 @@ animalType("sharks");
 // ==== Challenge 2: Create a counter function ====
   // Return a function that when invoked increments and returns a counter variable.
 const counter = () => {
-  let n = 0;
-  return function increment(){
-  n++;
-  return n;
+  let count = 0;
+  return function(){
+    count++;
+    return count;
   }
 };
 const increment = counter();

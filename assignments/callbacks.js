@@ -63,13 +63,13 @@ multiplyNums(3, 4, function(times){
 }); 
 
 function contains(item, list, cb) {
-  return cb (list.every(function(item){ return item.length > 0 })); 
+  return cb(list.includes(item)); 
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
-// contains(gum, items, function(check){
-//   console.log(check)
-// });
+contains("Gum", items, function(check){
+  console.log(check)
+});
 
 /* STRETCH PROBLEM */
 
