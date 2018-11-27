@@ -39,8 +39,11 @@ const counter = () => {
 
 const newCounter = counter();
 
-newCounter();
-newCounter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
