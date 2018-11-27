@@ -36,9 +36,11 @@ console.log(length)
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
+
 function last(arr, cb){
   return cb(arr[arr.length - 1]);
 }
+
 last(items, function(last){
   console.log(last);
 });
@@ -48,14 +50,45 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+function sumNums(x, y, cb){
+  return cb(x + y);
+}
+
+sumNums(5, 7, function(addition){
+  console.log(addition)
+});
+
+
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+
+function multiplyNums(x, y, cb) {
+  return cb(x * y);
+}
+
+multiplyNums(2, 5, function(multiplication){
+  console.log(multiplication)
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+function contains(item, list, cb) {
+  if(list.includes(item)){
+    return cb(true);
+  }
+  else{
+    return cb(false);
+  }
+}
+
+contains('yo-yo', items, function(tf){
+console.log(tf)
+});
 
 /* STRETCH PROBLEM */
 
