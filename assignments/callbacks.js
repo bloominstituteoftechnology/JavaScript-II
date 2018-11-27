@@ -53,8 +53,26 @@ logContains(`You`, items);
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+const stuff = [ "toothbrush", "cereal bar", "laptop", "notebook", "fire extinguisher", "scalpel", "なに？？？", 
+                "cereal bar", "fire extinguisher", "laptop", "cereal bar", "scalpel", "notebook", "toothbrush",
+                "toothbrush", "toothbrush", "toothbrush", "toothbrush", "toothbrush", "toothbrush", "scalpel" ];
+// 7 unique items, 21 total
+
+function logEach(array) {
+  array.forEach(item => console.log(item));
 }
+
+// removeDuplicates removes all duplicate values from the given array and packs unique values into a unique array.
+// The unique array is passed into the callback function. The original array is not mutated.
+function removeDuplicates(array, cb) {
+  let uniqueStuff = [];
+  stuff.forEach(item => {
+    if (uniqueStuff.filter(uniqueItem => uniqueItem === item).length == 0) {
+      uniqueStuff.push(item);
+    }
+  });
+
+  cb(uniqueStuff);
+}
+
+removeDuplicates(stuff, logEach);
