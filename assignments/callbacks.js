@@ -61,23 +61,19 @@ const multiplication = function(num1, num2) {
 
 multiplyNums(5, 4, multiplication);
 
-function contains(item, list, cb) {
+function contains(list, item, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  if (list.includes(item)) {
-    return cb(true);
-  } else {
-    return cb(false);
-  }
+  return cb(list, item);
 }
 
-contains('Jansport', items, function(bool) {
-  console.log(bool);
-})
+const check = function(list, item) {
+  console.log(list.includes(item));
+}
 
-contains('Notebook', items, function(bool) {
-  console.log(bool);
-})
+contains(items, 'Jansport', check);
+contains(items, 'Notebook', check);
+
 
 /* STRETCH PROBLEM */
 
