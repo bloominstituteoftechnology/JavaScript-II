@@ -68,11 +68,27 @@ let multiplies = function(x,y) {
 
 multiplyNums(12, 5, multiplies);
 
+//const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let presentItem = false;
+
+  for (let i=0; i < list.length; i++) {
+    if (list[i] === item) {
+      presentItem = true;
+    }
+
+}
+cb(presentItem);
 }
 
+function containsItem(answer) {
+  console.log(answer);
+}
+
+contains("yo-yo",items,containsItem)
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
