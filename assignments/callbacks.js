@@ -63,8 +63,17 @@ contains("Matt", ["Matt", "Nick", "Andrew"], log);
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+// Need to work through this more, was researching online and found this function, need to understand it deeper.
+// function removeDuplicates(arr){
+//   let unique_array = arr.filter(function(elem, index, self) {
+//       return index == self.indexOf(elem);
+//   });
+//   return unique_array
+// }
+
+// console.log(removeDuplicates(["Matt", "tevin", "pat", "Matt"]));
+
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+
