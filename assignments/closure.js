@@ -1,14 +1,26 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function widget(name) {
+  const chachacha = name;
+  console.log(`Hola, Popi, my name is ${chachacha}`);
+}
+
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = function(){
   // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+	
+	++x;
+
+	return x;
+  
+}
+var x=0;
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
