@@ -76,9 +76,35 @@ contains(items, 'Notebook', check);
 
 
 /* STRETCH PROBLEM */
+let names = ['Jack', 'Janice', 'Hillary', 'Mark', 'Jack', 'Lenora'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  const remove = array.filter((item, dup) => {
+    debugger;
+    return array.indexOf(item) === dup;
+  });
+
+  cb(remove);
+  debugger;
 }
+
+const unique = function(result) {
+ console.log(result);
+ debugger;
+}
+
+
+removeDuplicates(names, unique);
+
+// let remove = (array) =>
+//   array.filter((item, dup) => {
+//     console.log(array.indexOf(item) === dup);
+//   })
+  
+
+
+// removeDuplicates(names, remove);
