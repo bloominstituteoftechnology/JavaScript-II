@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+function favAnimals(animal) {
+  const animalHolder = animal;
+  console.log(`My favorite animals are ${animalHolder}`);
+ 
+  function animalResides(place) {
+    const placeHolder = place;
+    console.log(`${animalHolder} live in ${placeHolder}`)
+  }
+  animalResides('India');
+}
+favAnimals('Tigers');
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
