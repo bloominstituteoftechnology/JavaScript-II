@@ -145,12 +145,33 @@ ticketPriceTotal.push(total);
 console.log(ticketPriceTotal.join());
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems 
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential 
+//problems 
 //you could solve given the data set and the 5k fun run theme.  
 //Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//using map
+
+let array = [1,2,3,4,5,56,6,7];
+let doubleArray = array.map(function(element){
+  return element * 4;
+})
+console.log(doubleArray);
+
 
 // Problem 2
+//using filter;
+
+let name = ["one","two","three","four","five"];
+let nameCheck = name.filter(function(element){
+  return  element === "three";
+})
+
+console.log(nameCheck);
+
 
 // Problem 3
+
+let sumArray = array.reduce((total,element)=>{return total+element});
+console.log(sumArray);
