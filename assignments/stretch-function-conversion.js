@@ -6,7 +6,7 @@ let myFunction = () =>{};
 // let anotherFunction = function (param) {
 //   return param;
 // };
-
+//using arrow functions
 let anotherFunction = (param)=>{return param};
 
 // let add = function (param1, param2) {
