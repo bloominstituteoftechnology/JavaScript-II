@@ -22,15 +22,19 @@ layerOne("This is the top");
 
 
 // ==== Challenge 2: Create a counter function ====
+
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
   return function () {
-    let counter = 0;
-    return counter++;
-  }
+    return ++count;
+  };
 };
 
-counter();
+const newCounter = counter();
+console.log(newCounter()); // returns 1
+console.log(newCounter()); // returns 2
+console.log(newCounter()); // returns 3
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
