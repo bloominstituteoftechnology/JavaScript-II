@@ -18,19 +18,29 @@ beNice("great");
 
 
 // ==== Challenge 2: Create a counter function ====
-let counter = (function(){
+// let counter = (function(){
+//   let count = 0;
+//   return function () {
+//     count +=1;
+//     return count
+//   }
+// })();
+// counter();
+// counter()
+// console.log(counter());
+
+const counter = () => {
   let count = 0;
-  return function () {
-    count +=1;
-    return count
+  return function() {
+    count += 1;
+    return count;
   }
-})();
-counter();
-counter()
-console.log(counter());
+};
 
-
-
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2

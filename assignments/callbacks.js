@@ -15,8 +15,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     return cb(arr[0]);
   }
 
-  firstItem(items, function(x) {
-    console.log(x)
+  firstItem(items, function(first) {
+    console.log(first)
   });
 
 
