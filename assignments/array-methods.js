@@ -487,8 +487,8 @@ let ticketPriceTotal = [];
 ticketPriceTotal = runners.reduce(donationTally);
 
 function donationTally(total, num) {
-  console.log(num);
-  return runnerData.donation.total + runnerData.donation.num;
+  //console.log(num.id);
+  return total + num.donation;
 }
 
 console.log(ticketPriceTotal);
