@@ -79,8 +79,28 @@ contains('Laser', items, function(packed) {
 
 /* STRETCH PROBLEM */
 
+const backpack = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pen', 'Pencil', 'Paper', 'Pen', 'Notebook'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+  let noDupes = [];
+  let foundDupe = 0;
+  for (i = 0; i < array.length; i++) {
+    noDupes.forEach(function(element){
+      if(element === array[i]) {
+        foundDupe++;
+      }
+    });
+    if (foundDupe === 0) {
+      noDupes.push(array[i]);
+    }
+  foundDupe = 0;
+  }
+  return cb(noDupes)
+};
+
+removeDuplicates(backpack, function(noDupe){
+  console.log(noDupe)
+});
