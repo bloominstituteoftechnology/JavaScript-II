@@ -72,7 +72,11 @@ runners.forEach(function(fullName) {
 // console.log(allCaps); 
 
 let allCaps = ["first_name"];
-console.log(allCaps.toUpperCase()); 
+for(let i = 0; i < runners.length; i++){
+  allCaps.push(runners[i].first_name.toUpperCase());
+}
+
+console.log(allCaps); 
 allCaps();
 
 // ==== Challenge 3: Use .filter() ====
