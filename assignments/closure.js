@@ -7,8 +7,19 @@ function myName(name) {
   debugger;
   
   function greeting() {
-    console.log(`Hi, how are you? My name is ${nameHolder}`)
+    const greetingSaying = "Hi, how are you?";
+    console.log(`${greetingSaying} My name is ${nameHolder}`);
     debugger;
+    
+    function other() {
+      const otherGreeting = "What's up? My name is"
+      console.log(`${otherGreeting} ${nameHolder}`);
+      debugger;
+      
+    }
+    
+    other();
+    
   }
   greeting();
 }
