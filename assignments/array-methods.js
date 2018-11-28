@@ -91,7 +91,45 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Sum up the number of t-shirts needed for each size
+let Small = [];
+let Medium = [];
+let Large = [];
+let XL = [];
+let XL2 = [];
+let XL3 = [];
+
+runners.filter(function(item) {
+    if(item.shirt_size === "S") {
+        Small.push(item);
+    } else if(item.shirt_size === "M") {
+        Medium.push(item);
+    } else if(item.shirt_size === "L") {
+        Large.push(item);
+    } else if(item.shirt_size === "XL") {
+        XL.push(item);
+    } else if(item.shirt_size === "2XL") {
+        XL2.push(item);
+    } else if(item.shirt_size === "3XL") {
+        XL3.push(item);
+    }
+})
+console.log(`Small: ${Small.length} Medium: ${Medium.length} Large: ${Large.length} XL: ${XL.length} 2XL: ${XL2.length} 3XL: ${XL3.length}`);
 
 // Problem 2
+// Retrieve the email addresses of every runner so they can be contacted re: sales, promotions, etc.
+let emails = [];
+runners.forEach(function(currentValue) {
+    emails.push(currentValue.email);
+})
+console.log(emails);
 
 // Problem 3
+// Find the names of each company that donated more than $200 so follow-up merchandise can be sent as a thank you for being a premium sponsor
+let premiumSponsor = [];
+runners.filter(function(item) {
+    if(item.donation >= 200) {
+        premiumSponsor.push(item.company_name);
+    }
+})
+console.log(premiumSponsor);
