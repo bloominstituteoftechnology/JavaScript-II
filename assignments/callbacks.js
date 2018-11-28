@@ -57,4 +57,6 @@ function removeDuplicates(array, cb) {
   let newArr = array;
   let finalArr = [...new Set(newArr)]
   return cb(finalArr)
+
+  //googled it. idk what is going on here, but it uses the sets method.. that i found on google
 }
