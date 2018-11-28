@@ -60,6 +60,7 @@ function removeDuplicates(array, cb) {
 
   // set method stores unique values of any type.. a value in set may only occur once.
   // spread operator to be put at the end of a newly formed array and assigned to final Arr.
+  // i know this is in es6... but this is also a stretch problem so that's how I justify using the spread operator
 }
 // test suite
 console.log(getLength(items,(a)=>a));
