@@ -81,7 +81,15 @@ console.log(totalDonations);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// The CHUMPS who donated less than $100 dollars won't be receiving a free water bottle. Get a list of those Scrooges and DISQUALIFY THEM!!!
+const cheapSkates = runners.filter((runner) => {return runner.donation < 100});
+console.log(cheapSkates);
 // Problem 2
-
+// We'd like to know which company's employees are donating the most money, but we'd like to keep donor's names anonymous. Create an array listing company name and donation amount.
+let companyDonorArray = [];
+runners.forEach((runner) => {companyDonorArray.push(`runner.company_name, runner.donation`)});
+console.log(companyDonorArray);
 // Problem 3
+// Students are getting a discount! Return an array of objects representing the students
+const students = runners.filter((runner) => {return runner.email.endsWith('edu')});
+console.log(students);
