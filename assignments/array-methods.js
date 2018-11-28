@@ -86,6 +86,28 @@ let ticketPriceTotal = [];
 
 // Problem 1
 
+    //The event director wants a list of the emails of all the runners.
+
+    let runnerEmail = [];
+    runners.forEach(function(runner){
+        runnerEmail.push(`${runner.email}`);
+    });
+    console.log(runnerEmail);
+
 // Problem 2
 
+    //The event director wants a list of the names of all the companys the runners came from.
+
+    let runnerCompany = [];
+    runners.forEach(function(runner){
+        runnerCompany.push(`${runner.company_name}`);
+    })
+    console.log(runnerCompany);
+
 // Problem 3
+
+    //The event director wants to know the information of the first thirty people to participate. 
+
+    let firstThirty = [];
+    firstThirty = runners.filter(runner => runner.id <= 30);
+        console.log(firstThirty);
