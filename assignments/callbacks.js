@@ -48,12 +48,30 @@ sumNums(25, 35, function(add) {
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+multiplyNums(50, 50, function(multiply) {
+  console.log(multiply);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for(let i = 0; i < list.length; i++) {
+    if(list[i] === item) {
+      return cb(true);
+    } 
+  } return cb(false);
 }
+contains("car", items, function(exists) {
+  console.log(exists);
+});
+
+contains("Gum", items, function(exists) {
+  console.log(exists);
+});
+
+
 
 /* STRETCH PROBLEM */
 
