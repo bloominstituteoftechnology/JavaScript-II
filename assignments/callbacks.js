@@ -84,21 +84,22 @@ function removeDuplicates(array, cb) {
   // Do not mutate the original array.
 
   const remove = array.filter((item, dup) => {
-    debugger;
+    // debugger;
     return array.indexOf(item) === dup;
   });
 
   cb(remove);
-  debugger;
+  // debugger;
 }
 
 const unique = function(result) {
  console.log(result);
- debugger;
+//  debugger;
 }
 
 
 removeDuplicates(names, unique);
+
 
 // let remove = (array) =>
 //   array.filter((item, dup) => {
