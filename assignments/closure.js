@@ -25,15 +25,18 @@ function Healthpoints(hp) {
 Healthpoints(1);
 
 // ==== Challenge 2: Create a counter function ====
-let num = 0;
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  num++
-  return num;
+  let num = 0;
+  return function () {
+    num++
+    return num;
+  }
 };
 
-console.log(counter());
-console.log(counter());
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
