@@ -74,14 +74,9 @@ function contains(item, list, cb) {
 
 const check = function (item, list) {
     for(let i = 0; i < list.length; i++){
-      // console.log(list[i]);
       if(item === list[i]){
-        // debugger;
-        // return true;
         return console.log(true);
       // } else {
-      //   // debugger;
-      //   // return false;
       //    return console.log(false);
       }
       
