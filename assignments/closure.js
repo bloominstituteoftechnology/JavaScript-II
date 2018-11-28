@@ -34,7 +34,7 @@ const counter = () => {
 const newCounter = counter();
 console.log(newCounter()); // returns 1
 console.log(newCounter()); // returns 2
-console.log(newCounter()); // returns 3
+console.log(newCounter()); // returns 3 
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
