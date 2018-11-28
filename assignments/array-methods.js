@@ -81,8 +81,9 @@ console.log(ticketPriceTotal);
 let emailList = runners.map( (item)=> item.email );
 console.log(emailList);
 // Problem 2
-let lastNameLower = runners.map( (item)=> item.last_name.toLowerCase())
-console.log(lastNameLower)
+let lastNameLowerLessThan4ThenAdd = runners.map( (item)=> item.last_name.toLowerCase()).filter((item)=> item.length < 5).reduce((a, b)=>a+b)
+console.log(lastNameLowerLessThan4ThenAdd)
 // Problem 3
-let id49 = runners.filter( (item)=> item.id === 49 );
-console.log(id49)
+let the49thDonatorCompanyName = runners.filter( (item)=> item.id === 49).map((item)=>` The 49th donator works in ${item.company_name}... 
+Rumor has he doesn't make enough. We should be donating to him.`)
+console.log(the49thDonatorCompanyName)
