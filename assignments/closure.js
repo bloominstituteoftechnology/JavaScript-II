@@ -4,9 +4,11 @@
 function myName(name) {
   const nameHolder = name;
   console.log(`My name is ${name}`);
+  debugger;
   
   function greeting() {
     console.log(`Hi, how are you? My name is ${nameHolder}`)
+    debugger;
   }
   greeting();
 }
