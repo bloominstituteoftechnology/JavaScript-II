@@ -1,11 +1,42 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function Healthpoints(hp) {
+  const hpValue = hp;
+  console.log(`You have ${hp} hp.`);
+  //debugger;
+  
+  function takeDamage() {
+    const tookdmg = hp-1;
+    console.log(`${tookdmg} you know have ${hp} left`);
+    //debugger;
+    
+    function faint() {
+      const fainted = "You have fainted"
+      console.log(`${fainted} because your hp was ${hp} but is now ${tookdmg}`);
+      //debugger;
+    }
+    
+    faint();
+  }// faint
+  
+  takeDamage();
+}// takeDamage
+Healthpoints(1);
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let num = 0;
+  return function () {
+    num++
+    return num;
+  }
 };
+
+const newCounter = counter();
+console.log(newCounter());
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
