@@ -1,6 +1,6 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Sharpie', 'Gum', 'yo-yo', 'Notebook', 'Pencil'];
 
 /* 
 
@@ -58,5 +58,13 @@ function removeDuplicates(array, cb) {
   let finalArr = [...new Set(newArr)]
   return cb(finalArr)
 
-  //googled it. idk what is going on here, but it uses the sets method.. that i found on google
+  // set method stores unique values of any type.. a value in set may only occur once.
+  // spread operator to be put at the end of a newly formed array and assigned to final Arr.
 }
+// test suite
+console.log(getLength(items,(a)=>a));
+console.log(last(items,(a)=>a));
+console.log(sumNums(5, 5,(a)=>a));
+console.log(multiplyNums(5, 5,(a)=>a));
+console.log(contains(items,'Nheell',(a)=>a));
+console.log(removeDuplicates(items,(a)=>a));
