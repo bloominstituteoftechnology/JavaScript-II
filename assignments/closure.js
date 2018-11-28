@@ -47,7 +47,7 @@ const counterFactory = () => {
 let idk = counterFactory();
 
 // initial value = 1
-console.log(counterFactory().decrement()) // 0
+console.log(idk.decrement()) // 0
 console.log(idk.increment()) // 1
 console.log(idk.increment()) // 2
 console.log(idk.increment()) // 3
