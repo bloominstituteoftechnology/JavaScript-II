@@ -57,8 +57,8 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  
 //Combine both the first and last names into a new array called fullName. 
 
-let fullName = runners.forEach (function(runnerName){
-    console.log(`${runnerName.first_name} ${runnerName.last_name}`);
+let fullName = runners.forEach (function(runner){
+    console.log(`${runner.first_name} ${runner.last_name}`);
 });
 console.log(fullName);
 
@@ -93,8 +93,21 @@ console.log(ticketPriceTotal);
 //could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or 
 //many of the array methods listed above.
 
-// Problem 1
+// Problem 1 Donations over $150
+let largeDonation = runners.filter(donor => donor.donation > 150);
+console.log(largeDonation);
 
 // Problem 2
+//List of first name, email and shirt size of donors over $150
 
-// Problem 3
+let ldonorName = largeDonation.forEach (function(donor){
+    console.log(`${donor.first_name} ${donor.email} ${donor.shirt_size}`);
+});
+console.log(ldonorName);
+
+// Problem 3  Company name of large donors
+
+let ldonorCo = largeDonation.forEach (function(donor){
+    console.log(`${donor.company_name} `);
+});
+console.log(ldonorCo);
