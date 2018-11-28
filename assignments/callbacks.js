@@ -45,12 +45,8 @@ function multiplyNums(x, y, cb) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb(list.forEach(function(itm) {
-    if(itm === item){
-      return true;
-    } else {
-      return false;
-    }))
+  cb(list.some(elelist => elelist === item));
+    
 }
 
 /* STRETCH PROBLEM */
