@@ -1,10 +1,10 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const cheese = 'cracker';
+const cheese = 'crackers';
 function returncheese(){
-  return cheese;
+  console.log('I sure do like cheese and ' + cheese)
 }
-returncheese(cheese);
+returncheese();
 
 // ==== Challenge 2: Create a counter function ====
 
