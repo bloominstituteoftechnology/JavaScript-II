@@ -20,11 +20,11 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
@@ -59,8 +59,10 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
 let cleanarray = []
 checkFlag = false
+
   for (let i = 0; i < array.length; i++) {
     if (checkFlag === true) {
       cleanarray.push(arrayitem);
@@ -75,8 +77,9 @@ checkFlag = false
   }
 return cb(cleanarray)
 }
+
 const test = ['jake', 'jake', 'Jake', 'justin', 'jourdan', 'jourdan']
-function log(x) {console.log(x)}
 removeDuplicates(test, log)
+
 
 

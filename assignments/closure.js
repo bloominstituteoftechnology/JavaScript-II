@@ -1,26 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 function greatfood() {
-let icecream = 'pralinepecan'
+let icecream = 'praline pecan'
   function favorite() {
     console.log(`My favorite flavor is ${icecream}`)
 }
+  return favorite()
 }
 
 // ==== Challenge 2: Create a counter function ====
-const counter = function() {
-let count = 0;
-  return function counterinc() {
-    return count++;
-  // Return a function that when invoked increments and returns a counter variable.
-}};
-newCounter = counter();
-console.log(newCounter())
-console.log(newCounter())
-console.log(newCounter())
-console.log(newCounter())
-console.log(newCounter())
-
+function counter (){
+  let counter = 0;
+  function counterinc (){
+    counter++;
+    return counter
+  }
+  return counterinc;
+}
 
 
 // Example usage: const newCounter = counter();
@@ -31,15 +27,29 @@ console.log(newCounter())
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = function() {
-  let object = {
-    
+  let counter = 0
+  let countobject = {
+    increment: function() {
+      counter ++;
+      return counter;
+    },
+    decrement: function() {
+      counter --;
+      return counter;
+    }
   }
+  return countobject
 }
-
+const mynewFunct = counterFactory()
+console.log(mynewFunct.increment())
+console.log(mynewFunct.increment())
+console.log(mynewFunct.increment())
+console.log(mynewFunct.decrement())
+console.log(mynewFunct.decrement())
 
 
 
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+// };

@@ -86,8 +86,32 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-Match each donation with each last name.
-// Problem 2
-show the emails of all people who donated over 100
-// Problem 3
-show all emails that start with m
+// Match each donation with each last name in an array of objects, with last names as the key and donation as the value.
+let whoDonated = []
+runners.forEach(item => {
+    whoDonated.push({
+        last_name: item.first_name,
+        donation: item.donation,
+    })
+})
+console.log(whoDonated)
+
+// // Problem 2
+// show the emails of all people who donated over 200 in an array.
+let hundredsEmails = runners.filter(item => {
+    return item.donation > 200
+}).map(item => {
+    return item.email
+})
+console.log(hundredsEmails)
+
+// // Problem 3
+// show the total donations for people whose first name starts with M in an array.
+let donationsWithM = runners.filter(item => {
+    return item.first_name[0] === 'M'
+}).map(item => {
+    return item.donation
+}).reduce((total, lonedonation) => {
+    return total + lonedonation;
+})
+console.log (donationsWithM)
