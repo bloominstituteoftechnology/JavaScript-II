@@ -8,7 +8,10 @@ speak()
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  
+  const anotherCounter = counter();
+  anotherCounter();
+  anotherCounter();
+  anotherCounter();
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
