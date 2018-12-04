@@ -140,3 +140,5 @@ runners.forEach(function(name) {
 console.log(emailName);
 
 // Problem 3
+
+// .map()
