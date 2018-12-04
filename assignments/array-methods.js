@@ -95,6 +95,13 @@ let eMails = [ ];
   });
 
 
-// Problem 2
+// Problem 2 Company wants to send out thank you cards to participants who donated over $200, create an array that logs that information accordingly.
+const specialThanks = runners.filter(function(runners) {
+    return runners.donation >= 200;
+});
+
+console.log(specialThanks);
+
+
 
 // Problem 3
