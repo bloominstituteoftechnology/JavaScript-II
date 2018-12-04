@@ -90,24 +90,29 @@ largeShirts = runners.filter(function(shirts) {
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+// The donations need to be tallied up and reported for tax purposes. 
+//Add up all the donations into a ticketPriceTotal array and log the result
 // let ticketPriceTotal = [];
-// console.log(ticketPriceTotal); v
+// console.log(ticketPriceTotal); 
+
+let ticketPriceTotal = [];
+
+console.log(ticketPriceTotal);
 
 // let ticketPriceTotal = function(donations) {
 //     console.log(ticketPriceTotal);
 //   }
 //   ticketPriceTotal(donations());
 
-function ticketPriceTotal(a,b,donation) {
-    return donations(a,b);
-  }
+// function ticketPriceTotal(a,b,donation) {
+//     return donations(a,b);
+//   }
   
-  const add = function(a,b){
-    console.log(a + b)
-  }
+//   const add = function(a,b){
+//     console.log(a + b)
+//   }
   
-  ticketPriceTotal(2,4,add);
+//   ticketPriceTotal(2,4,add);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  
@@ -117,6 +122,21 @@ function ticketPriceTotal(a,b,donation) {
 
 // Problem 1
 
+let companyName = [];
+runners.forEach(function(name) {
+  companyName.push(`${name.company_name}`);
+})
+
+console.log(companyName);
+
+
 // Problem 2
+
+let emailName = [];
+runners.forEach(function(name) {
+  emailName.push(`${name.email}`);
+})
+
+console.log(emailName);
 
 // Problem 3
