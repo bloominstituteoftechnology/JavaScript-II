@@ -104,4 +104,9 @@ console.log(specialThanks);
 
 
 
-// Problem 3
+// Problem 3 create an array that logs only company names
+let fullName2 = [ ];
+  runners.forEach(function(runner) {
+  
+    console.log(`${runner.company_name} `);
+  });
