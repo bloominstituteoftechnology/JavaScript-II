@@ -42,16 +42,25 @@ last(items, (last) => {
  
 
 function sumNums(x, y, cb) {
-
+  cb(x + y);
 }
+sumNums(4, 5, (total) => {
+  console.log(total);
+});
+// multiplyNums multiplies two numbers and passes the result to the callback.
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb(x * y);
 }
+multiplyNums(4,5, (sum) => {
+  console.log(sum);
+});
+
+// contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
+
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
 }
 
 /* STRETCH PROBLEM */
