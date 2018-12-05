@@ -49,6 +49,7 @@ function add(x,y){
 sumNums(1,2,add)
 
 function multiplyNums(x, y, cb) {
+  return cb(x,y)
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 function product(x,y){
