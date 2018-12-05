@@ -71,12 +71,19 @@ console.log(fullName);
 // let allCaps = [];
 // console.log(allCaps); 
 
-let allCaps = ["first_name"];
-for(let i = 0; i < runners.length; i++){
-  allCaps.push(runners[i].first_name.toUpperCase());
-}
+let allCaps = [];
+allCaps = runners.map(function (thing) {
+  return thing.first_name.toUpperCase();
+})
 
-console.log(allCaps); 
+console.log(allCaps);
+
+// let allCaps = ["first_name"];
+// for(let i = 0; i < runners.length; i++){
+//   allCaps.push(runners[i].first_name.toUpperCase());
+// }
+
+// console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
@@ -96,23 +103,13 @@ console.log(largeShirts);
 // console.log(ticketPriceTotal); 
 
 let ticketPriceTotal = [];
+let reducer = (accumulator, currentRunner) => accumulator + currentRunner.donation;
+ticketPriceTotal = runners.reduce(reducer, 0);
 
 console.log(ticketPriceTotal);
 
-// let ticketPriceTotal = function(donations) {
-//     console.log(ticketPriceTotal);
-//   }
-//   ticketPriceTotal(donations());
-
-// function ticketPriceTotal(a,b,donation) {
-//     return donations(a,b);
-//   }
-  
-//   const add = function(a,b){
-//     console.log(a + b)
-//   }
-  
-//   ticketPriceTotal(2,4,add);
+// const array1 = [1, 2, 3, 4];
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  
@@ -141,4 +138,9 @@ console.log(emailName);
 
 // Problem 3
 
-// .map()
+let lastCaps = [];
+lastCaps = runners.map(function (thing) {
+  return thing.last_name.toUpperCase();
+})
+
+console.log(lastCaps);
