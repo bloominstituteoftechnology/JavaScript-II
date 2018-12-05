@@ -76,9 +76,39 @@ multiplyNums(7, 7, function(multiply) {
 });
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+  // contains checks if an item is present inside of the given 
+  //array/list.
   // Pass true to the callback if it is, otherwise pass false.
+return cb(list.includes(item));
+
 }
+
+contains('Notebook', items, (trueFalse) => {
+  console.log(trueFalse)
+});
+
+
+// contains('Notebook', item) {
+//   console.log()
+// };
+
+  // The includes() method determines whether a typed array includes 
+  //a certain element, returning true or false as appropriate. 
+  //This method has the same algorithm as Array.prototype.includes(). 
+  // TypedArray is one of the typed array types here.
+
+//   var array1 = [1, 2, 3];
+
+// console.log(array1.includes(2));
+// // expected output: true
+
+// var pets = ['cat', 'dog', 'bat'];
+
+// console.log(pets.includes('cat'));
+// // expected output: true
+
+// console.log(pets.includes('at'));
+// // expected output: false
 
 
 
