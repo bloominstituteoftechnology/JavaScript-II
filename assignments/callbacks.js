@@ -30,6 +30,7 @@ function length(items) {
   console.log(items.length);
 }
 function last(arr, cb) {
+  return cb(arr)
   // last passes the last item of the array into the callback.
 }
 function lastOne(items){
