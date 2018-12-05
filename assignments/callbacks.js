@@ -23,25 +23,58 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  return cb(arr.length);
   // getLength passes the length of the array into the callback.
 }
 
+getLength(items, function (numItems) {
+  console.log(numItems);
+});
+
 function last(arr, cb) {
+  return cb(arr.slice(-1)[0]);
   // last passes the last item of the array into the callback.
 }
 
+last(items, function (lastItem) {
+  console.log(lastItem);
+});
+
 function sumNums(x, y, cb) {
+  return cb(x + y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+sumNums(5, 7, function (sum) {
+  console.log(sum);
+});
 
 function multiplyNums(x, y, cb) {
+  return cb(x * y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
+multiplyNums(3, 4, function (num) {
+  console.log(num);
+});
+
 function contains(item, list, cb) {
+  return cb(item, list);
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+function match(item, list) {
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(contains('Gum', items, match));
+console.log(contains('Hot Sauce', items, match));
+console.log(contains('yo-yo', items, match));
+console.log(contains('Apples', items, match));
 
 /* STRETCH PROBLEM */
 
