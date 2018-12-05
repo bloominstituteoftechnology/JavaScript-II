@@ -14,7 +14,7 @@ myName();
 // ==== Challenge 2: Create a counter function ====
 const counter = function () {
   let number = 0;
-  return function (){
+  return function () {
     number++;
     console.log(number);
   }

@@ -102,12 +102,12 @@ console.log(lastName);
 
 // Problem 2 - average donation amount 
 
-let averageDonationAmount  = [];
+let averageDonationAmount = [];
 
 averageDonationAmount = runners.reduce(function (total, tally) {
     return total + tally.donation;
 }, 0)
-console.log(averageDonationAmount /  50);
+console.log(averageDonationAmount / 50);
 
 
 // Problem 3 Create Email list of all runners

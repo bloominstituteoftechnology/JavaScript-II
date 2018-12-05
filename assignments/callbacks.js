@@ -72,11 +72,11 @@ function match(item, list) {
 }
 
 console.log(contains('Gum', items, match));
-  console.log(contains('Hot Sauce', items, match));
-  console.log(contains('yo-yo', items, match));
-  console.log(contains('Apples', items, match));
+console.log(contains('Hot Sauce', items, match));
+console.log(contains('yo-yo', items, match));
+console.log(contains('Apples', items, match));
 
-  /* STRETCH PROBLEM */
+/* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
