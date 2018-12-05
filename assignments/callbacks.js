@@ -59,19 +59,9 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 
-sumNums(4, 2, function(add) {
+sumNums(7, 7, function(add) {
   console.log(add);
 });
-
-// sumNums(4, 4, funciton (add) {
-//   console.log(add);
-// })
-
-// const sum = function(x,y){
-//   console.log(x + y)
-// }
-
-// sumNums(4,4,sum);
 
 // function multiplyNums(x, y, cb) {
 //   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -81,12 +71,9 @@ function multiplyNums(x, y, cb) {
   return cb(x * y);
 }
 
-multiplyNums = function(x,y){
-  console.log(x * y)
-}
-
-multiplyNums(2,2,multiply);
-
+multiplyNums(7, 7, function(multiply) {
+  console.log(multiply);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
