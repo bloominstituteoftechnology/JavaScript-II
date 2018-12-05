@@ -59,11 +59,9 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 
-sumNums(a, b, function(add) {
+sumNums(4, 2, function(add) {
   console.log(add);
 });
-
-sumNums();
 
 // sumNums(4, 4, funciton (add) {
 //   console.log(add);
@@ -80,10 +78,10 @@ sumNums();
 // }
 
 function multiplyNums(x, y, cb) {
-  return callback(x,y);
+  return cb(x * y);
 }
 
-const multiply = function(x,y){
+multiplyNums = function(x,y){
   console.log(x * y)
 }
 
