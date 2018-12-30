@@ -24,24 +24,53 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function () {
+  console.log(items.length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+
+last(items, function () {
+  console.log(items[items.length - 1]);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  return cb(x + y);
+};
+
+sumNums(1, 2, function (cb) {
+  console.log(cb)
+});
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+multiplyNums(2, 3, function (cb) {
+  console.log(cb);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  return cb(list.includes(item));
+};
+
+contains('Pencil', items, function (cb) {
+  console.log(cb);
+});
+
+contains('_', items, function (cb) {
+  console.log(cb);
+});
 
 /* STRETCH PROBLEM */
 
