@@ -3,7 +3,7 @@
 
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
-## Task 1: Set Up The Project With Git
+## Task 1: Set Up The Project With Git 🚧
 
 * [ ] Fork the project into your GitHub user account
 * [ ] Clone the forked project into a directory on your machine
