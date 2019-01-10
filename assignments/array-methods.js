@@ -101,8 +101,13 @@ console.log(largeShirts);
 
 console.log('CHALLENGE 4 👇');
 
-// let ticketPriceTotal = [];
-// console.log(ticketPriceTotal);
+const donations = runners.map(runner => runner.donation);
+
+let ticketPriceTotal = donations.reduce((total, donation) => {
+    return total + donation;
+});
+
+console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().
