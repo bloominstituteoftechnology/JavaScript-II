@@ -58,7 +58,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.
 // Combine both the first and last names into a new array called fullName.
 
-console.log('CHALLENGE 1 👇');
+console.log('ARRAY METHODS CHALLENGE 1 👇');
 
 let fullName = [];
 
@@ -72,7 +72,7 @@ console.log(fullName);
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER.
 // Convert each first name into all caps and log the result
 
-console.log('CHALLENGE 2 👇');
+console.log('ARRAY METHODS CHALLENGE 2 👇');
 
 let allCaps = runners.map(runner => (runner.first_name.toUpperCase()));
 
@@ -83,7 +83,7 @@ console.log(allCaps);
 // Get a list of runners with large sized shirts so they can choose a different size.
 // Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result.
 
-console.log('CHALLENGE 3 👇');
+console.log('ARRAY METHODS CHALLENGE 3 👇');
 
 let largeShirts = [];
 
@@ -99,7 +99,7 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes.
 // Add up all the donations into a ticketPriceTotal array and log the result.
 
-console.log('CHALLENGE 4 👇');
+console.log('ARRAY METHODS CHALLENGE 4 👇');
 
 const donations = runners.map(runner => runner.donation);
 

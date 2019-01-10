@@ -1,98 +1,108 @@
-// // Create a callback function and invoke the function to test your work.
-// // You have been provided an example of a problem and a solution to see how this works with our items array.
-// // Study both the problem and the solution to figure out the rest of the problems.
+// Create a callback function and invoke the function to test your work.
+// You have been provided an example of a problem and a solution to see how this works with our items array.
+// Study both the problem and the solution to figure out the rest of the problems.
 
-// console.log('Test JS-II');
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+////////////////////////////////////////////////////////////////
 
-// ////////////////////////////////////////////////////////////////
+console.log('CALLBACKS CHALLENGE 1 👇');
 
-// function firstItem(arr, cb) {
-//   // firstItem passes the first iteam of the array into the callback.
-//   cb(arr[0]);
-// }
+function firstItem(arr, cb) {
+  // firstItem passes the first iteam of the array into the callback.
+  cb(arr[0]);
+}
 
-// firstItem(items, (first) => {
-//   console.log(first)
-// });
+firstItem(items, (first) => {
+  console.log(first)
+});
 
-// ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
-// function getLength(arr, cb) {
-//   // getLength passes the length of the array into the callback.
-//   cb(arr.length);
-// }
+console.log('CALLBACKS CHALLENGE 2 👇');
 
-// getLength(items, (length) => {
-//   console.log(length)
-// });
+function getLength(arr, cb) {
+  // getLength passes the length of the array into the callback.
+  cb(arr.length);
+}
 
-// ////////////////////////////////////////////////////////////////
+getLength(items, (length) => {
+  console.log(length)
+});
 
-// function lastItem(arr, cb) {
-//   // last passes the last item of the array into the callback.
-//   cb(arr[arr.length - 1]);
-// }
+////////////////////////////////////////////////////////////////
 
-// lastItem(items, (last) => {
-//   console.log(last)
-// });
+console.log('CALLBACKS CHALLENGE 3 👇');
 
-// ////////////////////////////////////////////////////////////////
+function lastItem(arr, cb) {
+  // last passes the last item of the array into the callback.
+  cb(arr[arr.length - 1]);
+}
 
-// function sumNums(x, y, cb) {
-//   // sumNums adds two numbers (x, y) and passes the result to the callback.
-//   cb(x + y);
-// }
+lastItem(items, (last) => {
+  console.log(last)
+});
 
-// sumNums(13, 10, (sum) => {
-//   console.log(sum)
-// });
+////////////////////////////////////////////////////////////////
 
-// ////////////////////////////////////////////////////////////////
+console.log('CALLBACKS CHALLENGE 4 👇');
 
-// function multiplyNums(x, y, cb) {
-//   // multiplyNums multiplies two numbers and passes the result to the callback.
-//   cb(x * y);
-// }
+function sumNums(x, y, cb) {
+  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  cb(x + y);
+}
 
-// multiplyNums(7, 7, (mult) => {
-//   console.log(mult)
-// });
+sumNums(13, 10, (sum) => {
+  console.log(sum)
+});
 
-// ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
-// function contains(item, list, cb) {
-//   // contains checks if an item is present inside of the given array/list.
-//   // Pass true to the callback if it is, otherwise pass false.
-//   if(list.includes(item)){
-//     return cb(true);
-//   }
-//   else return cb(false);
-// };
+console.log('CALLBACKS CHALLENGE 5 👇');
 
-// contains("Notebook", items, function(word) {
-//   console.log(word);
-// });
+function multiplyNums(x, y, cb) {
+  // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb(x * y);
+}
 
-// ////////////////////////////////////////////////////////////////
+multiplyNums(7, 7, (mult) => {
+  console.log(mult)
+});
 
-// /* STRETCH PROBLEM */
+////////////////////////////////////////////////////////////////
 
-// const duplicates = ['Orlando','Gabe','Maxime','Louis','Gabe'];
+console.log('CALLBACKS CHALLENGE 6 👇');
 
-// function removeDuplicates(array, cb) {
-//   // removeDuplicates removes all duplicate values from the given array.
-//   // Pass the duplicate free array to the callback function.
-//   // Do not mutate the original array.
-//   cb(array.filter(function(item, index) {
-//     return array.indexOf(item) == index;
-//   }))
-// }
+function contains(item, list, cb) {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+  if(list.includes(item)){
+    return cb(true);
+  }
+  else return cb(false);
+};
 
-// removeDuplicates(duplicates, function(duplicates) {
-//   console.log(duplicates);
-// });
+contains("Notebook", items, function(word) {
+  console.log(word);
+});
 
-// ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+/* STRETCH PROBLEM */
+
+const duplicates = ['Orlando','Gabe','Maxime','Louis','Gabe'];
+
+function removeDuplicates(array, cb) {
+  // removeDuplicates removes all duplicate values from the given array.
+  // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
+  cb(array.filter(function(item, index) {
+    return array.indexOf(item) == index;
+  }))
+}
+
+removeDuplicates(duplicates, function(duplicates) {
+  console.log(duplicates);
+});
+
+////////////////////////////////////////////////////////////////
