@@ -3,7 +3,7 @@
 
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
-## Task 1: Set Up The Project With Git 🚧
+## Task 1: Set Up The Project With Git ✅
 
 * [X] Fork the project into your GitHub user account
 * [X] Clone the forked project into a directory on your machine
@@ -11,7 +11,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [X] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
 
 
-## Task 2: Callbacks
+## Task 2: Callbacks ✅
 
 This task focuses on getting practice with callback functions by giving you an array of values and instructions on what to do with that array.
 
@@ -21,11 +21,11 @@ This task focuses on getting practice with callback functions by giving you an a
 
 * [X] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
 
-## Task 3: Array Methods
+## Task 3: Array Methods 🚧
 
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
-* [ ] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
+* [X] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
 * [ ] Complete the problems provided to you
 
