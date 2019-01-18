@@ -483,3 +483,5 @@ console.log(ticketPriceTotal);
 // Problem 2
 
 // Problem 3
+
+let randomness = [1, 2, 3];
