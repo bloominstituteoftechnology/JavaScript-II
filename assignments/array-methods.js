@@ -1,5 +1,6 @@
-// A local community center is holding a fund rasising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
-
+// A local community center is holding a fund raising 5k fun run and has invited 50 small
+// businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// ADDED
 // Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
 
 const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
