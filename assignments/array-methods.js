@@ -114,6 +114,7 @@ let new_donations = runners.map(function(runner) {
     return Math.floor(runner.donation / 2);
 });
 console.log(new_donations);
+
 // Problem 3
 // Zoomcast blackmailed the director with footage of his binger from last night.
 // Disqualify everyone who doesn't work for Zoomcast and make a list of the remaining runners.
