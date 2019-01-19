@@ -101,6 +101,20 @@ let maxDonor = donor.reduce(function(acc, object) {
   });
 console.log(maxDonor)
 // Problem 2
-
+// Display all e-mail addresses
+let email = [];
+runners.forEach(function (object) {
+  let mail = object.email;
+  email.push(mail)
+})
+console.log(email)
 
 // Problem 3
+//Find the Smallest donation
+let donor= [];
+runners.forEach(function (object) {
+ donor.push(object.donation)})
+let maxDonor = donor.reduce(function(acc, object) {
+    return Math.min(acc, object)
+  });
+console.log(maxDonor)
