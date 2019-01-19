@@ -107,9 +107,18 @@ contains('nope', items, isIncluded2);
 ////////////////////////////////////////////////////////
 
 /* STRETCH PROBLEM */
+let isIncluded3 = (item, list) => list.includes(item);
+const items2 = [1, 2, 4, 'one', false, 'one', 'two', true, 2, '    two', 'three', 4, true];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDupsArr = [];
+
+  array.forEach( el =>  {if(!cb(el, noDupsArr)) noDupsArr.push(el)} );
+
+  return noDupsArr;
 }
+
+console.log(removeDuplicates(items2, isIncluded3));
