@@ -84,8 +84,18 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Get list of runners that have XL, 2XL, or 3XL  shirt size
+let xLargeDonorList = [];
+xLargeDonorList = runners.filter( runner => runner.shirt_size.includes('XL'));
+console.log(xLargeDonorList);
 
-// Problem 2
+// Problem 2 - Instead of using list from Prob2, get total amount of donations of runners that have XL, 2XL, or 3XL  shirt size
+let largeDonorDonationTotal = [];
+largeDonorDonationTotal = runners.filter( runner => runner.shirt_size.includes('XL'))
+                                 .reduce( (acc, curr) => acc + curr.donation, 0);
+console.log(largeDonorDonationTotal);
 
-// Problem 3
+// Problem 3 - find max email length
+let max_emailLength = [];
+max_emailLength = runners.map(runner => runner.email.length);
+console.log(Math.max(...max_emailLength));
