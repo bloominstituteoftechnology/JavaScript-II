@@ -1,5 +1,6 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+console.log('----------CLOSURE----------')
 function isThisClosure () {
   const closure = 'closure'
   console.log(closure)
