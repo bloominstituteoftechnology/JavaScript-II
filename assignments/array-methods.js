@@ -72,7 +72,7 @@ runners.map((x) => {
 })
 
 console.log(allCaps);
-
+// dsds
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
@@ -87,7 +87,7 @@ console.log(largeShirts);
 
 
 let ticketPriceTotal = runners.reduce((total, b) => total + b.donation, 0)
-console.log('ticket total' + ticketPriceTotal)
+console.log(`The Total Donations were ${ticketPriceTotal}`)
 
 
 // ==== Challenge 5: Be Creative ====
@@ -99,5 +99,19 @@ let longNames = runners.filter(name => name.first_name.length > 7)
 console.log(longNames)
 
 // Problem 2
+let firstNames = runners.map(a => a.first_name)
+let str = firstNames.reduce((a, b) => a + b, '')
+let strLength = str.length
+let nameLength = firstNames.length
+const averageLength = strLength / nameLength
+console.log(averageLength)
 
 // Problem 3
+let bigDonations = runners.filter(person => person.donation > 250)
+let smallDonations = runners.filter(person => person.donation < 50)
+let highCompanies = bigDonations.map(a => a.company_name)
+let lowCompanies = smallDonations.map(a => a.company_name)
+console.log(highCompanies)
+console.log(lowCompanies)
+console.log(bigDonations.length)
+console.log(smallDonations.length)
