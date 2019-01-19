@@ -1,11 +1,38 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function toggleClosure () {
+  let state = true;
+  let count = 0;
+
+  function toggleState () {
+    state = !state;
+    return `state ${++count} is ${state}`;
+  }
+
+  return toggleState;
+}
+
+let toggle = toggleClosure();
+toggle();
 
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+
+ //  let increment = () => ++count;   also works
+
+  let increment = function() {
+    return ++count;
+  };
+
+  return increment;
+
 };
+
+let countUp = counter();
+countUp();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
