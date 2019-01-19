@@ -7,7 +7,7 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
     const addOne = function() {
-        return ++count;
+      return ++count;
     }
     return addOne;
 };
