@@ -2,7 +2,11 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+//  const pie=items.includes('Pencil');
+
+//  console.log(pie);
+
+/*
 
   //Given this problem: 
   
@@ -23,25 +27,77 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  
   // getLength passes the length of the array into the callback.
+      return cb(arr.length);
+  
+};
+
+const myCb = function (item) {
+  console.log(item);
 }
+
+getLength(items, myCb);
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
+};
+
+const myArrayLength = function (item) {
+    console.log(item);
 }
+
+
+last(items, myArrayLength);
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb (x+y);
+};
+
+const mySum = function(item) {
+  console.log(item);
 }
+
+sumNums(2, 4, mySum);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+   return cb (x*y);
 }
 
-function contains(item, list, cb) {
+const myMult = function(item) {
+  console.log(item);
+}
+
+multiplyNums(5, 8, myMult);
+
+
+
+
+
+
+function Contain(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+        return cb (list.includes(item));
+     }
+
+
+     const myChecker = function(thing) { 
+    return (thing);
+    }    
+
+ let results= Contain('Pencil', items, myChecker);
+
+ console.log(results);
+
+
+
 
 /* STRETCH PROBLEM */
 
