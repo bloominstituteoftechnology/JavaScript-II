@@ -60,7 +60,7 @@ runners.forEach(function (object) {
   let name = object.first_name + " " + object.last_name;
   fullName.push(name)
 })
-console.log(fullName);	console.log(fullName);
+console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -92,7 +92,15 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// Find the largest donation
+let donor= [];
+runners.forEach(function (object) {
+ donor.push(object.donation)})
+let maxDonor = donor.reduce(function(acc, object) {
+    return Math.max(acc, object)
+  });
+console.log(maxDonor)
 // Problem 2
+
 
 // Problem 3
