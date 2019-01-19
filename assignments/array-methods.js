@@ -85,7 +85,29 @@ let ticketPriceTotal = runners.reduce(function(ladies, runner) {
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// If a runner doesnt have an S in their first name, they are cut 
+let sListed = runners.filter(function(runner ) {
+    let arr = runner.first_name.split('').filter(function(letter){
+        return letter.toLowerCase() === "S";
+    });
+    return arr.length > 0;
+});
 // Problem 2
+// One of the Donors backed out. Adjust the donation amounts to cover up the changes 
+
+let new_donations = runners.map(funtion(runner) {
+    return Math.floor(runner.donation / 2)
+});
+console.log(new_donations);
 
 // Problem 3
+
+// Everyone from photospace has been caught stealing domation money. 
+// Disqualify all who work for Photospace and make a list of the remianing runners
+
+let photo = [];
+photo = runners.filter(function(runner) {
+    return runner.company_name === "photospace";
+});
+
+console.log(photo);
