@@ -19,7 +19,7 @@ const counter = () => {
   }
   return thisisahorriblenameforafunction;
 };
-let countChocula = counter();
+const countChocula = counter();
 console.log(countChocula());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
@@ -32,4 +32,19 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+  let oprah = {};
+  oprah.value = 0;
+  oprah.increment = function() {return ++oprah.value;}
+  oprah.decrement = function() {return --oprah.value;}
+  return oprah;
+}
+
+const test = counterFactory();
+console.log(test.increment());
+console.log(test.increment());
+console.log(test.increment());
+console.log(test.decrement());
+console.log(test.decrement());
+console.log(test.decrement());
+console.log(test.value);
+console.log(test.value);
