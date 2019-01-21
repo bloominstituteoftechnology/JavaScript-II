@@ -49,43 +49,48 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
     {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
     {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
-const dateArray = ["1/12/2009", "1/14/2015", "1/27/1990", "1/9/2016", "10/22/2003", "10/27/1995", "10/7/2011",
-    "10/8/2017", "11/1/2008", "11/12/1983", "11/6/2004", "12/10/2009", "12/25/1999", "12/3/2001", "12/3/2008",
-    "2/27/1989", "2/28/2002", "2/28/2004", "2/3/2010", "2/5/2018", "3/16/1987", "3/20/1983", "3/22/1993",
-    "4/28/1987", "5/11/2017", "5/16/1988", "5/3/1987", "5/30/1982", "6/11/1984", "6/13/1991", "6/14/2008",
-    "6/21/1997", "6/25/1998", "6/27/1984", "6/5/1984", "6/7/2017", "6/8/2013", "7/26/1996", "7/26/1999",
-    "7/29/2014", "7/4/2011", "7/5/2009", "8/17/2007", "8/20/1997", "8/23/1983", "8/26/2005", "8/5/1987",
-    "8/9/2008", "9/29/2006", "9/7/2003"];
+//    Use    arrDates    below to generate a random array of dates in string or obj format to experiment with sorting
 
-////////////////////////////////////////////
-//  extra experimenting fun  /////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                  extra experimenting fun                  ////////////////////////////
 
+
+///////////////////////   A few ways to Clone array of objects using JSON.parse & JSON.stringify   /////////////////
 // Deep clone array functions for some extra experimenting
 function cloneArray(arr) {
     return JSON.parse(JSON.stringify(arr));
-}
+};
 
 const cloneArray2 = function(arr) {         // function expression, not hoisted
     return JSON.parse(JSON.stringify(arr));
-}
+};
 
 const cloneArray3 = arr => JSON.parse(JSON.stringify(arr));  // function expression, not hoisted
 
-// make some cloned arrays
+// verification of cloning functions
 let runnerClone1 = cloneArray(runners);
 let runnerClone2 = cloneArray2(runners);
 let runnerClone3 = cloneArray3(runners);
 
-//
-let arrTest = ['1', 'a', 1, 2, 3, 2, 4, true, true, false, 'app', -1, '-1', 5, 'r'];
 
-// some helper functions //////////
+/////////////////////////         some helper functions              ////////////////////////
+
 // test for duplicates
 function itemExists(arr, item) {
     return arr.includes(item);
 }
 
-// sort array of objects by key
+let itemExists2 = (arr, item) => arr.includes(item);
+
+// test array for itemExists & verification
+let includesTestArr = ['1', 'a', 1, 2, 3, 2, 4, true, true, false, 'app', -1, '-1', 5, 'r'];
+itemExists(includesTestArr, 2);    // debugging test: expected true
+itemExists(includesTestArr, '2');  // debugging test: expected false
+itemExists2(includesTestArr, 5);    // debugging test: expected true
+itemExists2(includesTestArr, '2');  // debugging test: expected false
+
+
+// sort array of objects by key, sorts in ascending order
 function sortByKey(arr, keyVal) {
     return arr.sort( function(a, b) {
         arr.forEach( (element) => {             // verify first Letter is uppercase
@@ -100,44 +105,98 @@ function sortByKey(arr, keyVal) {
     });
 }
 
+// verification of sortByKey for strings & numbers
+runnerClone1 = cloneArray(runners);      // reset cloned runners array
 sortByKey(runnerClone1, 'first_name');    // debugging test
+sortByKey(runnerClone1, 'donation');      // debugging test
 
 
-// generate a random date: start & end have format of  new Date(####, 0, 1)
+
+// generate a random Date object: start & end have format of  new Date(####, 0, 1)
 //                #### is year, 0 is zero-based month, 1 is day of month
-function randomDate(start, end) {
+function randomDateObj(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+// generate a random date string with month/day/year  e.g. 1/14/2004, 12/1/1978
+
+function randomDateString(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
       .toLocaleDateString("en-US");
 }
 
-// append key with random date to array of objects
-function addDates(arrObj, key, start_year, end_year) {
+
+// append key with random date to array of objects, callback used for type of date (Date object or string)
+function addDates(arrObj, key, start_year, end_year, cb_dateFormat) {
     arrObj.forEach( (el) => {
-        el[key] = randomDate(new Date(start_year, 0, 1), new Date(end_year, 0, 1));
+        el[key] = cb_dateFormat(new Date(start_year, 0, 1), new Date(end_year, 0, 1));
     });
     return arrObj;
 }
 
-runnerClone1 = cloneArray(runners);                 // reset cloned array of obj
-addDates(runnerClone1, 'birthday', 2000, 2020);     // debugging test complete
-addDates(runnerClone1, 'joined', 1982, 2019);       // debugging test complete
+// verification of addDates for date Objects & strings
+runnerClone2 = cloneArray2(runners);                 // reset cloned array of obj
+addDates(runnerClone2, 'birthday', 1967, 1998, randomDateObj);     // debugging test complete
+addDates(runnerClone2, 'joined', 2004, 2019, randomDateString);       // debugging test complete
+
+/////////////////                                 arrDates                                   ////////////////////////
+////////////////    generates a random array of dates of either string or obj format    ////////////////////////
+//
+// generate a random array of dates of given length, start year, & end year, and callback for type of date
+function arrDates(length, start_year, end_year, cb_dateFormat) {
+    let result = [];
+    for(let i = 0; i < length; i++){
+        result.push( cb_dateFormat(new Date(start_year, 0, 1), new Date(end_year, 0, 1)) );
+    }
+    return result;
+}
+
+// verification of arrDates
+let testArrDateStr = arrDates(50, 1980, 2000, randomDateString);
+let testArrDateObj = arrDates(50, 1980, 2000, randomDateObj);
 
 
-// find total number of unique properties given key
-function getUniqueProperties(arr, key, cb) {
+// generate sorted array of unique elements from array of objects given key
+function arrayUniqueProperties(arr, key, cb) {
    let result = [];
 
     arr.forEach( el =>  {
        if( !cb( result, el[key] )  ) {
            result.push(el[key])
        }
-
     });
 
     return result.sort();
 }
 
-runnerClone1 = cloneArray(runners);
-getUniqueProperties(runnerClone1, 'company_name' , itemExists);  // debugging test
-addDates(runnerClone1, 'joined', 1982, 2019);
+// verification of arrayUniqueProperties
+runnerClone2 = cloneArray2(runners);         // reset cloned array of obj
+arrayUniqueProperties(runnerClone2, 'company_name' , itemExists);  // debugging test
+
+
+////////////////   SORTING dates is bit trickier, array destructuring approach used   ////////////
+//     date obj require more formal sort using .sort((a, b) => a - b)  , not just .sort() which is UTF-16 based
+//        to sort date obj descending just use    .sort((a, b) => b - a);
+
+
+// array destructuring to create sortable date string
+function toDate(dateStr) {
+    const [month, day, year] = dateStr.split("/");
+    return new Date(year, month - 1, day)
+}
+// function to convert date string to date obj, sort, and return sorted date string
+function sortDateStrings(arr, cb) {
+    let dateStr = [];
+    let result = arr.map(el => cb(el))
+              .sort(function(a,b){return a.getTime() - b.getTime()});
+
+    result.forEach(el => dateStr.push( el.toLocaleDateString("en-US")) );
+    return dateStr;
+}
+
+// verification of sortDateStrings
+testArrDateStr = arrDates(50, 1980, 2000, randomDateString);    // reset random array of date strings
+sortDateStrings(testArrDateStr, toDate);
+
+
 
