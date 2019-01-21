@@ -49,7 +49,13 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
     {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
     {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
-
+const dateArray = ["1/12/2009", "1/14/2015", "1/27/1990", "1/9/2016", "10/22/2003", "10/27/1995", "10/7/2011",
+    "10/8/2017", "11/1/2008", "11/12/1983", "11/6/2004", "12/10/2009", "12/25/1999", "12/3/2001", "12/3/2008",
+    "2/27/1989", "2/28/2002", "2/28/2004", "2/3/2010", "2/5/2018", "3/16/1987", "3/20/1983", "3/22/1993",
+    "4/28/1987", "5/11/2017", "5/16/1988", "5/3/1987", "5/30/1982", "6/11/1984", "6/13/1991", "6/14/2008",
+    "6/21/1997", "6/25/1998", "6/27/1984", "6/5/1984", "6/7/2017", "6/8/2013", "7/26/1996", "7/26/1999",
+    "7/29/2014", "7/4/2011", "7/5/2009", "8/17/2007", "8/20/1997", "8/23/1983", "8/26/2005", "8/5/1987",
+    "8/9/2008", "9/29/2006", "9/7/2003"];
 
 ////////////////////////////////////////////
 //  extra experimenting fun  /////////
@@ -94,7 +100,8 @@ function sortByKey(arr, keyVal) {
     });
 }
 
-sortByKey(runnerClone1, 'first_name');    // debugging test complete
+sortByKey(runnerClone1, 'first_name');    // debugging test
+
 
 // generate a random date: start & end have format of  new Date(####, 0, 1)
 //                #### is year, 0 is zero-based month, 1 is day of month
@@ -113,5 +120,24 @@ function addDates(arrObj, key, start_year, end_year) {
 
 runnerClone1 = cloneArray(runners);                 // reset cloned array of obj
 addDates(runnerClone1, 'birthday', 2000, 2020);     // debugging test complete
-addDates(runnerClone1, 'joined', 1982, 2019);       // debugging test completex
+addDates(runnerClone1, 'joined', 1982, 2019);       // debugging test complete
+
+
+// find total number of unique properties given key
+function getUniqueProperties(arr, key, cb) {
+   let result = [];
+
+    arr.forEach( el =>  {
+       if( !cb( result, el[key] )  ) {
+           result.push(el[key])
+       }
+
+    });
+
+    return result.sort();
+}
+
+runnerClone1 = cloneArray(runners);
+getUniqueProperties(runnerClone1, 'company_name' , itemExists);  // debugging test
+addDates(runnerClone1, 'joined', 1982, 2019);
 
