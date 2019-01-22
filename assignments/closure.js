@@ -1,5 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const kingdom = (continentName) => {
+  console.log(`Welcome to ${continentName}`);
+  const region = () => {
+    let continentRegion = 'The North';
+    console.log(`${continentRegion} in ${continentName} will freeze you over`);
+    function castle() {
+      let continentCastle = 'Winterfell'
+      console.log(`Winter is coming to ${continentCastle} in ${continentRegion} of ${continentName}`);
+    }
+    castle();
+  }
+  region();
+}
+kingdom('Westeros');
 
 
 // ==== Challenge 2: Create a counter function ====
@@ -9,6 +23,8 @@ const counter = () => {
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
