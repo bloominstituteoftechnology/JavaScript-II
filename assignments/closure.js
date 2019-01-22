@@ -6,6 +6,7 @@
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
 };
+const newCounter = counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
