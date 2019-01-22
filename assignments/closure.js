@@ -47,3 +47,17 @@ let counter1 = (function () {
         }
       };
     }();
+
+
+
+
+
+    function aFunc(arr,cb) {
+      cb(arr.length)
+    }
+
+    const cb = n => n * 2
+    console.log(aFunc([1,2], cb))
+
+    // n represents the number that is arr.length
+
