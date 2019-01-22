@@ -37,6 +37,14 @@ function last(arr, cb) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+//   let a = 3
+// function addTwo(x) {
+//   let ret = x + 2
+//   return ret
+//  }
+//  let b = addTwo(a)
+//  console.log(b);
+
   return cb(arr[x + y]);
 }
 
@@ -57,9 +65,19 @@ function contains(item, list, cb) {
 }
 
 /* STRETCH PROBLEM */
-
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
+ // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+function removeDuplicates(array, cb) {
+  const newArr = Array.from(array);
+  console.log(newArr.filter(duplicates));
 }
+function duplicates(item, index, arr) {
+  return arr.indexOf(item) === index;
+ }
+ const dupArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 4, 1, 3, 3, 3, 3, 1];
+ removeDuplicates(dupArray, duplicates)
+
+ 
+console.log(dupArray);

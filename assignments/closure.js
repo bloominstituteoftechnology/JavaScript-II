@@ -10,25 +10,40 @@ function myClosure() {
 }
 myClosure();
 
+
+
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-    let count = 0;
-      return count++;
-  }
-  let counter1 = counter();
-  let counter2 = counter();
-  console.log(counter1);
-  console.log(counter2);
   // Return a function that when invoked increments and returns a counter variable.
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+    //  const newCounter = counter();
+     function createCounter() {
+         let counter = 0
+         const myFunction = function() {
+          counter = counter + 1
+          return counter
+        }
+       return myFunction
+     }
+       const increment = createCounter()
+     const c1 = increment()
+      const c2 = increment()
+      const c3 = increment()
+      console.log(c1, c2, c3);
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
-const counterFactory = () => {
+const counterFactory = ( function(a){
+  return function(){
+    a += 1;
+    return a; /* where a is an increament */ 
+    
+  }
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+})
+}
