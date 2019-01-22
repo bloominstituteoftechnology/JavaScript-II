@@ -2,30 +2,11 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
 
-  //Given this problem: 
-  
-  function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
-  }
-
-  // Potential Solution:
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
-
-  firstItem(items, function(first) {
-    console.log(first)
-  });
-
-*/
 function firstItem(arr, cb) {
     return cb(arr[0]);
 }
-
-
-firstItem(items, function(first) {
+firstItem(items, first => {
     console.log(first)
 });
 
@@ -37,8 +18,8 @@ function getLength(arr, cb) {
     return cb(arr.length);
 }
 
-getLength(items, function(len) {
-    console.log(len)
+getLength(items, l => {
+    console.log(l)
 });
 
 
@@ -47,8 +28,8 @@ getLength(items, function(len) {
 function last(arr, cb) {
     return cb(arr[arr.length - 1]);
 }
-//tests function 
-last(items, function(arrLast) {
+
+last(items, arrLast => {
     console.log(arrLast)
 });
 
@@ -57,8 +38,8 @@ last(items, function(arrLast) {
 function sumNums(x, y, cb) {
     return cb(x + y);
 }
-//Test for sumNums
-sumNums(4, 2, function(add) {
+
+sumNums(4, 2, add => {
     console.log(add)
 });
 
@@ -68,8 +49,8 @@ sumNums(4, 2, function(add) {
 function multiplyNums(x, y, cb) {
     return cb(x * y);
 }
-//test for multiplyNums
-multiplyNums(4, 2, function(mult) {
+
+multiplyNums(4, 2, mult => {
     console.log(mult);
 });
 
@@ -77,21 +58,17 @@ multiplyNums(4, 2, function(mult) {
 
 
 function contains(item, list, cb) {
-    if (list.includes(item)) {
-        return cb(true);
-    } else {
-        return cb(false);
-    }
+    return (list.includes(item) ? cb(true) : cb(false))
 }
-//test for contains
-contains('Gum', items, function(purseHas) {
-    console.log(purseHas)
+
+contains('Gum', items, myPurseHas => {
+    console.log(myPurseHas)
 });
 
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-    let newArr = array.filter(function(element, index, self) {
+    let newArr = array.filter(function (element, index, self) {
         return index == self.indexOf(element);
     });
     return cb(newArr);
