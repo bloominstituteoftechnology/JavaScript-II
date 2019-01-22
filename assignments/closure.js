@@ -4,6 +4,7 @@ const phrase = "Lambda school is cool";
 function returnPhrase () {
   return phrase;
 }
+
 console.log(returnPhrase());
 
 // ==== Challenge 2: Create a counter function ====
