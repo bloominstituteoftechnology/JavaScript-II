@@ -56,20 +56,20 @@ const runners = [
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = runners.map((val) => {
+let fullName = runners.map(function (val) {
     return `${val.first_name} ${val.last_name}`;
 });
 // console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = runners.map((val) => `${val.first_name.toUpperCase()} ${val.last_name.toLowerCase()}`);
+let allCaps = runners.map(function (val) { return `${val.first_name.toUpperCase()} ${val.last_name.toLowerCase()}` });
 // console.log(allCaps); 
 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = runners.filter((val) => {
+let largeShirts = runners.filter(function (val) {
     return val.shirt_size === "L";
 });
 // console.log(largeShirts);
@@ -77,7 +77,7 @@ let largeShirts = runners.filter((val) => {
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.reduce((total, val) => {
+let ticketPriceTotal = runners.reduce(function (total, val) {
     return total + val.donation;
 }, 0);
 // console.log(ticketPriceTotal);
@@ -87,7 +87,7 @@ let ticketPriceTotal = runners.reduce((total, val) => {
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1: The director needs to send out a rainy day cancellation to all contestants.  He needs a list of every runner's email address
-let emailList = runners.map((val) => {
+let emailList = runners.map(function (val) {
     return val.email;
 });
 // console.log(emailList);
@@ -96,7 +96,7 @@ let emailList = runners.map((val) => {
 // Problem 2:  The director needs to know how many of each shirt size to buy before the race.
 let shirtPurchase = { extraSmall: 0, small: 0, medium: 0, large: 0, extraLarge: 0, twoExtraLarge: 0, threeExtraLarge: 0 };
 
-runners.forEach((val) => {
+runners.forEach(function (val) {
     switch (val.shirt_size) {
         case 'XS':
             shirtPurchase.extraSmall++;
@@ -124,7 +124,7 @@ runners.forEach((val) => {
 // console.log(shirtPurchase);
 
 // Problem 3: The race director needs a list of all MVP runners to send thank you cards to for donating more than $100.
-let thankYous = runners.filter((val) => {
+let thankYous = runners.filter(function (val) {
     return val.donation > 100;
 });
 
