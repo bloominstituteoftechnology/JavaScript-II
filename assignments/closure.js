@@ -8,14 +8,13 @@ function returnPhrase () {
 console.log(returnPhrase());
 
 // ==== Challenge 2: Create a counter function ====
-var i = 0;  
-const newCounter = () => i += 1;
+var i = 0; 
+const counter = () => i += 1;
 // Return a function that when invoked increments and returns a counter variable.
+const newCounter = counter;
 
-console.log(newCounter()); // expect 1
-console.log(newCounter()); // expect 2
-
-
+console.log(newCounter());
+console.log(newCounter());
 // newCounter(); // 1
 // newCounter(); // 2
 
