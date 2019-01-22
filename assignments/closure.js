@@ -19,11 +19,10 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
 
   let count = 0;
-  return function counter() {
+  return (add = () => {
     count += 1;
-    console.log(count);
     return count;
-  };
+  });
 };
 
 const newCounter = counter();
