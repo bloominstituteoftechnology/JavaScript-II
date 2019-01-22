@@ -114,8 +114,28 @@ console.log(ticketPriceTotal);
 // I want you to think of potential problems you could solve given the data set and the 5k fun run theme.
 // Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+console.log('ARRAY METHODS CHALLENGE 5 👇');
+
 // Problem 1
+
+let notSmallShirts = [];
+
+notSmallShirts = runners.filter(runner => {
+    if(runner.shirt_size !== "S") {
+        return runner;
+    }
+});
+
+console.log(notSmallShirts);
 
 // Problem 2
 
+let toDollars = runners.map(runner => (runner.donation.toString() + "$"));
+
+console.log(toDollars); 
+
 // Problem 3
+
+let toEuros = runners.map(runner => ((runner.donation * 0.88).toString() + "€"));
+
+console.log(toEuros); 
