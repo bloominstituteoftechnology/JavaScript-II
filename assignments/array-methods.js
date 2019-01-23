@@ -56,28 +56,146 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(item => {
+    var eachName = `${item.first_name}, ${item.last_name}`;
+    fullName.push(eachName);    
+    return fullName;
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+runners.map( eachRunner => {
+    allCaps.push(eachRunner['first_name'].toUpperCase());
+    return allCaps;
+
+})
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+let filteredRunners = runners.filter(largeRunners => {
+    return largeRunners.shirt_size === 'L';
+});
+largeShirts.push(filteredRunners);
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+let total = runners.reduce((totalMoney, currentRunnerDonation) => {
+    return totalMoney + currentRunnerDonation.donation;     
+}, 0);
+ticketPriceTotal.push(total);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 : Total donations from each size shirt, 
+// will have to use filter to filter out each shirt size. Will have to use reduce to get the total amount. 
 
-// Problem 2
+// Avg. donation from 'xs' runners
+let filteredXSRunners = runners.filter(xsRunners => {
+    return xsRunners.shirt_size === 'XS';
+})
+let XSRunnerTotalDonation = filteredXSRunners.reduce((allXSRunnerMoney, currentXSRunnerMoney) => {
+    return allXSRunnerMoney + currentXSRunnerMoney.donation;
+}, 0);
+// console.log(`${XSRunnerTotalDonation}`);
+let XSRunnerAvgDonation = XSRunnerTotalDonation / filteredXSRunners.length;
+console.log(`Average Donation from Runners with xs size: ${XSRunnerAvgDonation}`);
 
-// Problem 3
+// Avg. donation from 's' runners
+let filteredSRunners = runners.filter(sRunners => {
+    return sRunners.shirt_size === 'S';
+})
+let SRunnerTotalDonation = filteredSRunners.reduce((allSRunnerMoney, currentSRunnerMoney) => {
+    return allSRunnerMoney + currentSRunnerMoney.donation;
+}, 0);
+let SRunnerAvgDonation = SRunnerTotalDonation / filteredSRunners.length;
+console.log(`Average Donation from Runners with s size: ${SRunnerAvgDonation}`);
+
+// Avg. donation from 'M' runners
+let filteredMRunners = runners.filter(MRunners => {
+    return MRunners.shirt_size === 'M';
+})
+let MRunnerTotalDonation = filteredMRunners.reduce((allMRunnerMoney, currentMRunnerMoney) => {
+    return allMRunnerMoney + currentMRunnerMoney.donation;
+}, 0);
+let MRunnerAvgDonation = MRunnerTotalDonation / filteredMRunners.length;
+console.log(`Average Donation from Runners with M size: ${MRunnerAvgDonation}`);
+
+// Avg. donation from 'L' runners
+let filteredLRunners = runners.filter(LRunners => {
+    return LRunners.shirt_size === 'L';
+})
+let LRunnerTotalDonation = filteredLRunners.reduce((allLRunnerMoney, currentLRunnerMoney) => {
+    return allLRunnerMoney + currentLRunnerMoney.donation;
+}, 0);
+let LRunnerAvgDonation = LRunnerTotalDonation / filteredLRunners.length;
+console.log(`Average Donation from Runners with L size: ${LRunnerAvgDonation}`);
+
+// Avg. donation from 'XL' runners
+let filteredXLRunners = runners.filter(XLRunners => {
+    return XLRunners.shirt_size === 'XL';
+})
+let XLRunnerTotalDonation = filteredXLRunners.reduce((allXLRunnerMoney, currentXLRunnerMoney) => {
+    return allXLRunnerMoney + currentXLRunnerMoney.donation;
+}, 0);
+let XLRunnerAvgDonation = XLRunnerTotalDonation / filteredXLRunners.length;
+console.log(`Average Donation from Runners with XL size: ${XLRunnerAvgDonation}`);
+
+// Avg. donation from 'twoXL' runners
+let filteredtwoXLRunners = runners.filter(twoXLRunners => {
+    return twoXLRunners.shirt_size === '2XL';
+})
+let twoXLRunnerTotalDonation = filteredtwoXLRunners.reduce((alltwoXLRunnerMoney, currenttwoXLRunnerMoney) => {
+    return alltwoXLRunnerMoney + currenttwoXLRunnerMoney.donation;
+}, 0);
+let twoXLRunnerAvgDonation = twoXLRunnerTotalDonation / filteredtwoXLRunners.length;
+console.log(`Average Donation from Runners with 2XL size: ${twoXLRunnerAvgDonation}`);
+
+// Avg. donation from 'threeXL' runners
+let filteredthreeXLRunners = runners.filter(threeXLRunners => {
+    return threeXLRunners.shirt_size === '3XL';
+})
+let threeXLRunnerTotalDonation = filteredthreeXLRunners.reduce((allthreeXLRunnerMoney, currentthreeXLRunnerMoney) => {
+    return allthreeXLRunnerMoney + currentthreeXLRunnerMoney.donation;
+}, 0);
+let threeXLRunnerAvgDonation = threeXLRunnerTotalDonation / filteredthreeXLRunners.length;
+console.log(`Average Donation from Runners with 3XL size: ${threeXLRunnerAvgDonation}`);
+
+// Conclusion: Medium sized individuals are the stingiest, 3XL sized individuals are the most generous!
+
+
+// let shirtSizeDonationObj = {
+//     '3XL': `${threeXLRunnerAvgDonation}`, 
+//     '2XL': `${twoXLRunnerAvgDonation}`
+// }
+// console.log(shirtSizeDonationObj);
+
+// Problem 2 : Companies with donation of more than $200. 
+// need to use filter and map;
+let highestDonatingCompanies = runners.filter(highestDonatingCompany => {
+    return highestDonatingCompany.donation > 200;
+});
+let highestDonatingCompanyNames = highestDonatingCompanies.map(companyName => {
+    return companyName.company_name;
+});
+console.log(highestDonatingCompanyNames);
+
+
+// Problem 3 : find highest donation
+
+let eachDonor = runners.map(eachPerson => {    
+    return eachPerson['donation'];
+});
+console.log(eachDonor);
+let highestDonation = eachDonor.reduce((previousLargeNumber, currentLargeNumber) => {
+    return (currentLargeNumber > previousLargeNumber) ? currentLargeNumber : previousLargeNumber;
+}, 0);
+console.log(highestDonation);
+
