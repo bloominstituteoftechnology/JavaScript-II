@@ -16,3 +16,8 @@
 //   return num * 3;
 // });
 // console.log(triple);
+
+// IIFE
+(function(){
+    return 2*2;
+})();
