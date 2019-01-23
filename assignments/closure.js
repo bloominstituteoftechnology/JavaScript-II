@@ -27,7 +27,7 @@ const newCounter = counter();
 newCounter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
-// newCounter(); // 2
+// newCounter(); // 2 test
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 

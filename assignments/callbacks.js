@@ -61,14 +61,14 @@ multiplyNums(4, 2, multiply => {
 })
 
 
-const lists = ["Pencil", "Can", "Soda", "Gum "]
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  for (let i =0; i < item.length; i++) {
+  for (let i =0; i < list.length; i++) {
 
-  if (item[i] === list[i]){
+  if (list[i] === item){
      return cb(true);
   } else {
     return cb(false);
@@ -76,7 +76,7 @@ function contains(item, list, cb) {
 }
 }
 
-contains (items, lists, sim => {
+contains ("bats", items, sim => {
   console.log(sim);
 })
 
