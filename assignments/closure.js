@@ -1,34 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
-// Write a simple closure of your own creation.  Keep it simple!
-function helloWorldAlert() {
-  let str = 'Hello, World!';
+// // Write a simple closure of your own creation.  Keep it simple!
+// function helloWorldAlert() {
+//   let str = 'Hello, World!';
 
-  function hWAlert() {
-    alert(str);
-  }
-  hWAlert();
-}
-helloWorldAlert();
+//   function hWAlert() {
+//     alert(str);
+//   }
+//   hWAlert();
+// }
+// helloWorldAlert();
 
+// let counter = 0;
+// const newCounter = function () {
+//   console.log(counter += 1);
+// }
+// newCounter();
+// newCounter();
+// newCounter();
+// newCounter();
 
-let counter = 0;
-const newCounter = function () {
-  console.log(counter += 1);
-}
-newCounter();
-newCounter();
-newCounter();
-newCounter();
+// // Example usage: const newCounter = counter();
+// // newCounter(); // 1
+// // newCounter(); // 2
 
+// /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
-
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
-
-/* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
-
-// ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
+// // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 let counter1 = (function () {
       let counter2 = 0;
 
@@ -46,18 +43,20 @@ let counter1 = (function () {
           return counter2;
         }
       };
-    }();
+    }()
 
+  
 
+// //     // n represents the number that is arr.length
 
+// const numbers = [1, 2, 3]
 
+// console.log(numbers.filter(number => number % 2 === 0))//?
 
-    function aFunc(arr,cb) {
-      cb(arr.length)
-    }
+// 2 === 2//?
 
-    const cb = n => n * 2
-    console.log(aFunc([1,2], cb))
+// true = "cat"//?
 
-    // n represents the number that is arr.length
-
+// if (number % 2 === 0) {
+  
+// }
