@@ -1,7 +1,5 @@
 // Create a callback function and invoke the function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
-
 /* 
 
   //Given this problem: 
@@ -20,18 +18,23 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 */
+const items = [1, 2, 3, 4, 'hello'] //with 5 elements where count starts from 0 || 
+        function firstItem(arr, cb) {
+          return cb(arr[4]);  // consoles hello
+        }
+        firstItem(items, function(first) {
+          console.log(first)
+        });
 
+const numero = [1, 2, 3, 4, 'hello'] //with 5 elements where count starts from 0 || 
 function getLength(arr, cb) {
-  
   return cb(arr.length)
-
   // getLength passes the length of the array into the callback.
 }
+console.log ();
 
 function last(arr, cb) {
-    // items[0] ; how to get the first item
      return cb(arr[arr.length -1])
-
   // last passes the last item of the array into the callback.
 }
 
@@ -47,6 +50,7 @@ function sumNums(x, y, cb) {
 
   return cb(arr[x + y]);
 }
+console.log(sumNums(5, 7));
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
