@@ -41,12 +41,11 @@ last(items, function(last) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  if (cb=="add"){
-  return (x + y);
-}}
+  console.log(`sum, ${x,y}`);
+}
 
 sumNums(items, function() {
-  console.log()
+  console.log(sumNums)
 });
 
 function multiplyNums(x, y, cb) {
