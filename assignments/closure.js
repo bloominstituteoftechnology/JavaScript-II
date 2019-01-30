@@ -8,7 +8,7 @@ function myClosure() {
   }
   displayName();    
 }
-
+myClosure();
 // ==== Challenge 2: Create a counter function ====
   // Return a function that when invoked increments and returns a counter variable.
 // Example usage: const newCounter = counter();
