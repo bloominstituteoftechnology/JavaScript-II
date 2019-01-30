@@ -29,7 +29,7 @@ function getLength(arr, cb) {
 
 getLength(items, function(length) {
   console.log(length);
-})
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
@@ -38,7 +38,7 @@ function last(arr, cb) {
 
 last(items, function(last) {
   console.log(last);
-})
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -47,7 +47,7 @@ function sumNums(x, y, cb) {
 
 sumNums(1, 2, function(add) {
   console.log(add);
-})
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -56,7 +56,7 @@ function multiplyNums(x, y, cb) {
 
 multiplyNums(2,3, function(multpy) {
   console.log(multpy);
-})
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -68,7 +68,7 @@ function contains(item, list, cb) {
 
 contains('Gum', items, function(word) {
   console.log(word);
-})
+});
 
 /* STRETCH PROBLEM */
 
