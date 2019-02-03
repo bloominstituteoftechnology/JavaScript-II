@@ -34,4 +34,24 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+//   let count = 5;
+//   return function () {
+//     count = this.crement;
+//     return  this.crement;
+//   }
+// };
 
+// const crement = {
+// increment (vfAttr) {
+//   this.crement = vfAttr.crement + 2;
+//   return count;
+// },
+// decrement () {
+//   count = count - 3;
+//   return count;
+// },
+// };
+
+// const newCounterFactory = counter();
+// console.log(newCounterFactory.crement()); // 10 
+// console.log(newCounterFactory()); // 15
