@@ -475,6 +475,10 @@ runners.forEach((runner) => {
 
 let allCaps = [];
 
+runners.map((runner) => {
+   allCaps.push(runner.first_name.toUpperCase());
+  })
+
 console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
