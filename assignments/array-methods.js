@@ -499,9 +499,10 @@ runners.filter((runner) => {
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+// The donations need to be tallied up and reported for tax purposes.
+// Add up all the donations into a ticketPriceTotal array and log the result
 
-let ticketPriceTotal = [];
+
 let ticketPriceTotal = runners.reduce(function(value, currentEntry) {
    return value + currentEntry.donation;
   }, 0);
