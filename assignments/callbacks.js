@@ -63,6 +63,11 @@ function multiplyNums(x, y, cb) {
   return cb(x * y);
 }
 
+multiplyNums(2,3, function(multpy) {
+  console.log(multpy);
+})
+
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
@@ -73,9 +78,9 @@ function contains(item, list, cb) {
   }
 }
 
-function cb(result) {
+contains('Pencil', items, function(result) {
   console.log(result);
-}
+})
 
 /* STRETCH PROBLEM */
 
