@@ -99,7 +99,12 @@ ticketPriceTotal = ticketPriceTotal.reduce(function (accumulator, currentValue) 
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Combining the company name with the donation in a new array.
+
 
 // Problem 2
+// Re ordering the runners in alphabetical order by last name 
 
 // Problem 3
+// Find the representative for the company Bluejam 
+ 
