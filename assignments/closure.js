@@ -34,3 +34,24 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+
+const counterFactory = () => {
+
+let counter = 0;
+return {
+  increment: function() {
+    return (counter += 1);
+  },
+
+   decrement: function() {
+    return (counter -= 1);
+  }
+};
+}
+
+const callFactory = counterFactory();
+
+console.log(callFactory.increment());
+console.log(callFactory.increment());
+console.log(callFactory.increment());
+console.log(callFactory.decrement());
