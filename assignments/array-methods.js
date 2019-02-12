@@ -101,10 +101,13 @@ ticketPriceTotal = ticketPriceTotal.reduce(function (accumulator, currentValue) 
 // Problem 1
 // Combining the company name with the donation in a new array.
 
+runners.forEach(function(getTotal) {
+    let money = getTotal.company_name + " " + getTotal.donation
+    console.log(money)
+  });
 
 // Problem 2
 // Re ordering the runners in alphabetical order by last name 
 
 // Problem 3
 // Find the representative for the company Bluejam 
- 
