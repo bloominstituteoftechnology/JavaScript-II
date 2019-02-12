@@ -58,26 +58,65 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 console.log(fullName);
 
+runners.forEach((getNames)=>{
+    let names = getNames.first_name + " " + getNames.last_name;
+    fullName.push(names)
+  });
+
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
 console.log(allCaps); 
 
+caps.push(capitalize.first_name.toUpperCase())
+const caps = runners.map((capitalize));{
+  return capitalize.first_name.toUpperCase()
+}
+
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+//filter() creates a new array with elements that fall under a given criteria from an existing array
+
+let largeShirts = runners.filter(runners => runners.shirt_size === "L");
 console.log(largeShirts);
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+ 
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+runners.forEach(function (total) {
+    let tickettotal = total.donation
+    ticketPriceTotal.push(tickettotal);
+});
+ticketPriceTotal = ticketPriceTotal.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue
+})
+
+ console.log(ticketPriceTotal);	
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Combining the company name with the donation amount to better track contributions.
+
+runners.forEach(function(getTotal) {
+    let money = getTotal.company_name + " " + getTotal.donation
+    console.log(money)
+  });
 
 // Problem 2
+// Creating a list of all the emails to thank the participants with a gift card.
+
+const emails = runners.map(runner => runner.email);
+console.log(emails);
 
 // Problem 3
+// Match the representative with the company name in a new array.
+
+const represent = runners.map(
+    runner =>
+      `${runner.first_name} ${runner.last_name} is from ${runner.company_name}.`
+  );
+  console.log(represent);
