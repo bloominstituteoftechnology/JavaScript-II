@@ -1,9 +1,9 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const nickname = 'Trinkie';
+const nickname = 'Twinkie';
 function crazyName(){
   const firstName = 'Myasia';
-  alert('My name is '${firstName}, ' but my nickname is ' ${nickname});
+  alert('My name is ' ${firstName}, ' but my nickname is ' ${nickname});
 }
 console.log(crazyName);
 
