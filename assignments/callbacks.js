@@ -51,6 +51,15 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+function sumNums(x){
+return function(y){
+  return x + y;
+}
+}
+const solve = sumNums(x);
+console.log(solve(y));
+
+// -------  //
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
