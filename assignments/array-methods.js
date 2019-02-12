@@ -107,7 +107,9 @@ runners.forEach(function(getTotal) {
   });
 
 // Problem 2
-// Re ordering the runners in alphabetical order by last name 
+// Find 
+
+
 
 // Problem 3
 // Find the representative for the company Bluejam 
