@@ -15,11 +15,9 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 
 This task focuses on getting practice with callback functions by giving you an array of values and instructions on what to do with that array.
 
-* [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your callback functions.
+* [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your functions.
 
-* [ ] Write out each function using the `ES5`  `function` keyword syntax.
-
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Task 3: Array Methods
 
@@ -27,22 +25,20 @@ Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array w
 
 * [ ] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
-* [ ] Complete the problems provided to you
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 * [ ] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
 
 ## Task 4: Closures
 
-We have learned that closures allow us to access values in scope that have already been invoked.  
+We have learned that closures allow us to access values in scope that have already been invoked (lexical scope).  
 
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
 * [ ] Review the contents of the [closure.js](assignments/closure.js) file.  
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
-* [ ] Once you have completed this task please submit a pull request against the original fork.  
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Stretch Goals
 
-* [ ] Arrow Function Syntax - [Check out this awesome guide for ES6 arrow syntax](https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26). You will see more and more arrow functions as you progress deeper into JavaScript. Use the [stretch-function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax. 
-
+* [ ] Go back through the stretch problems that you skipped over and complete as many as you can.
 * [ ] Look up what an IIFE is in JavaScript and experiment with them
