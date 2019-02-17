@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function myMonstrocity(myClass, timeline) {
+  const className = myClass;
+  function text() {
+    const time_line = timeline;
+    console.log(`Hello, ${className} I have come from the ${time_line}`);
+  }
+  text();
+}
+myMonstrocity("FSW 14", 'future');
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
@@ -7,8 +17,17 @@
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+  let num = 0;
+  function increase() {
+    num++;
+    return num;
+  }
+  return increase;
+}
+let newCount = counter();
+console.log(newCount());
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
