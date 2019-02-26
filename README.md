@@ -24,9 +24,9 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 
 This task focuses on getting practice with higher order functions and callback functions by giving you an array of values and instructions on what to do with that array.
 
-* [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your functions.
+* [x] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your functions.
 
-* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
+* [x] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Task 3: Array Methods
 
