@@ -1,6 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const logFactory = function() {
+  let log = []
+  return function(message) {
+    log.push([new Date(), message]);
+    return log;
+  };
+};
+
+const warningLog = logFactory();
+warningLog("Warning: Bad things");
+console.log(warningLog("Warning: More bad things"));
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
