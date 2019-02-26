@@ -1,6 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function calculate(num1, num2, cb) {
+  return cb(num1, num2);
+}
+
+function divide(num1, num2){
+  console.log(num1 / num2);
+}
+
+calculate(9,3, divide);
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -8,7 +19,15 @@
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function () {
+    count += 1;
+    return count;
+  }
 };
+
+const newCounter = counter();
+console.log(newCounter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
