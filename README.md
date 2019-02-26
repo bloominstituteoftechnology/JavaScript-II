@@ -3,13 +3,22 @@
 
 With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
-## Task 1: Set Up The Project With Git
+## Set Up The Project With Git
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
-* [ ] To test your `console.log()` statements, open up the index.html file found in the assignments folder and use the developer tools to view the console.  
+**Follow these steps to set up and work on your project:**
 
+* [ ] Create a forked copy of this project.
+* [ ] Add your project manager as collaborator on Github.
+* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
+* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [ ] Push commits: git push origin `<firstName-lastName>`.
+
+**Follow these steps for completing your project.**
+
+* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+* [ ] Add your project manager as a reviewer on the pull-request
+* [ ] Your project manager will count the project as complete by merging the branch back into master.
 
 ## Task 2: Callbacks
 
