@@ -1,6 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+// The World
+function usa() {
+  console.log(`I am visiting the USA`);
+  const moto = "What up yo!";
+  debugger;
+
+  function state() {
+    console.log(`I am in the state now`);
+    console.log(`The state heard usa say ${moto}`);
+    debugger;
+  }
+
+  state();
+}
+
+usa();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
