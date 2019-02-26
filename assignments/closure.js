@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function sayHiLater(){
+  // greeting outside chain scope
+  var greeting = "Hi";
+
+  setTimeout(function(){
+
+    console.log(greeting);
+  },3000);
+
+}
+
+sayHiLater();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
