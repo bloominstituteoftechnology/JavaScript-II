@@ -66,7 +66,8 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-const allCaps = runners.map( currentValue => currentValue.first_name.allCaps());
+const allCap = runners.map( first_name => first_name.toUpperCase);
+  allCaps.push(allCap.first_name)
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -95,11 +96,11 @@ const largeRunners = runners.filter( function(currentValue){
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-const ticketPriceTotal = cityData.reduce( function(accumulator, currentValue) {
-    return accumulator + currentValue.donation;
+const ticketPrice = runners.reduce( function(accumulator, currentValue) {
+    ticketPriceTotal.push(accumulator + currentValue.donation);
   }, 0);
   
-  console.log(totalPrice);
+  console.log(ticketPrice);
 
 
 console.log(ticketPriceTotal);
