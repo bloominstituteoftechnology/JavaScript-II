@@ -27,22 +27,23 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return cb(arr[0])
+  return cb(arr.length);
 }
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return 
+  return arr.pop();
+  
 }
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb(x + y)
+  return cb(x + y);
 }
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  return cb(x * y)
+  return cb(x * y);
 }
 
 function contains(item, list, cb) {
@@ -54,10 +55,12 @@ function contains(item, list, cb) {
   } else {
     return check = false;
   }
-  return cb(check);
 }
 
-contains(`pencil`, item, () => console.log(`test`));
+contains(`Pencil`, items, () => console.log(`test`));
+function bool() {
+  return CB(bool);
+}
 
 /* STRETCH PROBLEM */
 
