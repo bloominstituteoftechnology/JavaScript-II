@@ -34,7 +34,7 @@ const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 // function last(arr, cb) {
 //   // last passes the last item of the array into the callback.
-//   return cb(arr.pop());
+//   return cb[arr.length - 1];
 // }
 // last(items, function(lastItem) {
 // console.log(lastItem)
