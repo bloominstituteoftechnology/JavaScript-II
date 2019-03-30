@@ -78,7 +78,11 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// The shirt company needs Small and Xl sizes in separate arrays. Create arrays for them using .filer?
+let smallShirts = runners.filter(runner => runner.shirt_size === "S");
+let xlShirts = runners.filter(runner => runner.shirt_size === "XL");
+console.log(smallShirts)
+console.log(xlShirts)
 // Problem 2
 
 // Problem 3

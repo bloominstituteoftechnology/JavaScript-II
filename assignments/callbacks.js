@@ -37,12 +37,12 @@ function last(arr, cb) {
 
 // sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, cb) {
-  return cb(x + y)
+  return x + y
 }
 
 // multiplyNums multiplies two numbers and passes the result to the callback.
 function multiplyNums(x, y, cb) {
-  return cb(x * y)
+  return x * y
 }
 
 // contains checks if an item is present inside of the given array/list.
