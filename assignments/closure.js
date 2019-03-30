@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function makeSubtracter (x) {
+  return function (y) {
+    return x - y;
+  }
+}
+const sub5 = makeSubtracter(5);
+const sub10 = makeSubtracter(10);
+
+console.log(sub5(10))
+console.log(sub10(20))
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
