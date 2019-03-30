@@ -68,7 +68,9 @@ function contains(item, list, cb) {
   for (i=0; i<list.length;i++){
     if (list.includes(item)   ){
  return true
-    } else {}
+    } else {
+      return false;
+    }
  }
 }
 
@@ -79,4 +81,13 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+ let unique ={};
+
+ array.forEach(function(e){
+   if(!unique[e]){
+     unique[e] = true;
+   }
+ });
+
+ return Object.keys(unique);
 }
