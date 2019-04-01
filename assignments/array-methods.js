@@ -56,28 +56,62 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+fullName = runners.map((runner) => {
+    return {"first_name":runner.first_name, "last_name":runner.last_name};
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+
+allCaps =runners.map((function(currentValue) {
+    return {"first_name": currentValue.first_name.toUpperCase() };
+}));
+
+console.log(allCaps);
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts = runners.filter((currVal)=> {
+    return currVal.shirt_size === "L";
+});
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce((total, currV) => {
+    return total += currV.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Everyone who donated more than $100 gets their name put into drawing for a prize. Create an array with all those who donated more than $100.
+let nameInDrawing= [];
+nameInDrawing = runners.filter((drawer) => {
+    return drawer.donation >= 100;
+});
+console.log(nameInDrawing);
 
 // Problem 2
+//Skinix is catering dinner for all their employees after the race. Find all participants who work at the company Skinix.
+let skinixEmployees = [];
+skinixEmployees = runners.filter((employees) => {
+   return employees.company_name === "Skinix";
+});
+console.log(skinixEmployees);
 
 // Problem 3
+//Everyone decided to add bear to the end of their first name, during the race, in honor of national bear day. Add bear to the end of everyone's first name.
+let bearName = [];
+bearName = runners.map(function(nickname){
+    return nickname.first_name + '-bear';
+});
+
+console.log(bearName);
