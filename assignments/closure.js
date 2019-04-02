@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function space() {
+  console.log('Space is very big.');
+    
+  function galaxy() {
+      console.log("Galaxies are still very big.");
 
+      function solarSystem() {
+        console.log('Solar systems are still amazingly big and somewhere on a tiny planet, is even tinier you.');
+      }//solarsystem
+      solarSystem();
+  }//galaxy
+  galaxy();
+}//space
+space();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
