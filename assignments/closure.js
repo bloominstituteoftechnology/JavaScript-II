@@ -7,8 +7,19 @@
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+      let count = 0;
+      
+      return () => (++count);
+    };
+    const newCounter = counter();
+    console.log(newCounter()) // 1
+    console.log(newCounter()) // 2
+    console.log(newCounter()) // 3
+    console.log(newCounter()) // 4
+    console.log(newCounter()) // 5
+    
   // Return a function that when invoked increments and returns a counter variable.
-};
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
