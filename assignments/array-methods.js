@@ -116,6 +116,12 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+var sortedEmails = runners.map(function(thisArray){
+	return thisArray.email.toLowerCase()
+});
+
+console.log(sortedEmails.sort()); 
+
 // Problem 2
 
 // Problem 3
