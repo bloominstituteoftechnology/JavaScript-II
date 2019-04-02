@@ -78,9 +78,9 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runner.reduce((donationTotal, donationAmount) => {
-    return donationTotal + donationAmount.donation;
-});
+let ticketPriceTotal = runners.reduce((donationTotal, donationAmount) => {
+    return donationTotal + donationAmount.donation; 
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -94,6 +94,15 @@ let repEmail = runners.map((email) => {
 console.log(repEmail);
 
 // Problem 2
+let repSize = runners.map((shirts) => {
+    return shirts.shirt_size;
+});
 
+console.log(repSize);
 
 // Problem 3
+let repLastName = runners.map((name) => {
+    return name.last_name;
+});
+
+console.log(repLastName);
