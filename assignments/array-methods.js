@@ -77,6 +77,7 @@ let allCaps = runners.map(function(currentValue){
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
 let largeShirts = runners.filter(function(currentvalue){
     return currentvalue.shirt_size === "L";
   })
@@ -97,6 +98,36 @@ let ticketPriceTotal = runners.reduce(function(accumulator, currentValue){
 
 // Problem 1
 
+// The 5k company is running another race in a few months and wants to email all of the participants advertising the new race, create a new array for the marketing team with only participants first names and emails
+
+let emailList = [];
+
+runners.forEach(function(currentValue){
+  emailList.push(` ${currentValue.first_name}  ${currentValue.email}`);
+})
+
+console.log(emailList)
+
 // Problem 2
 
+// Reporter called and wanted to know each company involved with each racer, create an array for the company involved with every racer.
+
+let companies = runners.map(function(currentValue){
+    return currentValue.company_name;
+  }); 
+  
+  console.log(companies.sort()); 
+
 // Problem 3
+
+// Reporter is now curious on how the donations were distributed by each racer and wants a list of all donations, create an array from least to greatest that shows donations.
+
+let donorList = runners.map(function(currentValue){
+    return (` ${currentValue.donation}`)
+  });
+  
+  donorList.sort(function(a,b){
+    return a - b
+  })
+  
+  console.log(donorList); 
