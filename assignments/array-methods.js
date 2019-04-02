@@ -101,8 +101,8 @@ let repSize = runners.map((shirts) => {
 console.log(repSize);
 
 // Problem 3
-let repLastName = runners.map((name) => {
-    return name.last_name;
+let repCompany = runners.map((name) => {
+    return name.company_name;
 });
 
-console.log(repLastName);
+console.log(repCompany);

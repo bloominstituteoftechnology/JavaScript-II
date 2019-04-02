@@ -103,3 +103,10 @@ function removeDuplicates(array, cb) {
 removeDuplicates(items, function(noRepeats) {
   console.log(noRepeats);
 });
+
+
+const test = (function () {
+  var name = "King"; 
+  return name; 
+})(); 
+test;
