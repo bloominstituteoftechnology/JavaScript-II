@@ -1,15 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function mightyKingdom(){
+function mightyKingdom() {
     const greatWarriors = "Great Warriors";
     const GoldAmount = 1000000;
 
     function cityCapital(){
-      const castle = (`This castle is filled with ${GoldAmount} gold`);
+      const castle = (`This castle is filled with ${GoldAmount} gold and is protected by ${greatWarriors}`);
       console.log(castle);
-    }
+    }//city Capital
+    cityCapital()
 }
-
+mightyKingdom();
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
