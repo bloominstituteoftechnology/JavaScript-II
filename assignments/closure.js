@@ -1,5 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function nameyourteam() {
+  let team = "Packers";
+   function repyourteam(team) {
+    return repyourteam;
+  }
+}
+let nameyourteam = myfavteam();
+myfavteam();
+
+
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
@@ -7,8 +18,14 @@
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  function increment() {
+   return count += 1;
+ }
+  return increment;
 };
+
+// Return a function that when invoked increments and returns a counter variable.
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
