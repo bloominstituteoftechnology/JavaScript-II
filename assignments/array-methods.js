@@ -55,29 +55,35 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
+let fullName = runners.map(entry => `${entry.first_name} ${entry.last_name}`);
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map(entry => entry.first_name.toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+let largeShirts = runners.filter(entry => entry.shirt_size === 'L');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.map(entry => entry.donation).reduce((accum, current) => {return accum + current});
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: The director has decided all people who's names start with "T" will be blacklisted. He needs a list of everyone with an 'T' at the beginning of their first name.
+let sBlacklist = runners.filter(entry => entry.first_name[0] === 'T');
+console.log(sBlacklist);
 
-// Problem 2
+// Problem 2: The director heard a rumor that small people give less money. He would like you to check this by providing him with a total of the donations from people with a shirt size of "S" or smaller.
+let smallShirtDonationTotal = runners.filter(entry => entry.shirt_size.includes('S')).map(entry => entry.donation).reduce((accum, current) => {return accum + current});
+console.log(smallShirtDonationTotal);
 
-// Problem 3
+// Problem 3: The director is starting to lose his already tenuous grip on reality. He believes all people who use ".edu" email addresses are out to get him, and is also convinced an assassin with "a long last name" has infiltrated the fun run. (In this case, assume longer than 7 characters is "a long last name".) He has asked you to check if there are any such people, and to provide him with their information at once.
+let thisFreakingGuyOMG = runners.filter(entry => {return entry.email.includes(".edu") && entry.last_name.length > 7});
+console.log(thisFreakingGuyOMG);
