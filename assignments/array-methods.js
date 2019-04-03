@@ -133,6 +133,10 @@ var initials = [];
 runners.forEach(function(thisArray) {
 	initials.push(`${thisArray.first_name.charAt(0).toUpperCase()}.${thisArray.last_name.charAt(0).toUpperCase()}.`)
 });
+console.log(initials.sort());
+
+// Problem 3
+
 let bigDonations = runners.filter(function(thisArray) {
 	return thisArray.donation > 100;
 });

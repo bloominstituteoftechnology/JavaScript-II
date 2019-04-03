@@ -3,7 +3,7 @@
 function allMight {
 	var bestHero = "All Might";
 	console.log (`I am the BEST! I am ${bestHero}!!!`);
-
+	
 	function dekuIzuku {
 		var biggestFan = "Izuku";
 		console.log (`I am allMight's BIGGEST FAN, ${biggestFan}!`);
