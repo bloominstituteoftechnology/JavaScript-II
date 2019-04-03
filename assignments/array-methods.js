@@ -85,12 +85,9 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-runners.reduce(function (accumulator, value) {
-    console.log(`the accumulator ${accumulator}`);
-    console.log(` the value ${value.donation}`);
-    return accumulator + value.donation;
-}, 0);
-
+ ticketPriceTotal.push (runners.reduce(function (accumulator, value) {
+   return accumulator + value.donation;
+}, 0));
 console.log(ticketPriceTotal);
 
 
@@ -104,9 +101,15 @@ console.log(ticketPriceTotal);
 const dogs = [{ "id": 1, "name": "Fluffy", "breed": "Maltese", "weight": "12lbs"},
               { "id": 2, "name": "Stinky", "breed": "Beagle", "weight": "16lbs"},
               { "id": 3, "name": "Beck", "breed": "Collie", "weight": "40lbs"},
-              [{ "id": 4, "name": "Ginger", "breed": "Hound", "weight": "60lbs"},]
+              { "id": 4, "name": "Ginger", "breed": "Hound", "weight": "60lbs"},]
 
-              
+let nameBreed = []
+dogs.forEach(function (value) {
+    nameBreed.push(value.name + ` ` + value.breed);
+})
+console.log(nameBreed);
+
+
 
 
 
