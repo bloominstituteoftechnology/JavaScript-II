@@ -116,12 +116,27 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
-var sortedEmails = runners.map(function(thisArray){
-	return thisArray.email.toLowerCase()
-});
+var emails = [];
 
-console.log(sortedEmails.sort()); 
+runners.forEach(function(thisArray) {
+	emails.push(thisArray.email);
+});
+console.log(emails.sort());
+
 
 // Problem 2
 
-// Problem 3
+//Get the names and turn them into a new array for initials and sort them.
+
+var initials = [];
+
+runners.forEach(function(thisArray) {
+	initials.push(`${thisArray.first_name.charAt(0).toUpperCase()}.${thisArray.last_name.charAt(0).toUpperCase()}.`)
+});
+let bigDonations = runners.filter(function(thisArray) {
+	return thisArray.donation > 100;
+});
+
+
+console.log(bigDonations);
+
