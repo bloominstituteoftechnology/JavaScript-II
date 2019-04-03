@@ -3,13 +3,16 @@
 function allMight () {
 	var bestHero = "All Might";
 	console.log (`I am the BEST! I am ${bestHero}!!!`);
+	debugger;
 
 	function dekuIzuku () {
 		var biggestFan = "Izuku";
 		console.log (`I am allMight's BIGGEST FAN, ${biggestFan}!`);
+		debugger;
 
 		function bakugou () {
 			console.log (`I really hate ${biggestFan}, he's such a loser.`);
+			debugger;
 		}
 	}
 }
