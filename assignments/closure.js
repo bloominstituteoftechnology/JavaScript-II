@@ -1,15 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-function allMight {
+function allMight () {
 	var bestHero = "All Might";
 	console.log (`I am the BEST! I am ${bestHero}!!!`);
-	
-	function dekuIzuku {
+
+	function dekuIzuku () {
 		var biggestFan = "Izuku";
 		console.log (`I am allMight's BIGGEST FAN, ${biggestFan}!`);
 
-		function bakugou {
-			console.log (`I really hate ${biggestFan}, he's such a loser.`)
+		function bakugou () {
+			console.log (`I really hate ${biggestFan}, he's such a loser.`);
 		}
 	}
 }
