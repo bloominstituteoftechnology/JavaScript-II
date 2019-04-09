@@ -1,16 +1,18 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-const close = () => {
+const close = (phrase) => {
   const func = () => {
-
+    return console.log(`goodbye ${phrase}`);
   }
+  func();
   const and = () => {
-    
+    return console.log(`hello ${phrase}`);
   }
+  and();
 }
 
-
+close("john");
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
