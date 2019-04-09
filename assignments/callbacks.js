@@ -4,6 +4,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
   //Here We Go//
+
   //Given this problem: 
   
   function firstItem(arr, cb) {
@@ -26,6 +27,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  
   // getLength passes the length of the array into the callback.
 }
 
