@@ -65,7 +65,7 @@ console.log(fullName);
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 
 let allCaps = runners.map(currentValue => {
-    return currentValue.first_name.toUpperCase() + " " + currentValue.last_name.toUpperCase();
+    return currentValue.first_name.toUpperCase();
 });
 console.log(allCaps);
 
@@ -89,7 +89,29 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// ==== Challenge ====
+// The event director wants all of the email addresses for the runners to be able to add them to their mailing list for future events. 
+
+let eMail = runners.forEach(currentValue => {
+    console.log(currentValue.email);
+});
+
+console.log(eMail);
 
 // Problem 2
+// ==== Challenge ====
+// The event director felt bad about becoming drunk with power during the event and declaring himself the winner. He wants to send a gift basket to the companies who donated more than $200. Find all of the runners who donated $200 or more. 
+
+let biggestDonors = runners.filter(currentValue => {
+    return currentValue.donation >= 200;
+});
+console.log(biggestDonors);
 
 // Problem 3
+// ==== Challenge ====
+// Now that the event director has come down from his intoxication from power, he can't remember why he asked you to capitalize all of the names. Convert the first and last names to all lowercase.
+
+let allLower = runners.map(currentValue => {
+    return currentValue.first_name.toLowerCase() + " " + currentValue.last_name.toLowerCase();
+});
+console.log(allLower);
