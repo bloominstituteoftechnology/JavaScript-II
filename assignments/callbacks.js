@@ -3,7 +3,7 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
-
+  //Here We Go//
   //Given this problem: 
   
   function firstItem(arr, cb) {

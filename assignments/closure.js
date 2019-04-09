@@ -4,6 +4,7 @@
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
+//Here We Go//
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
