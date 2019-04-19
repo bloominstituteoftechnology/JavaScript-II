@@ -1,5 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const car = () => {
+  console.log(`car`);
+ 
+  const motor = () => {
+    console.log(`motor`);
+ 
+    const piston = () => {
+      console.log(`piston`);
+    }
+    piston();
+  }
+  motor();
+ }
+ car();
+
+ 
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
