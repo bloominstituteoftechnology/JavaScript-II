@@ -120,3 +120,11 @@ largeDonations = runners.filter((bigMoney) => {
     return bigMoney.donation >= 200;
 });
 console.log(largeDonations);
+
+//For funsies
+// Last names in Abc order
+let lastNames = []; 
+ lastNames = runners.map((element) => {
+    return element.last_name; });
+    lastNames = lastNames.sort();
+    console.log(lastNames);
