@@ -31,7 +31,7 @@ function getLength(arr, cb) {
 };
 
 getLength(items, function(length){
-	console.log(length);
+	console.log("length \n", length);
 });
 
 // last passes the last item of the array into the callback.
@@ -40,7 +40,7 @@ function last(arr, cb) {
  };
  
  last(items, function(last){
-   console.log(last);
+   console.log("last \n", last);
  }); 
 
  // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -53,7 +53,7 @@ function sum(x, y){
 	return(x + y);
 };
 	
-console.log(sumNums(5, 6, sum));
+console.log("sumNums \n", sumNums(5, 6, sum));
 
 
 // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -66,25 +66,25 @@ function multiply(x, y){
   return (x * y);
 };
 
-console.log(multiplyNums(10, 6, multiply));
+console.log("multiplyNums \n", multiplyNums(10, 6, multiply));
 
 
 // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-// function contains(item, list, cb) {
-//  if(cb === true){
-//    console.log("true");
-//  }else{
-//    console.log(false);
-//  }
-// }
+function contains(item, list, cb) {
+ if(cb === true){
+   console.log("true");
+ }else{
+   console.log(false);
+ }
+}
 
-// const checkList = list.filter((item, list) => {
-//   return list.item;
-// });
+const checkList = list.filter((item, list) => {
+  return list.item;
+});
 
 
-// console.log(contains("notebook", items, checkList));
+console.log(contains("notebook", items, checkList));
 
 
 

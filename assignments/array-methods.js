@@ -60,7 +60,7 @@ let fullName = [];
 const firstLast = runners.forEach((name) => {    
     return fullName.push(name.first_name + " "  + name.last_name);
 });
-console.log(fullName);
+console.log("fullName \n", fullName);
 
 
 
@@ -72,7 +72,7 @@ const firstNameCaps = runners.map((name) => {
 	return allCaps.push(((name.first_name).toUpperCase()));
 });
 
-console.log(allCaps); 
+console.log("allCaps \n", allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
@@ -81,7 +81,7 @@ let largeShirts = [];
 largeShirts = runners.filter((size) =>{
 	return size.shirt_size === "L";	
  });
-console.log(largeShirts);
+console.log("largeShirts \n", largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
@@ -91,7 +91,7 @@ ticketPriceTotal = runners.reduce((total, amt) => {
 	 return total += amt.donation;	
 }, 0);
 
-console.log(ticketPriceTotal);
+console.log("ticketPriceTotal \n", ticketPriceTotal);
 
 
 // ==== Challenge 5: Be Creative ====
@@ -99,17 +99,45 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+//Returning Donators whos donations are above 200.00
+
 let bigDonation = [];
 
 bigDonation = runners.filter((amt) => {
 	return amt.donation >= 200;
 
 }); 
-console.log(bigDonation);
+console.log("bigDonation \n", bigDonation);
 
 
 // Problem 2
 
+//Calculation the average donation amount
+
+let averageDonation = [];
+
+averageDonation = runners.reduce((total, amt ) => {
+	let numOfDonations = runners.length;
+	let average = (total += amt.donation / numOfDonations);
+	return average;
+}, 0);
+
+console.log("averageDonation \n", averageDonation);
+
 
 
 // Problem 3
+
+// Get Name and Email 
+
+let nameEmail = [];
+
+const getNameEmail = runners.forEach((item) => {    
+    return nameEmail.push(item.first_name + " "  + item.last_name + " :" + item.email);
+});
+console.log("nameEmail \n", nameEmail);
+
+
+
+
+
