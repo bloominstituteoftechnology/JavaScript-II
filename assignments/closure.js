@@ -2,6 +2,35 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+Donald();
+
+function Donald(){
+  const president="Donald Trump";
+  console.log(`Our current president is: ${president}!`);
+
+  Mike();
+  function Mike(){
+    const vp="Mike Pence";
+    console.log(`${president} is very concerned about China.`);
+    Sally();
+    function Sally(){
+      const wife="Sally Pence";
+      const wifeDinnerPreference="Chinese";
+      console.log(`We ate our Easter dinner at ${president}'s house, my husband is ${vp}!`)
+    }
+    // const dinnerPreference="Hamburger";
+    // function doesMikeknowWhatSallyWantsForDinner (wifeDinnerPreference, dinnerPreference) {
+    //   if (wifeDinnerPreference == dinnerPreference) {
+    //     console.log("Harmony in the home.")
+    //   }
+    //   else {console.log("What's for dinner remains unanswered.")};
+    // }
+    // doesMikeknowWhatSallyWantsForDinner(wifeDinnerPreference, dinnerPreference);
+
+    //  The code above is an example of how Mike doesn't have access to the thoughts in his wife's head, which is a metaphor for a closure.  running that code block results in an error, because the closure of the function causes wifeDinnerPreference to return as an undefined variable.
+  }
+}
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
