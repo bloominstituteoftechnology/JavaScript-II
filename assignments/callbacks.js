@@ -75,11 +75,6 @@ console.log("multiplyNums \n", multiplyNums(10, 6, multiply));
 
   function contains(item, list, cb) {
     return cb(item, list);
-    // if(item === true){
-    //   console.log("true");
-    // }else{
-    //   console.log("false");
-    // }
   };
    
    function findItem (item, list) {
