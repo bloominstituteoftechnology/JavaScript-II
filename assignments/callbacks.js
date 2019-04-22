@@ -74,19 +74,25 @@ console.log("multiplyNums \n", multiplyNums(10, 6, multiply));
 
 
   function contains(item, list, cb) {
-    if(item === true){
-      console.log("true");
-    }else{
-      console.log("false");
-    }
+    return cb(item, list);
+    // if(item === true){
+    //   console.log("true");
+    // }else{
+    //   console.log("false");
+    // }
   };
    
    function findItem (item, list) {
-     let find = items.includes(item);
-     return find;
-   }
+     let find = items.includes("Notebook");
+      if(item === true){
+        console.log("true");
+      }else{
+        console.log("false");
+      }
+      return find;
+   };
  
-   console.log("Contains \n", findItem("Notebook", items));
+   console.log("Contains \n", contains("Notebook", items, findItem));
 
 
 
