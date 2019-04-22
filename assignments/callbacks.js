@@ -46,7 +46,7 @@ function last(arr, cb) {
  // sumNums adds two numbers (x, y) and passes the result to the callback.
 
  function sumNums(x, y, cb) {
-  return (x + y);
+  return cb(x, y);
 };
 
 function sum(x, y){
@@ -59,7 +59,7 @@ console.log("sumNums \n", sumNums(5, 6, sum));
 // multiplyNums multiplies two numbers and passes the result to the callback.
 
 function multiplyNums(x, y, cb) {
-  return (x * y);
+  return cb(x, y);
 };
 
 function multiply(x, y){
@@ -85,9 +85,8 @@ console.log("multiplyNums \n", multiplyNums(10, 6, multiply));
      let find = items.includes(item);
      return find;
    }
-   
-   
-   console.log(findItem("Notebook", items));
+ 
+   console.log("Contains \n", findItem("Notebook", items));
 
 
 
