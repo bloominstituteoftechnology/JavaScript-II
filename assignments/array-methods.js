@@ -56,39 +56,105 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 
-let fullName = [];
-runners.forEach(NewName => {
-    let name = NewName.first_name + ' ' + NewName.last_name;
-    fullName.push(name);
-})
-console.log(fullName);
+    let fullName = [];
+    runners.forEach(NewName => {
+        let name = NewName.first_name + ' ' + NewName.last_name;
+        fullName.push(name);
+    })
+    console.log(fullName);
 
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 
-let allCaps = [runners.map((name) =>{return {'name':name.first_name.toUpperCase()};})];
-console.log(allCaps); 
-
-
+    let allCaps = [runners.map((name) =>{return {'name':name.first_name.toUpperCase()};})];
+    console.log(allCaps); 
 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 
-let largeShirts = runners.filter((size) => {return runners.shirt_size == 'L'});
-console.log(largeShirts);
+    let largeShirts = [];
+    let largesz = (runners) => {return runners.shirt_size === 'L'}
+    largeShirts = runners.filter(largesz);
+    console.log(largeShirts);
+
+
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+
+    let donations = runners.map(function(donation, index, runners){return runners[index].donation;})
+    let ticketPriceTotal = donations.reduce((acc,value)=>{return acc + value});
+    console.log(ticketPriceTotal);
+
+
+
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
 
+    // The head of the race would like to add everyone to an email List. create an array with all the participants' email addresses!
+    let emailList = [];
+    runners.forEach(NewName => {
+        let name = NewName.email;
+        emailList.push(name);
+    })
+    console.log(emailList);
+
 // Problem 2
 
+    // The head of the race would like to create a mosaic of all the corporate sponsors supporting racers, create an array with all the participants' companies listed!
+
+    let companiesMosaic = [];
+    runners.forEach(NewName => {
+        let name = NewName.company_name;
+        companiesMosaic.push(name);
+    })
+    console.log(companiesMosaic);
+
+
 // Problem 3
+
+    // Given that there already was an ordering issue, let's double check the numbers to make sure we have the right amount of shirts for all the runners.
+
+    let xsShirts = [];
+    let xssz = (runners) => {return runners.shirt_size === 'XS'}
+    xsShirts = runners.filter(xssz);
+    console.log(xsShirts.length);
+
+    let smallShirts = [];
+    let smallsz = (runners) => {return runners.shirt_size === 'S'}
+    smallShirts = runners.filter(smallsz);
+    console.log(smallShirts.length);
+
+    let mediumShirts = [];
+    let medsz = (runners) => {return runners.shirt_size === 'M'}
+    mediumShirts = runners.filter(medsz);
+    console.log(mediumShirts.length);
+    
+    let largeShirtss = [];
+    let largessz = (runners) => {return runners.shirt_size === 'L'}
+    largeShirtss = runners.filter(largessz);
+    console.log(largeShirtss.length);
+
+    let xlShirts = [];
+    let xlsz = (runners) => {return runners.shirt_size === 'XL'}
+    xlShirts = runners.filter(xlsz);
+    console.log(xlShirts.length);
+
+    let xxlShirts = [];
+    let xxlsz = (runners) => {return runners.shirt_size === '2XL'}
+    xxlShirts = runners.filter(xxlsz);
+    console.log(xxlShirts.length);
+
+    let xxxlShirts = [];
+    let xxxlsz = (runners) => {return runners.shirt_size === '3XL'}
+    xxxlShirts = runners.filter(xxxlsz);
+    console.log(xxxlShirts.length);
+
+    let ShirtsArray = [{'Size: XS, QTY': xsShirts.length},{'Size: S, QTY: ': smallShirts.length},{'Size: M, QTY: ': mediumShirts.length},{'Size: L, QTY: ': largeShirts.length},{'Size: XL, QTY: ': xlShirts.length},{'Size: 2XL, QTY: ': xxlShirts.length},{'Size: 3XL, QTY: ': xxxlShirts.length}]
+    console.log(ShirtsArray);
