@@ -71,26 +71,31 @@ console.log("multiplyNums \n", multiplyNums(10, 6, multiply));
 
 // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-function contains(item, list, cb) {
- if(cb === true){
-   console.log("true");
- }else{
-   console.log(false);
- }
-}
-
-const checkList = list.filter((item, list) => {
-  return list.item;
-});
 
 
-console.log(contains("notebook", items, checkList));
+  function contains(item, list, cb) {
+    if(item === true){
+      console.log("true");
+    }else{
+      console.log("false");
+    }
+  };
+   
+   function findItem (item, list) {
+     let find = items.includes(item);
+     return find;
+   }
+   
+   
+   console.log(findItem("Notebook", items));
+
 
 
 
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
