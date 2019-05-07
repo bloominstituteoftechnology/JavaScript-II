@@ -1,6 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const school = 'Lambda'
 
+function welcome (){
+  const cohort = 'Web20'
+  console.log(`Welcome to ${school}, you're currently studying ${cohort}`);
+}
+
+console.log(welcome);
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
