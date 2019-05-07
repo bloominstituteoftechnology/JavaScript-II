@@ -56,10 +56,21 @@ const multiply =function (x , y) {
 
 console.log(problemSolver(2,4,add))
 console.log(problemSolver(2,4,multiply))
+const item = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for(let i = 0; i < list.length; i++) {
+    if(list[i] === item) 
+    result = true;
+    else 
+     result = false;
+  }
+  cb(result);
 }
+console.log('pencil',items,contains)
 
 /* STRETCH PROBLEM */
 
