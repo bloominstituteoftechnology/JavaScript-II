@@ -80,13 +80,36 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+    
+    ticketPriceTotal = runners.reduce((total, amt) => {
+	 return total += amt.donation;	
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+    //We are ordering some shirts for the runners but need to know all of their sizes.
+let mediumShirts = [];
+    let mediumShirts = runners.filter((size) =>{
+        return size.shirt_size ==="M";
+    });
+    console.log(mediumShirts);
 // Problem 2
-
+    // We are a sponsor and need to find which runner we are sponsoring. We only know the company and want to find out
+    // all of their runners
+let CompanyVimbo = [];
+    let CompanyVimbo = runners.filter((company) => {
+        return company.company_name === "Vimbo";
+    });
 // Problem 3
+   // we want to know the average donation amount so that we can see how much we can ask for next year.
+let averageDonation = [];
+
+averageDonation = runners.reduce((total, amt ) => {
+	let AvgDonations = runners.length;
+	let average = (total += amt.donation / AvgDonations);
+	return average;
+}, 0);
+    console.log(average);
