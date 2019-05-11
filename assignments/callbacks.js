@@ -29,22 +29,99 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 }
 
+  //Solution,
+  function getLength(arr, cb) {
+    console.log(arr.length)
+  }
+
+  getLength(items, function(length) {
+    console.log(length) });
+
+
+
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
+
+  //Solution,
+function last(arr, cb) {
+  console.log(arr.slice(-1)[0])
+}
+
+last(items, function(test) {
+  console.log(test) });
+
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+//solution,
+
+function sumNums(x,y, cb) {
+  return cb(x, y)
+}
+
+function add(x, y) {
+    console.log(x + y);
+}
+
+sumNums(1,7,add)
+
+
+
+
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+
+//solutions,
+
+function multiplyNums(x,y, cb) {
+  return cb(x, y)
+}
+
+function multiply(x, y){
+  console.log(x * y);
+}
+
+sumNums(2,7,multiply)
+
+
+
+
+
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+function contains(item, list, cb) {
+  for (let i = 0; i < list.length; i++) {
+    if (item === list[i]) {
+      return cb(true)
+    }
+  }
+  {
+    return cb(false)
+  }
+}
+
+contains('Gum', list, function(test){console.log(test)});
+
+
+
+
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 
