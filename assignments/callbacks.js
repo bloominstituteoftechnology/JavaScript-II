@@ -24,32 +24,85 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
-function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-}
+// function getLength(arr, cb) {
+//   return cb(arr.length);
+// }
 
-function last(arr, cb) {
+// const callBack = function(len) {
+//   console.log(len)
+// }
+
+// getLength(items, callBack);
+
+
   // last passes the last item of the array into the callback.
-}
+// function last(arr, cb) {
+//   return cb(arr[arr.length-1])
+// }
 
-function sumNums(x, y, cb) {
+// const callBack = function(last) {
+//   console.log(last)
+// }
+
+// last(items, callBack);
+
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+// function sumNums(x, y, cb) {
+//   return cb(x+y);
+// }
 
-function multiplyNums(x, y, cb) {
+// const callBack = function(sum) {
+//   console.log(sum);
+// }
+
+// sumNums(2,4,callBack);
+
+
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+// function multiplyNums(x, y, cb) {
+//   return cb(x*y);
+// }
 
-function contains(item, list, cb) {
+// const callBack = function(mult) {
+//   console.log(mult);
+// }
+
+// multiplyNums(2,3,callBack);
+
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+// function contains(item, list, cb) {
+//   cb(list.includes(item))
+// }
+// const callBack = function(bool) {
+//   console.log(bool);
+// }
+
+// contains("Paper", items, callBack);
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+const newItems = ['Pencil', 'Notebook', 'yo-yo', 'Gum', "Notebook"];
+
+function removeDuplicates(array, cb) {
+  newList = []
+  for (let i=0; i < array.length; i++) {
+    if (newList.includes(array[i]) === false) {
+      newList.push(array[i]);
+    }
+  }
+  return cb(newList);
 }
+
+const callBack = function(lst) {
+  console.log(lst)
+}
+
+removeDuplicates(newItems, callBack);
