@@ -65,6 +65,17 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 
+var array = [item, list, cb];
+
+var items = function(element) {
+  reurn element % items === cb;
+};
+
+console.log(array.some(items));
+
+}
+
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
