@@ -72,6 +72,9 @@ fullName.forEach(function(element) {
 let allCaps = [];
 console.log(allCaps); 
 
+runners.map((runner, index) => {
+    allCaps[index] = runner.first_name.toUpperCase();
+
 
 
 // ==== Challenge 3: Use .filter() ====
