@@ -7,8 +7,6 @@ for(let i =0; i > items.length; i++) {
 
 }
 
-/* 
-
   //Given this problem: 
   
   function firstItem(arr, cb) {
@@ -22,16 +20,19 @@ for(let i =0; i > items.length; i++) {
     return cb(arr[0]);
   }
 
-  // Function invocation 
+Function invocation 
+
   firstItem(items, function(first) {
     console.log(first)
   });
 
-*/
-
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+}
+
+showFirst(items, (firstItem) => {
+  console.log(firstItem);
 }
 
 function last(arr, cb) {
