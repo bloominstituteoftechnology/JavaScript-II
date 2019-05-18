@@ -2,6 +2,11 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+for(let i =0; i > items.length; i++) {
+  console.log(items[i]);
+
+}
+
 /* 
 
   //Given this problem: 
