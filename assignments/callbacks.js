@@ -2,7 +2,10 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+for(let i =0; i > items.length; i++) {
+  console.log(items[i]);
+
+}
 
   //Given this problem: 
   
@@ -17,34 +20,61 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     return cb(arr[0]);
   }
 
-  // Function invocation 
+Function invocation 
+
   firstItem(items, function(first) {
     console.log(first)
   });
 
-*/
-
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+
+
+showLength(items, (LengthOfList) => {
+  console.log(LengthOfList);
 }
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
 
+showLength(items, (LastofItems) => {
+  console.log()
+}
+myArray[myArray.length-1];
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+}
+
+const add = function(x, y) {
+  return x + y;
 }
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
+const multiply = function(x,y) {
+  return x * y;
+}
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+var array = [item, list, cb];
+
+var items = function(element) {
+  reurn element % items === cb;
+};
+
+console.log(array.some(items));
+
+}
+
 
 /* STRETCH PROBLEM */
 
