@@ -69,8 +69,26 @@ contains("Gum", items, containsItem => console.log(containsItem));
 
 /* STRETCH PROBLEM */
 
+// Test array with duplicates
+const testArray = ['Micah', 'Micah', 'Heather', 'Yarriba', 'Micah', 'Laryna', 'Devon', 'Devon'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const noDuplicates = array.filter((arrayItem, arrayIndex) => {
+    return array.indexOf(arrayItem) === arrayIndex;
+  });
+  cb(noDuplicates)
 }
+
+removeDuplicates(testArray, (duplicateFree) => console.log(duplicateFree));
+
+
+// function onlyUnique(value, index, self) { 
+//   return self.indexOf(value) === index;
+// }
+
+// // usage example:
+// var a = ['a', 1, 'a', 2, '1'];
+// var unique = a.filter( onlyUnique ); // returns ['a', 1, 2, '1']
