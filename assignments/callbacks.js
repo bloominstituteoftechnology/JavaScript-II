@@ -24,27 +24,93 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
+console.log ('Problem1');
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+	return cb (arr.length);
 }
+
+getLength(items, function dumb(length){
+	console.log(length)
+});
+
+
+
+console.log ('Problem2');
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+	return cb(arr.slice(-1));
 }
+
+last(items, function stupid(thing){
+	console.log(thing);
+})
+
+
+
+
+console.log ('Problem3');
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+	return cb(x+y);
 }
+
+sumNums(3, 4, function(x){
+	console.log(x)
+})
+
+
+
+
+console.log ('Problem4');
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+	return cb(x*y);
 }
+
+multiplyNums(4, 5, function rando(j){
+	console.log(j);
+})
+
+
+
+
+console.log ('Problem5');
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+
+	
+	for (i =0; i < list.length; i++){
+		if (list[i] = item){
+			return cb ("yes");
+		}
+	}
+
+	return cb (list);
+
 }
+
+contains("Notebook", items, function isit(maybe){
+	console.log(maybe);
+})
+
+
+
+
+console.log ('Random Test Thing');
+
+function doStuff(x,y,z){
+	return ((x/y)*z);
+} 
+
+doStuff(45,213,1);
+
 
 /* STRETCH PROBLEM */
 

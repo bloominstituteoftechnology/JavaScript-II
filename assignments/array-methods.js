@@ -56,21 +56,60 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach(function(thing){
+	fullName.push(thing.first_name, thing.last_name);
+	
+});
+
+
+console.log('Challenge 1');
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
-console.log(allCaps); 
+
+let runnerData = runners.map( function(anotherthing){
+ allCaps.push( anotherthing.first_name.toUpperCase() );
+ //anotherthing.first_name.toUpperCase();
+ });
+
+console.log('Challenge 2');
+console.log(allCaps);
+//console.log(runnerData); 
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
 let largeShirts = [];
+
+const noShirt4U = runners.filter(function(currentValue){
+   largeShirts.push( currentValue.shirt_size == "L");
+ });
+
+console.log('Challenge 3');
 console.log(largeShirts);
+//console.log (noShirt4U);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+
 let ticketPriceTotal = [];
+
+const totaldon = runners.reduce(
+	function (randomthing, currentValue) {
+  ticketPriceTotal.push (randomthing + currentValue.donation );
+	return randomthing + currentValue.donation;
+	}, 
+0);
+
+
+
+console.log('Challenge 4 Total');
+console.log(totaldon);
+console.log('Challenge 4 Addition');
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +117,37 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// My potential problem is I barely understand how the 'methods'
+// work in the first place.  SO... yeah.  The explanations have
+// been swift and not so great at explaining things, and the MDN
+// documentation is... incredibly simple, and will take a long
+// while to go through and make sense of... which I will do on
+// my own.
+
 // Problem 2
 
+// I Suppose if a company wanted to buy all the runners e-mail
+// addresses from our website/group and we had the proper terms
+// of service we could send it to them by pulling them all out
+
+console.log ('Problem 2');
+
+let emayl = [];
+
+let runnerData2 = runners.map( function(anotherthing){
+ emayl.push( anotherthing.email );
+
+ });
+
+console.log(emayl);
+
 // Problem 3
+
+// I guess if I wanted to see who was a cheapskate I'd do
+// something like this
+
+const cheap = runners.filter(function(currentValue){
+   return currentValue.donation < 100;
+ });
+console.log('Problem 3');
+console.log(cheap);
