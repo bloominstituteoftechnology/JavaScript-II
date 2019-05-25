@@ -1,9 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const greeting = () => {
+  const name = 'Derek';
+
+  const child = () => {
+    const childName = 'Cody';
+
+    return `${name} has a son named ${childName}!`;
+  };
+  return child();
+};
+
+console.log(greeting());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
