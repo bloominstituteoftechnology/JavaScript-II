@@ -55,22 +55,60 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
-let fullName = [];
+
+// let fullName = [];
+// for (var i = 0; i < runners.length; i++) {
+// 	fullName.push(`${runners[i].first_name} ${runners[i].last_name}`); 
+// }
+// console.log(fullName);
+
+var fullName = [];
+
+runners.forEach(function(thisArray) {
+	fullName.push( `${thisArray.first_name} ${thisArray.last_name}`);
+});
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+
+// let allCaps = [];
+
+// for(var i = 0; i < runners.length; i++) {
+// 	allCaps.push(runners[i].first_name.toUpperCase());
+// }
+// console.log(allCaps); 
+
+
+var allCaps = runners.map(function(thisArray){
+	return thisArray.first_name.toUpperCase()
+});
+
 console.log(allCaps); 
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+
+//the parameters can literally can be called anything, because you're passing the runners array through the filter function already
+
+let largeShirts = runners.filter(function(thisArray) {
+	return thisArray.shirt_size == "L";
+});
+
+
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+
+//the array's donation total will be stored in donationTotal for each accumulation, and the value at the end of the reduce function, 0, tells us the value that the donatationTotal starts at (e.g. if the value starts at 100 the accumulation would be the donation total +100)
+
+let ticketPriceTotal = runners.reduce(function(donationTotal, thisArray) {
+	return donationTotal + thisArray.donation;
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -78,6 +116,31 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+var emails = [];
+
+runners.forEach(function(thisArray) {
+	emails.push(thisArray.email);
+});
+console.log(emails.sort());
+
+
 // Problem 2
 
+//Get the names and turn them into a new array for initials and sort them.
+
+var initials = [];
+
+runners.forEach(function(thisArray) {
+	initials.push(`${thisArray.first_name.charAt(0).toUpperCase()}.${thisArray.last_name.charAt(0).toUpperCase()}.`)
+});
+console.log(initials.sort());
+
 // Problem 3
+
+let bigDonations = runners.filter(function(thisArray) {
+	return thisArray.donation > 100;
+});
+
+
+console.log(bigDonations);
+
