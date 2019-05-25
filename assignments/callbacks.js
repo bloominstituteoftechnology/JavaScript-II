@@ -2,19 +2,14 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+ 
 
   //Given this problem: 
   
   function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
-  }
+       return items[0];
 
-  // Potential Solution:
-
-  // Higher order function using "cb" as the call back
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
+    
   }
 
   // Function invocation 
@@ -22,29 +17,39 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     console.log(first)
   });
 
-*/
 
 
-function getLength(arr, cb) {
+
+function getLength(arr, cb) { items.getLength;
+  return items;
   // getLength passes the length of the array into the callback.
+
+
 }
 
-function last(arr, cb) {
+function last(arr, cb) { items.last;
+  return last;
   // last passes the last item of the array into the callback.
 }
 
 function sumNums(x, y, cb) {
+  let x = 200;
+  let y = 800;
+  return sumNums(x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+    let x = 10;
+    let y = 100;
+    return sumNums(x*y)                 // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+       notebook.contains();
+       return notbook;              // contains checks if an item is present inside of the given array/list.
+                       // Pass true to the callback if it is, otherwise pass false.
+} 
 
 /* STRETCH PROBLEM */
 
