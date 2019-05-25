@@ -81,7 +81,29 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The director wants to sell all the runners personal email accounts so he can make some side cash. Grab all the runners email addresses and push them into a new array then log the new array.
+let runnerEmails = runners.map(runner => runner.email);
+// console.log(runnerEmails);
 
 // Problem 2
+// The director has an urgent request! Somebody forgot to specify which race the runners are taking part in. He needs you to add a new property to each of the runners so that they know which race they are a part of. All runners with ID between 1-25 will take part in the 3k and all runners with an ID between 26-50 will take part in the 5k. The director wants the information changed and update, he does not want a new array.
+runners.forEach(runner => {
+    if (runner.id <= 25) {
+        runner.race = "3k";
+    } else if (runner.id > 25) {
+        runner.race = "5k";
+    }
+});
+// console.log(runners);
+
 
 // Problem 3
+// The director is only interested in donations over 50. He wants you to filter through the runners and find all donations that are over 50 and put them in a new array. After that he wants you to reduce the numbers in the new array down to an average donation.
+let bigDonors = runners.filter(runner => runner.donation > 50);
+let bigDonations = []; 
+bigDonors.forEach(runner => bigDonations.push(runner.donation));
+
+const reducedDonations = bigDonations.reduce((totalDonations, currentDonation) => (totalDonations + currentDonation), 0);
+const averageDonations = reducedDonations / bigDonations.length;
+
+console.log(averageDonations);
