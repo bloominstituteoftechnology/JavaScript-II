@@ -2,6 +2,18 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+function house(){
+  let mother = "mom";
+  console.log( mother + " says clean your room")
+
+  function room(){
+    let father = "dad";
+    console.log(father + " reminded me to do what " + mother + " said")
+  }
+  room()
+}
+house()
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
