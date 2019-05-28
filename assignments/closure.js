@@ -1,7 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function closure() {
+  let closureinfo = 'I am a closure.';
 
-
+  function closure2() {
+    console.log(`${closureinfo} as well`)
+  };
+}
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
