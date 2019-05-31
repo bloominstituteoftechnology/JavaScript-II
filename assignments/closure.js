@@ -31,4 +31,12 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+  return {
+    increment: () => (++count), //pre-increment
+    decrement: () => (--count),
+  };
 };
+
+//++x (pre-increment) means "increment the variable; the value of the expression is the final value"
+//x++ (post-increment) means "remember the original value, then increment the variable; the value of the expression is the original value"
