@@ -103,6 +103,22 @@ runners.forEach(function(currentValue){
 })
 
 
-// Problem 2 
+// Problem 2 Sort by Alabetical
 
-// Problem 3
+let alphabetical = [];
+
+for (i=0; i<runners.length; i++){
+    alphabetical.push(runners[i].first_name);
+}
+
+alphabetical.sort();
+console.log(alphabetical)
+
+
+// Problem find medium shirts
+
+let mediumShirts = runners.filter(function(currentValue){
+    return currentValue.shirt_size === 'M';
+})
+
+console.log(mediumShirts)

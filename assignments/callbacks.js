@@ -25,25 +25,38 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
+  // getLength passes the length of the array into the callback.
 function getLength(arr, cb) {
   return cb(arr.length);
 }
 
+  // last passes the last item of the array into the callback.
 function last(arr, cb) {
   return cb(arr[arr.length -1]);
 }
 
+
+ // multiplyNums multiplies two numbers and passes the result to the callback.
 function sumNums(x, y, cb) {
   
 }
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y);
 }
 
-function contains(item, list, cb) {
+const multiply= function(x ,y){
+  return x * y;
+}
+
+console.log(multiplyNums(2,10,multiply));
+
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+
+function contains(item, list, cb) {
+  
 }
 
 /* STRETCH PROBLEM */
