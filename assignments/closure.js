@@ -1,6 +1,8 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+const animalCrossing = 'Release date: March 20, 2020!!!'
+let preOrder = () => console.log(animalCrossing)
+preOrder();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
