@@ -41,12 +41,21 @@ console.log(nameCaller()('Hello'));
 
 
 // ==== Challenge 2: Create a counter function ====
+let num = 0;
 const counter = () => {
+  num += 1;
+  console.log(num);
   // Return a function that when invoked increments and returns a counter variable.
 };
+
+counter();
+counter();
+counter();
+
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter();
+newCounter; // 1
+newCounter; // 2
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
