@@ -70,19 +70,14 @@ let allCaps = runners.map(function(currentValue){
     return currentValue.first_name.toUpperCase();
 })
 
-
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 
-
-
 let largeShirts = runners.filter(function(currentValue){
     return currentValue.shirt_size === 'L';
 })
-
-
 
 console.log(largeShirts);
 
@@ -91,6 +86,7 @@ console.log(largeShirts);
 let ticketPriceTotal = runners.reduce(function(accumulator, currentValue){
     return accumulator + currentValue.donation;
 },0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -101,7 +97,6 @@ console.log(ticketPriceTotal);
 runners.forEach(function(currentValue){
     console.log(currentValue.email)
 })
-
 
 // Problem 2 Sort by Alabetical
 

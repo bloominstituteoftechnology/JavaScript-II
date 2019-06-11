@@ -37,10 +37,6 @@ function last(arr, cb) {
 
 
  // multiplyNums multiplies two numbers and passes the result to the callback.
-function sumNums(x, y, cb) {
-  
-}
-
 function multiplyNums(x, y, cb) {
   return cb(x, y);
 }
@@ -56,7 +52,11 @@ console.log(multiplyNums(2,10,multiply));
   // Pass true to the callback if it is, otherwise pass false.
 
 function contains(item, list, cb) {
-  
+  return cb(item, list);
+} if (items === true){
+  console.log(contains)
+} else {
+  console.log('false')
 }
 
 /* STRETCH PROBLEM */
@@ -66,3 +66,4 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+tests
