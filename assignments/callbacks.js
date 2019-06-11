@@ -24,7 +24,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 ///////////////////////////////////////////////////////////////////
-
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 }
@@ -74,19 +74,28 @@ multiplyNums(4, 7, function(answer){
 
 ///////////////////////////////////////////////////////////////////
 
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
 function contains(item, list, cb) {
-    const result = list.includes(item);
-}
-function result(result) {
-    console.log(result);
-}
-contains('gum', items, result());
+    let answer = false;
+    list.forEach(function(scanner){
+      if(scanner === item){
+        answer = true;
+      }
 
+    });
+  cb(answer);
+  return answer;
+}
+contains("Pencil", items, function (answer) {
+    console.log(answer);
+
+})
 ///////////////////////////////////////////////////////////////////
 /* STRETCH PROBLEM */
 
