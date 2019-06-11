@@ -1,6 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const myCounter = () =>{
+let count = 0;
+return function() {
+  return ++count;
+  }
+}
+const newCounter = myCounter;
+console.log(newCounter());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
