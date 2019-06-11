@@ -63,11 +63,12 @@ multiplyNums(10, 5, mult => {
 });
 
 function contains(item, list, cb) {
-  cb(item, list);
+  for (let index of items)
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+};
 
+cb();
 
 /* STRETCH PROBLEM */
 
