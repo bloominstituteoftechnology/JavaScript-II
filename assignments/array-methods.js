@@ -63,7 +63,8 @@ let rFullName = runners.forEach(function(runner){
 });
 
 console.log(fullName);
-// let fullName = runners.forEach(runner) => console.log(`${runner.first_name} ${runner.last_name}`);
+// let fullNameA = runners.forEach(runner) => console.log(`${runner.first_name} ${runner.last_name}`);
+console.log(fullNameA);
 
 
 
