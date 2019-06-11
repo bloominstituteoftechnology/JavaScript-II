@@ -128,7 +128,30 @@ function removeDuplicates(array, cb) {
   return result;
 }
 
+function removeDuplicatesAlt(array, cb) {
+  // removeDuplicates removes all duplicate values from the given array.
+  // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
 
-console.log(removeDuplicates(array, function (result) {
+  //let arr = array.slice();
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let compare = array[i]
+    for (let x = 1; x < array.length; x++) {
+      let target = array.slice(array[x])
+      if (!target.includes(compare)) {
+        if (!result.includes(compare))
+          result.push(compare)
+
+      }
+    }
+  }
+  return result;
+}
+
+
+console.log(removeDuplicatesAlt(array, function (result) {
   console.log(result);
 }))
+
+console.log(array);
