@@ -1,6 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const Country = 'USA'
+
+function PartofCountry(){
+  const State = "Tennesse"
+  console.log(`The name of the place ${State} ${Country}`)
+}
+console.log(Country);
+PartofCountry();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
