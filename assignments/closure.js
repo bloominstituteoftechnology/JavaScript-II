@@ -1,6 +1,23 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function calorieCounter (name){
+  let calorieMessage = `Hello ${name} your current calories for the day are `
+  currentCount = 0;
+  const addCalories = (calorieAmount) => {
+    currentCount += calorieAmount;
+    console.log(calorieMessage + currentCount);
+  }
+  return addCalories;
+  }
+
+let myCalories = calorieCounter('Armando');
+console.log(myCalories(250));
+console.log(myCalories(250));
+console.log(myCalories(250));
+
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
