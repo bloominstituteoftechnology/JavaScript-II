@@ -83,9 +83,52 @@ contains('yo-yo', items, function (boolean) {
 
 
 /* STRETCH PROBLEM */
+const array = [1, 2, 3, 4, 4, 2]
+
+// function removeDuplicates(array, cb) {
+//   // removeDuplicates removes all duplicate values from the given array.
+//   // Pass the duplicate free array to the callback function.
+//   // Do not mutate the original array.
+
+//   let arr = array.slice();
+//   let result = [];
+//   for (let i = 0; i < array.length; i++) {
+//     let compare = array[i]
+//     for (let x = 1; x < arr.length; x++) {
+
+//       if (arr[x] === compare) {
+//         //result.push(compare)
+//         arr.splice(arr[x], 0)
+//         //result.push(compare)
+//       }
+//     }
+//     result.push(arr)
+//   }
+//   return result;
+// }
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  let arr = array.slice();
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let compare = array[i]
+    for (let x = 1; x < arr.length; x++) {
+      let target = arr.slice(arr[x])
+      if (!target.includes(compare)) {
+        if (!result.includes(compare))
+          result.push(compare)
+
+      }
+    }
+  }
+  return result;
 }
+
+
+console.log(removeDuplicates(array, function (result) {
+  console.log(result);
+}))
