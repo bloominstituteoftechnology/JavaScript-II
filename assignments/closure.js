@@ -1,9 +1,23 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function Enterprise() {
+  const captain = "Captain Picard";
+  console.log(`Engage number 1 says: ${captain}`);
+
+  function shuttle() {
+    console.log(`must assimilate ${captain}`);
+
+    function transporter() {
+      console.log(`I am in the transporter`);
+    }
+    transporter();
+  }
+  shuttle();
+}
+Enterprise();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
