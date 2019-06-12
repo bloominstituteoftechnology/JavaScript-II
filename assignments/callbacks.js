@@ -35,6 +35,8 @@ getLength(items, function (length) {
   console.log(length)
 })
 
+console.log(getLength(items, (length) => length))
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1])
@@ -43,6 +45,9 @@ function last(arr, cb) {
 last(items, function (lastItem) {
   console.log(lastItem)
 })
+
+//declarative anon function
+console.log(last(items, (last) => last));
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -54,6 +59,8 @@ sumNums(1, 2, function (sum) {
   console.log(sum);
 })
 
+console.log(sumNums(1, 2, (sum) => sum))
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   let result = x * y;
@@ -63,6 +70,8 @@ function multiplyNums(x, y, cb) {
 multiplyNums(2, 3, function (result) {
   console.log(result)
 })
+
+console.log(multiplyNums(2, 3, (result) => result));
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -80,6 +89,7 @@ contains('yo-yo', items, function (boolean) {
   console.log(boolean)
 })
 
+console.log(contains('yo-yo', items, (boolean) => boolean))
 
 
 /* STRETCH PROBLEM */
@@ -90,6 +100,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  //this can be done using ES6 & indexOf
 
   let result = [];
   for (let i = 0; i < array.length; i++) {
