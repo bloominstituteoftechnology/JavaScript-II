@@ -64,13 +64,18 @@ console.log(multiplyNums(6, 6, mult));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
- arr.forEach(function(currentValue) {
-   if ()
- }) 
-  
+  // Use if to specify a block of code to be executed, if a specified condition is true
+  // Use else to specify a block of code to be executed, if the same condition is false
+  arr.forEach(function(currentValue) {
+    if (currentValue === item) {
+      return cb(true);
+    } else {
+      return cb(false);
+    }
+  });
 }
 console.log(currentValue);
- // Type converting equality (==) means automatically it will covert the variable to value irrespective of data type; either it is a string or a number. This means "2" will be equal to 2 ("2" == 2 it will return true).
+// Type converting equality (==) means automatically it will covert the variable to value irrespective of data type; either it is a string or a number. This means "2" will be equal to 2 ("2" == 2 it will return true).
 // var array1 = ['a', 'b', 'c'];
 
 // array1.forEach(function(element) {
@@ -80,7 +85,6 @@ console.log(currentValue);
 // expected output: "a"
 // expected output: "b"
 // expected output: "c"
-
 
 // const items = ['item1', 'item2', 'item3'];
 // const copy = [];
