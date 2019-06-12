@@ -58,10 +58,10 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
    
 runners.forEach(function (name) {
-    fullName.push(`${name.first_name}` + " "  + `${name.last_name}`);
+    fullName.push(`${name.first_name} ${name.last_name}`);
 })
 
-    // runners.forEach ((names) => { 
+    // runners.forEach ((name) => { 
 
     //     return { "first_name": names.first_name.first, "last-Name": names.last_name}
     // })
@@ -93,13 +93,53 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
+
+
+let price = runners.reduce(function(donation, total) {
+        return total.donation += donation;
+    }, 0)
+ ticketPriceTotal.push(price) 
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+
 // Problem 1
+
+let emailAddress = []
+
+runners.forEach( function(email){
+    emailAddress.push ("first name-last name-email address" + `${email.first_name}  ${email.last_name} ${email.email}`);
+})
+    
+console.log(emailAddress)
 
 // Problem 2
 
+let myJob = []
+
+runners.filter(function(company) {
+
+    // --if ( company.company_name === company);)
+    // myJob.push(company.company_name);
+        // shorter way to write above line)--
+    return myJob.push( `employee name:  ${company.first_name} ${company.last_name}  company name: ${company.company_name}`)
+
+})
+
+console.log(myJob.sort())
 // Problem 3
+// Bring back the first name for all the people who work for Skinte and Skinix
+
+let firstName = []
+
+runners.filter(function(nameCompany) {
+
+    if (nameCompany.company_name ===  "Skinte" || nameCompany.company_name === "Skinix" )
+
+    return firstName.push(`first_name ${nameCompany.first_name} company ${nameCompany.company_name}`)
+
+})
+
+console.log(firstName.sort())
