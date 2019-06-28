@@ -28,7 +28,7 @@ This task focuses on getting practice with higher order functions and callback f
 
 * [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
-## Task 3: Array Methods
+## Task 3: Array Methods.
 
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
