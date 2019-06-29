@@ -8,7 +8,9 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/assignments/callbacks.js"
+            // "program": "${workspaceFolder}/assignments/callbacks.js",
+            "program": "${workspaceFolder}/assignments/closure.js",
+            // "program": "${workspaceFolder}/assignments/array-methods.js"
         }
     ]
 }
