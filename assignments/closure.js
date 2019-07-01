@@ -1,6 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+let num1 = 30;
+let addingWithThirty = (num2) => {
+  return num1 + num2;
+};
+
+console.log(addingWithThirty(20));
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -8,6 +15,7 @@
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+ 
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
