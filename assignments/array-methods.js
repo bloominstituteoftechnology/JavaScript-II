@@ -94,9 +94,39 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //Create an email list from the runners so that we can sell that listing to a local shoe store
+let emailList =[]
 
+let pullEmails = (arr) => {
+    emailList += arr.email + ",";
+}
+runners.forEach(pullEmails);
+
+console.log(emailList);
 
 
 // Problem 2
+//We are out of all sizes except Larges so we will give everyone who ordered larges an extra large and hope they don't notice
+
+
+let largeShirtsReplacement = [];
+
+largeShirtsReplacement = runners.filter(runners => runners.shirt_size = "L")
+console.log(largeShirtsReplacement);
+
+
 
 // Problem 3
+//We want to find out how much people who work at Skinix donated
+
+let skinixEmployees = [];
+let skinixEmployeesDonations = [];
+
+skinixEmployees = runners.filter(runners => runners.company_name === "Skinix")
+console.log(skinixEmployees);
+
+
+
+skinixEmployeesDonations = skinixEmployees.reduce((total, employee) => {
+    return total + employee.donation;
+}, 0);
+console.log(skinixEmployeesDonations);
