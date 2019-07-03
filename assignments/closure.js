@@ -1,6 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function basicMath (a, b) {
+  let totalSum = "Your total is, ";
+
+  function addTogether () {
+    return totalSum + (a + b);
+  }
+
+  return addTogether();
+
+
+}
+
+basicMath(10, 5);
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
