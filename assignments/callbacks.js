@@ -25,7 +25,6 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo
 */
 
 
-
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 
@@ -71,7 +70,7 @@ return cb(x * y)
 
 }
 
-const multiply = multiplyNums(9,1, function(correct){
+const multiply = multiplyNums(9,1, correct => {
   return correct;
 })
 
@@ -96,10 +95,16 @@ const result = contains('yo-yo', items, function(list) {
 }) 
 console.log(result);
 
+//function contains(item,list,cb) {
+// return cb(arr.includes(items))
+//}
+
+
+
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+function removeDuplicates(array, cb) {}
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+
