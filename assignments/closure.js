@@ -4,7 +4,7 @@ const thingOne = 'thing';
 function returnOne () {
   return thingOne;
 }
-returnOne();
+console.log(returnOne());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
