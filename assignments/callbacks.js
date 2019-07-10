@@ -37,10 +37,10 @@ getLength(items, function(length){
 
 function getLast(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr[arr.length]);
+  return cb(arr[arr.length - 1]);
 }
-getLast(items, function(getLast){
-  console.log(getLast);
+getLast(items, function(item){
+console.log(item);
 });
 
 
@@ -69,7 +69,12 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
   return cb(list.includes(item));
 }
-console.log(contains);
+contains('yo-yo', items, function(bool){
+console.log(bool);
+});
+contains('rock', items, function(bool){
+  console.log(bool);
+});
 
 
 /* STRETCH PROBLEM */
