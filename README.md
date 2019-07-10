@@ -26,7 +26,7 @@ This task focuses on getting practice with higher order functions and callback f
 
 * [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your functions.
 
-* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS files first.
 
 ## Task 3: Array Methods
 

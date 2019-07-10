@@ -33,7 +33,7 @@ function getLength(arr, cb) {
  const length1 = getLength(items, length => {
   return length;
 });
-console.log(length1)
+console.log(length1);
 
 
 
@@ -76,10 +76,10 @@ function multiplyNums(num1, num2, cb) {
 
 
 
-function contains(item, list, cb) {
+function contains(items, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  if(list.includes(item)) {
+  if(list.includes(items)) {
     return true;
   }
   else return false;
@@ -87,7 +87,7 @@ function contains(item, list, cb) {
 contains('yo-yo', items, function(result) {
   return result;
 });
-
+console.log(items);
 
 
 /* STRETCH PROBLEM */
@@ -102,4 +102,5 @@ function removeDuplicates(array, cb) {
 removeDuplicates(items, function(array) {
   return[...new Set(array)];
 });
+console.log(...items);
 // help from whiteboard team meeting
