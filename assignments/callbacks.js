@@ -80,5 +80,5 @@ function removeDuplicates(array, cb) {
 }
 
 removeDuplicates(items, function(dupe) {
-  console.log(dupe);
+  console.log('remove dupe', dupe);
 });
