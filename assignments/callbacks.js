@@ -5,12 +5,13 @@ function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
   cb(arr[0]);
 };
+// 
 
-firstItem(items, firstItem => {
-  console.log(`This is the first item: ${firstItem}`);
+firstItem(items, firstItemCBDef => {
+  console.log(`This is the first item: ${firstItemCBDef}`);
 }) 
 
-
+// This is the first item: 'Pencil'
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
@@ -36,16 +37,48 @@ last(items, last => {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  const result = x + y;
+  cb(result);
+  
 }
+
+sumNums(2, 4, sumNums => {
+  // const result = x + y;
+  console.log(`adding two nums ${sumNums}`, )
+})
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  const result = x * y;
+  cb(result);
+
 }
+multiplyNums(5, 7, multiplyNums => {
+  console.log(`multiplying two numbers, result: ${multiplyNums}`);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if(list.length <= 0) return false;
+  for (let i = 0; i < list.length; i++) {
+    if (item === list[i]) {
+      return cb(true);
+    }
+
+  }
+  return cb(false);
 }
+
+contains(item = 'Pen', items, contains => {
+  if (contains) {
+    console.log(`List does contain ${item}`);
+    return;
+  }else {
+    console.log(`List does not contain ${item}`);
+
+  }
+})
 
 /* STRETCH PROBLEM */
 
