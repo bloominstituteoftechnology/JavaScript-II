@@ -74,10 +74,25 @@ function contains(item, list, cb) {
 // contains('yo-yo', items, function(result){
 //   console.log(result);
 // });
+
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  undupedArray = [];
+  undupedArray = array.filter(function(item, index, array){
+    if (index == array.lastIndexOf(item)) {
+      return item
+    }
+  });
+  return cb(undupedArray);
 }
+
+// CB TEST - returns [2,3,1]
+// let items2 = [1,1,1,1,2,2,3,1];
+// removeDuplicates(items2, function(result){
+//   console.log(result);
+// })

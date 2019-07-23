@@ -40,12 +40,15 @@ const counterFactory = () => {
   return {
     count: count,
     increment: function(){
-      return(console.log(count));
+      this.count++;
     },
     decrement: function(){
-      this.count += -1;
+      this.count--;
     }
   }  
 };
 let newCountObject = counterFactory();
-newCountObject.increment;
+console.log(newCountObject);
+newCountObject.increment();
+newCountObject.increment();
+console.log(newCountObject);

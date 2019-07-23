@@ -83,7 +83,21 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// If shirt is 2XL or larger, add $5 to donation to cover shirt costs. Return all of person's info.
+let extraDono = [];
+extraDono = runners.filter(runner => runner.shirt_size == "2XL" || runner.shirt_size == "3XL");
+extraDono = extraDono.map(runner => runner.donation + 5);
+console.log(extraDono);
 
 // Problem 2
+// Grab emails of all even numbered IDs
+let evenEmails = [];
+evenEmails = runners.filter(runner => runner.id % 2 == 0);
+evenEmails = evenEmails.map(runner => runner.email);
+console.log(evenEmails);
 
 // Problem 3
+// Find how many people did large donations (> $100);
+let largeDono = [];
+largeDono = runners.filter(runner => runner.donation >= 100);
+console.log(largeDono.length);
