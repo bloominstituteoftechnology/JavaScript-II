@@ -76,15 +76,27 @@ function multiply(num1,num2){
 }
 multiplyNums(5, 4, multiply)
 
-function contains(item, list, cb) {
+// function contains(thing, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  // return cb(thing, list);}
 
-/* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-}
+// function findItem(thingOne, folder){
+//   return folder.filter(function(la){
+//     if (la.toLowerCase().indexOf(thingOne.toLowerCase()) !== -1) { return 'True'}else{
+//       return 'false'
+//     } ;
+//   }) 
+// }
+// // contains('notebook', items, findItem);
+// console.log(findItem(items, 'notebook'));
+// console.log(findItem(items, 'pear'));
+
+// /* STRETCH PROBLEM */
+
+// // function removeDuplicates(array, cb) {
+// //   // removeDuplicates removes all duplicate values from the given array.
+// //   // Pass the duplicate free array to the callback function.
+// //   // Do not mutate the original array.
+// // }

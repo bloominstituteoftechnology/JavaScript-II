@@ -1,7 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-
+const number = 5;
+function multiplyByTwo(num1){
+  
+  return num1 * 2;
+}
+multiplyByTwo(number);
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
