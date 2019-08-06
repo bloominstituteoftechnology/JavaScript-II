@@ -11,7 +11,7 @@ let anotherFunction = function (param) {
   return param;
 }; */
 
-let anotherFunction = () => {
+let anotherFunction = ( param ) => {
   return param;
 }
 
@@ -22,10 +22,10 @@ let add = function (param1, param2) {
 };
 add(1,2); */
 
-let add = (param1, param2) => {
+let add = ( param1, param2 ) => {
   return param1 + param2;
 };
-add(1,2);
+console.log(add(1, 2));
 
 
 /* Problem #4
@@ -34,10 +34,10 @@ let subtract = function (param1, param2) {
 };
 subtract(1,2); */
 
-let subtract = (param1, param2) => {
+let subtract = ( param1, param2 ) => {
   return param1 - param2;
 };
-console.log(exampleArray = [1,2,3,4]);
+console.log(subtract(5, 4));
 
 
 /* Problem #5
