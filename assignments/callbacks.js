@@ -1,10 +1,10 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
+//Higher-order function map using the arrow function syntax:
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
- const items2 = items.map(function(item) {
-   return items * 3;
- });
+ const items2 = items.map(item => item * 3);
+   
  console.log(items);
 /*
   //Given this problem: 
