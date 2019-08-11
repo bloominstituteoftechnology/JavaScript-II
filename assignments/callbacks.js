@@ -88,9 +88,11 @@ function removeDuplicates(array, cb) {
     // compares values
     if (sorted[i + 1] === sorted[i]) {
       // remove duplicate from sorted array
-      results.pop(sorted[i]);
+      sorted.splice(i, 1);
+
     }
   }
+  console.log(sorted);
   // Pass the duplicate free array to the callback function.
   cb(sorted);
   
@@ -100,4 +102,4 @@ removeDuplicates(duplicates, (array) => {
 });
 
 // Check mutation
-console.log(duplicates)
+console.log(duplicates);
