@@ -93,8 +93,47 @@ console.log(ticketPriceTotal)
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 * List of companies participating in the race
+let companies = [];
+runners.forEach((item) => {
+  companies.push(item['company_name']);
+})
+console.log(companies);
+  
+// Problem 2 * Person with the highest donation
+let highestDonation = [];
+let currentValue;
+let previousValue = '';
 
-// Problem 2
+// Track previous donation to current donation.
+// and find the highest within all runners.
+runners.forEach((id) => {
+  currentValue = id['donation'];
+  if (previousValue < currentValue)
+  previousValue = currentValue;
+})
 
-// Problem 3
+// filter the highest donation and get the full object with the persons info.
+highestDonation.push(previousValue);
+let result = runners.filter(obj => {
+  return obj['donation'] === previousValue;
+})
+// Data of highest donator
+console.log(result)
+// Accessing the properties within the array object
+console.log("Thank You " + result[0]['first_name'] + ", for being the most generous donator in the 5k run fundraiser!");
+
+console.log("The highest donation is: " + highestDonation);
+
+// Problem 3 * Total amount of shirts for any size!
+function shirts(size) {
+  let shirts = [];
+  runners.filter((id) => {
+    if (id['shirt_size'] === size) {
+      shirts.push([id]);
+    }
+  })
+  return shirts;
+}
+
+console.log(shirts('S'));
