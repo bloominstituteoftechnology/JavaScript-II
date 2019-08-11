@@ -133,7 +133,12 @@ function shirts(size) {
       shirts.push([id]);
     }
   })
-  return shirts;
+  // cheeck if not exist, is not an array, or is empty
+  if (!Array.isArray(shirts) || !shirts.length) {
+    console.log("Wrong input of size");
+  } else {
+    console.log(shirts);
+  }
 }
 
-console.log(shirts('S'));
+shirts('S');
