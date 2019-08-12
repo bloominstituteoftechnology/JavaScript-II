@@ -1,5 +1,31 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function father() {
+  const family = "Shockley";
+  console.log(`I am Christopher ${family}`)
+
+  function firstBorn() {
+    console.log(`I am Kailyn ${family}`);
+
+    function secondBorn() {
+      console.log(`I am Dajon ${family}`);
+
+      function nextBorn() {
+        console.log(`I am Ariana ${family}`);
+
+        function lastBorn() {
+          console.log(`I am Deuce ${family}`);
+        } //lastborn
+        lastBorn();
+      } //nextborn
+      nextBorn();
+    } //secondBord
+    secondBorn();
+  } //firstBorn
+  firstBorn();
+} //Father
+
+father();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
