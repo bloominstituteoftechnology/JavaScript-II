@@ -88,8 +88,8 @@ console.log(LargeShirts);            // ???
 //  https://www.geeksforgeeks.org/javascript-array-reduce-method/   //
 
 let ticketPriceTotal = [];
-const tallied = (donate) => {
-  return  donate;
+const tallied = (arr, donate) => {
+  return  arr + donate;
 }
 runners.forEach(function (object) {
    ticketPriceTotal.push(object.donation)

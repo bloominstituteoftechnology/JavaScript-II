@@ -34,24 +34,27 @@ lastitem(items, function(last) {
 });
 
 //---------------------------------------------------------------//
-function sumNums(x, y, callback) {
+//https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced//
+
+function sumNums(x, y, callback){
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  console.log(x + y);
+   let adding = (x + y);
   callback();
 }
-function callbackFunc() {
- return 250 + 56983;
-};
 
-sumNums(callbackFunc);
+sumNums(2658 + 562629.32625, function(total) {
+  console.log(total);
+});
 
 //---------------------------------------------------------------//
-function multiplyNums(x, y, cb) {
+
+function multiplyNums(x, y, callback) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  return cb(x * y); 
+ let multiple = (x * y);
+ callback(); 
 }
-multiplyNums(function(results2) {
-  console.log(results2)
+multiplyNums(function(MultiplyTotal) {
+  console.log(MultiplyTotal)
 });
 
 
