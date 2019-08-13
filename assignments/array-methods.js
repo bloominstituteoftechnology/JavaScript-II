@@ -93,7 +93,25 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let Association = [];
+runners.forEach(function (list){
+ Association.push(list.first_name +' '+ list.last_name + ' joins us from, ' + list.company_name);
+});
+
+    console.log(Association);
 
 // Problem 2
+// Each runner is allowed up to 2 viewing guest, the possible number of attendees
+let Attendees= [];
+ Attendees = runners.reduce((total, item) => {
+    return total = item.id + (item.id*2);
+  }, 0);
+console.log("The maximum  number of attendees allowed is " + Attendees);
 
 // Problem 3
+// let's see who works for the same companioes
+let company= [];
+company = runners.filter(function co (items){
+ return items.company_name === 'Skinix';
+});
+console.log (company);
