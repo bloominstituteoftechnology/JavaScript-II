@@ -1,7 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function lion (){
 
+  const king = "Ned"; 
+  console.log(`${king} is the king`);
 
+  function lioness (){
+    const queen = "Nugget";
+    console.log(`${king} is the king`);
+    console.log(`${queen} is the queen`);
+
+    function cub (){
+      const princess = "Pippin";
+      console.log(`${king} is the king`);
+      console.log(`${queen} is the queen`);
+      console.log(`${princess} is the princess`);
+    }
+    cub()
+  }
+  lioness()
+
+} 
+lion()
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
