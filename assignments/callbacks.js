@@ -33,15 +33,19 @@ lastitem(items, function(last) {
   console.log(last)
 });
 
-
-function sumNums(x, y, cb) {
+//---------------------------------------------------------------//
+function sumNums(x, y, callback) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb(x + y);
+  console.log(x + y);
+  callback();
 }
-sumNums(function(results) {
- console.log(results)
-});
+function callbackFunc() {
+ return 250 + 56983;
+};
 
+sumNums(callbackFunc);
+
+//---------------------------------------------------------------//
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x * y); 
