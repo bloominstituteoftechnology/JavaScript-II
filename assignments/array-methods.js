@@ -101,8 +101,28 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1  Runners are required to get at least $100 in donations. If not they have to pay $25 to race. 
+let RunnersNeedtoPay = [];
+const checkDonations = (donation) => {
+  return donation <= 100;
+}
 
-// Problem 2
+runners.forEach(function (object) {
+  RunnersNeedtoPay.push(object.donation)
+});
 
-// Problem 3
+RunnersNeedtoPay = RunnersNeedtoPay.reduce(checkDonations);
+console.log(RunnersNeedtoPay);     
+//---------------------------------------------------------------//
+// Problem 2  The runners can bring a friend with them to run for free!  How many people would be running now?
+
+const CurrentRunners = runners.length(); 
+console.log(CurrentRunners);
+
+let NewTotalRunners = CurrentRunners.map(number => number * 2);
+console.log(NewTotalRunners);
+//---------------------------------------------------------------//
+// Problem 3  Problems with making shirts with runners last name with more than 8 characters. Have to custom the font size for each shirt. 
+
+let changeFontShirts = runners.filter(lastname => lastname.length() <= 8);
+console.log(changeFontShirts);

@@ -67,7 +67,7 @@ function contains(item, list, callback) {
 }
 contains('Pencil', items, console.log)
 
-//calling on the function contains, and using specific key phrases from array above. 
+//calling on the function contains, and using specific key phrases from array above.
 
 //---------------------------------------------------------------//
 
