@@ -38,8 +38,8 @@ lastitem(items, function(last) {
 
 function sumNums(x, y, callback){
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-   let adding = (x + y);
-  callback();
+   let adding = x + y;
+  callback(adding);
 }
 
 sumNums(2658 + 562629.32625, function(total) {
@@ -50,18 +50,26 @@ sumNums(2658 + 562629.32625, function(total) {
 
 function multiplyNums(x, y, callback) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
- let multiple = (x * y);
- callback(); 
+ let multiple = x * y;
+ callback(multiple); 
 }
 multiplyNums(function(MultiplyTotal) {
   console.log(MultiplyTotal)
 });
 
+//--------------------------------------------------------------//
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes 
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+function contains(item, list, callback) {
+  // contains checks if an item is present inside of the given array/list (instead of saying items (to detailed, want to reuse for another array.))
   // Pass true to the callback if it is, otherwise pass false.
+ callback(list.includes(item))
 }
+contains('Pencil', items, console.log)
+
+//calling on the function contains, and using specific key phrases from array above. 
+
+//---------------------------------------------------------------//
 
 /* STRETCH PROBLEM */
 
