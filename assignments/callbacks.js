@@ -69,8 +69,14 @@ contains('Pencil', items, function (bol) {
 
 /* STRETCH PROBLEM */
 
+const nbaChamiopns = ['Raptors', 'Warriors', 'Warrior', 'Cavaliers', 'Warriors'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  cb(Array.from(new Set(nbaChamiopns)));
 }
+removeDuplicates(nbaChamiopns, function (teams) {
+  console.log(teams);
+})
