@@ -57,14 +57,18 @@ function multiplyNums(x, y, cb) {
  multiplyNums(1,2, function(m){
   console.log(m)
 })
-/*function contains(item, list, cb) {
+function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  return cb(list.includes(item))
+  return cb(item, list);
 }
-contains("Pencil", supplies, function(contains){
-  console.log(contains)
-})*/
+
+const check = function(item, list){
+  return list.includes(item);
+}
+
+console.log(contains('Pencil', items, check));
+
 //look up dot includes method
 /* STRETCH PROBLEM */ 
 
