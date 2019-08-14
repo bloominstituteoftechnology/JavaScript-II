@@ -1,15 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const foo = 'bar';
-function returnFoo() {
-  const foo = 'pizza';
-  return foo;
+const item = 'burger';
+function returnitem() {
+  const item = 'pizza';
+  return item;
 }
-function returnfoo2() {
-  return foo;
+function returnitem2() {
+  return item;
 }
-console.log(returnFoo());
-console.log(returnfoo2());
+console.log(returnitem());
+console.log(returnitem2());
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 2: Create a counter function ====
