@@ -51,12 +51,15 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":47,"first_name":"Vida","last_name":"Tydd","email":"vtydd1a@dropbox.com","shirt_size":"S","company_name":"Quaxo","donation":55},
 {"id":48,"first_name":"Anderea","last_name":"MacGiolla Pheadair","email":"amacgiollapheadair1b@xing.com","shirt_size":"2XL","company_name":"Kwimbee","donation":214},
 {"id":49,"first_name":"Bel","last_name":"Alway","email":"balway1c@ow.ly","shirt_size":"S","company_name":"Voolia","donation":107},
-{"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
+{"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}
+{"id":51,"first_name":"Simon","last_name":"Posford","email":"","shirt_size":"L","company_name":"Shpongle","donation":585},
+{"id":52,"first_name":"Simon","last_name":"Ott","email":"","shirt_size":"S","company_name":"Ottsonic","donation":1158},
+{"id":53,"first_name":"Corderosa","last_name":"Amada","email":"","shirt_size":"M","company_name":"ProjectErostribe","donation":3630}];
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
-runners.forEach(runner => fullName.push(`${runner.first_name} $${runner.last_name}`));
+runners.forEach(runner => fullName.push(`${runner.first_name} ${runner.last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -81,8 +84,10 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1- missing email addresses 
+    console.log('Runners without emails, using filter()', runners.filter(runner => !runner.email);
 
 // Problem 2
+console.log('Sum of all donations less than $100 using map, filter and reduce(): ', `$${runners.map(runner => runner.donation).filter(donation => donation < 100).reduce((x,y) => x + y, 0)}`);
 
 // Problem 3
