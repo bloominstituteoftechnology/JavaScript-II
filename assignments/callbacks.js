@@ -31,11 +31,11 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // TEST 2 (declaring callback before hand):
 
   function logExorbitantPrice(article) {
-    console.log(`this ${article} costs a million dollars!`);
+    console.log(`this ${article} is worth a million dollars!`);
   };
 
   firstItem(items, logExorbitantPrice);
-  // "this Pencil costs a million dollars!"
+  // "this Pencil is worth a million dollars!"
 */
 
 
