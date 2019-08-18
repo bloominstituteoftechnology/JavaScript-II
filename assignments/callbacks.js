@@ -28,7 +28,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   firstItem(items, item => console.log(`I love my ${item}!`));
   // "I love my Pencil!"
 
-  // TEST 2 (declaring callback previously):
+  // TEST 2 (declaring callback before hand):
 
   function exorbitantPrice(thing) {
     console.log(`this ${thing} costs a million dollars!`);
