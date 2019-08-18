@@ -4,7 +4,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
 
-  // GIVEN THIS PROBLEM:
+  // GIVEN THIS PROBLEM (and the `items` array):
 
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
