@@ -19,7 +19,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // NOTES ON THE SOLUTION:
 
   // firstItem is a higher order function
-  // that uses a callback (referred to as `cb`) as its second argument.
+  // that expects a callback (referred to as `cb`) as its second argument.
   // To test our solution, we will use the given `items` array and a variety of callbacks.
   // Note how callbacks can be declared separately, or inlined.
 
