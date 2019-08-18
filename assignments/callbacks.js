@@ -4,7 +4,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
 
-  // GIVEN THIS PROBLEM (and the `items` array):
+  // GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
@@ -19,8 +19,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // NOTES ON THE SOLUTION:
 
   // firstItem is a higher order function
-  // that uses a callback (referred to as 'cb') as its second argument.
-  // To test our solution, we will try it with a variety of callbacks.
+  // that uses a callback (referred to as `cb`) as its second argument.
+  // To test our solution, we will use the given `items` array and a variety of callbacks.
   // Note how callbacks can be declared separately, or inlined.
 
   // TEST 1 (inlined callback):
