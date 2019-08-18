@@ -21,7 +21,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // firstItem is a higher order function
   // that uses a callback (referred to as 'cb') as its second argument.
   // To test our solution, we will try it with a variety of callbacks.
-  // Note that callbacks might be declared separately, or inlined.
+  // Note how callbacks can be declared separately, or inlined.
 
   // TEST 1 (inlined callback):
 
