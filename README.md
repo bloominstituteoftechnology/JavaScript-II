@@ -20,7 +20,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [ ] Add your team lead as a reviewer on the pull-request
 * [ ] Your team lead will count the project as complete by merging the branch back into master.
 
-## Task 2: Higher Order Functions and Callbacks
+## Task 1: Higher Order Functions and Callbacks
 
 This task focuses on getting practice with higher order functions and callback functions by giving you an array of values and instructions on what to do with that array.
 
@@ -28,7 +28,7 @@ This task focuses on getting practice with higher order functions and callback f
 
 * [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
-## Task 3: Array Methods
+## Task 2: Array Methods
 
 Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
@@ -38,7 +38,7 @@ Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array w
 
 * [ ] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
 
-## Task 4: Closures
+## Task 3: Closures
 
 We have learned that closures allow us to access values in scope that have already been invoked (lexical scope).  
 
