@@ -25,8 +25,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   // TEST 1 (inlined callback):
 
-  firstItem(items, item => console.log(`I love my ${item}!`));
-  // "I love my Pencil!"
+  const test1 = firstItem(items, item => console.log(`I love my ${item}!`));
+  console.log(test1); // "I love my Pencil!"
 
   // TEST 2 (declaring callback before hand):
 
@@ -34,8 +34,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     console.log(`this ${article} is worth a million dollars!`);
   };
 
-  firstItem(items, logExorbitantPrice);
-  // "this Pencil is worth a million dollars!"
+  const test2 = firstItem(items, logExorbitantPrice);
+  console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
 
