@@ -47,10 +47,11 @@ function getLength(arr, cb) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  const lastofarray = arr.length - 1;
-  cb(lastofarray);
+  //const lastofarray = arr.length - 1;
+  cb(arr[arr.length - 1]);
 
 }
+//arr[arr.length - 1]
 
 
 function sumNums(x, y, cb) {
