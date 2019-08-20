@@ -79,7 +79,7 @@ function contains(item, list, cb) {
   else {
     TorF = false;
   }
-  cb(TorF)
+  cb(TorF);
 }
 
 /* STRETCH PROBLEM */
