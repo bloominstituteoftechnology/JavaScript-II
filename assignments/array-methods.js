@@ -92,9 +92,28 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-//
+//In order to send out thank you letters to everyone make an array of everyone's first name and email address.
+let nameEmail = [];
+runners.forEach(function(items){
+  return nameEmail.push(`${items.first_name} , ${items.email}`);
+})
+console.log(nameEmail);
 
 
 // Problem 2
+//A special email is going to going to be sent out for those who donated more than $100 so use the .filter method to determine who did in the array 
+let bigSpender =
+runners.filter(function(element){
+  return element.donation > 100;
+})
+console.log(bigSpender);
+
 
 // Problem 3
+//To go along with the uppercased names above, use the .map function to get the last names into uppercase
+
+let lastNamesAllCaps = 
+runners.map(function(element){
+  return element.last_name.toUpperCase();
+})
+console.log(lastNamesAllCaps);
