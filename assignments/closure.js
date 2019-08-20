@@ -4,6 +4,26 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function backpack(bigBag){
+  // const lang1 = 'French'
+  // const lang2 = 'English'
+  // console.log(`People living in ${countryName} like to eat ${food}`);
+
+    function pencilCase (smallBag){
+      // const food = 'Maple Syrup';
+      console.log(`My ${smallBag} is great! It's where I put my pens and pencils`);
+
+        function pencil (write){
+          console.log(`${write} is what I use to write. I put it in my ${smallBag} inside of my ${bigBag}.`);
+
+
+        }//this closes pencil
+        pencil('UniBall');
+    }//this closes pencilCase
+    pencilCase('Logitech pencil case');
+}//this closes backpack
+backpack('Jansport');
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
