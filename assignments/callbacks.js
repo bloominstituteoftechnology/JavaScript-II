@@ -95,13 +95,14 @@ console.log(multiplyNums(2,4,multi));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  const trueFalse = function(item, list) {
-    if(contains[contains.includes]){
-      return cb(true)
-    } return cb(false) 
-  }
+  return cb(item, list);
 };
-console.log(contains('yo-yo'));
+const trueFalse = function(item, list) {
+  if(items.includes(item, list)){
+    return true;
+  } return false;
+}
+console.log(contains('Pencil', '', trueFalse));
 
 
 /* STRETCH PROBLEM */
