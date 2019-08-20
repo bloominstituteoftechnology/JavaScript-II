@@ -63,10 +63,10 @@ const runners = [
 //and populate a new array called `fullNames`. This array will contain just strings.
 
 let fullName = runners.forEach(function(runner){
-  console.log(runner.first_name, runner.last_name);
+  // console.log(runner.first_name, runner.last_name);
 });
 
-console.log(fullName);
+// console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. 
@@ -74,7 +74,7 @@ console.log(fullName);
 let firstNamesAllCaps = runners.map(function(runner){
   return runner.first_name.toUpperCase();
 });
-console.log(firstNamesAllCaps);
+// console.log(firstNamesAllCaps);
 
 // const allCaps = runners.map(currentValue => currentValue.first_name.toUpperCase());
 
@@ -88,7 +88,7 @@ console.log(firstNamesAllCaps);
 let runnersLargeSizeShirt = runners.filter(function(runner){
   return runner.shirt_size === "L";
 });
-console.log(runnersLargeSizeShirt);
+// console.log(runnersLargeSizeShirt);
 
 // let largeShirts = runners.filter(currentValue => currentValue.shirt_size === "L");
 
@@ -103,7 +103,7 @@ let ticketPriceTotal = runners.reduce(function(accumulator,runner){
   return accumulator + runner.donation;
 }, 0);
 
-console.log(ticketPriceTotal);
+// console.log(ticketPriceTotal);
 
 // let ticketPriceTotal = runners.reduce((total, currentValue) => {
 //   return total += currentValue.donation;
@@ -118,11 +118,15 @@ console.log(ticketPriceTotal);
 //isted above.
 
 // Problem 1
-let alphabetizedByLastName = runners.map(function(runner){
-  return runner.last_name.sort();
+
+
+let lastNames= runners.map(function(runner){
+  return runner.last_name;
 });
 
-console.log(alphabetizedByLastName);
+let alphabetizedByLastName = lastNames.sort();
+
+// console.log(alphabetizedByLastName);
 
 
 // Problem 2
@@ -131,7 +135,7 @@ let topDoners = runners.filter(function(runner){
   return runner.donation > 200;
 })
 
-console.log(topDoners)
+// console.log(topDoners)
 
 // Problem 3
 
@@ -139,4 +143,4 @@ let filterCompany = runners.filter(function(runner){
   return runner.company_name === "Skinte";
 });
 
-console.log(filterCompany);
+// console.log(filterCompany);
