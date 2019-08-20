@@ -3,7 +3,20 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function dogs(dogName){
+  const breed1 = 'Jack Russell'
+  const breed2 = 'Pit Bull'
 
+    function whereTheyPlay(areaName){
+      const food = "Dog Treats"
+    
+      function whatTheyLike(likeName){
+        const like = "Belly Rubs"
+      }
+    }
+}
+
+console.log(`${whatTheyLike} is what ${dogName} loves more than anything, especially if they are ${breed1} and ${breed2} and playing in the ${areaName}`);
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
