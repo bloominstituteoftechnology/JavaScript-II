@@ -102,7 +102,7 @@ const trueFalse = function(item, list) {
     return true;
   } return false;
 }
-console.log(contains('Pencil', '', trueFalse));
+console.log(contains('Pencil', 'list', trueFalse));
 
 
 /* STRETCH PROBLEM */
