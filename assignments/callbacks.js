@@ -41,29 +41,51 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  const lengthofarray = arr.length;
+  cb(lengthofarray);
 }
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  const lastofarray = arr.length - 1;
+  cb(lastofarray);
+
 }
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  const sum = x + y;
+  cb(sum);
+
 }
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  const multiply = x * y;
+  cb(multiply);
 }
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  var TorF
+  const present = list.findIndex(function(items){
+    return items === item
+  })
+  if (present !== -1) {
+    TorF = true;
+  }
+  else {
+    TorF = false;
+  }
+  cb(TorF)
 }
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+
