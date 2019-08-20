@@ -25,13 +25,13 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   // TEST 1 (inlined callback):
 
-  const test1 = firstItem(items, item => console.log(`I love my ${item}!`));
+  const test1 = firstItem(items, item => `I love my ${item}!`);
   console.log(test1); // "I love my Pencil!"
 
   // TEST 2 (declaring callback before hand):
 
   function logExorbitantPrice(article) {
-    console.log(`this ${article} is worth a million dollars!`);
+    return `this ${article} is worth a million dollars!`;
   };
 
   const test2 = firstItem(items, logExorbitantPrice);
