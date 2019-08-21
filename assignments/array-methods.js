@@ -98,4 +98,9 @@ let email_message = runnersLargeSizeShirt.forEach(currentValue => {
 // Problem 2: sort all the names fullnames
 console.log(firstNamesAllCaps.sort());
 
-// Problem 3
+// Problem 3: Create a new array for people that made donation more than 100 and aswell give the total numbers
+let moreDonations = runners.filter(currentValue => {
+    return currentValue.donation > 100;
+})
+console.log(moreDonations);
+console.log(moreDonations.length);
