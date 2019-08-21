@@ -3,11 +3,26 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+
+const globalVariable = 'banana';
+
+const house = () => {
+  let fruitBasket = 'basket';
+  return `Please, put the ${globalVariable} in the ${fruitbasket}.`
+}
+console.log(house());
+
+// OR
+
 const num = 3;
+
 function add (num){
   return num + 0;
 }
 console.log(add(num));
+
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 

@@ -77,12 +77,12 @@ let runnersLargeSizeShirt = [];
 runners.filter(function(element){
   for(i = 0; i < runners.length; i++){
     if(runners[i].shirt_size === 'L'){
-      runnersLargeSizeShirt.push(runners[i]);
+      return runnersLargeSizeShirt.push(runners[i])
     }else{
-      continue;
+      return false;
     }
   }
-})
+});
 // KEEPS GOING
 console.log(runnersLargeSizeShirt);
 
@@ -98,7 +98,26 @@ console.log(totalDono);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// List the companies with the their respective donations.
+let donos = [];
+runners.forEach(function(element){
+  return donos.push(`${element.company_name}, ${element.donation}`);
+});
+console.log(donos);
 // Problem 2
-
+// List all participants in alphabetical order by last name.
+let Names = [];
+runners.forEach(function(element){
+  let names = Names.push(`${element.last_name}, ${element.first_name}`);
+  return Names.sort();
+});
+console.log(Names);
 // Problem 3
+// let firstNamesAllCaps = [];
+// runners.map(function(element){
+//   return firstNamesAllCaps.push(element.first_name.toUpperCase());
+// });
+// console.log(firstNamesAllCaps);
+// Add 200 to each donation.
+let adjustedDono = 0;
+runners.map(function(element){
