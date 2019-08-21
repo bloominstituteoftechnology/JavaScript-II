@@ -3,7 +3,23 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function myClose() {
+  console.log("This is my example");
+  const message = "Hi, you are reading my example of Closure";
 
+  function secondClosure() {
+    console.log(`example: ${message}`);
+    const anothermessage =
+      "This is another message";
+
+    function thirdClosure() {
+      console.log(`${message} and ${anothermessage}`);
+    }
+    thirdClosure();
+  }
+  secondClosure();
+}
+myClose();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
