@@ -17,7 +17,7 @@ console.log(house());
 const num = 3;
 
 function add (num){
-  return num + 0;
+  return num + 1;
 }
 console.log(add(num));
 

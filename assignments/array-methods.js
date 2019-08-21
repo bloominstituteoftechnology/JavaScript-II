@@ -66,24 +66,18 @@ console.log(fullNames);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
-runners.map(function(element){
-  return firstNamesAllCaps.push(element.first_name.toUpperCase());
+firstNamesAllCaps = runners.map(function(element){
+  return element.first_name.toUpperCase();
 });
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
-runners.filter(function(element){
-  for(i = 0; i < runners.length; i++){
-    if(runners[i].shirt_size === 'L'){
-      return runnersLargeSizeShirt.push(runners[i])
-    }else{
-      return false;
+runnersLargeSizeShirt = runners.filter(function(element){
+  return element.shirt_size === 'L'
     }
-  }
-});
-// KEEPS GOING
+);
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
@@ -91,7 +85,7 @@ console.log(runnersLargeSizeShirt);
 let ticketPriceTotal = 0;
 const totalDono = runners.reduce(function(ticketPriceTotal, item){
   return item.donation + ticketPriceTotal;
-})
+},0)
 console.log(totalDono);
 
 // ==== Challenge 5: Be Creative ====
@@ -118,6 +112,6 @@ console.log(Names);
 //   return firstNamesAllCaps.push(element.first_name.toUpperCase());
 // });
 // console.log(firstNamesAllCaps);
-// Add 200 to each donation.
-let adjustedDono = 0;
-runners.map(function(element){
+// // Add 200 to each donation.
+// let adjustedDono = 0;
+// runners.map(function(element){
