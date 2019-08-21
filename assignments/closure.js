@@ -3,6 +3,20 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function favFood(foodName) {
+  ingredient1 = 'pineapple';
+  ingredient2 = 'mushroom';
+
+  console.log(`Do you like ${ingredient1} and ${ingredient2} on your ${foodName} ?`)
+
+  function outlet(outletName) {
+    console.log(outletName);
+  } //closes outlet
+  outlet('pizzahut');
+
+} //closes favFood 
+favFood('pizza');
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
