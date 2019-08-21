@@ -95,6 +95,7 @@ let email_message = runnersLargeSizeShirt.forEach(currentValue => {
     console.log(`Hi ${currentValue.first_name}, Please your size is not available you may need to change size `)
 })
 
-// Problem 2
+// Problem 2: sort all the names fullnames
+console.log(firstNamesAllCaps.sort());
 
 // Problem 3
