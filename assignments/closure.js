@@ -4,19 +4,40 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function videoGameSeries(gameName){
+  console.log(gameName+" is a game exclusive to Sony PlayStation.")
+
+  function mainChar(mainName){
+    console.log("In "+gameName+", " +mainName+ " is the main character.")
+    
+    function sideChar(sideName){
+      console.log(`${mainName}'s partner is ${sideName}.`)
+      
+      function mission(goal){
+        console.log(`${mainName} and ${sideName} look for ${goal} in every installment of ${gameName}.`)
+      }
+      mission("treasure");
+    }
+    sideChar("Sully");
+  }
+  mainChar("Nathan");
+}
+videoGameSeries("Uncharted");
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
-const counterMaker = () => {
+//const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
-};
+//};
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -26,8 +47,8 @@ const counterMaker = () => {
 // will refuse to go over the limit, and start back at 1.
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
-const counterFactory = () => {
+//const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+//};
