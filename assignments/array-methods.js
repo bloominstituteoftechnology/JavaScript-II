@@ -74,7 +74,7 @@ console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-runnersLargeSizeShirt = runners.filter(currentValue => {
+let runnersLargeSizeShirt = runners.filter(currentValue => {
     return currentValue.shirt_size == "L";
 })
 console.log(runnersLargeSizeShirt);
@@ -89,7 +89,11 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: The manager want to email all person whose size is large to inform them that their size is not available
+
+let email_message = runnersLargeSizeShirt.forEach(currentValue => {
+    console.log(`Hi ${currentValue.first_name}, Please your size is not available you may need to change size `)
+})
 
 // Problem 2
 
