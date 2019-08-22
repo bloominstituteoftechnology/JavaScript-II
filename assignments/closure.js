@@ -4,6 +4,20 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function sandwich (layer1){
+  console.log (layer1);
+}
+sandwich("The Bread Goes on Top & Bottom");
+  function hamSandwich (layer2){
+    console.log (layer2);
+  }
+  hamSandwich("Ham Goes in the Middle");
+    function hamwCheese(layer3){
+      console.log (layer3)
+    }
+    hamwCheese("Add Cheese between the bread...Enjoy!");
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
