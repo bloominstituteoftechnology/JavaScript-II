@@ -58,28 +58,60 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+runners.forEach(function(element){
+  return fullNames.push(`${element.first_name} ${element.last_name}`);
+});
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+firstNamesAllCaps = runners.map(function(element){
+  return element.first_name.toUpperCase();
+});
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runnersLargeSizeShirt = runners.filter(function(element){
+  return element.shirt_size === 'L'
+    }
+);
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
-console.log(ticketPriceTotal);
+const totalDono = runners.reduce(function(ticketPriceTotal, item){
+  return item.donation + ticketPriceTotal;
+},0)
+console.log(totalDono);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// List the companies with the their respective donations.
+let donos = [];
+runners.forEach(function(element){
+  return donos.push(`${element.company_name}, ${element.donation}`);
+});
+console.log(donos);
 // Problem 2
-
+// List all participants in alphabetical order by last name.
+let Names = [];
+runners.forEach(function(element){
+  let names = Names.push(`${element.last_name}, ${element.first_name}`);
+  return Names.sort();
+});
+console.log(Names);
 // Problem 3
+// let firstNamesAllCaps = [];
+// runners.map(function(element){
+//   return firstNamesAllCaps.push(element.first_name.toUpperCase());
+// });
+// console.log(firstNamesAllCaps);
+// // Add 200 to each donation.
+// let adjustedDono = 0;
+// runners.map(function(element){
