@@ -48,7 +48,7 @@ function getLength(arr) {
   // getLength passes the length of the array into the callback.
   
 };
-console.log(getLength(items));
+console.log(array(items, getLength));
 
 
 function last(arr) {
@@ -56,11 +56,11 @@ function last(arr) {
 return items.slice(-1)[0]
 };
 
-console.log(last(items))
+console.log(array(items, last))
 
 
 
-function Nums(x, y, cb) {
+function nums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   return cb (x,y)
 };
@@ -68,18 +68,22 @@ function Nums(x, y, cb) {
 function sumNums(x,y){
 return x + y
 };
-console.log(sumNums(4,3));
+console.log(nums(4,3,sumNums));
 
 function multiplyNums(x, y) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 return x * y ;
 }
 
-console.log (multiplyNums(3,4));
+console.log (nums (3,4, multiplyNums));
 
-function contains(item, list) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+function contains(item, list, callback) {
+  return callback (item,list)
+  // *contains checks if an item is present inside of the given array/list.
+  // *Pass true to the callback if it is, otherwise pass false.
+}
+
+function cb(item, list){
   if (list.includes (item)){
     return true
   }
@@ -88,7 +92,7 @@ function contains(item, list) {
     }
   }
 
-    console.log(contains(items,'Pencil'));
+    console.log(contains ('Pencil', items, cb));
 
 /* STRETCH PROBLEM */
 
