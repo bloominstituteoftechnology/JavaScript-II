@@ -135,8 +135,25 @@ needmoreshirtsplz =
 console.log(needmoreshirtsplz);
 
 // Problem 2 - We need a list of company names of the runners
+let companyNames= [];
+
+runners.forEach( runnernames =>{
+  companyNames.push(`${runnernames.company_name}`);
+});
+
+console.log(companyNames);
+
+// Problem 3 The director is even more drunk and decided to ask for the last names to be uppercase because he has nothing better to do even though you're busy and the deadline is in 10 minutes.
 
 
+let lastNamesAllCaps = [];
 
 
-// Problem 3
+runners.map((runner, index) => {
+    lastNamesAllCaps[index] =
+  runner.last_name.toUpperCase();
+  
+});
+
+
+console.log(lastNamesAllCaps);
