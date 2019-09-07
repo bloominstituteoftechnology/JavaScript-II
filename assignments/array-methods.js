@@ -100,5 +100,18 @@ emails.push(getEmails.email);
 console.log(emails);
 
 // Problem 2
+//an invasion of rats damaged all medium size shirts, get their info to let them know medium shirts wont be available
+let mediumSizeShirt = [];
+
+mediumSizeShirt = runners.filter(function(SizeMediumrunners){
+  return SizeMediumrunners.shirt_size === "M";
+})
+console.log(mediumSizeShirt);
 
 // Problem 3
+//The event director needs a list of all the company names to thank them before the race starts
+let companyNames = [];
+runners.map(function(allNames){
+  return companyNames.push(`${allNames.company_name}`)
+});
+console.log(companyNames);
