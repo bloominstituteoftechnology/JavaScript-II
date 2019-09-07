@@ -85,9 +85,18 @@ contains('Gum', items, cb => {
 
 
 /* STRETCH PROBLEM */
-
+let dup = ["apple", "banana", "grape", "apple"];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  // Do not mutate the original array. 
+
+  const remove = array.filter(function(item, index, arr){
+    return index === arr.indexOf(item);
+  })
+  return cb(remove);
 }
+function logArray(arr){
+  console.log(arr);
+}
+removeDuplicates(dup,logArray);
