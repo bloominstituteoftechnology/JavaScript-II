@@ -1,4 +1,7 @@
-// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  
+//Study both the problem and the solution to figure out the rest of the problems.
+
+//FUCK YOU JS. I WILL DEFEAT YOU, and I WILL LEARN
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -40,25 +43,46 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  return cb(items.length);
   // getLength passes the length of the array into the callback.
-}
+} 
+const arrayLength = getLength(items, item => `Array length is ${item}`);
+console.log(arrayLength);
+
+//FUCK YOU JS. I AM GONNA OWN YOUR ASS!
 
 function last(arr, cb) {
+  return cb(items[3]);
   // last passes the last item of the array into the callback.
 }
+  const lastItem = last (items, itemlast => `Last item in the list is ${itemlast}`);
+  console.log(lastItem);
 
 function sumNums(x, y, cb) {
+  return cb(x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+sumNums(10,3, console.log);
 
 function multiplyNums(x, y, cb) {
+  return cb(x*y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+multiplyNums(10,3, console.log);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for (let index = 0; index < items.length; i++)
+
+  if (list.includes(item)){
+    return cb ('Yes');
+  } else {
+    return cb('No');
+  }
 }
+const resultContains = contains('Pencil', items, item => `Pencil is ${items ? '' : 'not'} located in the basket`);
+console.log(resultContains);
 
 /* STRETCH PROBLEM */
 
