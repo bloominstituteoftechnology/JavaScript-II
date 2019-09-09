@@ -4,6 +4,17 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+const multiplier = () => {
+  let multiple = 2;
+  return function() {
+    multiple = multiple * 2;
+    return multiple;
+  }
+};
+
+const newMultiple = multiplier();
+console.log(newMultiple());
+console.log(newMultiple());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -16,7 +27,22 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
-};
+
+
+  
+  let count = 2;
+    var counter = () => {
+      
+      count = count + 1;
+      return count;
+    }
+    return counter;
+  };
+
+  const myCounter = 
+  console.log();
+  console.log();
+
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -30,4 +56,15 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let countChallenge4 = 0;
+  var object1
+  return object1 = [decrement = function() {
+    countChallenge4 = countChallenge4 - 1;
+    return countChallenge4
+  } ,
+  increment = function() {
+    countChallenge4 = countChallenge4 + 1;
+    return countChallenge4
+  } ]
+
 };
