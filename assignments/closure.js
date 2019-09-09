@@ -4,9 +4,20 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let x = 5;
+let add = num => {
+  let total = num + x;
+
+  let hello = () => `we added ${total}`;
+
+  return hello;
+};
+
+let test = add(5);  
+
+console.log(test());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
