@@ -40,30 +40,63 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  cb(arr.length);// getLength passes the length of the array into the callback.
 }
+getLength(items, itemsLength => {
+  console.log(`This is the length of items ${itemsLength}`)
+});
 
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  cb(arr[arr.length-1]);// last passes the last item of the array into the callback.
 }
+last (items, lastItem => {
+  console.log(`This is the last item ${lastItem}`);
+});
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  cb(x + y);// sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+sumNums(1,2, sum => {
+  console.log(sum);
+});
+
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb(x * y);// multiplyNums multiplies two numbers and passes the result to the callback.
 }
+multiplyNums(4,5, multiplication => {
+  console.log(multiplication);
+});
+
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+  if(list.includes(item)) {
+    cb(true) ;
+ }
+ else {
+   cb(false);
+ } // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
 
-/* STRETCH PROBLEM */
+contains('Gum', items, cb => {
+  console.log(cb);
+});
 
+
+/* STRETCH PROBLEM */
+let dup = ["apple", "banana", "grape", "apple"];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  // Do not mutate the original array. 
+
+  const remove = array.filter(function(item, index, arr){
+    return index === arr.indexOf(item);
+  })
+  return cb(remove);
 }
+function logArray(arr){
+  console.log(arr);
+}
+removeDuplicates(dup,logArray);
