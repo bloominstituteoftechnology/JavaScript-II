@@ -96,7 +96,6 @@ function removeDuplicates(array, cb) {
   });
   cb(unique)
 }
-
 removeDuplicates(items, result=>{
   console.log(result)
 })
