@@ -3,12 +3,19 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+let name = 'brian';
 
+let changeName = (newName)=>{
+  name = newName
+}
+changeName('Esteel')
+console.log(name)
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
+let count = 0
 const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
@@ -16,7 +23,16 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+ const counter = ()=>{
+    count++
+    return count
+ }
+ return counter()
 };
+
+// console.log(counterMaker()) // 1
+// console.log(counterMaker()) // 2
+// console.log(counterMaker()) // 3
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -25,9 +41,53 @@ const counterMaker = () => {
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
 
+// const limitedCounterMaker = (limit) =>{
+
+//   const counter = ()=>{
+//     if (count <= limit -1){
+//       count ++
+//       return count
+//     } else {
+//       count = 0
+//       return count
+//     }
+//   }
+//   return counter()
+// }
+
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+
+  const counter = ()=>{
+    return {
+      increment: function(){
+        count++
+        return count
+      },
+      decrement: function(){
+        count--
+        return count
+      }
+    }
+  }
+
+  return counter()
+
 };
+
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
