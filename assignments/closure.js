@@ -5,6 +5,15 @@
 // The outer scope can be a parent function, or the top level of the script.
 
 
+let food = 'potato';
+function baked(){
+  console.log(`${food} says let's get baked`);
+}
+
+baked();
+
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
