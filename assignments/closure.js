@@ -30,9 +30,9 @@ const counterMaker = () => {
  return counter()
 };
 
-console.log(counterMaker()) // 1
-console.log(counterMaker()) // 2
-console.log(counterMaker()) // 3
+// console.log(counterMaker()) // 1
+// console.log(counterMaker()) // 2
+// console.log(counterMaker()) // 3
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -41,9 +41,53 @@ console.log(counterMaker()) // 3
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
 
+// const limitedCounterMaker = (limit) =>{
+
+//   const counter = ()=>{
+//     if (count <= limit -1){
+//       count ++
+//       return count
+//     } else {
+//       count = 0
+//       return count
+//     }
+//   }
+//   return counter()
+// }
+
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+// console.log(limitedCounterMaker(5))
+
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+
+  const counter = ()=>{
+    return {
+      increment: function(){
+        count++
+        return count
+      },
+      decrement: function(){
+        count--
+        return count
+      }
+    }
+  }
+
+  return counter()
+
 };
+
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
+console.log(counterFactory().increment())
