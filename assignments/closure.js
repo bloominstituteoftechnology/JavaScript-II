@@ -3,7 +3,17 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+const countTwo = () => {
+let countbytwo = 2; 
+  return function() {
+    countbytwo = countbytwo + 2;
+    return countbytwo;
+  }
+};
 
+console.log(countTwo);
+console.log(countTwo);
+console.log(countTwo);
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -16,6 +26,10 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+let count = 0;
+  let counter = () => {
+    return ++count;
+  }
 };
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
