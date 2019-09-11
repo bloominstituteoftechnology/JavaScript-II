@@ -72,21 +72,8 @@ contains('Gum', items, contains=>{
 })
 
 
+
+
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-  const unique = []
-  array.forEach(element => {
-    if (!unique.includes(element)){
-      unique.push(element)
-    }
-  });
-  cb(unique)
-}
-removeDuplicates(items, result=>{
-  console.log(result)
-})
-
+//
