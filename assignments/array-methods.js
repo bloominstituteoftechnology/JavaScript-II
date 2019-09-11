@@ -60,22 +60,10 @@ const runners = [
 let fullNames = [];
 
 
-// for (let i = 0; i<runners.length; i++){
-  // fullNames.push(runners[i].first_name + runners[i].last_name);
-  // console.log(fullNames);
-// }
-
-
-  // runners.forEach((name, i, array)=>{
-            // console.log(name+name);
-            // console.log(array);
-            // console.log(runners);
-  // });
-
   runners.forEach( runnernames =>{
       fullNames.push(`${runnernames.first_name} ${ runnernames.last_name}`);
   });
-  // Template literals 
+  
 
 
 console.log(fullNames);
