@@ -59,7 +59,7 @@ const runners = [
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
 runners.forEach(function (object) {
-  let name = object.first_name + " " + object.last_name;
+ let name = object.first_name + " " + object.last_name;
   
   fullNames.push(name)
 })
@@ -77,10 +77,7 @@ console.log(firstNamesAllCaps);
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
-const largeSized = (object) => {
-  return object.shirt_size === "L"
-}
-largeShirts = runners.filter(largeSized)
+runnersLargeSizeShirt = runners.filter(x=> x.shirt_size === "L")
 
 console.log(runnersLargeSizeShirt);
 
@@ -97,7 +94,7 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 const students = [
   {
-    name: 'Estella Shanae',
+    
     age: 24,
     phone: '(215)34-5676',
     id: 1
@@ -131,7 +128,8 @@ console.log(studentNamesPhones);
 // Problem 2	// Problem 2
 
 
-// Problem 3 	let averageStudentAge = [];
+// Problem 3 	
+let averageStudentAge = [];
 
 averageStudentAge = students.reduce((averageAge, student) => {
 return averageAge + student.age;
