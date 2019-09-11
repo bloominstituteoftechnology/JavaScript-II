@@ -60,7 +60,8 @@ const runners = [
 let fullNames = [];
 runners.forEach(function (object) {
   let name = object.first_name + " " + object.last_name;
-  fullName.push(name)
+  
+  fullNames.push(name)
 })
 console.log(fullNames);
 
@@ -70,7 +71,7 @@ let firstNamesAllCaps = [];
 const caplock = (str) => {
   return str.toUpperCase();
 }
-allCaps = fullName.map(caplock)
+allCaps = fullNames.map(caplock)
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
@@ -85,7 +86,7 @@ console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
+let ticketPriceTotal = []
 const calc = (acc, donate) =>
   {return acc + donate;}
 runners.forEach(function (object) {
@@ -94,10 +95,54 @@ ticketPriceTotal = ticketPriceTotal.reduce(calc)
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+const students = [
+  {
+    name: 'Estella Shanae',
+    age: 24,
+    phone: '(215)34-5676',
+    id: 1
+},
+
+{
+    name: 'Frankie Davina',
+    age: 28,
+    phone: '(215)17-5171',
+    id: 2
+},
+{
+    name: 'Cheri Sally',
+    age: 33,
+    phone: '(215)22-5676',
+    id: 3
+}
+]
+
+// Problem 1	// Problem 1
 
 
+const studentNamesPhones = [];
 
-// Problem 2
+students.forEach(student => {
+return studentNamesPhones.push(`Name: "${student.name}" Phone number: ${student.phone}`);
+})
+
+console.log(studentNamesPhones);
+
+// Problem 2	// Problem 2
+
+
+// Problem 3 	let averageStudentAge = [];
+
+averageStudentAge = students.reduce((averageAge, student) => {
+return averageAge + student.age;
+}, 0);
+averageStudentAge = Math.floor(averageStudentAge/students.length);
+console.log(averageStudentAge);
 
 // Problem 3
+
+let studentsOver30 = students.filter(student => {
+if (student.age > 30) {
+    return student;
+}
+});
