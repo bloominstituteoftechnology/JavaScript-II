@@ -3,8 +3,17 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+const Hotty = () => {
+  let Husband = "Heinz";
+  console.log (`${Husband} is my rock`);
 
-
+const BestFriend = () => {
+  let Haley = "Tarzan";
+  console.log (`${Haley} is the only one allowed to beat up ${Husband}`);
+}
+BestFriend();
+}
+Hotty();
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
@@ -15,8 +24,20 @@ const counterMaker = () => {
   // 2- Declare a function `counter`. It should increment and return `count`.
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
-  // 3- Return the `counter` function.
-};
+  // 3- Return the `counter` function
+  let count = 0;
+   let counter = () => {
+     if(count <= 2){
+       return count++;
+   }else {
+     count = 0;
+     return count++;
+   }
+  }
+      return counter;
+   }
+  const myCounter = counterMaker();
+console.log (myCounter());
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -30,4 +51,6 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+
 };
