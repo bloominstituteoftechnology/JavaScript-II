@@ -4,7 +4,11 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
-
+let pooperScooper = "Drone service that will pick up your doggies poop and drop it into your neighbors yard";
+function whatIsPooperScooper(){
+  return pooperScooper;
+}
+console.log(whatIsPooperScooper());
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 

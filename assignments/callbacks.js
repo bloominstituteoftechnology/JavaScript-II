@@ -39,31 +39,90 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+// function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-}
+// }
+const getLength = (arr, cb) => {
+  cb(arr.length);
+};
+getLength(items, length => {
+  console.log(`The length of the array is ${length}.`);
+});
+// ------------------------------------------
+// function last(arr, cb) {
+//   last passes the last item of the array into the callback.
+// }
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+const last = (arr, cb) => {
+cb(arr[arr.length -1])
 }
+last(items, lastItem => {
+	console.log(`The last item in the array is ${lastItem}`)
+});
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+// -----------------------------------------------
+// function sumNums(x, y, cb) {
+//   // sumNums adds two numbers (x, y) and passes the result to the callback.
+// }
+
+const sumsNums= (x, y, cb) => {
+  cb(x + y);
+  };
+  
+  sumsNums(10,11, sum => {
+    console.log(sum);
+  });
+
+
+
+// -----------------------------------------------
+// function multiplyNums(x, y, cb) {
+//   // multiplyNums multiplies two numbers and passes the result to the callback.
+// }
+const multiplyNums=(x, y, cb)=> {
+	cb(x * y);
+};
+// 
+multiplyNums(10, 11, product=> {
+	console.log(`The answer is ${product}`);
+});
+
+// ------------------------------------------------
+// function contains(item, list, cb) {
+//   contains checks if an item is present inside of the given array/list.
+//   // Pass true to the callback if it is, otherwise pass false.
+// }
+function contains(item,list,cb){
+  if(list.includes(item)){
+     return cb(true)
+  }
+  return cb(false)
+
+
+ }
+
+contains(3,[1,2,3],function(success){
+ if(success){
+   return "item is contained in the list"
+  }
+  return "item is not present in the list"
+})
+
+
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+// function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+// }
+const removeDuplicates = (arr, cb) => {
+  var mySet = new Set(arr);
+  cb([...mySet]);
+};
+removeDuplicates(foods, uniqueFoods => {
+  console.log(`foods with duplicates removed: ${uniqueFoods}`);
+});
