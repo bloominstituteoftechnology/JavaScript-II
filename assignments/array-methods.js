@@ -58,28 +58,63 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+runners.forEach(element => {
+   fullNames.push(`FirstName: ${element.first_name} LastName: ${element.last_name}`);
+});
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+runners.map(el => firstNamesAllCaps.push(el.first_name.toUpperCase()));
+
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runners.filter((runner) => {
+     
+    runnersLargeSizeShirt.push(runner["shirt_size"] === "L");
+    
+})
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
+let ticketPriceTotal = [];
+let alls =  runners.reduce((total, num) => {
+  return total + num["donation"];
+}, 0);
+ticketPriceTotal.push(alls);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The event director needs to have all the runners company alphabetically
+
+let alpha = [];
+runners.forEach(runner => {
+  alpha.push(`Company: ${runner.company_name}`);
+  alpha.sort();
+  console.log(alpha);
+});
 
 // Problem 2
+// show donation and company name with amount donation from small to high 
+function sorting(a, b){
+  if(a.donation > b.donation){
+    return 1;
+  } if(a.donation < b.donation){
+    return -1;
+  }
+}
+runners.forEach(element => {
+   runners.sort(sorting);
+  console.log(`Company: ${element.company_name} donation: ${element.donation}`);  
+});
+
 
 // Problem 3
