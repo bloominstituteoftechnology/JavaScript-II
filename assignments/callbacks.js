@@ -66,8 +66,6 @@ sumNums(4, 5, function(add) {
   console.log(add);
 });
 
-console.log(sumNums(2, 4, add));
-
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x * y);
@@ -80,14 +78,13 @@ function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   for (let i = 0; i < list.length; i++) {
-    if (list[i] === item) {
+    if (item === list[i]) {
       return cb(true);
     }
+    return cb(false);
   }
-  return cb(false);
-
-  contains("yo-yo", items, function(holder) {
-    console.log(holder);
+  contains("Pencil", items, function(noName) {
+    console.log(noName);
   });
 
   /* STRETCH PROBLEM */
