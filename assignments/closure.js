@@ -4,7 +4,7 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
-function dragonball(name1) {
+function goku(name1) {
   const characterOne = "ChiChi";
   const characterTwo = "Gohan";
   console.log(
@@ -23,7 +23,7 @@ function dragonball(name1) {
   } //vegeta
   prince("vegeta");
 } //kakarot
-dragonball("kakarot");
+goku("kakarot");
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
