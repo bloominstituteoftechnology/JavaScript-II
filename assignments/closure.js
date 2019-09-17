@@ -1,4 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
+
+function country( countryName){
+  console.log(`I'm from ${countryName}.`)
+}
+
+console.log(country("America"))
+
+
 // Write a closure of your own creation.
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
@@ -10,6 +18,7 @@
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
+  
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
@@ -17,6 +26,7 @@ const counterMaker = () => {
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
 };
+
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -26,8 +36,8 @@ const counterMaker = () => {
 // will refuse to go over the limit, and start back at 1.
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
-const counterFactory = () => {
-  // Return an object that has two methods called `increment` and `decrement`.
-  // `increment` should increment a counter variable in closure scope and return it.
-  // `decrement` should decrement the counter variable and return it.
-};
+// const counterFactory = () => {
+//   // Return an object that has two methods called `increment` and `decrement`.
+//   // `increment` should increment a counter variable in closure scope and return it.
+//   // `decrement` should decrement the counter variable and return it.
+//};
