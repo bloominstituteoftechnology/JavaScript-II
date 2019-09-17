@@ -3,37 +3,26 @@
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
-
   // GIVEN THIS PROBLEM:
-
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
   }
-
   // SOLUTION:
-
   function firstItem(arr, cb) {
     return cb(arr[0]);
   }
-
   // NOTES ON THE SOLUTION:
-
   // firstItem is a higher order function.
   // It expects a callback (referred to as `cb`) as its second argument.
   // To test our solution, we can use the given `items` array and a variety of callbacks.
   // Note how callbacks can be declared separately, or inlined.
-
   // TEST 1 (inlined callback):
-
   const test1 = firstItem(items, item => `I love my ${item}!`);
   console.log(test1); // "I love my Pencil!"
-
   // TEST 2 (declaring callback before hand):
-
   function logExorbitantPrice(article) {
     return `this ${article} is worth a million dollars!`;
   };
-
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
@@ -66,7 +55,7 @@ function sumNums(x, y, cb) {
 }
 
 const printSum = sum => `The sum of x and y is ${sum}.`
-console.log(last(items, printSum));
+console.log(sumNums(5,7, printSum));
 
 
 
@@ -76,6 +65,9 @@ function multiplyNums(x, y, cb) {
   return cb(prod);
 }
 
+const printProd = prod => `The product of x and y is ${prod}.`
+console.log(multiplyNums(4,2,printProd));
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -84,7 +76,9 @@ function contains(item, list, cb) {
   return cb(check);
 }
 
-const printContains = check => check ? 'The array contains that item.' : 'The array does not contain that item.' 
+const containsChecker = check => check ? 'The item exists in the list' : 'The item does not exist in the list'
+console.log(contains('Gum',items, containsChecker))
+
 
 /* STRETCH PROBLEM */
 
@@ -92,4 +86,17 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const noDupes = [];
+  array.forEach(element => {
+    if (!noDupes.includes(element)) {
+      noDupes.push(element);
+    }
+  })
+
+  return cb(noDupes);
 }
+const original = [1,1,1,1,2,2,2,3,4,5,6,7,7,8,9,9,9,9,9,9,10];
+const countUniqueValues = values => values.join();
+
+console.log(removeDuplicates(original , countUniqueValues));
+console.log(original);
