@@ -82,6 +82,7 @@ function contains(item, list, cb) {
       return cb(true);
     }
   }
+  return cb(false);
 }
 contains("Pencil", items, function(noName) {
   console.log(noName);
