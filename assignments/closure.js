@@ -4,9 +4,28 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function company(companyName) {
+  const game1 = "World of Warcarft";
+  const game2 = "Warcraft: Orcs & Humans";
+  const game3 = "Diablo";
+  console.log(
+    `${companyName} is a game development company whose most popular titles are ${game1} and ${game3}.`
+  );
+  function game(gameName) {
+    console.log(
+      `${gameName} was their first PC title, but ${game1} has been their most popular release.`
+    );
+    function release(date) {
+      console.log(`${date} is when ${gameName} was originally released.`);
+    } // release
+    release(1994);
+  } // game
+  game(game2);
+} //company
+company("Blizzard");
+// *** Remember to put strings in quotations!! ***
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
