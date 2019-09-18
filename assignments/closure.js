@@ -21,14 +21,10 @@ const counterMaker = (limit) => {
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
   let count = 0;
-
-  return function() {
+  
+    return function() {
     count = count + 1;
     return count;
-  }
-
-
-
 };
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
@@ -45,17 +41,17 @@ console.log(myCounter(2));
 // will refuse to go over the limit, and start back at 1.
 
 
-
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  const obj {
-    inrcrement: function() {
+  const obj = {
+
+    increment1: function() {
       return num++;
-    }
-    decrement: function() {
+    },
+    decrement1: function() {
       return num --;
     }
   }
