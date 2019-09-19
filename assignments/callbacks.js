@@ -81,21 +81,17 @@ console.log(multiplyNums(1,2, multiply));
 
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-const contains = (arr, str, cb) => {
-  const isInArray = () => {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === str) {
-        return true;
-      }
-    } return false;
-  };
-  cb(isInArray());
+const contains = (item, list, cb) => {
+  return cb(item, list)
 };
-contains(items, 'Pencil', result => {
-  console.log(result ? 'pencil is in the array' : 'pencil is not in the array');
-});
+const included = (thing, items) => {
+  if (items.includes(thing)){
+    return true
+  }
+  else {return false}
+};
 
-
+console.log(contains("Pencil", items, included ))
 
 /* STRETCH PROBLEM */
 

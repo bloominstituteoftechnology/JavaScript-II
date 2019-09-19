@@ -57,11 +57,14 @@ const runners = [
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
-runners.forEach (runners => {
-  return fullName.push[`${runner.first_name} ${runner.last_name}`];
+const fullName = [];
+runners.forEach (runner => {
+  
+ return fullName.push(`${runner.first_name} ${runner.last_name}`);
 });
 
 console.log(fullName);
+
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
@@ -77,21 +80,21 @@ console.log(firstNamesAllCaps);
 let runnersLargeSizeShirt = [];
 
 
-runners.filter(runners => {if [runners.shirt_size === "L"] {largeShirts.push{runners}}});
+runners.filter(runners => {if (runners.shirt_size === "L") {runnersLargeSizeShirt.push(runners)}});
 console.log(runnersLargeSizeShirt);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
 
-ticketPriceTotal = runners.reduce{(total, runners) => total + runners.donation, 0};
+ticketPriceTotal = runners.reduce((total, runners) => total + runners.donation, 0);
 console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
-runners.forEach (runners => {
-  return email.push[`${runner.email}`];
+let email = [];
+runners.forEach(runners => {
+  return email.push(runners.email);
 });
 console.log(email)
 
