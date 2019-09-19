@@ -6,7 +6,8 @@
 const num2 = 7;
 function closure() {
   const num1 = 4;
-  return num1 + num2;
+  return function() { 
+    return num1 + num2;
 }
 console.log(closure());
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
