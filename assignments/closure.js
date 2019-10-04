@@ -4,9 +4,28 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function goku(name1) {
+  const characterOne = "ChiChi";
+  const characterTwo = "Gohan";
+  console.log(
+    `${name1} is a Seiyan. He is related to ${characterOne} and ${characterTwo}.`
+  );
+
+  function prince(name2) {
+    const characterThree = "Prince of Seiyans";
+    console.log(`${name2} is the Prince of Seiyans.`);
+
+    function friend(name3) {
+      const food = "senzu beans";
+      console.log(`${name3} always has ${food}.`);
+    } //krillin
+    friend("krillin");
+  } //vegeta
+  prince("vegeta");
+} //kakarot
+goku("kakarot");
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
