@@ -2,6 +2,14 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+function firstItem(arr, cb){
+  return cb(arr[0])
+}
+  const test1 = firstItem(items, item => `I love my ${item}!`);
+  console.log(test1); // "I love my Pencil!"
+  
+
+
 /* 
 
   // GIVEN THIS PROBLEM:
@@ -9,6 +17,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
   }
+
 
   // SOLUTION:
 
