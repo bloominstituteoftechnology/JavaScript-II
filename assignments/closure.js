@@ -4,6 +4,19 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+const dogs = () => {
+  let dogNumber = 0;
+  return function() {
+    dogNumber = dogNumber + 1;
+    return dogNumber;
+  }
+};
+
+const moreDogs = dogs();
+console.log(moreDogs());
+console.log(moreDogs());
+console.log(moreDogs());
+console.log(moreDogs());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
