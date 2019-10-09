@@ -39,26 +39,72 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+// function getLength(arr, cb) {
+//   cb(arr.length)
+//   // getLength passes the length of the array into the callback.
+// }
+// getLength(items,(length) => {
+//   console.log(length);
+// });
+// function last(arr, item, cb) {
+//   cb(arr[3]);
+//   // last passes the last item of the array into the callback.
+// }
+// last(items,3,(items) =>{
+//   console.log(items);
+// });
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
-}
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+// function sumNums(x, y, cb) {
+//   cb(x+y)
+//   return (x+y);
+//   // sumNums adds two numbers (x, y) and passes the result to the callback.
+// }
+// sumNums(2,2,(sumNums) => {
+//   console.log(sumNums);
+// });
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+// function multiplyNums(x, y, cb) {
+//   cb(x*y)
+//   return (x*y);
+//   // multiplyNums multiplies two numbers and passes the result to the callback.
+// }
+// multiplyNums(2,6,(multiplyNums) => {
+//   console.log(multiplyNums);
+// })
 
-function contains(item, list, cb) {
+function contains(item, list, cb ) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  // for(let i = 0; i < list.length; i++){
+  if(list.includes(item)){
+    return cb(true);
+    // console.log(item);
+    }
+    else{
+      return cb(false);
+    }
+  }
+
+  const test = contains("Backpack",items, a => a);
+
+  console.log(test);
+
+
+
+  // contains("Gum", items, function(a) {
+  //   if(a){
+  //     console.log("The Item is in the list");
+  //   }
+  //   else{
+  //     console.log("The Item is not in the list");
+  //   }
+  //  } );
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 
