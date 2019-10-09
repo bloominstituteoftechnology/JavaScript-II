@@ -56,17 +56,37 @@ last(items,3,(items) =>{
 
 
 function sumNums(x, y, cb) {
+  cb(x+y)
+  return (x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+sumNums(2,2,(sumNums) => {
+  console.log(sumNums);
+});
 
 function multiplyNums(x, y, cb) {
+  cb(x*y)
+  return (x*y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+multiplyNums(2,6,(multiplyNums) => {
+  console.log(multiplyNums);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+return cb(
+  list.reduce(
+    (isThere, thing, i, arr) =>
+      isThere === true || item === thing ? true : false
+  )
+);
+
+contains("Gum", items, function(isItem) {
+console.log(isItem);
+});
 
 /* STRETCH PROBLEM */
 
