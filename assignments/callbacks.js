@@ -9,6 +9,7 @@ function firstItem(arr, cb) {
   return cb(arr);
 }
 
+
 const first = (item) => {
   console.log(item[0]);
 }
@@ -73,7 +74,7 @@ const containsItem = (item, list) => {
   }
 }
 
-contains('John', items, containsItem)
+contains('Gum', items, containsItem)
 
 /* STRETCH PROBLEM */
 
