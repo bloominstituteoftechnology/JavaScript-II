@@ -4,6 +4,22 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function solarSystem(galaxy) {
+  console.log(`The ${galaxy} is where our planetary system is located.`);
+  debugger;
+  function planet(planetName) {
+    const continent = 'North America'
+    console.log(`We live on ${planetName} which is the third planet from the Sun.`);
+    debugger;
+    function country(countryName) {
+      console.log(`I live in the ${countryName} found in ${continent}.`);
+      debugger;
+    }//This closes country
+    country('United States');
+  }//this closes planet
+  planet('Earth');
+}//this closes solarsystem
+solarSystem('Milky Way');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
