@@ -44,6 +44,18 @@ sub();
 sub();
 sub();
 
+function letsMultiply(x){
+  return function(y){
+    return x * y;
+  };
+}
+
+const mult666 = letsMultiply(666);
+const mult13 = letsMultiply(13);
+
+console.log(mult666(13));
+console.log(mult13(666));
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
