@@ -10,11 +10,13 @@ function nhl(name) {
     console.log(`${name} is a ${nhlPlayer}`)
 
     function ahl(player) {
-        // const fighter = 'Goon'
-        console.log(`${player} is rough ${nhlPlayer}`)
+        const fighter = 'Goon'
+        console.log(`${player} is rough ${nhlPlayer} and ${fighter}`)
 
         function echl(veteran) {
-            console.log(`${veteran} is in the minor leagues`)
+            console.log(
+                `${veteran} is in the minor leagues and got in a fight with ${nhlPlayer} ${name}`
+            )
         } //this closes the echl
         echl('Todd Murphy')
     } //this closes the ahl
