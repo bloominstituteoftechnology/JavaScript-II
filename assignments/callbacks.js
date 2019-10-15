@@ -2,7 +2,7 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+ /*
 
   // GIVEN THIS PROBLEM:
 
@@ -41,24 +41,51 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-}
+  return cb(arr.length);
+};
+
+// TEST NOT WORKING!
+// const test4 = showLength (items, getLength) {
+//   return `${getLength} is how long ${items} array is`;
+// }
+// console.log(test4);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+  return cb(arr[arr.length-1]);
+};
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  return cb(x + y); 
+};
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+  return cb(x * y);
+};
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  
+  // TRIED USING A FILTER 
+  // function cb = list.filter((itemIterator)
+  // {return true
+  // });
+
+  function cb (item, list) {
+    for (i = 0; i < list.length; i++) {
+      if (list[i] === item){
+        return true;
+      } else {
+        return false;
+      }// End of If Statement
+    }// End of For Loop
+  }; //end of Callback
+}; // end of main funtion
+
+
 
 /* STRETCH PROBLEM */
 
