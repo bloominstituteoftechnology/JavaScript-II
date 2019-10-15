@@ -3,6 +3,23 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+let studentStarAwarder = (first, last, pronoun) =>{
+  const firstName = first;
+  const lastName = last;
+  let studentPronoun = pronoun;
+  let stars = 0;
+
+  return function(){
+    stars++;
+    console.log(`${firstName} ${lastName} gets a star... ${studentPronoun} now has ${stars} star(s).`);
+  }
+}
+
+const joeStarAwarder = studentStarAwarder('Joe', 'John', 'he');
+
+joeStarAwarder();
+joeStarAwarder();
+joeStarAwarder();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
