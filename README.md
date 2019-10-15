@@ -52,3 +52,5 @@ We have learned that closures allow us to access values in scope that have alrea
 -   [ ] Look up what an IIFE is in JavaScript and experiment with them
 
 # First commit for javascript II project
+
+# Second commit to make sure repo installed correctly
