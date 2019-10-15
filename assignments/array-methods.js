@@ -77,6 +77,7 @@ let firstNamesAllCaps = [];
 console.log(firstNamesAllCaps);
 
 
+
 // How to do it.
 // i) Access runners.first_name
 // ii) make them uppercase.
