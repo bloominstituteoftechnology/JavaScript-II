@@ -58,28 +58,60 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+runners.forEach (elements =>{
+  fullNames.push(`${elements.first_name} ${elements.last_name}`)
+});
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+runners.map((Atlas, index) => {
+  firstNamesAllCaps[index] = Atlas.first_name.toUpperCase();
+})
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runnersLargeSizeShirt = runners.filter( largeman => {
+  if (largeman.shirt_size === 'L'){
+    return largeman;
+  }
+
+})
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+ticketPriceTotal = runners.reduce((totalValue, runner) => {
+  return totalValue + runner.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// how to contact donators
+let emails = [];
+runners.forEach (elements =>{
+  emails.push(`${elements.first_name} ${elements.email}`)
+});
+console.log(emails);
 // Problem 2
-
+//top donators
+let topDonors = 0;
+topDonors = runners.filter(topDonator => {
+  if (topDonator.donation >= 200)
+  return topDonator.first_name
+})
+console.log(topDonors);
 // Problem 3
+// have to make the last name all caps if the to make names look normal
+let lastName = [];
+runners.map((caps, index) => {
+  lastName[index] = caps.last_name.toUpperCase();
+})
+console.log(lastName);
