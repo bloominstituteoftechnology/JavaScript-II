@@ -5,6 +5,46 @@
 // The outer scope can be a parent function, or the top level of the script.
 
 
+//NESTED
+function genre(genreName, genreName2) { 
+  const origin1 = 'Japan';
+  const origin2 = 'Russia';
+  console.log(`These are my favorite genres: ${genreName} and ${genreName2}.`);
+  //debugger;
+
+  function author(authorName, authorName2) {
+    const lifeStatus = 'dead';
+    const lifeStatus2 = 'alive';
+    console.log(`${authorName} is ${lifeStatus2}; ${authorName2} is ${lifeStatus}.`);
+    //debugger;
+
+    function book(title, title2) {
+      const length = 'light reading';
+      const length2 = 'heavy read';
+      console.log(`${title} is a ${length2}; ${title2} is some ${length}.`);
+      //debugger;
+    } //closes book
+    book('Wind-Up Bird Chronicle', 'Notes from Underground');
+  } //closes author
+  author('Haruki Murakami', 'Fyodor Dostoevsky');
+} //closes genre
+genre('Surrealism', 'Russian Classics');
+
+
+//Closure
+const sub = (function() {
+  var counter = 0;
+  return function () {
+    counter += 1;
+    return counter;
+  }
+}) ();
+
+sub();
+sub();
+sub();
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
