@@ -86,7 +86,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let allCompanies = runners.map(runner => runner.company_name);
+let uniqueCompanies = Array.from(new Set(allCompanies));
+let uniqueCompanies2 = allCompanies.filter((co, index) => allCompanies.indexOf(co) >= index);
+console.log(uniqueCompanies);
 
 // Problem 2
 
+let allDonorAmtByLastName = runners.map(runner =>  `${runner.last_name}: $${ runner.donation }` );
+console.log(allDonorAmtByLastName);
+
 // Problem 3
+let dotCompCo = [];
+dotCompCo = runners.filter(runner => runner.email.includes(`.com`));
+let allDotCompCoPrices = 0;
+allDotCompCoPrices = dotCompCo.map(runner => runner.donation).reduce((a, c) => a + c);
+let avgTicketPriceTotal = ticketPriceTotal/runners.length;
+console.log(`Average donation price from.com emails ${avgDotCompCoPrices > avgTicketPriceTotal ? `is` : `is not`} more than the average donation price for all companies.`);
