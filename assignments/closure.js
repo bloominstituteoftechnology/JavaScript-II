@@ -3,10 +3,15 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
-
+function gerald(param1, param2) {
+  let result = function() {
+    console.log(`${param1} is not ${param2}`);
+  };
+  result(param1, param2);
+}
+gerald("Jackie", "George");
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
