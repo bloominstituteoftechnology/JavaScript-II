@@ -14,10 +14,11 @@ function sayHello(greeting) {
     console.log(`${whatsup} ${name}, ${answer}`);
   }
 
-  answer();
+answer();
 }
 
-console.log(sayHello('yo'))
+console.log(sayHello("yo"));
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
