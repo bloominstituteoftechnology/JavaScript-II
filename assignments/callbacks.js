@@ -56,21 +56,42 @@ last(items, function (lastItem){
 });
 
 function sumNums(x, y, cb) {
-  return x + y;
+  return cb (x,y);
 }
-console.log(sumNums(2,4, sumNums));
+console.log(sumNums(2,4, (x,y)=> x + y));
 
 
-function multiplyNums(x, y, cb) {
-  return x * y;
+function numbers(x, y, cb) {
+  return cb(x , y);
 }
-console.log(multiplyNums(3, 6, multiplyNums));
+function multiply(x,y){
+ return x * y
+} 
+console.log(numbers(3, 6, multiply ));
+
 
 function contains(item, list, cb) {
-  
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+  if(list.includes(item)){
+    return cb(true);
+  } else {
+    return cb(false);
+  }
+}	
+contains('Notebook', items, function(result){
+  console.log(result);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 
