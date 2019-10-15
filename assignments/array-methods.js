@@ -470,8 +470,8 @@ console.log(fullNames)
 //use .map to loop over the runners array to get -> ${first_name}.toUpperCase
 let firstNamesUpperCase = runners.map(items => items.first_name.toUpperCase())
 console.log(firstNamesUpperCase)
-// let UpperCase = firstNames.toUpperCase() //I tried this but it would't work so i didnt have to add .toUpperCase to he filter array
-// console.log(firstNameUpperCase)
+// let upperCase = firstNamesUpperCase //I tried this but it would't work so i didnt have to add .toUpperCase to he filter array
+// console.log(upperCase.toUpperCase())
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
