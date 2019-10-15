@@ -149,8 +149,21 @@ contains2(items, 'yo-yo', check => {
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+const arrayWithDupes = [6, 666, 13, 420, 99, 'cat', 'tiger', 'cheetah', 'leopard', 666, 420, 13, 'tiger', 'snow leopard', 'jaguar', 'panther', 'lucifer', 'satan']
+
+function removeDuplicates(array, callback) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return callback(array);
 }
+
+console.log(removeDuplicates(arrayWithDupes, function(array) {
+  let noDupesArray = [];
+  array.forEach(item => {
+    if (!noDupesArray.includes(item)) {
+      noDupesArray.push(item);
+    }
+  });
+  return noDupesArray;
+}));
