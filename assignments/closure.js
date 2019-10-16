@@ -4,6 +4,17 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function makeThemMultiply(num1) {
+  return function(num2) {
+    return num1 * num2;
+  };
+}
+
+let firstNumber = makeThemMultiply(4);
+let secondNumber = makeThemMultiply(2);
+
+console.log(firstNumber(10));
+console.log(secondNumber(15));
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
