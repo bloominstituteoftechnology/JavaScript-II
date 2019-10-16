@@ -50,9 +50,15 @@ function displayLength(name) {
 }
 displayLength('Todd')
 
-function last(items, cb) {
+function last(arr, cb) {
+    return cb(arr)
     // last passes the last item of the array into the callback.
 }
+
+function lastItemArray(lastItemValue) {
+    return lastItemValue[lastItemValue.length - 1]
+}
+console.log(last(items, lastItemArray))
 
 function sumNums(num1, num2, cb) {
     // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -67,6 +73,7 @@ console.log(sumNums(5, 5, add))
 
 function multiplyNums(num1, num2, cb) {
     // multiplyNums multiplies two numbers and passes the result to the callback.
+
     return cb(num1, num2)
 }
 
@@ -79,6 +86,7 @@ console.log(multiplyNums(5, 5, multiply))
 function contains(item, list, cb) {
     // contains checks if an item is present inside of the given array/list.
     // Pass true to the callback if it is, otherwise pass false.
+    return cb(list.includes(item))
 }
 
 // /* STRETCH PROBLEM */
