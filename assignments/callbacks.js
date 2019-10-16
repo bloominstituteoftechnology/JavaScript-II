@@ -71,7 +71,7 @@ function multiplyNums(x, y, cb) {
 }
 cdMultiplyNums = (x, y) => x * y;
 
-//! console.log(multiplyNums(3, 6, cdMultiplyNums));
+// ! console.log(multiplyNums(3, 6, cdMultiplyNums));
 
 // let items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 /*
@@ -562,10 +562,7 @@ const runners = [
 
 //todo STRETCH PROBLEM
 
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+function findDuplicates(array, cb) {
   for (let i = 0; i < array.length; i++) {
     let j = i + 1;
     if (j < array.length) {
@@ -582,6 +579,6 @@ function removeDuplicates(array, cb) {
   return cb("No Duplicates Found");
 }
 
-removeDuplicatesCb = argument => console.log(argument);
+findDuplicatesCb = argument => console.log(argument);
 
-removeDuplicates(runners, removeDuplicatesCb);
+findDuplicates(runners, findDuplicatesCb);
