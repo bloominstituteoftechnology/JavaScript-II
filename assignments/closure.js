@@ -69,7 +69,7 @@ const counterFactory = () => {
         },
     }
 
-    };
+
         console.log(counterFactory.increment());
         console.log(counterFactory.increment());
         console.log(counterFactory.decrement())
