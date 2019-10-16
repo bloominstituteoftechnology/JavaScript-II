@@ -102,7 +102,7 @@ console.log(companiesDon);
 
 // Problem 2 edu
 let eduRunners = runners.filter(function(currentValue){
-  return currentValue.email === 'edu';
+  return currentValue.email === '.edu';
 });
 console.log(eduRunners);
 
