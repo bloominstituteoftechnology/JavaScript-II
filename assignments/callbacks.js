@@ -52,34 +52,34 @@ displayLength('Todd')
 
 function last(items, cb) {
     // last passes the last item of the array into the callback.
-    return cb(items[items.length - 1])
 }
-console.log(last(items, lastItem))
 
-function lastItem(placeHolder) {
-    //placehoder is pulling from the cb(...) i dont' understand how cb gets to placeholder
-    return `The last item in the items array is ${placeHolder}`
-}
-lastItem()
-
-function sumNums(x, y, cb) {
+function sumNums(num1, num2, cb) {
     // sumNums adds two numbers (x, y) and passes the result to the callback.
-    return cb(x + y)
+    return cb(num1, num2)
 }
-sumNums(num1, num2, addSum)
 
-function addSum(newPlaceHolder) {
-    return ` text... ${newPlaceHolder}`
+const add = (num1, num2) => {
+    return num1 + num2
+} //We pass 'add' into sumNums as an argument which then gets passed to the 'cb' parameter.
+
+console.log(sumNums(5, 5, add))
+
+function multiplyNums(num1, num2, cb) {
+    // multiplyNums multiplies two numbers and passes the result to the callback.
+    return cb(num1, num2)
 }
-addSum()
-// function multiplyNums(x, y, cb) {
-//     // multiplyNums multiplies two numbers and passes the result to the callback.
-// }
 
-// function contains(item, list, cb) {
-//     // contains checks if an item is present inside of the given array/list.
-//     // Pass true to the callback if it is, otherwise pass false.
-// }
+const multiply = (num1, num2) => {
+    return num1 * num2
+}
+
+console.log(multiplyNums(5, 5, multiply))
+
+function contains(item, list, cb) {
+    // contains checks if an item is present inside of the given array/list.
+    // Pass true to the callback if it is, otherwise pass false.
+}
 
 // /* STRETCH PROBLEM */
 

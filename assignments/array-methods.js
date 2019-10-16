@@ -483,6 +483,8 @@ console.log(runnersLargeSizeShirt)
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 //use reduce to sum the ${donation} property for a total.
 let ticketPriceTotal = runners.reduce((accumulator, items) => {
+    // console.log(accumulator)
+    // console.log(items.donation)
     return accumulator + items.donation
 }, 0)
 console.log(ticketPriceTotal)
