@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "Fantasque Sans Mono, Hack, Envy Code R VS, Menlo, OperatorMono-Book, SF Pro, Inconsolata, Anonymous Pro, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "Hack, Envy Code R VS, Menlo, OperatorMono-Book, SF Pro, Inconsolata, Anonymous Pro, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 11
+}
