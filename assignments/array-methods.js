@@ -58,21 +58,42 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+runners.forEach(function (runnerObj){
+  return fullNames.push(`${runnerObj.first_name} ${runnerObj.last_name}`);
+});
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+firstNamesAllCaps = runners.map(function(runnerObj){
+  return runnerObj.first_name.toUpperCase();
+});
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runnersLargeSizeShirt = runners.filter(function(runnerObj){
+  if (runnerObj.shirt_size === 'L' || runnerObj.shirt_size === 'XL' || runnerObj.shirt_size === '2XL' || runnerObj.shirt_size === '3XL' || runnerObj.shirt_size === '4XL') {
+    return true;
+  }
+});
+
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+//Use Map to extract the donations to a new array
+runnerDonations = runners.map(function(runnerObj){
+  return runnerObj.donation;
+});
+//Use reduce to tally up the new array
+ticketPriceTotal = runnerDonations.reduce(function(accumulator, currentValue){
+  return (accumulator + currentValue);
+});
+//Print out the solution
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====

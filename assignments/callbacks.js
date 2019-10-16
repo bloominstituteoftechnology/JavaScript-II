@@ -38,11 +38,16 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-
+//My CODE STARTS HERE
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return cb(arr.length);
+  cb(arr.length);
 };
+
+
+getLength(items, (lengthoflist) => {
+  console.log(lengthoflist);
+});
 
 // TEST NOT WORKING!
 // const test4 = showLength (items, getLength) {
@@ -68,7 +73,7 @@ function multiplyNums(x, y, cb) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  
+
   // TRIED USING A FILTER 
   // function cb = list.filter((itemIterator)
   // {return true
