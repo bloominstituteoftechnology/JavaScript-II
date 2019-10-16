@@ -4,7 +4,14 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
-
+ let dance = function (partner1, partner2, typeOfDance) {
+    //  partner1 = function () {
+    //    return `I am ${partner1}!`;
+    //     };
+     return `I am ${partner2}, and I don't like ${typeOfDance}ing with ${partner1}!`; 
+    };
+ console.log (dance ('Timothy', 'Elizabeth', 'waltz'));
+ 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
