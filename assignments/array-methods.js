@@ -493,11 +493,12 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // The organizer wants a list of all the company names and the full names of all the runners to be printed on their donation sheet.
-
 let companyNames = [];
 runners.forEach(runner => companyNames.push(`${runner.company_name}`));
 console.log(companyNames);
 
 // Problem 2
+//
 
 // Problem 3
+// All runners with ID greather than 25 nneded to be added to another list to compete for the 100m sprint.
