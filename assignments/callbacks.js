@@ -57,16 +57,25 @@ console.log(last(items));
 //Function 3
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return x + y;
 }
+console.log(sumNums(5, 5));
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return x * y;
 }
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if(list.includes(item)) {
+    return true;
+  }
 }
+console.log(contains('Pencil', items));
+
+
 
 /* STRETCH PROBLEM */
 
