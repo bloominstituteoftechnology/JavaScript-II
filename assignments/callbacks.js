@@ -1,6 +1,8 @@
-// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a
+// problem and a solution to see how this works with our items array. Study both the problem and the solution to figure out the
+// rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum']
 
 /* 
 
@@ -38,32 +40,134 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-
-function getLength(arr, cb) {
+function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr)
 }
 
-function last(arr, cb) {
+// inlined callback:
+const length = getLength(items, () => items.length)
+console.log('Inline getLength: ', length)
+
+// pre declaring callback:
+function getLenCB (ar) {
+  return ar.length
+}
+
+const newLength = getLength(items, getLenCB)
+console.log('predeclared newLength: ', newLength)
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+function last (arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr)
 }
 
-function sumNums(x, y, cb) {
+// inlined callback:
+const inlineLast = last(items, () => items[items.length - 1])
+console.log('inlineLast: ', inlineLast)
+
+// pre declaring callback:
+function getLast (ar) {
+  return ar[ar.length - 1]
+}
+
+const preDeclaredLast = last(items, getLast)
+console.log('preDeclaredLast: ', preDeclaredLast)
+
+///////////////////////////////////////////////////////////////////////////////////
+
+function sumNums (x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x, y)
 }
 
-function multiplyNums(x, y, cb) {
+const a = 10
+const b = 20
+
+// inlined callback:
+const inlineSum = sumNums(a, b, () => a + b)
+console.log('inlineSum: ', inlineSum)
+
+// pre declaring callback:
+function getSum (arg1, arg2) {
+  return arg1 + arg2
+}
+
+const preDeclaredSum = sumNums(a, b, getSum)
+console.log('preDeclaredSum: ', preDeclaredSum)
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+function multiplyNums (x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y)
+}
+const factorOne = 10
+const factorTwo = 5
+
+// inlined callback:
+const inlinedProduct = multiplyNums(
+  factorOne,
+  factorTwo,
+  () => factorOne * factorTwo
+)
+console.log('inlinedProduct: ', inlinedProduct)
+
+// pre declaring callback:
+function getProduct (arg1, arg2) {
+  return arg1 * arg2
 }
 
-function contains(item, list, cb) {
+const preDeclaredProduct = multiplyNums(factorOne, factorTwo, getProduct)
+console.log('preDeclaredProduct: ', preDeclaredProduct)
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+function contains (item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item, list);
 }
 
+// inlined callback:
+const inlineTrue = contains('yo-yo', items, (i, l) => {
+  let found = false;
+  l.forEach((thing) => {
+    if (thing === i) {
+      found = true;
+    }
+  })
+  return found;
+})
+console.log("inlineTrue: ", inlineTrue);
+
+// pre declared callback:
+function findItem (i, l) {
+  let found = false;
+  l.forEach((thing) => {
+    if (thing === i) {
+      found = true;
+    }
+  })
+  return found;
+}
+
+const preDeclaredTrue = contains('Gum', items, findItem);
+console.log("preDeclaredTrue: ", preDeclaredTrue);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+const dupeyArr = ['hello', 'world', 'hello', 'world', 'this', 'is', 'a', 'derpty', 'derp', 'hello', 'derpina', 'shopping'];
+
+function removeDuplicates (array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+
+// inlined callback:
