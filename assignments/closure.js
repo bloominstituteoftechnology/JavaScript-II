@@ -9,17 +9,24 @@
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
-const counterMaker = () => {
+const counterMaker = (limit) => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+  let count = 0;
+  const counter = () => {
+    count = count < limit ? count+1 : 0;
+    return count;
+  }
+  return counter;
 };
-// Example usage: const myCounter = counterMaker();
-// myCounter(); // 1
-// myCounter(); // 2
+const myCounter = counterMaker(10);
+for (let i = 0; i < 11; i++) {
+  console.log(myCounter());
+}
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
@@ -30,4 +37,23 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+  const counter = {
+    increment: function() {
+      return ++count;
+    },
+    decrement: function() {
+      return --count;
+    }
+  }
+  return counter;
 };
+
+ const Count = counterFactory();
+for (let i = 0; i < 10; i++) {
+  console.log(Count.increment());
+}
+
+for (let i = 0; i < 11; i++) {
+  console.log(Count.decrement());
+}
