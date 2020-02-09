@@ -166,8 +166,27 @@ function removeDuplicates (array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  return cb(array);
+  const noDuplicates = {};
+  array.forEach((item) => {
+    if (noDuplicates[item] === undefined) {
+      noDuplicates[item] = true;
+    }
+  })
+  const arr = Object.keys(noDuplicates);
+  return cb(arr);
 }
 
 
 // inlined callback:
+const noDupes = removeDuplicates(dupeyArr, (arr) => {
+  return arr;
+});
+console.log(noDupes);
+
+// pre declared callback:
+function callback(ar) {
+  return ar;
+}
+
+const preNoDupes = removeDuplicates(dupeyArr, callback);
+console.log(preNoDupes);
